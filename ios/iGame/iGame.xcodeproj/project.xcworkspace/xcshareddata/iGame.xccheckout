@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B1654C6D-EC77-40CF-BDCA-10E023B1F865</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>99e9b1be-817c-4732-bd21-355b8b058331</key>
+		<string>svn://serwer1551517.home.pl/fenix</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/iGame/iGame.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>99e9b1be-817c-4732-bd21-355b8b058331</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>99e9b1be-817c-4732-bd21-355b8b058331</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>99e9b1be-817c-4732-bd21-355b8b058331</string>
+			<key>IDESourceControlWCCName</key>
+			<string>fenix</string>
+		</dict>
+	</array>
+</dict>
+</plist>
