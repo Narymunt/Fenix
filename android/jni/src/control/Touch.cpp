@@ -14,6 +14,7 @@ void CTouch::Update(bool isTouch, int iX, int iY)
 {
 	if (isTouch)
 	{
+		//SDL_Log("touch x:%d y:%d\n",iX,iY);
 		if (!_isTouch)
 		{
 			_iStartX = iX;

@@ -1,152 +1,173 @@
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/obj/local/armeabi/objs/SDL2_image/external/jpeg-9/jmem-android.o: \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jmem-android.c \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jinclude.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jconfig.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdlib.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/api-level.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/string.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/malloc.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/alloca.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/strings.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdint.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/stddef.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/compiler.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/posix_types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/kernel.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysmacros.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/memory.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdio.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jpeglib.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jmorecfg.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jpegint.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jerror.h \
- /Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jmemsys.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/unistd.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/select.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/time.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/time.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/signal.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/limits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/limits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/limits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/internal_types.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/limits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/syslimits.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/page.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/signal.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm-generic/signal.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/sigcontext.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/siginfo.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm-generic/siginfo.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysconf.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/capability.h \
- /Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/pathconf.h
+obj/local/armeabi/objs/SDL2_image/external/jpeg-9/jmem-android.o: \
+ jni/SDL_image/external/jpeg-9/jmem-android.c \
+ jni/SDL_image/external/jpeg-9/jinclude.h \
+ jni/SDL_image/external/jpeg-9/jconfig.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h \
+ jni/SDL_image/external/jpeg-9/jpeglib.h \
+ jni/SDL_image/external/jpeg-9/jmorecfg.h \
+ jni/SDL_image/external/jpeg-9/jpegint.h \
+ jni/SDL_image/external/jpeg-9/jerror.h \
+ jni/SDL_image/external/jpeg-9/jmemsys.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/unistd.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/select.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/time.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/time.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysconf.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pathconf.h
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jinclude.h:
+jni/SDL_image/external/jpeg-9/jinclude.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jconfig.h:
+jni/SDL_image/external/jpeg-9/jconfig.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdlib.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/api-level.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/string.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/malloc.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/alloca.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/strings.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdint.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/_wchar_limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/posix_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/stddef.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/compiler.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/posix_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/kernel.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysmacros.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/memory.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdio.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jpeglib.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jmorecfg.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jpegint.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jerror.h:
+jni/SDL_image/external/jpeg-9/jpeglib.h:
 
-/Volumes/BOOTCAMP/iProjects/GemsOfAtlantis/android/project/jni/SDL_image/external/jpeg-9/jmemsys.h:
+jni/SDL_image/external/jpeg-9/jmorecfg.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/unistd.h:
+jni/SDL_image/external/jpeg-9/jpegint.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/select.h:
+jni/SDL_image/external/jpeg-9/jerror.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/time.h:
+jni/SDL_image/external/jpeg-9/jmemsys.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/time.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/unistd.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/signal.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/select.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/time.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/time.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/internal_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/syslimits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/page.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/signal.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm-generic/signal.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/sigcontext.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/siginfo.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm-generic/siginfo.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysconf.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/linux/capability.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h:
 
-/Applications/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/pathconf.h:
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysconf.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pathconf.h:
