@@ -1,7 +1,0 @@
-[openGL]: 4.6.0 NVIDIA 516.59
- [vendor]: NVIDIA Corporation
- [renderer]: NVIDIA GeForce RTX 3090/PCIe/SSE2
- [shader]: 4.60 NVIDIA
-
-[SCREEN]: 2000x1000 | pixelRatio 2.000000 | reverseRatio 0.500000 | 
-WIDE: YES HD: NO 
