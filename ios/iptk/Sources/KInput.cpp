@@ -63,24 +63,6 @@ void	KInput::setFingerPosition( int fingerid , short	x , short y , bool pressed 
 
 	finger[fingerid].pressed = pressed ;
 
-	if( KPTK::_screenOrientation == IPHONE_1136x640 )
-		finger[fingerid].x = 1136-y;
-    
-	if( KPTK::_screenOrientation == IPHONE_960x640 )
-		finger[fingerid].x = 960-y;
-    
-	if( KPTK::_screenOrientation == IPHONE_480x320 )
-		finger[fingerid].x = 480-y;
-  
-	if( KPTK::_screenOrientation == IPAD_1024x768 )
-		finger[fingerid].x = 1024-y;
-    
-	if( KPTK::_screenOrientation == IPAD_2048x1536 )
-		finger[fingerid].x = 2048-y;
-    
-    
-    /*
-    
 	if( KPTK::_screenOrientation == K_320x480 || KPTK::_screenOrientation == K_768x1024) {
 		finger[fingerid].x = x ;
 	}
@@ -97,8 +79,6 @@ void	KInput::setFingerPosition( int fingerid , short	x , short y , bool pressed 
 	else {
 		finger[fingerid].y = x;
 	}
-     
-    */
 }
 
 void	KInput::swapFingerPosition(int fingerid1, int fingerid2) 
@@ -139,25 +119,7 @@ void KInput::mousePointerTo(int x, int y)
 
 int KInput::getMouseX()
 {
-
-	if( KPTK::_screenOrientation == IPHONE_1136x640)
-		return (int)1136-_yScreenHit;// - midX;
-    
-	if( KPTK::_screenOrientation == IPHONE_960x640)
-		return (int)960-_yScreenHit;// - midX;
-
-	if( KPTK::_screenOrientation == IPHONE_480x320)
-		return (int)480-_yScreenHit;// - midX;
-    
-	if( KPTK::_screenOrientation == IPAD_1024x768)
-		return (int)1024-_yScreenHit;// - midX;
-
-	if( KPTK::_screenOrientation == IPAD_2048x1536)
-		return (int)2048-_yScreenHit;// - midX;
-    
-	
-/*
-    if( KPTK::_screenOrientation == K_320x480 || KPTK::_screenOrientation == K_768x1024 )
+	if( KPTK::_screenOrientation == K_320x480 || KPTK::_screenOrientation == K_768x1024 )
 	{
 	   return (int)_xScreenHit;// - midX;
 	}
@@ -167,18 +129,15 @@ int KInput::getMouseX()
 	else if( KPTK::_screenOrientation == K_1024x768) {
 		return (int)1024-_yScreenHit;// - midX;		
 	}
-*/
 	return 0;
 }
 
 int KInput::getMouseY()
 {
-/*
 	if( KPTK::_screenOrientation == K_320x480 || KPTK::_screenOrientation == K_768x1024 )
 	{
 		return (int)_yScreenHit;// - midX;
 	}
-*/
 	return (int)_xScreenHit;// - midX;
 }
 
