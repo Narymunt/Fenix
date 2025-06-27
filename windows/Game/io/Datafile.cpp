@@ -2,13 +2,13 @@
 
 #include "Datafile.h"
 
-CDatafile::CDatafile(unsigned long offset, unsigned long size) :
+Datafile::Datafile(unsigned long offset, unsigned long size) :
 _buffer(NULL), _size(0), _empty(true)
 {
 	load(offset,size);
 }
 
-CDatafile::CDatafile(char filename[]) :	// dane o offsecie itd biezemy z pliku data.map
+Datafile::Datafile(char filename[]) :	// dane o offsecie itd biezemy z pliku data.map
 _buffer(NULL), _size(0), _empty(true)
 {
 	char linia[1024];
@@ -38,12 +38,12 @@ _buffer(NULL), _size(0), _empty(true)
 
 }
 
-CDatafile::~CDatafile()
+Datafile::~Datafile()
 {
 	delete []_buffer;
 }
 
-void CDatafile::load(unsigned long offset, unsigned long size)
+void Datafile::load(unsigned long offset, unsigned long size)
 {
 	FILE *plik = NULL;
 	static int index;

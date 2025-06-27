@@ -206,6 +206,30 @@
     <ClCompile Include="ui\ButtonTTF.cpp">
       <Filter>ui</Filter>
     </ClCompile>
+    <ClCompile Include="app\SkeletalEditor.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="app\SeqEditor.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\AnimationEvent.cpp">
+      <Filter>gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="math\EquationSystem.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Box.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Vector2d.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Ytable.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\AnimationTrack.cpp">
+      <Filter>gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -391,6 +415,33 @@
     </ClInclude>
     <ClInclude Include="ui\ButtonTTF.h">
       <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="app\SkeletalEditor.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\SeqEditor.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\AnimationEvent.h">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="math\EquationSystem.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Tween.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Box.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vector2d.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Ytable.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\AnimationTrack.h">
+      <Filter>gfx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

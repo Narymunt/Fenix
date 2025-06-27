@@ -1,6 +1,6 @@
 #include "Credits.h"
 
-CCredits::CCredits()
+Credits::Credits()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -9,13 +9,13 @@ CCredits::CCredits()
 }
 
 
-CCredits::~CCredits()
+Credits::~Credits()
 {
-	Close();
+	close();
 }
 
 
-void CCredits::Open(CScreen *pScreen)
+void Credits::open(Screen *pScreen)
 {	
 //	_pBackground = new CSprite(pScreen,"CREDITS_SCREEN");
 //	_pExitButton = new CButton("data/x1.png","data/x2.png","data/x3.png");
@@ -25,14 +25,14 @@ void CCredits::Open(CScreen *pScreen)
 	_isOpen = true;
 }
 
-void CCredits::Close(void)
+void Credits::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
 	_isOpen = false;
 }
 
-int CCredits::Render(unsigned long timer, CMouse *mouse)
+int Credits::render(unsigned long timer, Mouse *mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

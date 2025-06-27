@@ -10,12 +10,12 @@
 #define MOUSE_HAND		20
 #define MOUSE_WAIT		30
 
-class CMouse : public CGameObject
+class Mouse : public GameObject
 {
 
 public:
-	CMouse(bool isVisible);      
-	~CMouse();
+	Mouse(bool isVisible);      
+	~Mouse();
 
 	void render(void);		
 	void render(int iState);
@@ -52,9 +52,9 @@ public:
 	char	_hotX;		// hot coords 
 	char	_hotY;		
 
-	CSprite		*_cursorArrow;		// bitmap
-	CSprite		*_cursorHand;
-	CSprite		*_cursorWait;
+	Sprite		*_cursorArrow;		// bitmap
+	Sprite		*_cursorHand;
+	Sprite		*_cursorWait;
 };
 
 

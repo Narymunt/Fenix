@@ -3,19 +3,18 @@
 
 #include "Tween.h"
 
-CTween::CTween()
+Tween::Tween()
 {
     
 }
 
-CTween::CTween(int iSize)
+Tween::Tween(int iSize)
 {
     for (int i=0; i<iSize; ++i)
-        _pTable.push_back(0);
-    
+        _pTable.push_back(0);    
 }
 
-CTween::CTween(float fv1, float fv2, int i)
+Tween::Tween(float fv1, float fv2, int i)
 {
     _fV1 = fv1; _fV2 = fv2;
 
@@ -23,7 +22,7 @@ CTween::CTween(float fv1, float fv2, int i)
         _pTable.push_back(0);
 }
 
-CTween::CTween(float fv1, float fv2, float f)
+Tween::Tween(float fv1, float fv2, float f)
 {
     float step, fstart;
 
@@ -41,12 +40,12 @@ CTween::CTween(float fv1, float fv2, float f)
     
 }
 
-CTween::CTween(float fv1, float fv2)
+Tween::Tween(float fv1, float fv2)
 {
     _fV1 = fv1; _fV2 = fv2;
 }
 
-CTween::~CTween()
+Tween::~Tween()
 {
     _pTable.clear();
 }
@@ -57,7 +56,7 @@ CTween::~CTween()
  *        progression of the tweener.
  */
 
-float CTween::fBack(float t)
+float Tween::back(float t)
 {
     float fValue;
     float s = 1.70158f;
@@ -65,7 +64,7 @@ float CTween::fBack(float t)
     return _fV1+((_fV2 - _fV1)*fValue);
 }
 
-float CTween::fBack(float f1, float f2, float t)
+float Tween::back(float f1, float f2, float t)
 {
     float fValue;
     float s = 1.70158f;
@@ -83,7 +82,7 @@ float CTween::fBack(float f1, float f2, float t)
  *        progression of the tweener.
  */
 
-float CTween::fBounce( float t )
+float Tween::bounce( float t )
 {
     const float v = 1 - t;
     float fValue,c,d;
@@ -114,7 +113,7 @@ float CTween::fBounce( float t )
     return _fV1+((_fV2 - _fV1)*fValue);
 }
 
-float CTween::fBounce( float f1, float f2, float t )
+float Tween::bounce( float f1, float f2, float t )
 {
     const float v = 1 - t;
     float fValue,c,d;
@@ -153,13 +152,13 @@ float CTween::fBounce( float f1, float f2, float t )
  *        progression of the tweener.
  */
 
-float CTween::fCirc( float t )
+float Tween::circ( float t )
 {
     float fValue = 1 - sqrt(1 - t * t);
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_circ_func()
 
-float CTween::fCirc( float f1, float f2, float t )
+float Tween::circ( float f1, float f2, float t )
 {
     float fValue = 1 - sqrt(1 - t * t);
     _fV1 = f1; _fV2 = f2;
@@ -173,13 +172,13 @@ float CTween::fCirc( float f1, float f2, float t )
  *        progression of the tweener.
  */
 
-float CTween::fCubic( float t )
+float Tween::cubic( float t )
 {
     float fValue = t * t * t;
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_cubic_func()
 
-float CTween::fCubic( float f1, float f2, float t )
+float Tween::cubic( float f1, float f2, float t )
 {
     float fValue = t * t * t;
     _fV1 = f1; _fV2 = f2;
@@ -193,7 +192,7 @@ float CTween::fCubic( float f1, float f2, float t )
  *        progression of the tweener.
  */
 
-float CTween::fElastic( float t )
+float Tween::elastic( float t )
 {
     const float pi(3.1415927);
     float v(t-1);
@@ -204,7 +203,7 @@ float CTween::fElastic( float t )
 
 } // easing_elastic_func()
 
-float CTween::fElastic( float f1, float f2, float t )
+float Tween::elastic( float f1, float f2, float t )
 {
     const float pi(3.1415927);
     float v(t-1);
@@ -224,13 +223,13 @@ float CTween::fElastic( float f1, float f2, float t )
  *        progression of the tweener.
  */
 
-float CTween::fExpo( float t )
+float Tween::expo( float t )
 {
     float fValue = t == 0 ? 0 : pow(2, 10 * (t - 1));
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_expo_func()
 
-float CTween::fExpo( float f1, float f2, float t )
+float Tween::expo( float f1, float f2, float t )
 {
     _fV1 = f1; _fV2 = f2;
     float fValue = t == 0 ? 0 : pow(2, 10 * (t - 1));
@@ -243,12 +242,12 @@ float CTween::fExpo( float f1, float f2, float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fLinear( float t )
+float Tween::linear( float t )
 {
     return _fV1+((_fV2 - _fV1)*t);
 } // easing_linear_func()
 
-float CTween::fLinear( float f1, float f2, float t )
+float Tween::linear( float f1, float f2, float t )
 {
     _fV1 = f1; _fV2 = f2;
     return _fV1+((_fV2 - _fV1)*t);
@@ -260,13 +259,13 @@ float CTween::fLinear( float f1, float f2, float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fQuad( float t )
+float Tween::quad( float t )
 {
     float fValue =  t * t;
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_quad_func()
 
-float CTween::fQuad( float f1, float f2, float t )
+float Tween::quad( float f1, float f2, float t )
 {
     _fV1 = f1; _fV2 = f2;
     float fValue =  t * t;
@@ -278,13 +277,13 @@ float CTween::fQuad( float f1, float f2, float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fQuart( float t )
+float Tween::quart( float t )
 {
     float fValue = t * t * t * t;
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_quart_func()
 
-float CTween::fQuart( float f1, float f2, float t )
+float Tween::quart( float f1, float f2, float t )
 {
     _fV1 = f1; _fV2 = f2;
     float fValue = t * t * t * t;
@@ -297,7 +296,7 @@ float CTween::fQuart( float f1, float f2, float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fQuint( float t )
+float Tween::quint( float t )
 {
     float fValue = t * t * t * t * t;
     return _fV1+((_fV2 - _fV1)*fValue);
@@ -308,7 +307,7 @@ float CTween::fQuint( float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fQuint( float f1, float f2, float t )
+float Tween::quint( float f1, float f2, float t )
 {
     _fV1 = f1; _fV2 = f2;
     float fValue = t * t * t * t * t;
@@ -320,14 +319,14 @@ float CTween::fQuint( float f1, float f2, float t )
  * \param t The ratio of the date, in (0, 1), representing the total
  *        progression of the tweener.
  */
-float CTween::fSine( float t )
+float Tween::sine( float t )
 {
     const float pi(3.1415927);
     float fValue = 1 - cos(t * pi / 2);
     return _fV1+((_fV2 - _fV1)*fValue);
 } // easing_sine_func()
 
-float CTween::fSine( float f1, float f2, float t )
+float Tween::sine( float f1, float f2, float t )
 {
     const float pi( 3.1415927 );
     float fValue = 1 - cos(t * pi / 2);

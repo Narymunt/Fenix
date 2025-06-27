@@ -33,12 +33,12 @@
    @return none
 */
 
-CParticle2DManager::CParticle2DManager(char cSpriteFilename[], unsigned long ulCount, 
+Particle2DManager::Particle2DManager(char cSpriteFilename[], unsigned long ulCount, 
                                    double fX1, double fY1, double fX2, double fY2, 
                                    double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
                                    double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
                                    double fAngle, double fMinIncAngle, double fMaxIncAngle,
-                                   unsigned long ulMinLifeTime, unsigned long ulMaxLifeTime, CScreen *pScreen) :
+                                   unsigned long ulMinLifeTime, unsigned long ulMaxLifeTime, Screen *pScreen) :
 _r(1), _g(1), _b(1), _a(1),
 _count(ulCount),
 _x1(fX1), _y1(fY1), _x2(fX2), _y2(fY2),
@@ -65,10 +65,10 @@ _minLifeTime(ulMinLifeTime), _maxLifeTime(ulMaxLifeTime)
     
         ulLifeTime = _minLifeTime + ((unsigned long)rand()%(_maxLifeTime-_minLifeTime));
     
-        _particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+        _particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
     }        
     
-    _image = new CSprite(cSpriteFilename);	
+    _image = new Sprite(cSpriteFilename);	
 }
 
 /**
@@ -95,7 +95,7 @@ _minLifeTime(ulMinLifeTime), _maxLifeTime(ulMaxLifeTime)
    @return none
 */
 
-CParticle2DManager::CParticle2DManager(CSprite *pImage, unsigned long ulCount,
+Particle2DManager::Particle2DManager(Sprite *pImage, unsigned long ulCount,
 	double fX1, double fY1, double fX2, double fY2,
 	double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
 	double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
@@ -127,7 +127,7 @@ _minLifeTime(ulMinLifeTime), _maxLifeTime(ulMaxLifeTime)
 
 		ulLifeTime = _minLifeTime + ((unsigned long)rand() % (_maxLifeTime - _minLifeTime));
 
-		_particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+		_particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
 	}
 
 	_image = pImage;	// przekazujemy wskaznik przez referencje
@@ -158,7 +158,7 @@ _minLifeTime(ulMinLifeTime), _maxLifeTime(ulMaxLifeTime)
    @return none
 */
 
-void CParticle2DManager::reset(CSprite *pImage, unsigned long ulCount,
+void Particle2DManager::reset(Sprite *pImage, unsigned long ulCount,
 	double fX1, double fY1, double fX2, double fY2,
 	double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
 	double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
@@ -196,7 +196,7 @@ void CParticle2DManager::reset(CSprite *pImage, unsigned long ulCount,
 
 		ulLifeTime = _minLifeTime + ((unsigned long)rand() % (_maxLifeTime - _minLifeTime));
 
-		_particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+		_particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
 	}
 
 	_image = pImage;
@@ -227,7 +227,7 @@ void CParticle2DManager::reset(CSprite *pImage, unsigned long ulCount,
    @return none
 */
 
-void CParticle2DManager::reset(unsigned long ulCount,
+void Particle2DManager::reset(unsigned long ulCount,
 	double fX1, double fY1, double fX2, double fY2,
 	double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
 	double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
@@ -264,7 +264,7 @@ void CParticle2DManager::reset(unsigned long ulCount,
 
 		ulLifeTime = _minLifeTime + ((unsigned long)rand() % (_maxLifeTime - _minLifeTime));
 
-		_particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+		_particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
 	}
 }
 
@@ -274,7 +274,7 @@ void CParticle2DManager::reset(unsigned long ulCount,
    @return none
 */
 
-void CParticle2DManager::restart(unsigned long ulCount)
+void Particle2DManager::restart(unsigned long ulCount)
 {
     double fX, fY, fIncX, fIncY, fIncAlpha, fIncAngle;
     unsigned long ulLifeTime;
@@ -295,7 +295,7 @@ void CParticle2DManager::restart(unsigned long ulCount)
     
         ulLifeTime = _minLifeTime + ((unsigned long)rand()%(_maxLifeTime-_minLifeTime));
     
-        _particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+        _particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
     }        
 }
 
@@ -307,7 +307,7 @@ void CParticle2DManager::restart(unsigned long ulCount)
    @return none
 */
 
-void CParticle2DManager::restart(void)
+void Particle2DManager::restart(void)
 {
     double fX, fY, fIncX, fIncY, fIncAlpha, fIncAngle;
     unsigned long ulLifeTime;
@@ -328,7 +328,7 @@ void CParticle2DManager::restart(void)
     
         ulLifeTime = _minLifeTime + ((unsigned long)rand()%(_maxLifeTime-_minLifeTime));
     
-        _particles.push_back(new CParticle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
+        _particles.push_back(new Particle2D(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime));
     }        
 }
 
@@ -340,7 +340,7 @@ void CParticle2DManager::restart(void)
    @return none
 */
 
-CParticle2DManager::~CParticle2DManager()
+Particle2DManager::~Particle2DManager()
 {
 	for (unsigned int i=0; i<_particles.size(); i++)
 		delete _particles[i];
@@ -357,7 +357,7 @@ CParticle2DManager::~CParticle2DManager()
    @return none
 */
 
-void CParticle2DManager::regenerate(unsigned long ulIndex)
+void Particle2DManager::regenerate(unsigned long ulIndex)
 {
     double fX, fY, fIncX, fIncY, fIncAlpha, fIncAngle;
     unsigned long ulLifeTime;
@@ -373,7 +373,7 @@ void CParticle2DManager::regenerate(unsigned long ulIndex)
     
     ulLifeTime = _minLifeTime + ((unsigned long)rand()%(_maxLifeTime-_minLifeTime));
     
-    _particles[ulIndex]->Regenerate(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime); 
+    _particles[ulIndex]->regenerate(fX, fY, _alpha, _angle, fIncX, fIncY, fIncAlpha, fIncAngle, ulLifeTime); 
 }
 
 /**
@@ -383,20 +383,20 @@ void CParticle2DManager::regenerate(unsigned long ulIndex)
    @return none
 */
 
-int CParticle2DManager::render(unsigned long ulTimer)
+int Particle2DManager::render(unsigned long ulTimer)
 {   
 	if (_image == NULL)
 		return 0;
 
 	for (unsigned long i=0; i<_particles.size(); i++)
     {
-        if (_particles[i]->Update(ulTimer))
+        if (_particles[i]->update(ulTimer))
         {            
             _image->position((float)_particles[i]->x(),(float)_particles[i]->y());
-			   _image->_r = ((float)_particles[i]->dAngle());
-			   _image->_a = ((float)_particles[i]->dAlpha());	
-			   _image->color(_r, _g, _b,_a);
-			   _image->render();                             
+            _image->_r = (float)_particles[i]->_dAngle;
+		   _image->_a = (float)_particles[i]->_dAlpha;	
+		   _image->color(_r, _g, _b,_a);
+		   _image->render();                             
         }
         else 
         {	
@@ -418,7 +418,7 @@ int CParticle2DManager::render(unsigned long ulTimer)
    @return none
 */
 
-void CParticle2DManager::setXY(double x1, double y1, double x2, double y2)
+void Particle2DManager::setXY(double x1, double y1, double x2, double y2)
 {
 	_x1 = x1;	_x2 = x2; 
 	_y1 = y1;	_y2 = y2;
@@ -435,7 +435,7 @@ void CParticle2DManager::setXY(double x1, double y1, double x2, double y2)
    @return none
 */
 
-void CParticle2DManager::setInc(double minX, double minY, double maxX, double maxY)
+void Particle2DManager::setInc(double minX, double minY, double maxX, double maxY)
 {
 	_minIncX = minX; _minIncY = minY;
 	_maxIncX = maxX; _maxIncY = maxY;
@@ -451,7 +451,7 @@ void CParticle2DManager::setInc(double minX, double minY, double maxX, double ma
    @return none
 */
 
-void CParticle2DManager::alpha(double alpha, double min, double max)
+void Particle2DManager::alpha(double alpha, double min, double max)
 {
 	_alpha = alpha;
 	_minIncAlpha = min;
@@ -468,7 +468,7 @@ void CParticle2DManager::alpha(double alpha, double min, double max)
    @return none
 */
 
-void CParticle2DManager::angle(double angle, double min, double max)
+void Particle2DManager::angle(double angle, double min, double max)
 {
 	_angle = angle;
 	_minIncAngle = min;
@@ -484,7 +484,7 @@ void CParticle2DManager::angle(double angle, double min, double max)
    @return losowa liczba w podanym przedziale
 */
 
-double CParticle2DManager::randomDouble(double a, double b)
+double Particle2DManager::randomDouble(double a, double b)
 {
     return ((b-a)*((double)rand()/RAND_MAX))+a;
 }
@@ -498,7 +498,7 @@ double CParticle2DManager::randomDouble(double a, double b)
    @param a alfa - przeŸroczystoœæ
 */
 
-void CParticle2DManager::color(float r, float g, float b, float a)
+void Particle2DManager::color(float r, float g, float b, float a)
 {
 	_r = r; 
 	_g = g; 
@@ -515,7 +515,7 @@ void CParticle2DManager::color(float r, float g, float b, float a)
    @param b blue - niebieski
 */
 
-void CParticle2DManager::color(float r, float g, float b)
+void Particle2DManager::color(float r, float g, float b)
 {
 	_r = r;
 	_g = g;

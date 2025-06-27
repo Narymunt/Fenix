@@ -1,13 +1,13 @@
 #pragma once
 
-class CVector 2D
+class Vector2D
 {
 	
 public:
 
-	CVector2D(float x, float y);
-	CVector2D(float x1, float y1, float x2, float y2);
-	~CVector2D();
+	Vector2D(float x, float y);
+	Vector2D(float x1, float y1, float x2, float y2);
+	~Vector2D();
 
 	void	set(float nx, float ny);
 	void	set(float x1, float y1, float x2, float y2);
@@ -33,9 +33,7 @@ public:
 	float	fY2(void);
 	void	fY2(float v);
 
-protected:
-
-	float		m_fX, m_fY;
-	float		m_fX1, m_fY1, m_fX2, m_fY2;
+	float		_fX, _fY;
+	float		_fX1, _fY1, _fX2, _fY2;
 
 };

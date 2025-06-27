@@ -1,27 +1,27 @@
 #include "Animation.h"
 #pragma warning(disable : 4996)	// sprintf unsafe
 
-CAnimation::CAnimation() :
+Animation::Animation() :
 _frameCount(0)
 {
 	_isOpen = false;
 }
 
-CAnimation::CAnimation(char cFile[], int iFrameCount, char cExt[]) :
+Animation::Animation(char cFile[], int iFrameCount, char cExt[]) :
    _frameCount(iFrameCount)
 {
 	strcpy(_file,cFile);	// zapamietujemy nazwe pliku i rozszerzenie, numery dodajemy np. img001,img002
 	strcpy(_ext,cExt);
 }
 
-CAnimation::~CAnimation()
+Animation::~Animation()
 {
 	close();
 }
 
 // Wczytanie danych na podstawie wczeœniej ustawionych parametrów
 
-void CAnimation::open(void)
+void Animation::open(void)
 {
 	char buffer[1024];	// tutaj wygenerujemy nazwe pliku
 
@@ -47,14 +47,14 @@ void CAnimation::open(void)
 			if (i>9 && i <100)
 				sprintf(buffer,"%s%d.%s",_file,i,_ext);
 		}
-		_sprite.push_back(new CSprite(buffer));
+		_sprite.push_back(new Sprite(buffer));
 	}
 	_isOpen = true;
 }
 
 // Zwolnij wszystkie dane. 
 
-void CAnimation::close(void)
+void Animation::close(void)
 {
 	for (unsigned int i=0; i<_sprite.size(); i++)
 		delete _sprite[i];
@@ -65,14 +65,14 @@ void CAnimation::close(void)
 
 // Dodajemy klatkê na koniec kolejki
 
-void CAnimation::add(char cFilename[])
+void Animation::add(char cFilename[])
 {
-	_sprite.push_back(new CSprite(cFilename));
+	_sprite.push_back(new Sprite(cFilename));
 }
 
 // Renderuj klatkê o podanym numerze
 
-void CAnimation::render(int i)
+void Animation::render(int i)
 {
 	if (i>=0 && i < _frameCount)
 		_sprite[i]->render();
@@ -88,7 +88,7 @@ void CAnimation::render(int i)
    @return none
 */
 
-void CAnimation::render(int i, int x, int y)
+void Animation::render(int i, int x, int y)
 {
 	if (i>=0 && i<_frameCount)
 	{
@@ -108,7 +108,7 @@ void CAnimation::render(int i, int x, int y)
    @return none
 */
 
-void CAnimation::render(int i, int x, int y, unsigned char a)
+void Animation::render(int i, int x, int y, unsigned char a)
 {
 	if (i>=0 && i<_frameCount)
 	{
@@ -130,7 +130,7 @@ void CAnimation::render(int i, int x, int y, unsigned char a)
    @return none
 */
 
-void CAnimation::render(int i, int x, int y, float sx, float sy)
+void Animation::render(int i, int x, int y, float sx, float sy)
 {
 	if (i>=0 && i<_frameCount)
 	{
@@ -154,7 +154,7 @@ void CAnimation::render(int i, int x, int y, float sx, float sy)
 */
 
 
-void CAnimation::render(int i, int x, int y, float sx, float sy, float r)
+void Animation::render(int i, int x, int y, float sx, float sy, float r)
 {
 	if (i>=0 && i<_frameCount)
 	{
@@ -181,7 +181,7 @@ void CAnimation::render(int i, int x, int y, float sx, float sy, float r)
 */
 
 
-void CAnimation::render(int i, int x, int y, float sx, float sy, float r, float rx, float ry)
+void Animation::render(int i, int x, int y, float sx, float sy, float r, float rx, float ry)
 {
 	if (i>=0 && i<_frameCount)
 	{

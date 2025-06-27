@@ -3,7 +3,7 @@
 
 #include "GameSettings.h"
 
-CGameSettings::CGameSettings()
+GameSettings::GameSettings()
 {
 	_isFullscreen = 1;
 	_isMSX = 1;
@@ -11,12 +11,12 @@ CGameSettings::CGameSettings()
 	_language = 0;	// 0 czyli nieustawiony
 }
 
-CGameSettings::~CGameSettings()
+GameSettings::~GameSettings()
 {
     
 }
 
-bool CGameSettings::load(void)
+bool GameSettings::load(void)
 {
     FILE *plik;
    
@@ -35,7 +35,7 @@ bool CGameSettings::load(void)
     return true;   
 }
 
-bool CGameSettings::save(void)
+bool GameSettings::save(void)
 {
     FILE *plik;
     

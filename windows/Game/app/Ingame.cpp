@@ -1,7 +1,7 @@
 #include "Ingame.h"
 #pragma warning(disable : 4996)	// sprintf unsafe
 
-CIngame::CIngame() : _black(NULL), _background(NULL), _timerStart(0), _timerPrev(0)
+Ingame::Ingame() : _black(NULL), _background(NULL), _timerStart(0), _timerPrev(0)
 {
 	_isOpen = false;
 	_isMouseLock = false;
@@ -9,20 +9,20 @@ CIngame::CIngame() : _black(NULL), _background(NULL), _timerStart(0), _timerPrev
 
 // class destructor
 
-CIngame::~CIngame()
+Ingame::~Ingame()
 {
 	close();
 }
 
 // load data
 
-void CIngame::open(CScreen *pScreen)
+void Ingame::open(Screen *pScreen)
 {	
 	_timerStart = 0;	// poczatek
 	_timerPrev = 0;
 
 //	_black = new CSprite("level05_1920.jpg");
-	_background = new CSprite((char*)"level05_1920.jpg");
+	_background = new Sprite((char*)"level05_1920.jpg");
 
 	_isMouseLock = false;
 	
@@ -33,7 +33,7 @@ void CIngame::open(CScreen *pScreen)
 
 // free graphics and music, but keep the required data
 
-void CIngame::close(void)
+void Ingame::close(void)
 {
 	safeDelete(_black);
 	safeDelete(_background);
@@ -46,7 +46,7 @@ void CIngame::close(void)
 //=== rysuje pojedyncza klatke
 //=== TODO: extra klocki dostepne proporcjonalnie do levelu
 
-void CIngame::render(unsigned long timer, CMouse *mouse)
+void Ingame::render(unsigned long timer, Mouse *mouse)
 {
 
 	if (_timerStart == 0)		// czy to pierwsza renderowana klatka ?

@@ -13,20 +13,20 @@
 #define ON_CENTER	30
 #define ON_OVER		40
 
-class CButton  
+class Button  
 {
 	
 public:
 	
-	CButton(char onStatic[], char onClick[]);
-	CButton(char onStatic[], char onClick[], int x1, int y1, int x2, int y2);
+	Button(char onStatic[], char onClick[]);
+	Button(char onStatic[], char onClick[], int x1, int y1, int x2, int y2);
 
-	CButton(char onStatic[], char onOver[], char onClick[]);
-	CButton(char onStatic[], char onOver[], char onClick[], int x1, int y1, int x2, int y2);
+	Button(char onStatic[], char onOver[], char onClick[]);
+	Button(char onStatic[], char onOver[], char onClick[], int x1, int y1, int x2, int y2);
 
-	~CButton();
+	~Button();
 
-	int render(CMouse *pMouse);								// render button 
+	int render(Mouse *pMouse);								// render button 
 
 	void position(long x, long y);							// ustawia wspó³rzêdne do rysowania	
 	void setHotCoords(long x1, long y1, long x2, long y2);  // ustawia wspó³rzêdne aktywnego obszaru
@@ -38,11 +38,9 @@ public:
 	
 	long		_x1, _y1, _x2, _y2;
 
-private:
-
-	CSprite		*_onClick;		
-	CSprite		*_onOver;	
-	CSprite		*_onStatic;		
+	Sprite		*_onClick;		
+	Sprite		*_onOver;	
+	Sprite		*_onStatic;		
 
 };
 

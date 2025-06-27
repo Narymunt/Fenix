@@ -1,6 +1,6 @@
 #include "SceneEditor.h"
 
-CSceneEditor::CSceneEditor()
+SceneEditor::SceneEditor()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,23 +8,23 @@ CSceneEditor::CSceneEditor()
 	_isOpen = false;
 }
 
-CSceneEditor::~CSceneEditor()
+SceneEditor::~SceneEditor()
 {
 	close();
 }
 
-void CSceneEditor::open(CScreen* screen)
+void SceneEditor::open(Screen* screen)
 {
-	_background = new CSprite((char*)"grid.jpg");
+	_background = new Sprite((char*)"grid.jpg");
 
-	_exitButton = new CButtonTTF((char*)"orange.png", (char*) "blue.png", (char*)"green.png",(char*)"exit");
+	_exitButton = new ButtonTTF((char*)"orange.png", (char*) "blue.png", (char*)"green.png",(char*)"exit");
 	_exitButton->set(screen->_x[500], screen->_y[500], screen->_x[600], screen->_y[550]);
 	_exitButton->alfa(0.5f);
 
 	_isOpen = true;
 }
 
-void CSceneEditor::close(void)
+void SceneEditor::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
@@ -32,7 +32,7 @@ void CSceneEditor::close(void)
 }
 
 
-int CSceneEditor::render(unsigned long timer, CMouse* mouse)
+int SceneEditor::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

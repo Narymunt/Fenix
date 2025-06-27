@@ -1,4 +1,5 @@
-// edytor do animacji, pracujemy nad jedna animacja
+// edytor do animacji poklatkowych, pracujemy nad jedna animacja
+
 #pragma once
 
 #include "../Game.h"
@@ -9,19 +10,19 @@
 #include "../gfx/Sprite.h"
 #include "../gfx/Screen.h"
 
-class CAnimationEditor : public CGameObject
+class AnimationEditor : public GameObject
 {
 public:
-	CAnimationEditor();
-	~CAnimationEditor();
+	AnimationEditor();
+	~AnimationEditor();
 
-	void	open(CScreen* pScreen);		// load data
+	void	open(Screen* pScreen);		// load data
 	void	close(void);				// unload 
 
-	int		render(unsigned long lTimer, CMouse* pMouse);		// render frame																					
+	int		render(unsigned long lTimer, Mouse* pMouse);		// render frame																					
 
-	CSprite* _background;
-	CButton* _exitButton;
+	Sprite* _background;
+	Button* _exitButton;
 
 	unsigned long	_timerStart;	// start
 

@@ -2,55 +2,55 @@
 
 #pragma warning(disable : 4996)
 
-CSprite::CSprite(char filename[]) : _sprite(NULL)
+Sprite::Sprite(char filename[]) : _sprite(NULL)
 {
 	load(filename);
 }
 
-CSprite::CSprite(char filename[], int x, int y) : _sprite(NULL)
-{
-	position((float)x, (float)y);
-	load(filename);
-}
-
-CSprite::CSprite(char filename[], int x, int y, float scaleX, float scaleY) : _sprite(NULL)
+Sprite::Sprite(char filename[], int x, int y) : _sprite(NULL)
 {
 	position((float)x, (float)y);
-	scale(scaleX, scaleY);
 	load(filename);
 }
 
-CSprite::CSprite(char filename[], int x, int y, float scaleX, float scaleY, float rotation) : _sprite(NULL)
+Sprite::Sprite(char filename[], int x, int y, float scaleX, float scaleY) : _sprite(NULL)
 {
 	position((float)x, (float)y);
 	scale(scaleX, scaleY);
-	_rotation = rotation;
 	load(filename);
 }
 
-CSprite::CSprite(char filename[], int x, int y, float a) : _sprite(NULL)
-{
-	position((float)x, (float)y);
-	_a = a;
-	load(filename);
-}
-
-CSprite::CSprite(char filename[], int x, int y, float scaleX, float scaleY, float a, float rotation) : _sprite(NULL)
+Sprite::Sprite(char filename[], int x, int y, float scaleX, float scaleY, float rotation) : _sprite(NULL)
 {
 	position((float)x, (float)y);
 	scale(scaleX, scaleY);
 	_rotation = rotation;
+	load(filename);
+}
+
+Sprite::Sprite(char filename[], int x, int y, float a) : _sprite(NULL)
+{
+	position((float)x, (float)y);
 	_a = a;
 	load(filename);
 }
 
-CSprite::CSprite(char filename[], float a) : _sprite(NULL)
+Sprite::Sprite(char filename[], int x, int y, float scaleX, float scaleY, float a, float rotation) : _sprite(NULL)
+{
+	position((float)x, (float)y);
+	scale(scaleX, scaleY);
+	_rotation = rotation;
+	_a = a;
+	load(filename);
+}
+
+Sprite::Sprite(char filename[], float a) : _sprite(NULL)
 {
 	load(filename);
 	_a = a;
 }
 
-bool CSprite::load(char filename[])
+bool Sprite::load(char filename[])
 {
 	if (!_sprite) loadFromZip(filename);
 	if (!_sprite) loadFromDatafile(filename);
@@ -72,7 +72,7 @@ bool CSprite::load(char filename[])
 	return _sprite ? true : false;
 }
 
-void CSprite::loadFromZip(char filename[])
+void Sprite::loadFromZip(char filename[])
 {
 	HZIP	hZipFile;
 	ZIPENTRY ze;
@@ -92,12 +92,12 @@ void CSprite::loadFromZip(char filename[])
 	}
 }
 
-void CSprite::loadFromDatafile(char filename[])
+void Sprite::loadFromDatafile(char filename[])
 {
 	SDL_RWops *rw;
-	CDatafile *datafile;
+	Datafile *datafile;
 
-	datafile = new CDatafile(filename);       // szukamy ze s³ownika
+	datafile = new Datafile(filename);       // szukamy ze s³ownika
 	rw = SDL_RWFromMem(datafile->_buffer, datafile->_size);
 	_sprite = oglFromSurfaceFree(IMG_Load_RW(rw, 1));
 
@@ -106,7 +106,7 @@ void CSprite::loadFromDatafile(char filename[])
 
 // wczytaj z katalogu data
 
-void CSprite::loadFromFile(char filename[])
+void Sprite::loadFromFile(char filename[])
 {
 	char fullname[1024];
 	
@@ -116,7 +116,7 @@ void CSprite::loadFromFile(char filename[])
 
 // destructor
 
-CSprite::~CSprite()
+Sprite::~Sprite()
 {
 	if (_sprite!=NULL)
 	{
@@ -125,7 +125,7 @@ CSprite::~CSprite()
 	}
 }
 
-void CSprite::render(int x, int y, float a)
+void Sprite::render(int x, int y, float a)
 {
 	position((float)x,(float)y);
 	_a = a;
@@ -134,7 +134,7 @@ void CSprite::render(int x, int y, float a)
 
 // render sprite using top left coords
 
-void CSprite::render(void)
+void Sprite::render(void)
 {
 	if (_isCenter)
 	{
@@ -148,7 +148,7 @@ void CSprite::render(void)
 
 // updates parameters after rendering
 
-void CSprite::update(void)
+void Sprite::update(void)
 {
 	if (_isCenter)
 	{
@@ -175,7 +175,7 @@ void CSprite::update(void)
 
 // aktualizuj parametry i rysuj 
 
-void CSprite::update(unsigned long timer)
+void Sprite::update(unsigned long timer)
 {
 	if (_renderTime==0)	// pierwsze rysowanie 
 	{
