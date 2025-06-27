@@ -1,0 +1,8 @@
+﻿  SceneEditor.cpp
+g:\fenix.git\windows\game\app\sceneeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+g:\fenix.git\windows\game\app\sceneeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+g:\fenix.git\windows\game\game.cpp(166): warning C4800: 'char' : forcing value to bool 'true' or 'false' (performance warning)
+g:\fenix.git\windows\game\game.cpp(167): warning C4800: 'char' : forcing value to bool 'true' or 'false' (performance warning)
+  Generating Code...
+  Game.vcxproj -> G:\Fenix.git\windows\Debug\Game.exe
