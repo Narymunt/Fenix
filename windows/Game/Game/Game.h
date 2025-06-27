@@ -121,8 +121,8 @@ static char MAIN_VERSION[]="version 0.1";
 
 //=== has³o do plików .zip
 
-static char ZIP_FILE[]="Game.bin";
-static char	ZIP_PASSWORD[]="pass";
+static char MAIN_RESOURCE[]="Game.bin";
+static char	MAIN_PASSWORD[]="pass";
 
 //=== tu trzymamy najlepsze punktu
 
@@ -134,7 +134,7 @@ static char USERS_FILE[]="Game.cfg";
 
 //=== plik ze zlaczonymi danymi
 
-static char DATA_FILE[]="Game.dat";
+static char DATA_RESOURCE[]="Game.dat";
 static char DATA_PASSWORD[]="!shodan9";
 static char DATA_MAP[]="Game.map";
 
