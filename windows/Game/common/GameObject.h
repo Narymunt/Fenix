@@ -1,14 +1,14 @@
 #pragma once
 #include "../gfx/Screen.h"
 
-class CGameObject
+class GameObject
 {
 
 public:
 
-	CGameObject();												// tutaj _pScreen jest NULL
-	CGameObject(CScreen *screen);								// tutaj zapamiêtujemy wskaŸnik pScreen
-	~CGameObject();
+	GameObject();												// tutaj _pScreen jest NULL
+	GameObject(Screen *screen);								// tutaj zapamiêtujemy wskaŸnik pScreen
+	~GameObject();
 
 	virtual void		open(void);								// wczytaj dane 
 	virtual void		close(void);							// zwolnij dane
@@ -16,7 +16,7 @@ public:
 	bool				_isOpen;								// czy modu³ jest aktywny ? czy dane zostaly wczytane ?
 	bool				_isMouseLock;							// czy myszka jest zablokowana po poprzednim ekranie ? 
 
-	CScreen				*_screen;								// zapamietujemy w niektorych metodach
+	Screen				*_screen;								// zapamietujemy w niektorych metodach
 
 };
 

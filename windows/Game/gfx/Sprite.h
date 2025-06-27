@@ -8,20 +8,20 @@
 #include "../io/Zip.h"
 #include "../io/Unzip.h"
 
-class CSprite  : public CSpriteObject
+class Sprite  : public SpriteObject
 {
 
 public:
 	
 	// bezwzgledna nazwa pliku np. "obiekt.jpg"
 
-	CSprite(char filename[]);
-	CSprite(char filename[], int x, int y);
-	CSprite(char filename[], int x, int y, float scaleX, float scaleY);
-	CSprite(char filename[], int x, int y, float scaleX, float scaleY, float rotation);
-	CSprite(char filename[], int x, int y, float a);
-	CSprite(char filename[], int x, int y, float scaleX, float scaleY, float a, float rotation);
-	CSprite(char filename[], float a);
+	Sprite(char filename[]);
+	Sprite(char filename[], int x, int y);
+	Sprite(char filename[], int x, int y, float scaleX, float scaleY);
+	Sprite(char filename[], int x, int y, float scaleX, float scaleY, float rotation);
+	Sprite(char filename[], int x, int y, float a);
+	Sprite(char filename[], int x, int y, float scaleX, float scaleY, float a, float rotation);
+	Sprite(char filename[], float a);
 
 	bool	load(char filename[]);	// pomocnicza dla funkcji ponizej 
 
@@ -30,7 +30,7 @@ public:
 	void	loadFromFile(char filename[]);		// wczytaj z katalogu data/
 	void	loadFromPAQ(char filename[]) {};
 
-	~CSprite();
+	~Sprite();
 
 	void	render(int x, int y, float a);
 	void	render(void);						// use top left coords

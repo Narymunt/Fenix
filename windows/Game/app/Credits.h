@@ -9,21 +9,21 @@
 #include "../gfx/Sprite.h"
 #include "../gfx/Screen.h"
 
-class CCredits: public CGameObject
+class Credits: public GameObject
 {
 public:
-	CCredits();
-	~CCredits();
+	Credits();
+	~Credits();
 
-	void	Open(CScreen *pScreen);		// load data
-	void	Close(void);				// unload 
+	void	open(Screen *pScreen);		// load data
+	void	close(void);				// unload 
 
-	int		Render(unsigned long lTimer, CMouse *pMouse);		// render frame																					
+	int		render(unsigned long lTimer, Mouse *pMouse);		// render frame																					
 
 private:
 
-	CSprite		*_background;	
-	CButton		*_exitButton;
+	Sprite		*_background;	
+	Button		*_exitButton;
 
 	unsigned long	_timerStart;	// start
 

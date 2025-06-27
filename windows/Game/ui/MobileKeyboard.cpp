@@ -1,6 +1,6 @@
 #include "MobileKeyboard.h"
 
-CMobileKeyboard::CMobileKeyboard(char cLanguage) :
+MobileKeyboard::MobileKeyboard(char cLanguage) :
 	_a(0), _b(0), _c(0), _d(0), _e(0), _f(0), _g(0), _h(0), _i(0), _j(0), _k(0), _l(0), _m(0), _n(0),
 	_o(0), _p(0), _q(0), _r(0), _s(0), _t(0), _u(0), _v(0), _w(0), _x(0), _y(0), _z(0),
 	_0(0), _1(0), _2(0), _3(0), _4(0), _5(0), _6(0), _7(0), _8(0), _9(0), _space(NULL), _delete(NULL), _enter(NULL),
@@ -9,62 +9,62 @@ CMobileKeyboard::CMobileKeyboard(char cLanguage) :
 
 }
 
-CMobileKeyboard::~CMobileKeyboard()
+MobileKeyboard::~MobileKeyboard()
 {
 	_state = 0;
 	close();
 }
 
-void CMobileKeyboard::open(void)
+void MobileKeyboard::open(void)
 {
 	_state = 0;
 	
-	_1 = new CButton((char*)"BUTTON_KEY_1", (char*)"BUTTON_KEY_1");
-	_2 = new CButton((char*)"BUTTON_KEY_2", (char*)"BUTTON_KEY_1");
-	_3 = new CButton((char*)"BUTTON_KEY_3", (char*)"BUTTON_KEY_1");
-	_4 = new CButton((char*)"BUTTON_KEY_4", (char*)"BUTTON_KEY_1");
-	_5 = new CButton((char*)"BUTTON_KEY_5", (char*)"BUTTON_KEY_1");
-	_6 = new CButton((char*)"BUTTON_KEY_6", (char*)"BUTTON_KEY_1");
-	_7 = new CButton((char*)"BUTTON_KEY_7", (char*)"BUTTON_KEY_1");
-	_8 = new CButton((char*)"BUTTON_KEY_8", (char*)"BUTTON_KEY_1");
-	_9 = new CButton((char*)"BUTTON_KEY_9", (char*)"BUTTON_KEY_1");
-	_0 = new CButton((char*)"BUTTON_KEY_0", (char*)"BUTTON_KEY_1");
+	_1 = new Button((char*)"BUTTON_KEY_1", (char*)"BUTTON_KEY_1");
+	_2 = new Button((char*)"BUTTON_KEY_2", (char*)"BUTTON_KEY_1");
+	_3 = new Button((char*)"BUTTON_KEY_3", (char*)"BUTTON_KEY_1");
+	_4 = new Button((char*)"BUTTON_KEY_4", (char*)"BUTTON_KEY_1");
+	_5 = new Button((char*)"BUTTON_KEY_5", (char*)"BUTTON_KEY_1");
+	_6 = new Button((char*)"BUTTON_KEY_6", (char*)"BUTTON_KEY_1");
+	_7 = new Button((char*)"BUTTON_KEY_7", (char*)"BUTTON_KEY_1");
+	_8 = new Button((char*)"BUTTON_KEY_8", (char*)"BUTTON_KEY_1");
+	_9 = new Button((char*)"BUTTON_KEY_9", (char*)"BUTTON_KEY_1");
+	_0 = new Button((char*)"BUTTON_KEY_0", (char*)"BUTTON_KEY_1");
 
-	_a = new CButton((char*)"BUTTON_KEY_A", (char*)"BUTTON_KEY_1");
-	_b = new CButton((char*)"BUTTON_KEY_B", (char*)"BUTTON_KEY_1");
-	_c = new CButton((char*)"BUTTON_KEY_C", (char*)"BUTTON_KEY_1");
-	_d = new CButton((char*)"BUTTON_KEY_D", (char*)"BUTTON_KEY_1");
-	_e = new CButton((char*)"BUTTON_KEY_E", (char*)"BUTTON_KEY_1");
-	_f = new CButton((char*)"BUTTON_KEY_F", (char*)"BUTTON_KEY_1");
-	_g = new CButton((char*)"BUTTON_KEY_G", (char*)"BUTTON_KEY_1");
-	_h = new CButton((char*)"BUTTON_KEY_H", (char*)"BUTTON_KEY_1");
-	_i = new CButton((char*)"BUTTON_KEY_I", (char*)"BUTTON_KEY_1");
-	_j = new CButton((char*)"BUTTON_KEY_J", (char*)"BUTTON_KEY_1");
-	_k = new CButton((char*)"BUTTON_KEY_K", (char*)"BUTTON_KEY_1");
-	_l = new CButton((char*)"BUTTON_KEY_L", (char*)"BUTTON_KEY_1");
-	_m = new CButton((char*)"BUTTON_KEY_M", (char*)"BUTTON_KEY_1");
-	_n = new CButton((char*)"BUTTON_KEY_N", (char*)"BUTTON_KEY_1");
-	_o = new CButton((char*)"BUTTON_KEY_O", (char*)"BUTTON_KEY_1");
-	_p = new CButton((char*)"BUTTON_KEY_P", (char*)"BUTTON_KEY_1");
-	_q = new CButton((char*)"BUTTON_KEY_Q", (char*)"BUTTON_KEY_1");
-	_r = new CButton((char*)"BUTTON_KEY_R", (char*)"BUTTON_KEY_1");
-	_s = new CButton((char*)"BUTTON_KEY_S", (char*)"BUTTON_KEY_1");
-	_t = new CButton((char*)"BUTTON_KEY_T", (char*)"BUTTON_KEY_1");
-	_u = new CButton((char*)"BUTTON_KEY_U", (char*)"BUTTON_KEY_1");
-	_v = new CButton((char*)"BUTTON_KEY_V", (char*)"BUTTON_KEY_1");
-	_w = new CButton((char*)"BUTTON_KEY_W", (char*)"BUTTON_KEY_1");
-	_x = new CButton((char*)"BUTTON_KEY_X", (char*)"BUTTON_KEY_1");
-	_y = new CButton((char*)"BUTTON_KEY_Y", (char*)"BUTTON_KEY_1");
-	_z = new CButton((char*)"BUTTON_KEY_Z", (char*)"BUTTON_KEY_1");
+	_a = new Button((char*)"BUTTON_KEY_A", (char*)"BUTTON_KEY_1");
+	_b = new Button((char*)"BUTTON_KEY_B", (char*)"BUTTON_KEY_1");
+	_c = new Button((char*)"BUTTON_KEY_C", (char*)"BUTTON_KEY_1");
+	_d = new Button((char*)"BUTTON_KEY_D", (char*)"BUTTON_KEY_1");
+	_e = new Button((char*)"BUTTON_KEY_E", (char*)"BUTTON_KEY_1");
+	_f = new Button((char*)"BUTTON_KEY_F", (char*)"BUTTON_KEY_1");
+	_g = new Button((char*)"BUTTON_KEY_G", (char*)"BUTTON_KEY_1");
+	_h = new Button((char*)"BUTTON_KEY_H", (char*)"BUTTON_KEY_1");
+	_i = new Button((char*)"BUTTON_KEY_I", (char*)"BUTTON_KEY_1");
+	_j = new Button((char*)"BUTTON_KEY_J", (char*)"BUTTON_KEY_1");
+	_k = new Button((char*)"BUTTON_KEY_K", (char*)"BUTTON_KEY_1");
+	_l = new Button((char*)"BUTTON_KEY_L", (char*)"BUTTON_KEY_1");
+	_m = new Button((char*)"BUTTON_KEY_M", (char*)"BUTTON_KEY_1");
+	_n = new Button((char*)"BUTTON_KEY_N", (char*)"BUTTON_KEY_1");
+	_o = new Button((char*)"BUTTON_KEY_O", (char*)"BUTTON_KEY_1");
+	_p = new Button((char*)"BUTTON_KEY_P", (char*)"BUTTON_KEY_1");
+	_q = new Button((char*)"BUTTON_KEY_Q", (char*)"BUTTON_KEY_1");
+	_r = new Button((char*)"BUTTON_KEY_R", (char*)"BUTTON_KEY_1");
+	_s = new Button((char*)"BUTTON_KEY_S", (char*)"BUTTON_KEY_1");
+	_t = new Button((char*)"BUTTON_KEY_T", (char*)"BUTTON_KEY_1");
+	_u = new Button((char*)"BUTTON_KEY_U", (char*)"BUTTON_KEY_1");
+	_v = new Button((char*)"BUTTON_KEY_V", (char*)"BUTTON_KEY_1");
+	_w = new Button((char*)"BUTTON_KEY_W", (char*)"BUTTON_KEY_1");
+	_x = new Button((char*)"BUTTON_KEY_X", (char*)"BUTTON_KEY_1");
+	_y = new Button((char*)"BUTTON_KEY_Y", (char*)"BUTTON_KEY_1");
+	_z = new Button((char*)"BUTTON_KEY_Z", (char*)"BUTTON_KEY_1");
 
-	_space = new CButton((char*)"BUTTON_KEY_SPACE", (char*)"BUTTON_KEY_1");
-	_delete = new CButton((char*)"BUTTON_KEY_DELETE", (char*)"BUTTON_KEY_1");
-	_enter = new CButton((char*)"BUTTON_KEY_ENTER", (char*)"BUTTON_KEY_1");
+	_space = new Button((char*)"BUTTON_KEY_SPACE", (char*)"BUTTON_KEY_1");
+	_delete = new Button((char*)"BUTTON_KEY_DELETE", (char*)"BUTTON_KEY_1");
+	_enter = new Button((char*)"BUTTON_KEY_ENTER", (char*)"BUTTON_KEY_1");
 
 	_isOpen= true ;
 }
 
-void CMobileKeyboard::close()
+void MobileKeyboard::close()
 {
 	safeDelete(_1); safeDelete(_2); safeDelete(_3);
 	safeDelete(_4); safeDelete(_5); safeDelete(_6);
@@ -88,7 +88,7 @@ void CMobileKeyboard::close()
 	_isOpen = false;
 }
 
-unsigned char CMobileKeyboard::render(unsigned long ulTimer, CMouse *pMouse)
+unsigned char MobileKeyboard::render(unsigned long ulTimer, Mouse *pMouse)
 {
 	int y1,y2, x1, iStepX, iSize;
 	unsigned char cKey;

@@ -15,34 +15,34 @@
 
 using namespace std;
 
-class CParticle2DManager
+class Particle2DManager
 {
 
 public: 
 	
 	// inicjalizowane razem z grafika
 
-    CParticle2DManager(char cSpriteFilename[], unsigned long ulCount, 
+    Particle2DManager(char cSpriteFilename[], unsigned long ulCount, 
                      double fX1, double fY1, double fX2, double fY2, 
                      double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
                      double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
                      double fAngle, double fMinIncAngle, double fMaxIncAngle,
-                     unsigned long ulMinLifeTime, unsigned long ulMaxLifeTime, CScreen *pScreen);
+                     unsigned long ulMinLifeTime, unsigned long ulMaxLifeTime, Screen *pScreen);
 
 	// inicjalizowane ze wskaznikiem na istniejacy juz sprite jako particle
 
-	CParticle2DManager(CSprite *pImage, unsigned long ulCount,
+	Particle2DManager(Sprite *pImage, unsigned long ulCount,
 		double fX1, double fY1, double fX2, double fY2,
 		double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
 		double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
 		double fAngle, double fMinIncAngle, double fMaxIncAngle,
 		unsigned long ulMinLifeTime, unsigned long ulMaxLifeTime);
 
-    ~CParticle2DManager();            
+    ~Particle2DManager();            
 
 	// zmieniamy wszystkie parametry
 
-	void reset(CSprite *pImage, unsigned long ulCount,
+	void reset(Sprite *pImage, unsigned long ulCount,
 		double fX1, double fY1, double fX2, double fY2,
 		double fMinIncX, double fMinIncY, double fMaxIncX, double fMaxIncY,
 		double fAlpha, double fMinIncAlpha, double fMaxIncAlpha,
@@ -92,8 +92,8 @@ public:
     
     bool _active;        
 
-    vector <CParticle2D*> _particles;
-	CSprite *_image;  // particle image 
+    vector <Particle2D*> _particles;
+	Sprite *_image;  // particle image 
 	
 	float			_r, _g, _b, _a;
 };

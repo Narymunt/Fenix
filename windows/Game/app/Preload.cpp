@@ -1,6 +1,6 @@
 #include "Preload.h"
 
-CPreload::CPreload()
+Preload::Preload()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,24 +8,24 @@ CPreload::CPreload()
 	_isOpen = false;
 }
 
-CPreload::~CPreload()
+Preload::~Preload()
 {
 	close();
 }
 
 
-void CPreload::open(CScreen* pScreen)
+void Preload::open(Screen* pScreen)
 {
-	_background = new CSprite((char*)"level04.jpg");
+	_background = new Sprite((char*)"level04.jpg");
 
-	_exitButton = new CButton((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
+	_exitButton = new Button((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
 	_exitButton->position(128, 64 - 32);
 	_exitButton->setHotCoords(128, 32, 128 + 128, 32 + 128);
 
 	_isOpen = true;
 }
 
-void CPreload::close(void)
+void Preload::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
@@ -33,7 +33,7 @@ void CPreload::close(void)
 }
 
 
-int CPreload::render(unsigned long timer, CMouse* mouse)
+int Preload::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

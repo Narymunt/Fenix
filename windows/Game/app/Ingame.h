@@ -18,21 +18,19 @@
 #include "../gfx/Screen.h"
 #include "../gfx/FXManager.h"
 
-class CIngame : public CGameObject
+class Ingame : public GameObject
 {
 public:
-	CIngame();
-	~CIngame();
+	Ingame();
+	~Ingame();
 
-	void	open(CScreen *screen); // load data 
+	void	open(Screen *screen); // load data 
 	void	close(void); // unload data 
 
-	void	render(unsigned long timer, CMouse *mouse); // render frame
+	void	render(unsigned long timer, Mouse *mouse); // render frame
 
-private:
-
-	CSprite* _black; // czarne tlo
-	CSprite	*_background; // tlo
+	Sprite* _black; // czarne tlo
+	Sprite	*_background; // tlo
 
 	unsigned long _timerStart; // poczatek
 	unsigned long _timerPrev; // poprzedni czas wyrenderowania klatki

@@ -15,20 +15,20 @@
 #define ON_CENTER	30
 #define ON_OVER		40
 
-class CButtonTTF
+class ButtonTTF
 {
 	
 public:
 	
-	CButtonTTF(char onStatic[], char onClick[], char text[]);
-	CButtonTTF(char onStatic[], char onClick[], char text[], int x1, int y1, int x2, int y2);
+	ButtonTTF(char onStatic[], char onClick[], char text[]);
+	ButtonTTF(char onStatic[], char onClick[], char text[], int x1, int y1, int x2, int y2);
 
-	CButtonTTF(char onStatic[], char onOver[], char onClick[], char text[]);
-	CButtonTTF(char onStatic[], char onOver[], char onClick[], char text[], int x1, int y1, int x2, int y2);
+	ButtonTTF(char onStatic[], char onOver[], char onClick[], char text[]);
+	ButtonTTF(char onStatic[], char onOver[], char onClick[], char text[], int x1, int y1, int x2, int y2);
 
-	~CButtonTTF();
+	~ButtonTTF();
 
-	int render(CMouse *mouse);								// render button 
+	int render(Mouse *mouse);								// render button 
 
 	void position(long x, long y);							// ustawia wspó³rzêdne do rysowania	
 	void setHotCoords(long x1, long y1, long x2, long y2);  // ustawia wspó³rzêdne aktywnego obszaru
@@ -44,10 +44,10 @@ public:
 
 	std::string _text;
 
-	CSprite		*_onClick;		
-	CSprite		*_onOver;	
-	CSprite		*_onStatic;		
+	Sprite		*_onClick;		
+	Sprite		*_onOver;	
+	Sprite		*_onStatic;		
 
-	CFontTTF* _font;
+	FontTTF* _font;
 
 };

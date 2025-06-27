@@ -3,19 +3,19 @@
 
 #include "Screen.h"
 
-CScreen::CScreen() :
+Screen::Screen() :
 _sizeX(0), _sizeY(0), _fullscreen(true)
 {
 	init(0, 0, true);
 }
 
-CScreen::CScreen(int x, int y, bool fullscreen) :
+Screen::Screen(int x, int y, bool fullscreen) :
 _sizeX(0), _sizeY(0), _fullscreen(true)
 {
 	init(x, y, fullscreen);
 }
 
-void CScreen::init(int x, int y, bool fullscreen)
+void Screen::init(int x, int y, bool fullscreen)
 {
 	const SDL_VideoInfo	*pVideoInfo;
 
@@ -75,7 +75,7 @@ void CScreen::init(int x, int y, bool fullscreen)
 
 }
 
-void CScreen::precalc(void)
+void Screen::precalc(void)
 {
 	_sizePixelX =  (float)_sizeX / 1920.0f;
 	_sizePixelY =  (float)_sizeY / 1080.0f;

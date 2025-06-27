@@ -1,6 +1,6 @@
 #include "PostTroophy.h"
 
-CPostTroophy::CPostTroophy()
+PostTroophy::PostTroophy()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,24 +8,24 @@ CPostTroophy::CPostTroophy()
 	_isOpen = false;
 }
 
-CPostTroophy::~CPostTroophy()
+PostTroophy::~PostTroophy()
 {
 	close();
 }
 
 
-void CPostTroophy::open(CScreen* pScreen)
+void PostTroophy::open(Screen* pScreen)
 {
-	_background = new CSprite((char*)"level04.jpg");
+	_background = new Sprite((char*)"level04.jpg");
 
-	_exitButton = new CButton((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
+	_exitButton = new Button((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
 	_exitButton->position(128, 64 - 32);
 	_exitButton->setHotCoords(128, 32, 128 + 128, 32 + 128);
 
 	_isOpen = true;
 }
 
-void CPostTroophy::close(void)
+void PostTroophy::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
@@ -33,7 +33,7 @@ void CPostTroophy::close(void)
 }
 
 
-int CPostTroophy::render(unsigned long timer, CMouse* mouse)
+int PostTroophy::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

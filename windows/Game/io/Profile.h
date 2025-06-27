@@ -1,66 +1,61 @@
 // profile - profil gracza 
 // zawiera w srodku profile dla 8 uzytkownikow / graczy
 
-#ifndef _PROFILE_H_
-#define _PROFILE_H_
-
+#pragma once
 
 #include <windows.h>
 #include <stdio.h>
 
-class CProfile  
+class Profile  
 {
 
 public:
 
-	CProfile(char cFilename[]);
-	~CProfile();
+	Profile(char cFilename[]);
+	~Profile();
 
-	void	SetName(char cNewName[]);
-	char	*pGetName(void);
-	int		iNameSize(void);
+	void	setName(char cNewName[]);
+	char	*getName(void);
+	int		nameSize(void);
 
 
-	void	SetTotalScore(unsigned long ulScore);
-	void	AddTotalScore(unsigned long ulScore);
-	unsigned long ulGetTotalScore(void);
+	void	setTotalScore(unsigned long ulScore);
+	void	addTotalScore(unsigned long ulScore);
+	unsigned long getTotalScore(void);
 
-	void	SetScore(unsigned long ulScore);
-	void	AddScore(unsigned long ulScore);
-	unsigned long ulGetScore(void);
+	void	setScore(unsigned long ulScore);
+	void	addScore(unsigned long ulScore);
+	unsigned long getScore(void);
 
-	void	SetLevel(unsigned long ulLevel);
-	void	AddLevel(unsigned long ulLevel);
-	unsigned long ulGetLevel(void);
+	void	setLevel(unsigned long ulLevel);
+	void	addLevel(unsigned long ulLevel);
+	unsigned long getLevel(void);
 
-	void	ulMap(unsigned long ul);	
-	unsigned long ulMap(void);
+	void	map(unsigned long ul);	
+	unsigned long map(void);
 
-	bool	bSave(void);		// save profile
-	bool	bLoad(void);
+	bool	save(void);		// save profile
+	bool	load(void);
 
-	float	fGetProgress(void);	// zwraca procentowo ile jeszcze nam brakuje do konca levelu
+	float	getProgress(void);	// zwraca procentowo ile jeszcze nam brakuje do konca levelu
 
-	void	ucTroophy(int iIndex, unsigned char ucValue);
-	unsigned char ucTroophy(int iIndex); 
+	void	troophy(int iIndex, unsigned char ucValue);
+	unsigned char troophy(int iIndex); 
 
-	void	ucCurrentProfile(unsigned char ucProfile);	// ktory profil jest aktualnie u¿ywany
-	unsigned char ucCurrentProfile(void);
+	void	currentProfile(unsigned char ucProfile);	// ktory profil jest aktualnie u¿ywany
+	unsigned char currentProfile(void);
 
-private:
+	char	_cFilename[1024];	// nazwa pliku z danymi profilu
+	char	_cName[8][100];	// nazwa profilu
 
-	char	m_cFilename[1024];	// nazwa pliku z danymi profilu
-	char	m_cName[8][100];	// nazwa profilu
+	unsigned char	_ucCurrentProfile;	
 
-	unsigned char	m_ucCurrentProfile;	
+	unsigned long	_ulTotalScore[8];	// suma wszystkich zebranych punktow
+	unsigned long	_ulScore[8];		// aktualna suma punktow
+	unsigned long	_ulMap[8];			// ktore mapy sa dostepne, numer oznacza mapa1, mapa2 itd. 
+	unsigned long	_ulLevel[8];		// aktualny poziom w danym levelu, dla kazdego gracza/profilu, ktore sa dostepne
 
-	unsigned long	m_ulTotalScore[8];	// suma wszystkich zebranych punktow
-	unsigned long	m_ulScore[8];		// aktualna suma punktow
-	unsigned long	m_ulMap[8];			// ktore mapy sa dostepne, numer oznacza mapa1, mapa2 itd. 
-	unsigned long	m_ulLevel[8];		// aktualny poziom w danym levelu, dla kazdego gracza/profilu, ktore sa dostepne
-
-	unsigned char	m_ucTroophy[9][21];	// zdobyte osiagniecia
+	unsigned char	_ucTroophy[9][21];	// zdobyte osiagniecia
 
 };
 
-#endif 

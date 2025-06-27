@@ -1,4 +1,5 @@
-// edytor do scen, do umieszczania obiektów
+// edytor do scen, do umieszczania obiektów na planszy
+
 #pragma once
 
 #include "../Game.h"
@@ -10,22 +11,21 @@
 #include "../gfx/Screen.h"
 #include "../ui/ButtonTTF.h"
 
-class CSceneEditor: public CGameObject
+class SceneEditor: public GameObject
 {
 public:
-	CSceneEditor();
-	~CSceneEditor();
+	SceneEditor();
+	~SceneEditor();
 
-	void	open(CScreen* pScreen);		// load data
+	void	open(Screen* pScreen);		// load data
 	void	close(void);				// unload 
 
-	int		render(unsigned long lTimer, CMouse* pMouse);		// render frame																					
+	int		render(unsigned long timer, Mouse* mouse);		// render frame																					
 
 private:
 
-	CSprite* _background;
-	
-	CButtonTTF* _exitButton;
+	Sprite* _background;	
+	ButtonTTF* _exitButton;
 
 	unsigned long	_timerStart;	// start
 

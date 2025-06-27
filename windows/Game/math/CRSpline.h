@@ -29,19 +29,16 @@ public:
 
     // Operations
    
-    void            AddPoint(const Vec3 &v);
+    void        addPoint(const Vec3 &v);
+    Vec3        getPoint(float t);   // t = 0...1; 0=vp[0] ... 1=vp[max]
 	
-    Vec3        GetPoint(float t);   // t = 0...1; 0=vp[0] ... 1=vp[max]
-	
-    int             GetNumPoints(void);
-	Vec3        &GetNthPoint(int n);
+    int         getNumPoints(void);
+	Vec3        &getNthPoint(int n);
 
     // Static method for computing the Catmull-Rom parametric equation
     // given a time (t) and a vector quadruple (p1,p2,p3,p4).
     
-    static Vec3 Eq(float t, const Vec3 &p1, const Vec3 &p2, const Vec3 &p3, const Vec3 &p4);
-
-private:
+    static Vec3 eq(float t, const Vec3 &p1, const Vec3 &p2, const Vec3 &p3, const Vec3 &p4);
     
     std::vector<Vec3> vp;
     float delta_t;

@@ -2,14 +2,13 @@
 #pragma warning(disable:4244)
 
 #include "BSpline.h"
-
 #include <math.h>
 
-CSpline::CSpline()
+BSpline::BSpline()
 {
 }
 
-void CSpline::Reset()
+void BSpline::reset()
 {
 	mXPoints.clear();
 	mYPoints.clear();
@@ -18,13 +17,13 @@ void CSpline::Reset()
 	mYCoef.clear();
 }
 
-void CSpline::AddPoint(float x, float y)
+void BSpline::addPoint(float x, float y)
 {
 	mXPoints.push_back(x);
 	mYPoints.push_back(y);
 }
 
-void CSpline::CalcArcLengths()
+void BSpline::calcArcLengths()
 {
 	mArcLengths.clear();
 
@@ -42,27 +41,27 @@ void CSpline::CalcArcLengths()
 	}
 }
 
-bool CSpline::GetNextPoint(float &x, float &y, float &t)
+bool BSpline::getNextPoint(float &x, float &y, float &t)
 {
 	int anIndex = floorf(t);
 	if (anIndex<0 || anIndex>=(int)mXPoints.size()-1)
 	{
-		x = GetXPoint(t);
-		y = GetYPoint(t);
+		x = getXPoint(t);
+		y = getYPoint(t);
 		return false;
 	}
 
 	float aLength = 1 / (mArcLengths[anIndex]*100);
-	float ox = GetXPoint(t);
-	float oy = GetYPoint(t);
+	float ox = getXPoint(t);
+	float oy = getYPoint(t);
 	float nt = t;
 	float nx,ny;
 
 	while (true)
 	{
 		nt += aLength;
-		nx = GetXPoint(nt);
-		ny = GetYPoint(nt);
+		nx = getXPoint(nt);
+		ny = getYPoint(nt);
 
 		float dist = (nx-ox)*(nx-ox) + (ny-oy)*(ny-oy);
 		if (dist >= 1.0f)
@@ -78,101 +77,7 @@ bool CSpline::GetNextPoint(float &x, float &y, float &t)
 	return true;
 }
 
-class EquationSystem
-{
-public:
-	typedef std::vector<int> IntVector;
-
-	std::vector<float> eqs;
-	std::vector<float> sol;
-	
-	int mRowSize;
-	int mCurRow;
-
-public:
-	EquationSystem(int theNumVariables);
-
-	void SetCoefficient(int theRow, int theCol, float theValue);
-	void SetConstantTerm(int theRow, float theValue);
-
-	void SetCoefficient(int theCol, float theValue) { SetCoefficient(mCurRow, theCol, theValue); }
-	void SetConstantTerm(float theValue) { SetConstantTerm(mCurRow, theValue); }
-	void NextEquation() { mCurRow++; }
-
-	void Solve();
-	void CheckRanges();
-};
-
-EquationSystem::EquationSystem(int theNumVariables)
-{
-	mRowSize = theNumVariables + 1;
-	mCurRow = 0;
-	eqs.resize(mRowSize * theNumVariables);
-	sol.resize(theNumVariables);
-}
-
-void EquationSystem::SetCoefficient(int theRow, int theCol, float theValue)
-{
-	int anIndex = mRowSize*theRow + theCol;
-	
-	eqs[anIndex] = theValue;
-}
-
-void EquationSystem::SetConstantTerm(int theRow, float theValue)
-{
-	int anIndex = mRowSize*theRow + mRowSize-1;
-		
-	eqs[anIndex] = theValue;
-}
-
-void EquationSystem::Solve()
-{
-   int i, j, k, max, r, N;
-   float temp;
-
-   r = mRowSize;
-   N = mRowSize - 1;
-
-//   CheckRanges();
-
-   //first do triangulation
-   for(i=0;i<N;i++) 
-   {
-	   // Find maximum element in column i
-       max = i;
-       for(j=i+1;j<N;j++)
-           if( fabs(eqs[j*r+i]) > fabs(eqs[max*r+i]) ) max = j;
-
-	   // Swap row with maximum element with row i
-	   for(k=0;k<N+1;k++) 
-		   std::swap(eqs[i*r+k],eqs[max*r+k]);
-
-	   // Zero out column i in all lower rows by subtracting a multiple of row i from each lower row
-		for(j=i+1;j<N;j++) 
-		{
-			float mult = eqs[j*r+i] / eqs[i*r+i];
-			if (mult==0)
-				continue;
-
-			for(k=N;k>=i;k--) 
-				eqs[j*r+k] -= eqs[i*r+k] * mult;
-		}
-   }
-
-   //now do the back substitution
-   for(j=N-1;j>=0;j--) 
-   {
-       temp=0;
-       for(k=j+1; k<N; k++)
-           temp += eqs[j*r+k] * sol[k];
-   
-	   sol[j] = (eqs[j*r+N] - temp) / eqs[j*r+j];
-   }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-void CSpline::CalculateSplinePrv(std::vector<float> &thePoints, std::vector<float> &theCoef)
+void BSpline::calculateSplinePrv(std::vector<float> &thePoints, std::vector<float> &theCoef)
 {
 	if(thePoints.size()<2)
 		return;
@@ -225,9 +130,7 @@ void CSpline::CalculateSplinePrv(std::vector<float> &thePoints, std::vector<floa
 	theCoef = aSystem.sol;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-void CSpline::CalculateSplinePrvSemiLinear(std::vector<float> &thePoints, std::vector<float> &theCoef)
+void BSpline::calculateSplinePrvSemiLinear(std::vector<float> &thePoints, std::vector<float> &theCoef)
 {
 	if(thePoints.size()<2)
 		return;
@@ -299,9 +202,7 @@ void CSpline::CalculateSplinePrvSemiLinear(std::vector<float> &thePoints, std::v
 
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-void CSpline::CalculateSplinePrvLinear(std::vector<float> &thePoints, std::vector<float> &theCoef)
+void BSpline::calculateSplinePrvLinear(std::vector<float> &thePoints, std::vector<float> &theCoef)
 {
 	if(thePoints.size()<2)
 		return;
@@ -322,27 +223,25 @@ void CSpline::CalculateSplinePrvLinear(std::vector<float> &thePoints, std::vecto
 	}
 
 }
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-void CSpline::CalculateSpline(bool linear)
+
+void BSpline::calculateSpline(bool linear)
 {
-	CalcArcLengths();
+	calcArcLengths();
+	
 	if (linear)
 	{
-		CalculateSplinePrvLinear(mXPoints,mXCoef);
-		CalculateSplinePrvLinear(mYPoints,mYCoef);
+		calculateSplinePrvLinear(mXPoints,mXCoef);
+		calculateSplinePrvLinear(mYPoints,mYCoef);
 	}
 	else
 	{
-		CalculateSplinePrv(mXPoints,mXCoef);
-		CalculateSplinePrv(mYPoints,mYCoef);
+		calculateSplinePrv(mXPoints,mXCoef);
+		calculateSplinePrv(mYPoints,mYCoef);
 	}
-	CalcArcLengths();
+	calcArcLengths();
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-float CSpline::GetPoint(float t, std::vector<float> &theCoef)
+float BSpline::getPoint(float t, std::vector<float> &theCoef)
 {
 	int anIndex = floorf(t);
 	if (anIndex<0)
@@ -369,17 +268,13 @@ float CSpline::GetPoint(float t, std::vector<float> &theCoef)
 	return A*s3 + B*s2 + C*s + D;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-float CSpline::GetXPoint(float t)
+float BSpline::getXPoint(float t)
 {
-	return GetPoint(t,mXCoef);
+	return getPoint(t,mXCoef);
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-float CSpline::GetYPoint(float t)
+float BSpline::getYPoint(float t)
 {
-	return GetPoint(t,mYCoef);
+	return getPoint(t,mYCoef);
 }
 

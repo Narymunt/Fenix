@@ -1,15 +1,8 @@
-/**
-   FontTTF.cpp
-
-   @author Jaros³aw N. Ro¿yñski
-   
-*/
-
 #pragma warning (disable:4244)
 
 #include "FontTTF.h"
 
-CFontTTF::CFontTTF(char cFilenameTTF[], int iSize) :
+FontTTF::FontTTF(char cFilenameTTF[], int iSize) :
 _pFont(NULL)
 {  
    _pFont = TTF_OpenFont(cFilenameTTF, iSize);
@@ -19,12 +12,12 @@ _pFont(NULL)
 
 }
 
-CFontTTF::~CFontTTF()
+FontTTF::~FontTTF()
 {
   TTF_CloseFont(_pFont);  
 }
 
-void CFontTTF::Print(const std::string &message, unsigned char r, unsigned char g, unsigned char b, int x, int y)
+void FontTTF::print(const std::string &message, unsigned char r, unsigned char g, unsigned char b, int x, int y)
 {
    SDL_Color color;
 
