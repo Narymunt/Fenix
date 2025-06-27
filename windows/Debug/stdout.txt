@@ -1,0 +1,7 @@
+[openGL]: 4.6.0 NVIDIA 431.36
+ [vendor]: NVIDIA Corporation
+ [renderer]: GeForce RTX 2070 SUPER/PCIe/SSE2
+ [shader]: 4.60 NVIDIA
+
+[SCREEN]: 1024x768 | pixelRatio 1.333333 | reverseRatio 0.750000 | 
+WIDE: NO HD: YES 
