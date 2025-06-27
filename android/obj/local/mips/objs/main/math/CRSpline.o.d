@@ -10,9 +10,9 @@ obj/local/mips/objs/main/math/CRSpline.o: jni/src/math/CRSpline.cpp \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/host.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_system.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_android.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/cdefs.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/cdefs_elf.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/android/api-level.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/cdefs.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/cdefs_elf.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/android/api-level.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_gcc.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/stl_confix.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_native_headers.h \
@@ -22,40 +22,40 @@ obj/local/mips/objs/main/math/CRSpline.o: jni/src/math/CRSpline.cpp \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stddef.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/string.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/string.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/malloc.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/string.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/malloc.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/xlocale.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/using/cstring \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/climits \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/limits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/limits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/limits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/limits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/internal_types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/limits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/syslimits.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/page.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/syslimits.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/stdlib.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/alloca.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/strings.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/stdint.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/_types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/_types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/posix_types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/stddef.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/compiler.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/posix_types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/sgidefs.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/types.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/kernel.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/sysmacros.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/memory.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/stdlib.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/alloca.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/strings.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/stdint.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/machine/wchar_limits.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/int-ll64.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/bitsperlong.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/bitsperlong.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/stddef.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/compiler.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/sgidefs.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/posix_types.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/sysmacros.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/memory.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/math.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/math.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/math.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_pair.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/type_traits.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/type_manips.h \
@@ -76,7 +76,7 @@ obj/local/mips/objs/main/math/CRSpline.o: jni/src/math/CRSpline.cpp \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/gabixx_config.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdio.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdio.h \
- d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/stdio.h \
+ d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/stdio.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdarg.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_construct.h \
  d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_alloc.c \
@@ -112,11 +112,11 @@ d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_system.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_android.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/cdefs.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/cdefs.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/cdefs_elf.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/cdefs_elf.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/android/api-level.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/android/api-level.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/config/_gcc.h:
 
@@ -136,9 +136,11 @@ d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/string.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/string.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/string.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/malloc.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/malloc.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/xlocale.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/using/cstring:
 
@@ -146,63 +148,61 @@ d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/climits:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/limits.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/limits.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/limits.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/limits.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/limits.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/internal_types.h:
-
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/limits.h:
-
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/syslimits.h:
-
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/page.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/syslimits.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/stdlib.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/stdlib.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/alloca.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/alloca.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/strings.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/strings.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/types.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/stdint.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/stdint.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/machine/wchar_limits.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/types.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/posix_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/types.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/stddef.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/int-ll64.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/compiler.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/bitsperlong.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/posix_types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/bitsperlong.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/sgidefs.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/posix_types.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/asm/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/stddef.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/linux/types.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/linux/compiler.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/machine/kernel.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/posix_types.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/sys/sysmacros.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm/sgidefs.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/memory.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/asm-generic/posix_types.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/sys/sysmacros.h:
+
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/memory.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/math.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/math.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/math.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_pair.h:
 
@@ -244,7 +244,7 @@ d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdio.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdio.h:
 
-d:/ANDROID/ndk/platforms/android-16/arch-mips/usr/include/../include/stdio.h:
+d:/ANDROID/ndk/platforms/android-21/arch-mips/usr/include/../include/stdio.h:
 
 d:/ANDROID/ndk/sources/cxx-stl/stlport/stlport/stdarg.h:
 
