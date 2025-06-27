@@ -14,6 +14,7 @@ _buffer(NULL), _size(0), _empty(true)
 	char linia[1024];
 	unsigned long offset;
 	unsigned long size;
+	unsigned long return_offset=0;	// pliki zaczynaj¹ siê od 7 znaku, wiêc nie mo¿e byæ offset 0
 
 	FILE *plik = NULL;
 
@@ -29,11 +30,14 @@ _buffer(NULL), _size(0), _empty(true)
 	{
 		if (strcmp(linia,"<end>"))
 			fscanf(plik,"%s %d %d\n",linia,&offset,&size);
+
+		if (!strcmp(linia, filename))
+			return_offset = offset;
 	}
 
 	fclose(plik);
 
-	if (offset != 0)
+	if (return_offset != 0)
 		load(offset, size);
 
 }

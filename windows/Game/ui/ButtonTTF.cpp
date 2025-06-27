@@ -72,6 +72,8 @@ ButtonTTF::~ButtonTTF()
 
 int ButtonTTF::render(Mouse *mouse)
 {
+	static Screen* screen;
+
 	int ret = 0;
 
 	// check hot coords 
@@ -107,8 +109,8 @@ int ButtonTTF::render(Mouse *mouse)
 		ret = 0;
 	}
 	
-	_font->print(_text, 255, 255, 255, _x1+10, _y1+10);
-
+	_font->print(_text, 255, 255, 255, _x1+10, _y1+((_y2-_y1)/2)-10);
+	
 	return ret;
 }
 

@@ -230,6 +230,9 @@
     <ClCompile Include="gfx\AnimationTrack.cpp">
       <Filter>gfx</Filter>
     </ClCompile>
+    <ClCompile Include="gfx\SpriteManager.cpp">
+      <Filter>gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
@@ -441,6 +444,12 @@
       <Filter>math</Filter>
     </ClInclude>
     <ClInclude Include="gfx\AnimationTrack.h">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\SpriteManager.h">
+      <Filter>gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\TextureObject.h">
       <Filter>gfx</Filter>
     </ClInclude>
   </ItemGroup>
