@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFDAD1EB180C0836005CF9A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAD1EA180C0836005CF9A9 /* Cocoa.framework */; };
+		EFDAD1F5180C0836005CF9A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD1F3180C0836005CF9A9 /* InfoPlist.strings */; };
+		EFDAD1FB180C0836005CF9A9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD1F9180C0836005CF9A9 /* Credits.rtf */; };
+		EFDAD201180C0836005CF9A9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD1FF180C0836005CF9A9 /* MainMenu.xib */; };
+		EFDAD203180C0836005CF9A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD202180C0836005CF9A9 /* Images.xcassets */; };
+		EFDAD20A180C0836005CF9A9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAD209180C0836005CF9A9 /* XCTest.framework */; };
+		EFDAD20B180C0836005CF9A9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAD1EA180C0836005CF9A9 /* Cocoa.framework */; };
+		EFDAD213180C0836005CF9A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD211180C0836005CF9A9 /* InfoPlist.strings */; };
+		EFDAD215180C0836005CF9A9 /* Gems_Of_AtlantisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD214180C0836005CF9A9 /* Gems_Of_AtlantisTests.m */; };
+		EFDAD274180C0918005CF9A9 /* MobileKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD225180C0918005CF9A9 /* MobileKeyboard.cpp */; };
+		EFDAD275180C0918005CF9A9 /* Mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD227180C0918005CF9A9 /* Mouse.cpp */; };
+		EFDAD276180C0918005CF9A9 /* Datafile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD22A180C0918005CF9A9 /* Datafile.cpp */; };
+		EFDAD277180C0918005CF9A9 /* GameSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD22C180C0918005CF9A9 /* GameSettings.cpp */; };
+		EFDAD278180C0918005CF9A9 /* HighScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD22E180C0918005CF9A9 /* HighScore.cpp */; };
+		EFDAD279180C0918005CF9A9 /* Profile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD230180C0918005CF9A9 /* Profile.cpp */; };
+		EFDAD27A180C0918005CF9A9 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD232180C0918005CF9A9 /* Game.cpp */; };
+		EFDAD27B180C0918005CF9A9 /* OGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD235180C0918005CF9A9 /* OGL.cpp */; };
+		EFDAD27C180C0918005CF9A9 /* Particle2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD237180C0918005CF9A9 /* Particle2D.cpp */; };
+		EFDAD27D180C0918005CF9A9 /* Particle2DManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD239180C0918005CF9A9 /* Particle2DManager.cpp */; };
+		EFDAD27E180C0918005CF9A9 /* Popup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD23B180C0918005CF9A9 /* Popup.cpp */; };
+		EFDAD27F180C0918005CF9A9 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD23D180C0918005CF9A9 /* Screen.cpp */; };
+		EFDAD280180C0918005CF9A9 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD23F180C0918005CF9A9 /* Sprite.cpp */; };
+		EFDAD281180C0918005CF9A9 /* SpriteFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD241180C0918005CF9A9 /* SpriteFont.cpp */; };
+		EFDAD282180C0918005CF9A9 /* SpriteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD243180C0918005CF9A9 /* SpriteObject.cpp */; };
+		EFDAD283180C0918005CF9A9 /* Bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD246180C0918005CF9A9 /* Bezier.cpp */; };
+		EFDAD284180C0918005CF9A9 /* CRSpline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD248180C0918005CF9A9 /* CRSpline.cpp */; };
+		EFDAD285180C0918005CF9A9 /* Tween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD24A180C0918005CF9A9 /* Tween.cpp */; };
+		EFDAD286180C0918005CF9A9 /* eCongratulations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD24E180C0918005CF9A9 /* eCongratulations.cpp */; };
+		EFDAD287180C0918005CF9A9 /* eCredits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD250180C0918005CF9A9 /* eCredits.cpp */; };
+		EFDAD288180C0918005CF9A9 /* eHelp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD252180C0918005CF9A9 /* eHelp.cpp */; };
+		EFDAD289180C0918005CF9A9 /* eIngame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD254180C0918005CF9A9 /* eIngame.cpp */; };
+		EFDAD28A180C0918005CF9A9 /* eIntro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD256180C0918005CF9A9 /* eIntro.cpp */; };
+		EFDAD28B180C0918005CF9A9 /* eLanguage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD258180C0918005CF9A9 /* eLanguage.cpp */; };
+		EFDAD28C180C0918005CF9A9 /* eLevelMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD25A180C0918005CF9A9 /* eLevelMenu.cpp */; };
+		EFDAD28D180C0918005CF9A9 /* eMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD25C180C0918005CF9A9 /* eMainMenu.cpp */; };
+		EFDAD28E180C0918005CF9A9 /* ePostGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD25E180C0918005CF9A9 /* ePostGame.cpp */; };
+		EFDAD28F180C0918005CF9A9 /* ePostTroophy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD260180C0918005CF9A9 /* ePostTroophy.cpp */; };
+		EFDAD290180C0918005CF9A9 /* ePreload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD262180C0918005CF9A9 /* ePreload.cpp */; };
+		EFDAD291180C0918005CF9A9 /* eSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD264180C0918005CF9A9 /* eSettings.cpp */; };
+		EFDAD292180C0918005CF9A9 /* eTroophy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD266180C0918005CF9A9 /* eTroophy.cpp */; };
+		EFDAD293180C0918005CF9A9 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD268180C0918005CF9A9 /* GameObject.cpp */; };
+		EFDAD295180C0918005CF9A9 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD26E180C0918005CF9A9 /* Animation.cpp */; };
+		EFDAD296180C0918005CF9A9 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD270180C0918005CF9A9 /* Button.cpp */; };
+		EFDAD297180C0918005CF9A9 /* Checkbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD272180C0918005CF9A9 /* Checkbox.cpp */; };
+		EFDAD298180C0A03005CF9A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAD1EF180C0836005CF9A9 /* Foundation.framework */; };
+		EFDAD29A180C0A2D005CF9A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDAD299180C0A2D005CF9A9 /* OpenGL.framework */; };
+		EFDAD2A9180C0D53005CF9A9 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAD2A8180C0D53005CF9A9 /* SDLMain.m */; };
+		EFDAD2AB180C1206005CF9A9 /* Game.ini in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2AA180C1206005CF9A9 /* Game.ini */; };
+		EFDAD2AD180C17CE005CF9A9 /* Game.cfg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2AC180C17CE005CF9A9 /* Game.cfg */; };
+		EFDAD2AF180C1855005CF9A9 /* Game.dat in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2AE180C1855005CF9A9 /* Game.dat */; };
+		EFDAD2B1180C189D005CF9A9 /* Game.map in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B0180C189D005CF9A9 /* Game.map */; };
+		EFDAD2C2180C1944005CF9A9 /* bomb.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B3180C1944005CF9A9 /* bomb.ogg */; };
+		EFDAD2C3180C1944005CF9A9 /* click.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B4180C1944005CF9A9 /* click.ogg */; };
+		EFDAD2C4180C1944005CF9A9 /* diamond.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B5180C1944005CF9A9 /* diamond.ogg */; };
+		EFDAD2C5180C1944005CF9A9 /* level_up.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B6180C1944005CF9A9 /* level_up.ogg */; };
+		EFDAD2C6180C1944005CF9A9 /* music_ingame01.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B7180C1944005CF9A9 /* music_ingame01.ogg */; };
+		EFDAD2C7180C1944005CF9A9 /* music_ingame02.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B8180C1944005CF9A9 /* music_ingame02.ogg */; };
+		EFDAD2C8180C1944005CF9A9 /* music_ingame03.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2B9180C1944005CF9A9 /* music_ingame03.ogg */; };
+		EFDAD2C9180C1944005CF9A9 /* music_ingame04.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BA180C1944005CF9A9 /* music_ingame04.ogg */; };
+		EFDAD2CA180C1944005CF9A9 /* music_ingame05.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BB180C1944005CF9A9 /* music_ingame05.ogg */; };
+		EFDAD2CB180C1944005CF9A9 /* music_ingame06.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BC180C1944005CF9A9 /* music_ingame06.ogg */; };
+		EFDAD2CC180C1944005CF9A9 /* music_ingame07.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BD180C1944005CF9A9 /* music_ingame07.ogg */; };
+		EFDAD2CD180C1944005CF9A9 /* music_mainmenu.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BE180C1944005CF9A9 /* music_mainmenu.ogg */; };
+		EFDAD2CE180C1944005CF9A9 /* music_postgame.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2BF180C1944005CF9A9 /* music_postgame.ogg */; };
+		EFDAD2CF180C1944005CF9A9 /* rainbow.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2C0180C1944005CF9A9 /* rainbow.ogg */; };
+		EFDAD2D0180C1944005CF9A9 /* super.ogg in Resources */ = {isa = PBXBuildFile; fileRef = EFDAD2C1180C1944005CF9A9 /* super.ogg */; };
+		EFF397E9180C200C007BDE35 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF397E6180C200B007BDE35 /* SDL_image.framework */; };
+		EFF397EA180C200C007BDE35 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF397E7180C200C007BDE35 /* SDL_mixer.framework */; };
+		EFF397EB180C200C007BDE35 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF397E8180C200C007BDE35 /* SDL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFDAD20C180C0836005CF9A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFDAD1DF180C0836005CF9A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFDAD1E6180C0836005CF9A9;
+			remoteInfo = "Gems Of Atlantis";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFDAD1E7180C0836005CF9A9 /* Gems Of Atlantis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gems Of Atlantis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDAD1EA180C0836005CF9A9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EFDAD1ED180C0836005CF9A9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EFDAD1EE180C0836005CF9A9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EFDAD1EF180C0836005CF9A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EFDAD1F2180C0836005CF9A9 /* Gems Of Atlantis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gems Of Atlantis-Info.plist"; sourceTree = "<group>"; };
+		EFDAD1F4180C0836005CF9A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFDAD1F8180C0836005CF9A9 /* Gems Of Atlantis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gems Of Atlantis-Prefix.pch"; sourceTree = "<group>"; };
+		EFDAD1FA180C0836005CF9A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EFDAD200180C0836005CF9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EFDAD202180C0836005CF9A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFDAD208180C0836005CF9A9 /* Gems Of AtlantisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gems Of AtlantisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDAD209180C0836005CF9A9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EFDAD210180C0836005CF9A9 /* Gems Of AtlantisTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gems Of AtlantisTests-Info.plist"; sourceTree = "<group>"; };
+		EFDAD212180C0836005CF9A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFDAD214180C0836005CF9A9 /* Gems_Of_AtlantisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gems_Of_AtlantisTests.m; sourceTree = "<group>"; };
+		EFDAD225180C0918005CF9A9 /* MobileKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MobileKeyboard.cpp; sourceTree = "<group>"; };
+		EFDAD226180C0918005CF9A9 /* MobileKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileKeyboard.h; sourceTree = "<group>"; };
+		EFDAD227180C0918005CF9A9 /* Mouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mouse.cpp; sourceTree = "<group>"; };
+		EFDAD228180C0918005CF9A9 /* Mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
+		EFDAD22A180C0918005CF9A9 /* Datafile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Datafile.cpp; sourceTree = "<group>"; };
+		EFDAD22B180C0918005CF9A9 /* Datafile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datafile.h; sourceTree = "<group>"; };
+		EFDAD22C180C0918005CF9A9 /* GameSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSettings.cpp; sourceTree = "<group>"; };
+		EFDAD22D180C0918005CF9A9 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
+		EFDAD22E180C0918005CF9A9 /* HighScore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HighScore.cpp; sourceTree = "<group>"; };
+		EFDAD22F180C0918005CF9A9 /* HighScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScore.h; sourceTree = "<group>"; };
+		EFDAD230180C0918005CF9A9 /* Profile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Profile.cpp; sourceTree = "<group>"; };
+		EFDAD231180C0918005CF9A9 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		EFDAD232180C0918005CF9A9 /* Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Game.cpp; path = src/Game.cpp; sourceTree = "<group>"; };
+		EFDAD233180C0918005CF9A9 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = src/Game.h; sourceTree = "<group>"; };
+		EFDAD235180C0918005CF9A9 /* OGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OGL.cpp; sourceTree = "<group>"; };
+		EFDAD236180C0918005CF9A9 /* OGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGL.h; sourceTree = "<group>"; };
+		EFDAD237180C0918005CF9A9 /* Particle2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle2D.cpp; sourceTree = "<group>"; };
+		EFDAD238180C0918005CF9A9 /* Particle2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle2D.h; sourceTree = "<group>"; };
+		EFDAD239180C0918005CF9A9 /* Particle2DManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle2DManager.cpp; sourceTree = "<group>"; };
+		EFDAD23A180C0918005CF9A9 /* Particle2DManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle2DManager.h; sourceTree = "<group>"; };
+		EFDAD23B180C0918005CF9A9 /* Popup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Popup.cpp; sourceTree = "<group>"; };
+		EFDAD23C180C0918005CF9A9 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Popup.h; sourceTree = "<group>"; };
+		EFDAD23D180C0918005CF9A9 /* Screen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
+		EFDAD23E180C0918005CF9A9 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		EFDAD23F180C0918005CF9A9 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		EFDAD240180C0918005CF9A9 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		EFDAD241180C0918005CF9A9 /* SpriteFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteFont.cpp; sourceTree = "<group>"; };
+		EFDAD242180C0918005CF9A9 /* SpriteFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFont.h; sourceTree = "<group>"; };
+		EFDAD243180C0918005CF9A9 /* SpriteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteObject.cpp; sourceTree = "<group>"; };
+		EFDAD244180C0918005CF9A9 /* SpriteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteObject.h; sourceTree = "<group>"; };
+		EFDAD246180C0918005CF9A9 /* Bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bezier.cpp; sourceTree = "<group>"; };
+		EFDAD247180C0918005CF9A9 /* Bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bezier.h; sourceTree = "<group>"; };
+		EFDAD248180C0918005CF9A9 /* CRSpline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CRSpline.cpp; sourceTree = "<group>"; };
+		EFDAD249180C0918005CF9A9 /* CRSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSpline.h; sourceTree = "<group>"; };
+		EFDAD24A180C0918005CF9A9 /* Tween.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tween.cpp; sourceTree = "<group>"; };
+		EFDAD24B180C0918005CF9A9 /* Tween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tween.h; sourceTree = "<group>"; };
+		EFDAD24C180C0918005CF9A9 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3.h; sourceTree = "<group>"; };
+		EFDAD24E180C0918005CF9A9 /* eCongratulations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eCongratulations.cpp; sourceTree = "<group>"; };
+		EFDAD24F180C0918005CF9A9 /* eCongratulations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eCongratulations.h; sourceTree = "<group>"; };
+		EFDAD250180C0918005CF9A9 /* eCredits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eCredits.cpp; sourceTree = "<group>"; };
+		EFDAD251180C0918005CF9A9 /* eCredits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eCredits.h; sourceTree = "<group>"; };
+		EFDAD252180C0918005CF9A9 /* eHelp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eHelp.cpp; sourceTree = "<group>"; };
+		EFDAD253180C0918005CF9A9 /* eHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eHelp.h; sourceTree = "<group>"; };
+		EFDAD254180C0918005CF9A9 /* eIngame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eIngame.cpp; sourceTree = "<group>"; };
+		EFDAD255180C0918005CF9A9 /* eIngame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eIngame.h; sourceTree = "<group>"; };
+		EFDAD256180C0918005CF9A9 /* eIntro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eIntro.cpp; sourceTree = "<group>"; };
+		EFDAD257180C0918005CF9A9 /* eIntro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eIntro.h; sourceTree = "<group>"; };
+		EFDAD258180C0918005CF9A9 /* eLanguage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eLanguage.cpp; sourceTree = "<group>"; };
+		EFDAD259180C0918005CF9A9 /* eLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eLanguage.h; sourceTree = "<group>"; };
+		EFDAD25A180C0918005CF9A9 /* eLevelMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eLevelMenu.cpp; sourceTree = "<group>"; };
+		EFDAD25B180C0918005CF9A9 /* eLevelMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eLevelMenu.h; sourceTree = "<group>"; };
+		EFDAD25C180C0918005CF9A9 /* eMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eMainMenu.cpp; sourceTree = "<group>"; };
+		EFDAD25D180C0918005CF9A9 /* eMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eMainMenu.h; sourceTree = "<group>"; };
+		EFDAD25E180C0918005CF9A9 /* ePostGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ePostGame.cpp; sourceTree = "<group>"; };
+		EFDAD25F180C0918005CF9A9 /* ePostGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ePostGame.h; sourceTree = "<group>"; };
+		EFDAD260180C0918005CF9A9 /* ePostTroophy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ePostTroophy.cpp; sourceTree = "<group>"; };
+		EFDAD261180C0918005CF9A9 /* ePostTroophy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ePostTroophy.h; sourceTree = "<group>"; };
+		EFDAD262180C0918005CF9A9 /* ePreload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ePreload.cpp; sourceTree = "<group>"; };
+		EFDAD263180C0918005CF9A9 /* ePreload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ePreload.h; sourceTree = "<group>"; };
+		EFDAD264180C0918005CF9A9 /* eSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eSettings.cpp; sourceTree = "<group>"; };
+		EFDAD265180C0918005CF9A9 /* eSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eSettings.h; sourceTree = "<group>"; };
+		EFDAD266180C0918005CF9A9 /* eTroophy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eTroophy.cpp; sourceTree = "<group>"; };
+		EFDAD267180C0918005CF9A9 /* eTroophy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eTroophy.h; sourceTree = "<group>"; };
+		EFDAD268180C0918005CF9A9 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		EFDAD269180C0918005CF9A9 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		EFDAD26E180C0918005CF9A9 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		EFDAD26F180C0918005CF9A9 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		EFDAD270180C0918005CF9A9 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		EFDAD271180C0918005CF9A9 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		EFDAD272180C0918005CF9A9 /* Checkbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Checkbox.cpp; sourceTree = "<group>"; };
+		EFDAD273180C0918005CF9A9 /* Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkbox.h; sourceTree = "<group>"; };
+		EFDAD299180C0A2D005CF9A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EFDAD2A7180C0D53005CF9A9 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = src/SDLMain.h; sourceTree = "<group>"; };
+		EFDAD2A8180C0D53005CF9A9 /* SDLMain.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = SDLMain.m; path = src/SDLMain.m; sourceTree = "<group>"; };
+		EFDAD2AA180C1206005CF9A9 /* Game.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Game.ini; sourceTree = "<group>"; };
+		EFDAD2AC180C17CE005CF9A9 /* Game.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Game.cfg; sourceTree = "<group>"; };
+		EFDAD2AE180C1855005CF9A9 /* Game.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Game.dat; sourceTree = "<group>"; };
+		EFDAD2B0180C189D005CF9A9 /* Game.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Game.map; sourceTree = "<group>"; };
+		EFDAD2B3180C1944005CF9A9 /* bomb.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = bomb.ogg; sourceTree = "<group>"; };
+		EFDAD2B4180C1944005CF9A9 /* click.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.ogg; sourceTree = "<group>"; };
+		EFDAD2B5180C1944005CF9A9 /* diamond.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = diamond.ogg; sourceTree = "<group>"; };
+		EFDAD2B6180C1944005CF9A9 /* level_up.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = level_up.ogg; sourceTree = "<group>"; };
+		EFDAD2B7180C1944005CF9A9 /* music_ingame01.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame01.ogg; sourceTree = "<group>"; };
+		EFDAD2B8180C1944005CF9A9 /* music_ingame02.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame02.ogg; sourceTree = "<group>"; };
+		EFDAD2B9180C1944005CF9A9 /* music_ingame03.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame03.ogg; sourceTree = "<group>"; };
+		EFDAD2BA180C1944005CF9A9 /* music_ingame04.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame04.ogg; sourceTree = "<group>"; };
+		EFDAD2BB180C1944005CF9A9 /* music_ingame05.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame05.ogg; sourceTree = "<group>"; };
+		EFDAD2BC180C1944005CF9A9 /* music_ingame06.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame06.ogg; sourceTree = "<group>"; };
+		EFDAD2BD180C1944005CF9A9 /* music_ingame07.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_ingame07.ogg; sourceTree = "<group>"; };
+		EFDAD2BE180C1944005CF9A9 /* music_mainmenu.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_mainmenu.ogg; sourceTree = "<group>"; };
+		EFDAD2BF180C1944005CF9A9 /* music_postgame.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = music_postgame.ogg; sourceTree = "<group>"; };
+		EFDAD2C0180C1944005CF9A9 /* rainbow.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainbow.ogg; sourceTree = "<group>"; };
+		EFDAD2C1180C1944005CF9A9 /* super.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = super.ogg; sourceTree = "<group>"; };
+		EFF397E6180C200B007BDE35 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = ../../../../../Library/Frameworks/SDL_image.framework; sourceTree = "<group>"; };
+		EFF397E7180C200C007BDE35 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = ../../../../../Library/Frameworks/SDL_mixer.framework; sourceTree = "<group>"; };
+		EFF397E8180C200C007BDE35 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../../../../Library/Frameworks/SDL.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFDAD1E4180C0836005CF9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFF397E9180C200C007BDE35 /* SDL_image.framework in Frameworks */,
+				EFF397EA180C200C007BDE35 /* SDL_mixer.framework in Frameworks */,
+				EFF397EB180C200C007BDE35 /* SDL.framework in Frameworks */,
+				EFDAD29A180C0A2D005CF9A9 /* OpenGL.framework in Frameworks */,
+				EFDAD298180C0A03005CF9A9 /* Foundation.framework in Frameworks */,
+				EFDAD1EB180C0836005CF9A9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDAD205180C0836005CF9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDAD20B180C0836005CF9A9 /* Cocoa.framework in Frameworks */,
+				EFDAD20A180C0836005CF9A9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFDAD1DE180C0836005CF9A9 = {
+			isa = PBXGroup;
+			children = (
+				EFDAD1F0180C0836005CF9A9 /* Gems Of Atlantis */,
+				EFDAD20E180C0836005CF9A9 /* Gems Of AtlantisTests */,
+				EFDAD1E9180C0836005CF9A9 /* Frameworks */,
+				EFDAD1E8180C0836005CF9A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFDAD1E8180C0836005CF9A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD1E7180C0836005CF9A9 /* Gems Of Atlantis.app */,
+				EFDAD208180C0836005CF9A9 /* Gems Of AtlantisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFDAD1E9180C0836005CF9A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFF397E6180C200B007BDE35 /* SDL_image.framework */,
+				EFF397E7180C200C007BDE35 /* SDL_mixer.framework */,
+				EFF397E8180C200C007BDE35 /* SDL.framework */,
+				EFDAD299180C0A2D005CF9A9 /* OpenGL.framework */,
+				EFDAD1EA180C0836005CF9A9 /* Cocoa.framework */,
+				EFDAD209180C0836005CF9A9 /* XCTest.framework */,
+				EFDAD1EC180C0836005CF9A9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFDAD1EC180C0836005CF9A9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD1ED180C0836005CF9A9 /* AppKit.framework */,
+				EFDAD1EE180C0836005CF9A9 /* CoreData.framework */,
+				EFDAD1EF180C0836005CF9A9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EFDAD1F0180C0836005CF9A9 /* Gems Of Atlantis */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD1F1180C0836005CF9A9 /* Supporting Files */,
+				EFDAD224180C0918005CF9A9 /* control */,
+				EFDAD229180C0918005CF9A9 /* filesystem */,
+				EFDAD234180C0918005CF9A9 /* gfx */,
+				EFDAD245180C0918005CF9A9 /* math */,
+				EFDAD24D180C0918005CF9A9 /* modules */,
+				EFDAD26C180C0918005CF9A9 /* sfx */,
+				EFDAD26D180C0918005CF9A9 /* ui */,
+				EFDAD1FF180C0836005CF9A9 /* MainMenu.xib */,
+				EFDAD202180C0836005CF9A9 /* Images.xcassets */,
+				EFDAD232180C0918005CF9A9 /* Game.cpp */,
+				EFDAD233180C0918005CF9A9 /* Game.h */,
+				EFDAD2A7180C0D53005CF9A9 /* SDLMain.h */,
+				EFDAD2A8180C0D53005CF9A9 /* SDLMain.m */,
+			);
+			path = "Gems Of Atlantis";
+			sourceTree = "<group>";
+		};
+		EFDAD1F1180C0836005CF9A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD2B2180C1944005CF9A9 /* data */,
+				EFDAD2B0180C189D005CF9A9 /* Game.map */,
+				EFDAD2AE180C1855005CF9A9 /* Game.dat */,
+				EFDAD2AC180C17CE005CF9A9 /* Game.cfg */,
+				EFDAD2AA180C1206005CF9A9 /* Game.ini */,
+				EFDAD1F2180C0836005CF9A9 /* Gems Of Atlantis-Info.plist */,
+				EFDAD1F3180C0836005CF9A9 /* InfoPlist.strings */,
+				EFDAD1F8180C0836005CF9A9 /* Gems Of Atlantis-Prefix.pch */,
+				EFDAD1F9180C0836005CF9A9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFDAD20E180C0836005CF9A9 /* Gems Of AtlantisTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD214180C0836005CF9A9 /* Gems_Of_AtlantisTests.m */,
+				EFDAD20F180C0836005CF9A9 /* Supporting Files */,
+			);
+			path = "Gems Of AtlantisTests";
+			sourceTree = "<group>";
+		};
+		EFDAD20F180C0836005CF9A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD210180C0836005CF9A9 /* Gems Of AtlantisTests-Info.plist */,
+				EFDAD211180C0836005CF9A9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFDAD224180C0918005CF9A9 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD225180C0918005CF9A9 /* MobileKeyboard.cpp */,
+				EFDAD226180C0918005CF9A9 /* MobileKeyboard.h */,
+				EFDAD227180C0918005CF9A9 /* Mouse.cpp */,
+				EFDAD228180C0918005CF9A9 /* Mouse.h */,
+			);
+			name = control;
+			path = src/control;
+			sourceTree = "<group>";
+		};
+		EFDAD229180C0918005CF9A9 /* filesystem */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD22A180C0918005CF9A9 /* Datafile.cpp */,
+				EFDAD22B180C0918005CF9A9 /* Datafile.h */,
+				EFDAD22C180C0918005CF9A9 /* GameSettings.cpp */,
+				EFDAD22D180C0918005CF9A9 /* GameSettings.h */,
+				EFDAD22E180C0918005CF9A9 /* HighScore.cpp */,
+				EFDAD22F180C0918005CF9A9 /* HighScore.h */,
+				EFDAD230180C0918005CF9A9 /* Profile.cpp */,
+				EFDAD231180C0918005CF9A9 /* Profile.h */,
+			);
+			name = filesystem;
+			path = src/filesystem;
+			sourceTree = "<group>";
+		};
+		EFDAD234180C0918005CF9A9 /* gfx */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD235180C0918005CF9A9 /* OGL.cpp */,
+				EFDAD236180C0918005CF9A9 /* OGL.h */,
+				EFDAD237180C0918005CF9A9 /* Particle2D.cpp */,
+				EFDAD238180C0918005CF9A9 /* Particle2D.h */,
+				EFDAD239180C0918005CF9A9 /* Particle2DManager.cpp */,
+				EFDAD23A180C0918005CF9A9 /* Particle2DManager.h */,
+				EFDAD23B180C0918005CF9A9 /* Popup.cpp */,
+				EFDAD23C180C0918005CF9A9 /* Popup.h */,
+				EFDAD23D180C0918005CF9A9 /* Screen.cpp */,
+				EFDAD23E180C0918005CF9A9 /* Screen.h */,
+				EFDAD23F180C0918005CF9A9 /* Sprite.cpp */,
+				EFDAD240180C0918005CF9A9 /* Sprite.h */,
+				EFDAD241180C0918005CF9A9 /* SpriteFont.cpp */,
+				EFDAD242180C0918005CF9A9 /* SpriteFont.h */,
+				EFDAD243180C0918005CF9A9 /* SpriteObject.cpp */,
+				EFDAD244180C0918005CF9A9 /* SpriteObject.h */,
+			);
+			name = gfx;
+			path = src/gfx;
+			sourceTree = "<group>";
+		};
+		EFDAD245180C0918005CF9A9 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD246180C0918005CF9A9 /* Bezier.cpp */,
+				EFDAD247180C0918005CF9A9 /* Bezier.h */,
+				EFDAD248180C0918005CF9A9 /* CRSpline.cpp */,
+				EFDAD249180C0918005CF9A9 /* CRSpline.h */,
+				EFDAD24A180C0918005CF9A9 /* Tween.cpp */,
+				EFDAD24B180C0918005CF9A9 /* Tween.h */,
+				EFDAD24C180C0918005CF9A9 /* Vec3.h */,
+			);
+			name = math;
+			path = src/math;
+			sourceTree = "<group>";
+		};
+		EFDAD24D180C0918005CF9A9 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD24E180C0918005CF9A9 /* eCongratulations.cpp */,
+				EFDAD24F180C0918005CF9A9 /* eCongratulations.h */,
+				EFDAD250180C0918005CF9A9 /* eCredits.cpp */,
+				EFDAD251180C0918005CF9A9 /* eCredits.h */,
+				EFDAD252180C0918005CF9A9 /* eHelp.cpp */,
+				EFDAD253180C0918005CF9A9 /* eHelp.h */,
+				EFDAD254180C0918005CF9A9 /* eIngame.cpp */,
+				EFDAD255180C0918005CF9A9 /* eIngame.h */,
+				EFDAD256180C0918005CF9A9 /* eIntro.cpp */,
+				EFDAD257180C0918005CF9A9 /* eIntro.h */,
+				EFDAD258180C0918005CF9A9 /* eLanguage.cpp */,
+				EFDAD259180C0918005CF9A9 /* eLanguage.h */,
+				EFDAD25A180C0918005CF9A9 /* eLevelMenu.cpp */,
+				EFDAD25B180C0918005CF9A9 /* eLevelMenu.h */,
+				EFDAD25C180C0918005CF9A9 /* eMainMenu.cpp */,
+				EFDAD25D180C0918005CF9A9 /* eMainMenu.h */,
+				EFDAD25E180C0918005CF9A9 /* ePostGame.cpp */,
+				EFDAD25F180C0918005CF9A9 /* ePostGame.h */,
+				EFDAD260180C0918005CF9A9 /* ePostTroophy.cpp */,
+				EFDAD261180C0918005CF9A9 /* ePostTroophy.h */,
+				EFDAD262180C0918005CF9A9 /* ePreload.cpp */,
+				EFDAD263180C0918005CF9A9 /* ePreload.h */,
+				EFDAD264180C0918005CF9A9 /* eSettings.cpp */,
+				EFDAD265180C0918005CF9A9 /* eSettings.h */,
+				EFDAD266180C0918005CF9A9 /* eTroophy.cpp */,
+				EFDAD267180C0918005CF9A9 /* eTroophy.h */,
+				EFDAD268180C0918005CF9A9 /* GameObject.cpp */,
+				EFDAD269180C0918005CF9A9 /* GameObject.h */,
+			);
+			name = modules;
+			path = src/modules;
+			sourceTree = "<group>";
+		};
+		EFDAD26C180C0918005CF9A9 /* sfx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = sfx;
+			path = src/sfx;
+			sourceTree = "<group>";
+		};
+		EFDAD26D180C0918005CF9A9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD26E180C0918005CF9A9 /* Animation.cpp */,
+				EFDAD26F180C0918005CF9A9 /* Animation.h */,
+				EFDAD270180C0918005CF9A9 /* Button.cpp */,
+				EFDAD271180C0918005CF9A9 /* Button.h */,
+				EFDAD272180C0918005CF9A9 /* Checkbox.cpp */,
+				EFDAD273180C0918005CF9A9 /* Checkbox.h */,
+			);
+			name = ui;
+			path = src/ui;
+			sourceTree = "<group>";
+		};
+		EFDAD2B2180C1944005CF9A9 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAD2B3180C1944005CF9A9 /* bomb.ogg */,
+				EFDAD2B4180C1944005CF9A9 /* click.ogg */,
+				EFDAD2B5180C1944005CF9A9 /* diamond.ogg */,
+				EFDAD2B6180C1944005CF9A9 /* level_up.ogg */,
+				EFDAD2B7180C1944005CF9A9 /* music_ingame01.ogg */,
+				EFDAD2B8180C1944005CF9A9 /* music_ingame02.ogg */,
+				EFDAD2B9180C1944005CF9A9 /* music_ingame03.ogg */,
+				EFDAD2BA180C1944005CF9A9 /* music_ingame04.ogg */,
+				EFDAD2BB180C1944005CF9A9 /* music_ingame05.ogg */,
+				EFDAD2BC180C1944005CF9A9 /* music_ingame06.ogg */,
+				EFDAD2BD180C1944005CF9A9 /* music_ingame07.ogg */,
+				EFDAD2BE180C1944005CF9A9 /* music_mainmenu.ogg */,
+				EFDAD2BF180C1944005CF9A9 /* music_postgame.ogg */,
+				EFDAD2C0180C1944005CF9A9 /* rainbow.ogg */,
+				EFDAD2C1180C1944005CF9A9 /* super.ogg */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFDAD1E6180C0836005CF9A9 /* Gems Of Atlantis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFDAD218180C0836005CF9A9 /* Build configuration list for PBXNativeTarget "Gems Of Atlantis" */;
+			buildPhases = (
+				EFDAD1E3180C0836005CF9A9 /* Sources */,
+				EFDAD1E4180C0836005CF9A9 /* Frameworks */,
+				EFDAD1E5180C0836005CF9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gems Of Atlantis";
+			productName = "Gems Of Atlantis";
+			productReference = EFDAD1E7180C0836005CF9A9 /* Gems Of Atlantis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFDAD207180C0836005CF9A9 /* Gems Of AtlantisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFDAD21B180C0836005CF9A9 /* Build configuration list for PBXNativeTarget "Gems Of AtlantisTests" */;
+			buildPhases = (
+				EFDAD204180C0836005CF9A9 /* Sources */,
+				EFDAD205180C0836005CF9A9 /* Frameworks */,
+				EFDAD206180C0836005CF9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFDAD20D180C0836005CF9A9 /* PBXTargetDependency */,
+			);
+			name = "Gems Of AtlantisTests";
+			productName = "Gems Of AtlantisTests";
+			productReference = EFDAD208180C0836005CF9A9 /* Gems Of AtlantisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFDAD1DF180C0836005CF9A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = SHODAN9;
+				TargetAttributes = {
+					EFDAD207180C0836005CF9A9 = {
+						TestTargetID = EFDAD1E6180C0836005CF9A9;
+					};
+				};
+			};
+			buildConfigurationList = EFDAD1E2180C0836005CF9A9 /* Build configuration list for PBXProject "Gems Of Atlantis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFDAD1DE180C0836005CF9A9;
+			productRefGroup = EFDAD1E8180C0836005CF9A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFDAD1E6180C0836005CF9A9 /* Gems Of Atlantis */,
+				EFDAD207180C0836005CF9A9 /* Gems Of AtlantisTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFDAD1E5180C0836005CF9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDAD2C7180C1944005CF9A9 /* music_ingame02.ogg in Resources */,
+				EFDAD2C6180C1944005CF9A9 /* music_ingame01.ogg in Resources */,
+				EFDAD2C9180C1944005CF9A9 /* music_ingame04.ogg in Resources */,
+				EFDAD2D0180C1944005CF9A9 /* super.ogg in Resources */,
+				EFDAD2CD180C1944005CF9A9 /* music_mainmenu.ogg in Resources */,
+				EFDAD2CF180C1944005CF9A9 /* rainbow.ogg in Resources */,
+				EFDAD2CA180C1944005CF9A9 /* music_ingame05.ogg in Resources */,
+				EFDAD2AF180C1855005CF9A9 /* Game.dat in Resources */,
+				EFDAD2AB180C1206005CF9A9 /* Game.ini in Resources */,
+				EFDAD2C3180C1944005CF9A9 /* click.ogg in Resources */,
+				EFDAD2C8180C1944005CF9A9 /* music_ingame03.ogg in Resources */,
+				EFDAD1F5180C0836005CF9A9 /* InfoPlist.strings in Resources */,
+				EFDAD2AD180C17CE005CF9A9 /* Game.cfg in Resources */,
+				EFDAD203180C0836005CF9A9 /* Images.xcassets in Resources */,
+				EFDAD1FB180C0836005CF9A9 /* Credits.rtf in Resources */,
+				EFDAD2B1180C189D005CF9A9 /* Game.map in Resources */,
+				EFDAD2CE180C1944005CF9A9 /* music_postgame.ogg in Resources */,
+				EFDAD201180C0836005CF9A9 /* MainMenu.xib in Resources */,
+				EFDAD2CB180C1944005CF9A9 /* music_ingame06.ogg in Resources */,
+				EFDAD2C2180C1944005CF9A9 /* bomb.ogg in Resources */,
+				EFDAD2C4180C1944005CF9A9 /* diamond.ogg in Resources */,
+				EFDAD2C5180C1944005CF9A9 /* level_up.ogg in Resources */,
+				EFDAD2CC180C1944005CF9A9 /* music_ingame07.ogg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDAD206180C0836005CF9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDAD213180C0836005CF9A9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFDAD1E3180C0836005CF9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDAD291180C0918005CF9A9 /* eSettings.cpp in Sources */,
+				EFDAD275180C0918005CF9A9 /* Mouse.cpp in Sources */,
+				EFDAD293180C0918005CF9A9 /* GameObject.cpp in Sources */,
+				EFDAD284180C0918005CF9A9 /* CRSpline.cpp in Sources */,
+				EFDAD281180C0918005CF9A9 /* SpriteFont.cpp in Sources */,
+				EFDAD290180C0918005CF9A9 /* ePreload.cpp in Sources */,
+				EFDAD28C180C0918005CF9A9 /* eLevelMenu.cpp in Sources */,
+				EFDAD27C180C0918005CF9A9 /* Particle2D.cpp in Sources */,
+				EFDAD277180C0918005CF9A9 /* GameSettings.cpp in Sources */,
+				EFDAD278180C0918005CF9A9 /* HighScore.cpp in Sources */,
+				EFDAD27F180C0918005CF9A9 /* Screen.cpp in Sources */,
+				EFDAD287180C0918005CF9A9 /* eCredits.cpp in Sources */,
+				EFDAD28B180C0918005CF9A9 /* eLanguage.cpp in Sources */,
+				EFDAD27A180C0918005CF9A9 /* Game.cpp in Sources */,
+				EFDAD297180C0918005CF9A9 /* Checkbox.cpp in Sources */,
+				EFDAD28D180C0918005CF9A9 /* eMainMenu.cpp in Sources */,
+				EFDAD283180C0918005CF9A9 /* Bezier.cpp in Sources */,
+				EFDAD27D180C0918005CF9A9 /* Particle2DManager.cpp in Sources */,
+				EFDAD27E180C0918005CF9A9 /* Popup.cpp in Sources */,
+				EFDAD28A180C0918005CF9A9 /* eIntro.cpp in Sources */,
+				EFDAD288180C0918005CF9A9 /* eHelp.cpp in Sources */,
+				EFDAD289180C0918005CF9A9 /* eIngame.cpp in Sources */,
+				EFDAD285180C0918005CF9A9 /* Tween.cpp in Sources */,
+				EFDAD296180C0918005CF9A9 /* Button.cpp in Sources */,
+				EFDAD2A9180C0D53005CF9A9 /* SDLMain.m in Sources */,
+				EFDAD274180C0918005CF9A9 /* MobileKeyboard.cpp in Sources */,
+				EFDAD295180C0918005CF9A9 /* Animation.cpp in Sources */,
+				EFDAD292180C0918005CF9A9 /* eTroophy.cpp in Sources */,
+				EFDAD27B180C0918005CF9A9 /* OGL.cpp in Sources */,
+				EFDAD286180C0918005CF9A9 /* eCongratulations.cpp in Sources */,
+				EFDAD276180C0918005CF9A9 /* Datafile.cpp in Sources */,
+				EFDAD280180C0918005CF9A9 /* Sprite.cpp in Sources */,
+				EFDAD28F180C0918005CF9A9 /* ePostTroophy.cpp in Sources */,
+				EFDAD279180C0918005CF9A9 /* Profile.cpp in Sources */,
+				EFDAD282180C0918005CF9A9 /* SpriteObject.cpp in Sources */,
+				EFDAD28E180C0918005CF9A9 /* ePostGame.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFDAD204180C0836005CF9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDAD215180C0836005CF9A9 /* Gems_Of_AtlantisTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFDAD20D180C0836005CF9A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFDAD1E6180C0836005CF9A9 /* Gems Of Atlantis */;
+			targetProxy = EFDAD20C180C0836005CF9A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFDAD1F3180C0836005CF9A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDAD1F4180C0836005CF9A9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EFDAD1F9180C0836005CF9A9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDAD1FA180C0836005CF9A9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EFDAD1FF180C0836005CF9A9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDAD200180C0836005CF9A9 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		EFDAD211180C0836005CF9A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFDAD212180C0836005CF9A9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFDAD216180C0836005CF9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EFDAD217180C0836005CF9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EFDAD219180C0836005CF9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gems Of Atlantis/Gems Of Atlantis-Prefix.pch";
+				INFOPLIST_FILE = "Gems Of Atlantis/Gems Of Atlantis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EFDAD21A180C0836005CF9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gems Of Atlantis/Gems Of Atlantis-Prefix.pch";
+				INFOPLIST_FILE = "Gems Of Atlantis/Gems Of Atlantis-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EFDAD21C180C0836005CF9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gems Of Atlantis.app/Contents/MacOS/Gems Of Atlantis";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gems Of Atlantis/Gems Of Atlantis-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Gems Of AtlantisTests/Gems Of AtlantisTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EFDAD21D180C0836005CF9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gems Of Atlantis.app/Contents/MacOS/Gems Of Atlantis";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gems Of Atlantis/Gems Of Atlantis-Prefix.pch";
+				INFOPLIST_FILE = "Gems Of AtlantisTests/Gems Of AtlantisTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFDAD1E2180C0836005CF9A9 /* Build configuration list for PBXProject "Gems Of Atlantis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDAD216180C0836005CF9A9 /* Debug */,
+				EFDAD217180C0836005CF9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFDAD218180C0836005CF9A9 /* Build configuration list for PBXNativeTarget "Gems Of Atlantis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDAD219180C0836005CF9A9 /* Debug */,
+				EFDAD21A180C0836005CF9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFDAD21B180C0836005CF9A9 /* Build configuration list for PBXNativeTarget "Gems Of AtlantisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDAD21C180C0836005CF9A9 /* Debug */,
+				EFDAD21D180C0836005CF9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFDAD1DF180C0836005CF9A9 /* Project object */;
+}

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Showimage Sources">
+      <UniqueIdentifier>{d986cdbd-7c68-4bb7-8994-007c88a1f00e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External Libraries">
+      <UniqueIdentifier>{06381e0f-4291-4c11-9fc9-a12f5b132f9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\showimage.c">
+      <Filter>Showimage Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Release\SDL_image.lib">
+      <Filter>External Libraries</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

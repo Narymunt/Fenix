@@ -2,6 +2,8 @@
 #define WINVER 0x0501
 #define NTDDI_VERSION 0x0501
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #pragma warning(disable : 4996)
 #pragma warning(disable : 4244)     // zwrot innego typu niz size_t
 
@@ -36,6 +38,7 @@
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 #include <SDL_opengl.h>
+#include <stdio.h>
 
 #include "Game.h"
 
@@ -48,6 +51,17 @@
 #include "ui/Button.h"
 #include "ui/SpriteFont.h"
 #include "gfx/FontTTF.h"
+
+//=== libSDL bug
+
+/*
+FILE _iob[] = { *stdin, *stdout, *stderr };
+
+extern "C" FILE * __cdecl __iob_func(void)
+{
+	return _iob;
+}
+*/
 
 //=== modu³y aplikacji 
 

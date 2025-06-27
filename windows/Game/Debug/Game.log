@@ -1,2 +1,80 @@
-﻿  Game.cpp
-  Game.vcxproj -> J:\Fenix\trunk\windows\Debug\Game.exe
+﻿  SpriteFont.cpp
+  Mouse.cpp
+  MobileKeyboard.cpp
+  Checkbox.cpp
+  ButtonTTF.cpp
+  Button.cpp
+  Ytable.cpp
+  Vector2d.cpp
+  Tween.cpp
+  SinTable.cpp
+  Interpolate.cpp
+  HSV.cpp
+  Hermite.cpp
+  EquationSystem.cpp
+  CRSpline.cpp
+  Clamp.cpp
+  BSpline.cpp
+  Box.cpp
+  Bezier.cpp
+  Zip.cpp
+  Generating Code...
+  Compiling...
+  Unzip.cpp
+  Profile.cpp
+  HighScore.cpp
+  Datafile.cpp
+  SpriteObject.cpp
+  SpriteManager.cpp
+  Sprite.cpp
+  Screen.cpp
+e:\fenix.trunk\windows\game\gfx\screen.cpp(87): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+e:\fenix.trunk\windows\game\gfx\screen.cpp(90): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+  Popup.cpp
+  Particle2DManager.cpp
+  Particle2D.cpp
+  OGL.cpp
+  FXManager.cpp
+  FontTTF.cpp
+  AnimationTrack.cpp
+  AnimationEvent.cpp
+e:\fenix.trunk\windows\game\gfx\animationevent.cpp(24): warning C4101: 'buffer' : unreferenced local variable
+  Animation.cpp
+  Game.cpp
+  GameSettings.cpp
+  GameObject.cpp
+  Generating Code...
+  Compiling...
+  vector.cpp
+  spline.cpp
+  quatern.cpp
+  matrix.cpp
+  file_clx.cpp
+  file_3ds.cpp
+  clax.cpp
+  camera.cpp
+  Troophy.cpp
+  SkeletalEditor.cpp
+e:\fenix.trunk\windows\game\app\skeletaleditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Settings.cpp
+  SeqEditor.cpp
+e:\fenix.trunk\windows\game\app\seqeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneEditor.cpp
+e:\fenix.trunk\windows\game\app\sceneeditor.cpp(50): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Preload.cpp
+  PostTroophy.cpp
+  PostGame.cpp
+  ParticleEditor.cpp
+  MainMenu.cpp
+  LevelMenu.cpp
+  Language.cpp
+  Generating Code...
+  Compiling...
+  Intro.cpp
+  Ingame.cpp
+  Help.cpp
+  Credits.cpp
+  Congratulations.cpp
+  AnimationEditor.cpp
+  Generating Code...
+  Game.vcxproj -> E:\Fenix.trunk\windows\Debug\Game.exe

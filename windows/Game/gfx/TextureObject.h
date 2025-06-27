@@ -1,4 +1,6 @@
 #pragma once
+#pragma warning(disable : 4996)
+
 #include <SDL.h>
 #include <SDL_image.h>
 #include "OGL.h"
