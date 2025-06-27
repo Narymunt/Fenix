@@ -47,14 +47,89 @@ public:
 	void	Render(unsigned long ulTimer);		// tutaj wszystkie parapetry sa aktualizowane na podstawie timera
 
 	void	Resize(int x1, int y1, int x2, int y2);		// set size to requested
-	void	Scale(float fX, float fY);
 
 	void	Fullscreen(CScreen *pScreen);
 
-	void 	Position(float fX, float fY);
+	// set & get rotation
 
-	void 	Color(float r, float g, float b, float a);
-	void 	Color(float r, float g, float b);
+	void	AddRotation(float fRot);
+	void	fRotation(float fRot);
+	float	fRotation(void);
+	
+	// set & get position
+
+	void	Position(float fX, float fY);
+	void	AddPosition(float fX, float fY);
+
+	float	fPositionX(void);
+	void	fPositionX(float fX);
+	void	AddPositionX(float fX);
+
+	float	fPositionY(void);
+	void	fPositionY(float fY);
+	void	AddPositionY(float fY);
+
+	// set & get scale 
+
+	void	Scale(float fX, float fY);
+
+	void	fScaleX(float fX);
+	float	fScaleX(void);
+
+	void	fScaleY(float fY);
+	float	fScaleY(void);
+
+	// set & get size
+
+	float	fSizeX(void);
+	float	fSizeY(void);
+
+	// set & get alfa
+
+	void	fAlfa(float f);
+	float	fAlfa(void);
+	void	AddAlfa(float f);
+
+	// center
+
+	inline bool		isCenter(void) { return _isCenter; }
+	inline void		isCenter(bool b) { _isCenter = b; }
+
+	// modyfikatory dla rotacji
+
+	inline float	fRotationI(void) { return _fRotationI;  }
+	inline void		fRotationI(float f) { _fRotationI = f; }
+
+	// modyfikatory dla skali
+
+	inline float	fScaleXI(void) { return _fScaleXI; }
+	inline void		fScaleXI(float f) { _fScaleXI = f; }
+
+	inline float	fScaleYI(void) { return _fScaleYI; }
+	inline void		fScaleYI(float f) { _fScaleYI = f; }
+
+	// modyfikator dla wspó³rzêdnych
+
+	inline float	fPositionXI(void) { return _fPositionXI; }
+	inline void		fPositionXI(float f) { _fPositionXI = f; }
+
+	inline float	fPositionYI(void) { return _fPositionYI; }
+	inline void		fPositionYI(float f) { _fPositionYI = f; }
+
+	// modyfikator dla kana³u alfa
+
+	inline float	fAlfaI(void) { return _fAlfaI; }
+	inline void		fAlfaI(float f) { _fAlfaI = f; }
+
+	// oryginalny rozmiar tekstur
+
+	inline float 	fOriginalX(void) { return _fOriginalX; }
+	inline void		fOriginalX(float f) { _fOriginalX = f; }
+
+	inline float	fOriginalY(void) { return _fOriginalY; }
+	inline void		fOriginalY(float f) { _fOriginalY = f; }
+
+private:
 
 	bool				_isCenter;					// false = lewy gorny rog, true = srodek tekstury
 
@@ -75,7 +150,7 @@ public:
 	unsigned long		_ulRenderTime;	// czas renderowania ostatniej klatki
 	unsigned long		_ulDeltaTime;	// roznica pomiedzy ostatnim renderowaniem a aktualnym timerem
 	// our texture
-	float				_r, _g, _b, _a;					// kolor naszego sprite
+
 	GLuint				_pSprite;		// identyfikator tekstury
 
 };

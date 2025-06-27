@@ -1,213 +1,47 @@
-obj/local/armeabi/objs/SDL2/src/thread/pthread/SDL_syscond.o: \
- jni/SDL/src/thread/pthread/SDL_syscond.c \
- jni/SDL/src/thread/pthread/../../SDL_internal.h \
- jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi.h \
- jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi_overrides.h \
- jni/SDL/include/SDL_config.h jni/SDL/include/SDL_platform.h \
- jni/SDL/include/begin_code.h jni/SDL/include/close_code.h \
- jni/SDL/include/SDL_config_android.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/time.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/time.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/unistd.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/select.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysconf.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pathconf.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pthread.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/time.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sched.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/sched.h \
- jni/SDL/include/SDL_thread.h jni/SDL/include/SDL_stdinc.h \
- jni/SDL/include/SDL_config.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/inttypes.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/ctype.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/math.h \
- jni/SDL/include/SDL_error.h jni/SDL/include/SDL_atomic.h \
- jni/SDL/include/SDL_mutex.h jni/SDL/src/thread/pthread/SDL_sysmutex_c.h
+/opt/Fenix/fenix/android/project/obj/local/armeabi/objs/SDL2/src/thread/pthread/SDL_syscond.o: \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/SDL_syscond.c \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../SDL_internal.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi_overrides.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_platform.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/begin_code.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/close_code.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config_android.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_stdinc.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_error.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_atomic.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mutex.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/SDL_sysmutex_c.h
 
-jni/SDL/src/thread/pthread/../../SDL_internal.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../SDL_internal.h:
 
-jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi.h:
 
-jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi_overrides.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/../../dynapi/SDL_dynapi_overrides.h:
 
-jni/SDL/include/SDL_config.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h:
 
-jni/SDL/include/SDL_platform.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_platform.h:
 
-jni/SDL/include/begin_code.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/begin_code.h:
 
-jni/SDL/include/close_code.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/close_code.h:
 
-jni/SDL/include/SDL_config_android.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config_android.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/time.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_stdinc.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_error.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_atomic.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mutex.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/time.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/unistd.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/select.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysconf.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pathconf.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/pthread.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/time.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sched.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/sched.h:
-
-jni/SDL/include/SDL_thread.h:
-
-jni/SDL/include/SDL_stdinc.h:
-
-jni/SDL/include/SDL_config.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/inttypes.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/ctype.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/math.h:
-
-jni/SDL/include/SDL_error.h:
-
-jni/SDL/include/SDL_atomic.h:
-
-jni/SDL/include/SDL_mutex.h:
-
-jni/SDL/src/thread/pthread/SDL_sysmutex_c.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/thread/pthread/SDL_sysmutex_c.h:
