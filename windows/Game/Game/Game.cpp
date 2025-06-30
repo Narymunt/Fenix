@@ -11,23 +11,30 @@
 
 #include "Game.h"
 
-#include "dune/gfx/OGL.h"
-#include "dune/gfx/Screen.h"
-#include "dune/gfx/Sprite.h"
-#include "dune/ui/Mouse.h"
-#include "dune/io/GameSettings.h"
-#include "dune/ui/Button.h"
-#include "dune/ui/SpriteFont.h"
-#include "dune/gfx/FontTTF.h"
+#include "gfx/OGL.h"
+#include "gfx/Screen.h"
+#include "gfx/Sprite.h"
+#include "ui/Mouse.h"	
+#include "windows/GameSettings.h"
+#include "ui/Button.h"
+#include "ui/SpriteFont.h"
+#include "gfx/FontTTF.h"
 
-#ifdef _DEBUG
-#include "vld.h"
-#endif 
+// definicje dla windows, pierwsza dla vs2015
+
+#ifdef _WIN32
+	FILE _iob[] = { *stdin, *stdout, *stderr };
+	extern "C" FILE * __cdecl __iob_func(void) { return _iob; }
+// dolaczenie visual leak detector
+	#ifdef _DEBUG
+	#include "vld/include/vld.h"
+	#endif 
+#endif
 
 //=== stany aplikacji 
 
-#include "Ingame.h"				   // in game - tutaj ukladamy klocki
-#include "Congratulations.h"		// zwyciêstwo !!! koniec gry !!!
+#include "app/Ingame.h"				   // in game - tutaj ukladamy klocki
+#include "app/Congratulations.h"		// zwyciêstwo !!! koniec gry !!!
 
 int		iAppState;					// current application state
 int		iPrevAppState;				// poprzedni stan aplikacji
@@ -262,8 +269,8 @@ int main(int argc, char **argv)
 	if (iMode==2)
 	{
 		pMainScreen = new CScreen(true);
-		iScreenX = pMainScreen->iSizeX();
-		iScreenY = pMainScreen->iSizeY();
+		iScreenX = pMainScreen->_iSizeX;
+		iScreenY = pMainScreen->_iSizeY;
 	}
 
 	// ustawiamy na podstawie parametrow
@@ -274,9 +281,7 @@ int main(int argc, char **argv)
 	if (iMode==0)
 		pMainScreen = new CScreen(iScreenX,iScreenY,32,false);
 
-	pMainScreen->InitDictionary();	// inicjalizacja slownika
-
-   pFont = new CFontTTF("c:\\projects\\arial.ttf",20);
+   pFont = new CFontTTF("verdana.ttf",20);
 
 	// inicjalizacja myszki
 
@@ -293,7 +298,7 @@ int main(int argc, char **argv)
 	// ekran wczytywania danych
 
 	pLoadScreen = new CSprite("background.jpg");
-   pLoadScreen->Resize(0,0,pMainScreen->iSizeX(), pMainScreen->iSizeY());
+   pLoadScreen->Resize(0,0,pMainScreen->_iSizeX, pMainScreen->_iSizeY);
    pLoadScreen->Render();
 //	pConfirmQuit = new CSprite(pMainScreen, "QUIT_SCREEN");
 
@@ -481,7 +486,7 @@ int main(int argc, char **argv)
 
 			case	E_CONGRATULATIONS:
 
-				if (!pCongratulations->isActive())
+				if (!pCongratulations->_isOpen)
 				{
 					pCongratulations->Open(pMainScreen);
 
