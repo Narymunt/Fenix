@@ -1,43 +1,43 @@
 ./obj/local/x86_64/objs/main/application/MainMenu.o: \
   jni\src\application\MainMenu.cpp jni\src\application\MainMenu.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\vector \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__config \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\bit \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\limits \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\type_traits \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstddef \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\version \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__debug \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\initializer_list \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstring \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\string.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\utility \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__tuple \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstdint \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdint.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\memory \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\typeinfo \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\exception \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstdlib \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdlib.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\new \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\iterator \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__functional_base \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\tuple \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdexcept \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cassert \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\atomic \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\functional \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\vector \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__config \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\bit \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\limits \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\type_traits \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstddef \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\version \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__debug \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\initializer_list \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstring \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\string.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\utility \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__tuple \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstdint \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdint.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\memory \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\typeinfo \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\exception \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstdlib \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdlib.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\new \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\iterator \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__functional_base \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\tuple \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdexcept \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cassert \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\atomic \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\functional \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
   jni\src\Main.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdio.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\math.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdio.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\math.h \
   jni\src\application\State.h jni\src\application\..\gfx\Screen.h \
   jni\src\..\SDL\include\SDL.h jni\src\..\SDL\include\SDL_main.h \
   jni\src\..\SDL\include\SDL_stdinc.h \
@@ -46,9 +46,9 @@
   jni\src\..\SDL\include\begin_code.h \
   jni\src\..\SDL\include\close_code.h \
   jni\src\..\SDL\include\SDL_config_android.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stddef.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\ctype.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stddef.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\ctype.h \
   jni\src\..\SDL\include\SDL_assert.h \
   jni\src\..\SDL\include\SDL_atomic.h jni\src\..\SDL\include\SDL_audio.h \
   jni\src\..\SDL\include\SDL_error.h jni\src\..\SDL\include\SDL_endian.h \
@@ -96,81 +96,81 @@
 
 jni\src\application\MainMenu.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\vector:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\vector:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__config:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__config:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\bit:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\bit:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\limits:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\limits:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\type_traits:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\type_traits:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstddef:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstddef:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\version:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\version:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__debug:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__debug:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\initializer_list:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\initializer_list:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstring:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstring:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\string.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\string.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\utility:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\utility:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__tuple:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__tuple:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstdint:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstdint:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdint.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdint.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\memory:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\memory:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\typeinfo:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\typeinfo:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\exception:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\exception:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cstdlib:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cstdlib:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdlib.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdlib.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\new:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\new:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\iterator:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\iterator:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__functional_base:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__functional_base:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\tuple:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\tuple:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdexcept:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdexcept:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\cassert:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\cassert:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\atomic:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\atomic:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\functional:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\functional:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\climits:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\climits:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
 jni\src\Main.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stdio.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stdio.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\math.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\math.h:
 
 jni\src\application\State.h:
 
@@ -192,11 +192,11 @@ jni\src\..\SDL\include\close_code.h:
 
 jni\src\..\SDL\include\SDL_config_android.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\stddef.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\stddef.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\ctype.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\ctype.h:
 
 jni\src\..\SDL\include\SDL_assert.h:
 

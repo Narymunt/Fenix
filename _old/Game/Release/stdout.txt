@@ -1,0 +1,7 @@
+=======================================
+openGL: 3.3.10061 Compatibility Profile Context
+ vendor: ATI Technologies Inc.
+ renderer: ATI Radeon HD 4850
+ shader: 3.30
+
+screen 2560x1440
