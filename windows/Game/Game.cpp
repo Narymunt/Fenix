@@ -23,9 +23,9 @@
 // EDIT_MODE jest do ustawiania leveli, wtedy 2560x1440 fullscreen, z dodatkowymi kontrolkami do edycji obiektow itp
 
 #define DEBUG_MODE		1
-#define FULLSCREEN		0
-#define WINDOW_X		2000
-#define WINDOW_Y		1000
+#define FULLSCREEN		1
+#define WINDOW_X		1366
+#define WINDOW_Y		768
 #define EDIT_MODE		0
 
 #include <Windows.h>
@@ -92,7 +92,7 @@ Sprite *loadScreen = NULL;
 Sprite *confirmQuit = NULL;					// czy na pewno wyjscie z gry ? 
 
 
-#define POOL 10000
+#define POOL 1000
 
 Sprite* spritePool[POOL];
 
