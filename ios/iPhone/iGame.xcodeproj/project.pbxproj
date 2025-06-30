@@ -464,7 +464,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iGame" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -584,8 +584,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Satel Polska (FRJV235369)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satel Polska (FRJV235369)";
 				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -601,10 +601,10 @@
 				);
 				PRODUCT_NAME = iGame;
 				PROVISIONING_PROFILE = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
+				"PROVISIONING_PROFILE[sdk=*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
@@ -614,6 +614,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Satel Polska (FRJV235369)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satel Polska (FRJV235369)";
 				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -627,8 +629,10 @@
 				);
 				PRODUCT_NAME = iGame;
 				PROVISIONING_PROFILE = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
+				"PROVISIONING_PROFILE[sdk=*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
@@ -636,40 +640,39 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Satel Polska (FRJV235369)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satel Polska (FRJV235369)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
+				"PROVISIONING_PROFILE[sdk=*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wiktor Witkowski (V52G6SJJJ5)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Satel Polska (FRJV235369)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satel Polska (FRJV235369)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CF97DB68-CEC2-499A-8B33-CD17904F9965";
+				"PROVISIONING_PROFILE[sdk=*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "157716FF-8B72-4C7D-8448-1980DC91B352";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
