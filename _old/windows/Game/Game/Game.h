@@ -11,58 +11,81 @@
 
 // jezyki dla aplikacji
 
-#define	LANG_ENGLAND	10
-#define LANG_RUSSIA		20
-#define	LANG_GERMANY	30
-#define LANG_FRANCE		40
-
-#define	LANG_ITALY		50
-#define	LANG_SPAIN		60
-#define LANG_POLAND		70
-#define LANG_TURKEY		80
-
-#define LANG_JAPAN		90
-#define LANG_KOREA		100
-#define LANG_CHINA		110
-#define LANG_INDIA		120
-
-#define LANG_ARABIA		130
-#define LANG_ISRAEL		140
-#define LANG_BRASIL		150
-#define LANG_INDONESIA	160
-
-#define LANG_PORTUGAL	170
-#define LANG_SWEDEN		180
-#define LANG_NORWAY		190
-#define LANG_DENMARK	200
+enum eLanguage
+{
+   LANG_ENGLAND,
+   LANG_RUSSIA,
+   LANG_GERMANY,
+   LANG_FRANCE,
+   LANG_ITALY,	
+   LANG_SPAIN,		
+   LANG_POLAND,
+   LANG_TURKEY,	
+   LANG_JAPAN,
+   LANG_KOREA,
+   LANG_CHINA,
+   LANG_INDIA,
+   LANG_ARABIA,
+   LANG_ISRAEL,
+   LANG_BRASIL,
+   LANG_INDONESIA,
+   LANG_PORTUGAL,
+   LANG_SWEDEN,
+   LANG_NORWAY,
+   LANG_DENMARK
+};
 
 //=== trofea
 
-#define TROOPHY_MATCH_100		0	// 1 uloz 100 kombinacji
-#define TROOPHY_MATCH_1000		1	// 2 uloz 1000 kombinacji
-#define TROOPHY_DIAMOND_100		2	// 3 kliknij 100 diamentow
-#define TROOPHY_DIAMOND_1000	3	// 4 kliknij 1000 diamentow
-#define TROOPHY_RAINBOW_100		4	// 5 kliknij 100 teczowych kamieni
-#define TROOPHY_RAINBOW_1000	5	// 6 kliknij 1000 teczowych kamieni
-#define TROOPHY_BOMB_100		6	// 7 kliknij 100 bomb
-#define TROOPHY_BOMB_1000		7	// 8 kliknij 1000 bomb
-#define TROOPHY_HIGHSCORE		8	// 9 zdobadz 1 miejsce w highscore
-#define TROOPHY_DOUBLE_RAINBOW	9	// 10 zetknij ze sob¹ dwa teczowe kamienie
-#define TROOPHY_SCORE_10K		10	// 11 zdobadz 10 000 punktow
-#define TROOPHY_SCORE_100K		11	// 12 zdobadz 100 000 punktow
-#define TROOPHY_GAME_100		12	// 13 zagraj 100 razy w gre
-#define TROOPHY_GAME_1000		13	// 14 zagraj 1000 razy w gre
-#define TROOPHY_HIGHSCORE_ALL	14	// 15 zdobadz wszystkie miejsca w high score
-#define TROOPHY_DIAMOND_5		15	// 16 umiesc na jednej planszy 5 diamentow
-#define TROOPHY_RAINBOW_5		16	// 17 umiesc na jednej planszy 5 teczowych kamieni
-#define	TROOPHY_VLINE8			17	// 18 uloz 8 klockow w jednej pionowej linii
-#define TROOPHY_HLINE8			18	// 19 uloz 8 klockow w jednej poziomej linii
-#define TROOPHY_GAME_FINISH		19	// 20 ukoncz wszystkie etapy
+// 1 uloz 100 kombinacji
+// 2 uloz 1000 kombinacji
+// 3 kliknij 100 diamentow
+// 4 kliknij 1000 diamentow
+// 5 kliknij 100 teczowych kamieni
+// 6 kliknij 1000 teczowych kamieni
+// 7 kliknij 100 bomb
+// 8 kliknij 1000 bomb
+// 9 zdobadz 1 miejsce w highscore
+// 10 zetknij ze sob¹ dwa teczowe kamienie
+// 11 zdobadz 10 000 punktow
+// 12 zdobadz 100 000 punktow
+// 13 zagraj 100 razy w gre
+// 14 zagraj 1000 razy w gre
+// 15 zdobadz wszystkie miejsca w high score
+// 16 umiesc na jednej planszy 5 diamentow
+// 17 umiesc na jednej planszy 5 teczowych kamieni
+// 18 uloz 8 klockow w jednej pionowej linii
+// 19 uloz 8 klockow w jednej poziomej linii
+// 20 ukoncz wszystkie etapy
+
+enum eTroophy
+{
+TROOPHY_MATCH_100,
+TROOPHY_MATCH_1000,
+TROOPHY_DIAMOND_100,
+TROOPHY_DIAMOND_1000,
+TROOPHY_RAINBOW_100,
+TROOPHY_RAINBOW_1000,
+TROOPHY_BOMB_100,
+TROOPHY_BOMB_1000,
+TROOPHY_HIGHSCORE,
+TROOPHY_DOUBLE_RAINBOW,
+TROOPHY_SCORE_10K,
+TROOPHY_SCORE_100K,
+TROOPHY_GAME_100,
+TROOPHY_GAME_1000,
+TROOPHY_HIGHSCORE_ALL,
+TROOPHY_DIAMOND_5,
+TROOPHY_RAINBOW_5,
+TROOPHY_VLINE8,
+TROOPHY_HLINE8,
+TROOPHY_GAME_FINISH
+};
 
 //=== zwraca min i max
 
-#define getMin(x,y) ((x) < (y)) ? (x) : (y)
-#define getMax(x,y) ((x) > (y)) ? (x) : (y)
+#define _min(x,y) ((x) < (y)) ? (x) : (y)
+#define _max(x,y) ((x) > (y)) ? (x) : (y)
 
 //=== definicje PI
 
@@ -98,8 +121,8 @@ static char MAIN_VERSION[]="version 0.1";
 
 //=== has³o do plików .zip
 
-static char MAIN_RESOURCE[]="Game.bin";
-static char	MAIN_PASSWORD[]="pass";
+static char ZIP_FILE[]="Game.bin";
+static char	ZIP_PASSWORD[]="pass";
 
 //=== tu trzymamy najlepsze punktu
 
@@ -108,6 +131,13 @@ static char HIGHSCORE_FILE[]="highscore.bin";
 //=== tutaj trzymamy dane o graczach
 
 static char USERS_FILE[]="Game.cfg";
+
+//=== plik ze zlaczonymi danymi
+
+static char DATA_FILE[]="Game.dat";
+static char DATA_PASSWORD[]="!shodan9";
+static char DATA_MAP[]="Game.map";
+
 
 //=== do uzupelnienia
 
@@ -123,26 +153,52 @@ static char SCRIPT_FILE[] = "Game.ini";
 
 //=== aplication state
 
-#define E_LANGUAGE			9			 // wybór jêzyka
-#define E_PRELOAD			10           // wczytywanie aplikacji
-#define E_ADS				20           // banery, reklamy itd.
-#define E_INTRO				30           // intro do gry
-#define E_MAINMENU			40           // menu g³ówne gry
-#define E_SETTINGS			50           // ustawienia gry
-#define E_CREDITS			60           // autorzy gry itd. 
-#define E_PAUSE				70           // pauza w grze
-#define E_FREEZE			80           // zamro¿enie stanu gry np. w przypadku gdy telefon dzwoni
-#define E_PROFILE			90           // ustawianie profilu gracza
-#define E_LEVELMENU			100          // wybor etapu w grze
-#define E_INGAME			110          // GLOWNY MODU£ GRY
-#define E_TROOPHY			120          // ekran z nagrodami
-#define E_GAMEOVER			130          // koniec gry
-#define E_ENDSCREEN			140          // ekran koñcowy, kup pe³n¹ wersje itp.
-#define E_POSTGAME			150			 // po zakonczeniu gry (game over) - ekran zliczania punktow do profilu
-#define E_HELP				160			 // pomoc z instrukcja gry
-#define E_POST_TROOPHY		180
-#define E_CONGRATULATIONS	200			// zwyciestwo !!! wielki sukces !!!
-#define E_QUIT				255
+// E_LANGUAGE wybór jêzyka
+// E_PRELOAD wczytywanie aplikacji
+// E_ADS banery, reklamy itd.
+// E_INTRO intro do gry
+// E_MAINMENU  menu g³ówne gry
+// E_SETTINGS ustawienia gry
+// E_CREDITS autorzy gry itd. 
+// E_PAUSE pauza w grze
+// E_FREEZE zamro¿enie stanu gry np. w przypadku gdy telefon dzwoni
+// E_PROFILE ustawianie profilu gracza
+// E_LEVELMENU wybor etapu w grze
+// E_INGAME GLOWNY MODU£ GRY
+// E_TROOPHY ekran z nagrodami
+// E_GAMEOVER koniec gry
+// E_ENDSCREEN ekran koñcowy, kup pe³n¹ wersje itp.
+// E_POSTGAME po zakonczeniu gry (game over) - ekran zliczania punktow do profilu
+// E_HELP pomoc z instrukcja gry
+// E_POST_TROOPHY	pomocniczy
+// E_CONGRATULATIONS	zwyciestwo !!! wielki sukces !!!
+// E_CONFIRM_QUIT potwierdz wyjscie z gry
+// E_QUIT wyjscie z gry = koniec aplikacji
+
+enum eAppState
+{
+   E_LANGUAGE,
+   E_PRELOAD,
+   E_ADS,
+   E_INTRO,
+   E_MAINMENU,
+   E_SETTINGS,
+   E_CREDITS, 
+   E_PAUSE,
+   E_FREEZE,
+   E_PROFILE,
+   E_LEVELMENU,
+   E_INGAME,
+   E_TROOPHY,
+   E_GAMEOVER,
+   E_ENDSCREEN,
+   E_POSTGAME,
+   E_HELP,
+   E_POST_TROOPHY,
+   E_CONGRATULATIONS,
+   E_CONFIRM_QUIT,
+   E_QUIT			
+};
 
 //=== klawiatura
 

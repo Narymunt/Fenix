@@ -5,212 +5,276 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{06d7ef87-b7b3-4e63-b91a-d260ff2b4669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\clax">
+      <UniqueIdentifier>{a90e0123-89e4-46cb-8d55-e28c35e2588c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{e43debc5-77b7-41a9-9aa5-157268736fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gfx">
+      <UniqueIdentifier>{2501316f-e8a4-4972-aed0-c97324da6c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rapidxml">
+      <UniqueIdentifier>{7487e26b-08ed-4deb-a217-f13068f444f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{cc77a34b-3a92-464e-9d43-d8702530b14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{5a0bca57-5d19-4d3c-b377-5e6f228460a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\io">
+      <UniqueIdentifier>{602f106a-8766-47fe-a2eb-1e7bc0d51c16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="Game.ico">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\camera.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="eIngame.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\clax.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="eMainMenu.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\file_3ds.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\file_clx.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\matrix.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="OGL.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\quatern.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="Particle2D.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\spline.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="Particle2DManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="clax\vector.cpp">
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="Popup.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="common\GameObject.cpp">
+      <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\Animation.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\FontTTF.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="eCongratulations.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\FXManager.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="eLanguage.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\Particle2D.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="ePreload.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\Particle2DManager.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="eIntro.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\Popup.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="eLevelMenu.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="gfx\SpriteObject.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="ePostGame.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="app\Congratulations.cpp">
+      <Filter>Source Files\app</Filter>
     </ClCompile>
-    <ClCompile Include="eHelp.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="app\Ingame.cpp">
+      <Filter>Source Files\app</Filter>
     </ClCompile>
-    <ClCompile Include="eCredits.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\Bezier.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="eTroophy.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\BSpline.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="eSettings.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\Clamp.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="ePostTroophy.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\CRSpline.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="HighScore.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\Hermite.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="GameSettings.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\HSV.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="MobileKeyboard.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\SinTable.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="Profile.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="math\Tween.cpp">
+      <Filter>Source Files\math</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteFont.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ui\Button.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Checkbox.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ui\Checkbox.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ui\MobileKeyboard.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Unzip.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ui\Mouse.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Zip.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ui\SpriteFont.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Datafile.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\GameSettings.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\HighScore.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Profile.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Unzip.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Zip.cpp">
+      <Filter>Source Files\io</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clax\clax.h">
+      <Filter>Source Files\clax</Filter>
+    </ClInclude>
+    <ClInclude Include="clax\claxi.h">
+      <Filter>Source Files\clax</Filter>
+    </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rapidxml\rapidxml.hpp">
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="eIngame.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rapidxml\rapidxml_iterators.hpp">
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="eMainMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rapidxml\rapidxml_print.hpp">
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rapidxml\rapidxml_utils.hpp">
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="Mouse.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="common\GameObject.h">
+      <Filter>Source Files\common</Filter>
     </ClInclude>
-    <ClInclude Include="OGL.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\Animation.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="Particle2D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\FontTTF.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="Particle2DManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\FXManager.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="Popup.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\Particle2D.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\Particle2DManager.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\Popup.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="eCongratulations.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="gfx\SpriteObject.h">
+      <Filter>Source Files\gfx</Filter>
     </ClInclude>
-    <ClInclude Include="eLanguage.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="app\Congratulations.h">
+      <Filter>Source Files\app</Filter>
     </ClInclude>
-    <ClInclude Include="ePreload.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="app\Ingame.h">
+      <Filter>Source Files\app</Filter>
     </ClInclude>
-    <ClInclude Include="eIntro.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Bezier.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="eLevelMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\BSpline.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="ePostGame.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Clamp.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="eHelp.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\CRSpline.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="eCredits.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Hermite.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="eTroophy.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\HSV.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="eSettings.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\SinTable.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="ePostTroophy.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Tween.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="GameSettings.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Vec3.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="MobileKeyboard.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="math\Vector.h">
+      <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="Profile.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ui\Button.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteFont.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ui\Checkbox.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="Checkbox.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ui\MobileKeyboard.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ui\Mouse.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="HighScore.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ui\SpriteFont.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="Unzip.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="io\Datafile.h">
+      <Filter>Source Files\io</Filter>
     </ClInclude>
-    <ClInclude Include="Zip.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="io\GameSettings.h">
+      <Filter>Source Files\io</Filter>
     </ClInclude>
+    <ClInclude Include="io\HighScore.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Profile.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Unzip.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Zip.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
