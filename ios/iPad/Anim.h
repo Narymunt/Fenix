@@ -4,8 +4,8 @@
 #include "config.h"
 
 #include <time.h>
-#include <vector>
-#include <list>
+#include <vector.h>
+#include <list.h>
 
 #include "KPTK.h"
 #include "KMiscTools.h"
@@ -30,7 +30,7 @@ public:
     ~CAnim(); 
 
     void Render(int iFrame);       // render na ekranie
-    void Render(int iFrame, int iX, int iY);
+    void Render(int iX, int iY, int iFrame);    
     
     void    SetRotation(float fAngle);  // obracanie
     float   fGetRotation(void);         // zwraca kat
@@ -67,7 +67,6 @@ public:
         pVal = NULL;
     }
     
-    inline int iFrameCount(void) { return m_iCount; }
     
 private:	
     

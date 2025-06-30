@@ -24,8 +24,8 @@
 
 #define DEBUG_MODE		1
 #define FULLSCREEN		0
-#define WINDOW_X		1920
-#define WINDOW_Y		1080
+#define WINDOW_X		2000
+#define WINDOW_Y		1000
 #define EDIT_MODE		0
 
 #include <Windows.h>
@@ -92,7 +92,7 @@ Sprite *loadScreen = NULL;
 Sprite *confirmQuit = NULL;					// czy na pewno wyjscie z gry ? 
 
 
-#define POOL 1000
+#define POOL 10000
 
 Sprite* spritePool[POOL];
 
@@ -427,14 +427,14 @@ int main(int argc, char *argv[])
 
 		}	// switch
 
-/*
+
 		for (int i = 0; i < POOL; i++)
 		{
 			spritePool[i]->_x = spritePool[i]->_x > WINDOW_X ? 0 : spritePool[i]->_x + i;
 			spritePool[i]->_y = spritePool[i]->_y > WINDOW_Y ? 0 : spritePool[i]->_y + i;
 			spritePool[i]->render();
 		}
-*/
+
 		mouse->render();
 
 		// info debugowe

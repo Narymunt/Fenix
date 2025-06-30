@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _igame_
+#define _igame_
 
 #include "config.h"
 
@@ -16,22 +17,14 @@
 
 // moduły aplikacji
 
-#include "ePreload.h"                       // pre load danych
-#include "eAds.h"                           // banery, reklamy itp
-#include "eIntro.h"                         // intro, animacja itp.
-#include "eMainMenu.h"                      // menu główne gry
-#include "eIngame.h"                        // gra
-#include "eLevelMenu.h"                     // menu z levelami
-#include "eLanguage.h"                      // wybor jezyka
-#include "eSettings.h"                      // ustawienia gry
-#include "eHelp.h"                          // pomoc
-#include "eCredits.h"                       // scroll z autorami gry
-#include "Screen.h"
-#include "EventGFX.h"                       // event graficzny
-#include "eTroophy.h"                       // zdobyte nagrody
-#include "eCongratulations.h"
-#include "ePostTroophy.h"                   // trofea zdobyte w grze
-#include "ePostGame.h"                      // tablica hi-score
+#include "ePreload.h"   // pre load danych
+#include "eAds.h"       // banery, reklamy itp
+#include "eIntro.h"     // intro, animacja itp. 
+#include "eMainMenu.h"  // menu główne gry
+#include "eIngame.h"    // gra
+#include "eLevelMenu.h" // menu z levelami
+
+#include "EventGFX.h"   // event graficzny
 
 // główna klasa programu
 
@@ -49,10 +42,6 @@ public:
 	void			cleanup();	
 	void			UpdateSprite();	
 
-    void            LoadScreen(int iProgress);
-    
-    void            reloadSettings();
-    
     template< class T > void SafeDelete( T*& pVal )
     {
         delete pVal;
@@ -68,55 +57,33 @@ public:
     
 private:
 	
-    bool                    _bSettingsMSX;
+    timeval         Time;
+    unsigned long   m_ulTimer;
     
-    CScreen                 *_pScreen;
+    int         m_iGameState;
     
-    unsigned char           _ucLanguage;
+    CTouch      *m_pTouch;
     
-    int                     _iOS;
-    
-    timeval                 Time;
-
-    unsigned long           m_ulTimer;
-    unsigned long           _ulTimerPrev;
-    int                     _iFPS;
-    
-    
-    int                     _iAppState;         // aktualny stan
-    int                     _iPrevAppState;     // poprzedni stan
-    
-    int                     _iLoad;             // potrzebne dla progress bar
-    
-    CTouch                  *m_pTouch;
-    
-	KWindow                 *m_pWindow;         // Our window buffer
-
-    KSound                  *m_pSound;			// Short sound effect in CAF format
-	KMusic                  *_pMusic;			// Long MP3 audio track playing in background
+	// Simpe iPTK objects for handling everything needed in a game
 	
-    ePreload                *_pPreload;        // moduł przeładowania danych
-    eAds                    *m_pAds;           // reklamy
-	eIntro                  *_pIntro;         // intro
-    eMainMenu               *_pMainMenu;       // menu główne
-    eIngame                 *_pIngame;         // ingame
-    eLevelMenu              *_pLevelMenu;      // level menu
-    eLanguage               *_pLanguage;
-    eSettings               *_pSettings;        // ustawienia gry
-    eHelp                   *_pHelp;
-    eCredits                *_pCredits;         // autorzy gry
-    eTroophy                *_pTroophy;
-    eCongratulations        *_pCongratulations; 
-    ePostGame               *_pPostGame;        // tablica hi-score
-    ePostTroophy            *_pPostTroophy;     // zaliczone osiagnieca w grze
+	KWindow		*m_pWindow;		// Our window buffer  
+
+    KSound		*m_pSound;			// Short sound effect in CAF format
+	KMusic		*m_pMusic;			// Long MP3 audio track playing in background    
     
-    // grafiki do preload screen
-    
-    CSprite                 *_pLoadScreen;
-    CSprite                 *_pGreyBar;
-    CSprite                 *_pGreenBar;
-    
-    CSprite                 *_pBlack;           // czarna nakładka na ekran
+	// Sprite position direction angle infos
+	
+	//float			xpos, ypos, xdir, ydir;
+	//int				rotation;
+	//float			zoom;
+	
+    ePreload    *m_pPreload;    // moduł przeładowania danych
+    eAds        *m_pAds;        // reklamy
+	eIntro      *m_pIntro;      // intro
+    eMainMenu   *m_pMainMenu;   // menu główne
+    eIngame     *m_pIngame;     // ingame
+    eLevelMenu  *m_pLevelMenu;  // level menu
     
 };
 
+#endif

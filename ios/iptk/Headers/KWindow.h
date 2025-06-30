@@ -40,10 +40,7 @@ private:
 public:
 		
 	KWindow();
-	
-	int     iX();
-    int     iY();
-    float   fScale();
+		
 	bool	createGameWindow(int w, int h, int bpp, bool windowed, char *name);
 	void	setTitle(char *title);
 	int		getWindowWidth();
