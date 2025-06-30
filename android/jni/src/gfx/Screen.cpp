@@ -1,10 +1,8 @@
 #include "Screen.h"
 
-CScreen::CScreen() : _window(NULL), _gl(NULL), 
-_isSDS(false), _isSDW(false), _isHDS(false), _isHDW(false),
-_isHD(false)
+CScreen::CScreen() : _window(NULL), _gl(NULL), _isSDS(false), _isSDW(false), _isHDS(false), _isHDW(false)
 {
-    float fx, fy;
+	int iOffsetX, iOffsetY;
 
 	if (SDL_Init(SDL_INIT_VIDEO)!=0)
 	{
@@ -30,16 +28,6 @@ _isHD(false)
 	SDL_Log("Screen X: %d Y: %d\n",_iSizeX,_iSizeY);
 	SDL_Log("Pixel ratio : %.2f (reverse: %.2f)\n", _fPixelRatio,_fReverseRatio);
 
-	// Samsung fix
-
-	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 0);
-
-	// general
-
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
@@ -51,10 +39,6 @@ _isHD(false)
 		SDL_Quit();
 		return;
 	}
-	else
-    {
-        SDL_Log("Screen : %d x %d\n", _iSizeX, _iSizeY);        
-    }
 
 	_gl = SDL_GL_CreateContext(_window);
 
@@ -69,25 +53,17 @@ _isHD(false)
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glDisable(GL_DEPTH_TEST);
 
-	// wyliczanie punktow dla siatki 100x100
+    // wyliczanie punktow dla macierzy 4x4
 
-    fx = (float)_iSizeX * 0.01f;
-    fy = (float)_iSizeY * 0.01f;
+    _iXA = 0; _iXC = _iSizeX/2; _iXB = _iXC/2; _iXD = _iXB+_iXC; _iXE = _iSizeX;
+    _iYA = 0; _iYC = _iSizeY/2; _iYB = _iYC/2; _iYD = _iYB+_iYC; _iYE = _iSizeY;
 
-    for (int i=0; i<101; i++)
-    {
-        float f;
-        
-        f = fx * (float)i;
-        _iGridX[i] = (int)f;
-        
-        f = fy * (float)i;
-        _iGridY[i] = (int)f;
-    }
+    // wyliczanie punktow dla macierzy 16x16
 
-	SDL_Log("Screen TILE X: %.2f Y: %.2f\n",fx,fy);
+    iOffsetX = _iSizeX / 16;
+    iOffsetY = _iSizeY / 16;
 
-	// sprawdzenie typu ekranu
+	SDL_Log("Screen TILE X: %d Y: %d\n",iOffsetX,iOffsetY);
 
     if (_iSizeX < 1500)
     {
@@ -110,8 +86,6 @@ _isHD(false)
     	{
     		(_fReverseRatio < 1.5f) ? _isHDS = true : _isHDW = true;
     	}
-
-    	_isHD = true;
     }
 
     if (_isSDS) SDL_Log("Resolution : SDS\n");
@@ -119,13 +93,47 @@ _isHD(false)
     if (_isHDS) SDL_Log("Resolution : HDS\n");
     if (_isHDW) SDL_Log("Resolution : HDW\n");
 
-	precalc();
+    _x0 = iOffsetX * 0 ;
+    _x1 = iOffsetX * 1 ;
+    _x2 = iOffsetX * 2 ;
+    _x3 = iOffsetX * 3 ;
+    _x4 = iOffsetX * 4 ;
+    _x5 = iOffsetX * 5 ;
+    _x6 = iOffsetX * 6 ;
+    _x7 = iOffsetX * 7 ;
+    _x8 = iOffsetX * 8 ;
+    _x9 = iOffsetX * 9 ;
+    _x10 = iOffsetX * 10 ;
+    _x11 = iOffsetX * 11 ;
+    _x12 = iOffsetX * 12 ;
+    _x13 = iOffsetX * 13 ;
+    _x14 = iOffsetX * 14 ;
+    _x15 = iOffsetX * 15 ;
+    _x16 = iOffsetX * 16 ;
+
+    _y0 = iOffsetY * 0 ;
+    _y1 = iOffsetY * 1 ;
+    _y2 = iOffsetY * 2 ;
+    _y3 = iOffsetY * 3 ;
+    _y4 = iOffsetY * 4 ;
+    _y5 = iOffsetY * 5 ;
+    _y6 = iOffsetY * 6 ;
+    _y7 = iOffsetY * 7 ;
+    _y8 = iOffsetY * 8 ;
+    _y9 = iOffsetY * 9 ;
+    _y10 = iOffsetY * 10 ;
+    _y11 = iOffsetY * 11 ;
+    _y12 = iOffsetY * 12 ;
+    _y13 = iOffsetY * 13 ;
+    _y14 = iOffsetY * 14 ;
+    _y15 = iOffsetY * 15 ;
+    _y16 = iOffsetY * 16 ;
+
 }
 
 CScreen::~CScreen()
 {
-	SDL_GL_DeleteContext(_gl);
-    SDL_DestroyWindow(_window);
+
 }
 
 void CScreen::Clear(void)
@@ -145,111 +153,299 @@ void CScreen::Flip(void)
 	SDL_GL_SwapWindow(_window);
 }
 
-/**
-   Przygotuj tablice przeliczeniowe.
-*/
-
-void CScreen::precalcTableX(int size, int *table)
+float CScreen::fPositionX(float f)
 {
-	float index, pixelSize;
-
-	index = 0; pixelSize = _iSizeX / (float)size; _pixelX = pixelSize;
-
-	for (int i = 0; i<size; i++)
-	{
-		table[i] = (int)index;
-		index += pixelSize;
-	}
-}
-
-void CScreen::precalcTableY(int size, int *table)
-{
-	float index, pixelSize;
-
-	index = 0; pixelSize = _iSizeY / (float)size; _pixelY = pixelSize;
-
-	for (int i = 0; i<size; i++)
-	{
-		table[i] = (int)index;
-		index += pixelSize;
-	}
-}
-
-
-void CScreen::precalc(void)
-{
-	precalcTableX(1920, _xHDW); precalcTableY(1080, _yHDW);
-	precalcTableX(2048, _xHDS); precalcTableY(1536, _yHDS);
-	precalcTableX(1366, _xSDW); precalcTableY(768, _ySDW);
-	precalcTableX(1024, _xSDS); precalcTableY(768, _ySDS);
-}
-
-/**
-   Zwraca rozmiar pixela.
-   @return rozmiar ekranu / aktualne wymiary zrodlowe
-*/
-
-float CScreen::pixelX(void)
-{
-   if (_isSDS) return (float)_iSizeX/1024.0f;
-   if (_isSDW) return (float)_iSizeX/1366.0f;
-   if (_isHDS) return (float)_iSizeX/2048.0f;
-   if (_isHDW) return (float)_iSizeX/1920.0f;
-}
-
-/**
-   Zwraca rozmiar pixela.
-   @return rozmiar ekranu / aktualne wymiary zrodlowe
-*/
-
-float CScreen::pixelY(void)
-{
-   if (_isSDS) return (float)_iSizeY/768.0f;
-   if (_isSDW) return (float)_iSizeY/768.0f;
-   if (_isHDS) return (float)_iSizeY/1536.0f;
-   if (_isHDW) return (float)_iSizeY/1080.0f;
-
-}
-
-/**
-   Zwraca rzeczywist¹ wspó³rzêdn¹ na ekranie, gdy operujemy na fikcyjnych liczbach.
-   @param x gdzie na ekranie chcemy postawiæ pixel
-   @return gdzie naprawde postawimy pixel
-*/
-
-int CScreen::x(int x)
-{
-   if (_isSDS) return _xSDS[x];
-   if (_isSDW) return _xSDW[x];
-   if (_isHDS) return _xHDS[x];
-   if (_isHDW) return _xHDW[x];
-}
-
-/**
-   Zwraca rzeczywist¹ wspó³rzêdn¹ na ekranie, gdy operujemy na fikcyjnych liczbach.
-   @param y gdzie na ekranie chcemy postawiæ pixel
-   @return gdzie naprawde postawimy pixel
-*/
-
-int CScreen::y(int y)
-{
-   if (_isSDS) return _ySDS[y];
-   if (_isSDW) return _ySDW[y];
-   if (_isHDS) return _yHDS[y];
-   if (_isHDW) return _yHDW[y];
-}
-
-int CScreen::perX(float f)
-{
-	float x;
-	x = (float)_iSizeX *(100.0f / f);
+	float x = (float)_iSizeX*(f/100.0f);
 	return (int)x;
 }
 
-int CScreen::perY(float f)
+float CScreen::fPositionY(float f)
 {
-	float y;
-	y = (float)_iSizeY *(100.0f / f);
-	return (int)y;
+	float y = (float)_iSizeY*(f/100.0f);
+}
+
+int CScreen::ixSDStoSDW(int x)
+{
+	float f = ((float)x/(float)1024.0f) * 1366.0f;
+	return (int)f;
+}
+
+int CScreen::ixSDStoHDS(int x)
+{
+	float f = ((float)x/(float)1024.0f) * 2048.0f;
+	return (int)f;
+}
+
+int CScreen::ixSDStoHDW(int x)
+{
+	float f = ((float)x/(float)1024.0f) * 1920.0f;
+	return (int)f;
+}
+
+int CScreen::ixSDWtoSDS(int x)
+{
+	float f = ((float)x/(float)1366.0f) * 1024.0f;
+	return (int)f;
+}
+
+int CScreen::ixSDWtoHDS(int x)
+{
+	float f = ((float)x/(float)1366.0f) * 2048.0f;
+	return (int)f;
+}
+
+int CScreen::ixSDWtoHDW(int x)
+{
+	float f = ((float)x/(float)1366.0f) * 1920.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDWtoSDS(int x)
+{
+	float f = ((float)x/(float)1920.0f) * 1024.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDWtoSDW(int x)
+{
+	float f = ((float)x/(float)1920.0f) * 1366.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDWtoHDS(int x)
+{
+	float f = ((float)x/(float)1920.0f) * 2048.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDStoSDS(int x)
+{
+	float f = ((float)x/(float)2048.0f) * 1024.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDStoSDW(int x)
+{
+	float f = ((float)x/(float)2048.0f) * 1366.0f;
+	return (int)f;
+}
+
+int CScreen::ixHDStoHDW(int x)
+{
+	float f = ((float)x/(float)2048.0f) * 1920.0f;
+	return (int)f;
+}
+
+int CScreen::iySDStoSDW(int y)
+{
+	return y;
+}
+
+int CScreen::iySDStoHDS(int y)
+{
+	float f = ((float)y/(float)768.0f) * 1536.0f;
+	return (int)f;
+}
+
+int CScreen::iySDStoHDW(int y)
+{
+	float f = ((float)y/(float)768.0f) * 1080.0f;
+	return (int)f;
+}
+
+int CScreen::iySDWtoSDS(int y)
+{
+	return y;
+}
+
+int CScreen::iySDWtoHDS(int y)
+{
+	float f = ((float)y/(float)768.0f) * 1536.0f;
+	return (int)f;
+}
+
+int CScreen::iySDWtoHDW(int y)
+{
+	float f = ((float)y/(float)768.0f) * 1080.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDWtoSDS(int y)
+{
+	float f = ((float)y/(float)1080.0f) * 768.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDWtoSDW(int y)
+{
+	float f = ((float)y/(float)1080.0f) * 768.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDWtoHDS(int y)
+{
+	float f = ((float)y/(float)1080.0f) * 1536.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDStoSDS(int y)
+{
+	float f = ((float)y/(float)1536.0f) * 768.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDStoSDW(int y)
+{
+	float f = ((float)y/(float)1536.0f) * 768.0f;
+	return (int)f;
+}
+
+int CScreen::iyHDStoHDW(int y)
+{
+	float f = ((float)y/(float)1536.0f) * 1080.0f;
+	return (int)f;
+}
+
+int CScreen::iSDStoX(int x)
+{
+	float f = ((float)x/(float)1024.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iSDWtoX(int x)
+{
+	float f = ((float)x/(float)1366.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iHDStoX(int x)
+{
+	float f = ((float)x/(float)2048.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iHDWtoX(int x)
+{
+	float f = ((float)x/(float)1920.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iSDStoY(int y)
+{
+	float f = ((float)y/(float)768.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iSDWtoY(int y)
+{
+	float f = ((float)y/(float)768.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iHDStoY(int y)
+{
+	float f = ((float)y/(float)1536.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iHDWtoY(int y)
+{
+	float f = ((float)y/(float)1080.0f) * (float)_iSizeX;
+	return (int)f;
+}
+
+int CScreen::iXtoSDS(int x)
+{
+	float f = ((float)x/(float)_iSizeX) * (float)1024.0f;
+	return (int)f;
+}
+
+int CScreen::iXtoSDW(int x)
+{
+	float f = ((float)x/(float)_iSizeX) * (float)1366.0f;
+	return (int)f;
+}
+
+int CScreen::iXtoHDS(int x)
+{
+	float f = ((float)x/(float)_iSizeX) * (float)2048.0f;
+	return (int)f;
+}
+
+int CScreen::iXtoHDW(int x)
+{
+	float f = ((float)x/(float)_iSizeX) * (float)1920.0f;
+	return (int)f;
+}
+
+int CScreen::iYtoSDS(int y)
+{
+	float f = ((float)y/(float)_iSizeY) * (float)768.0f;
+	return (int)f;
+}
+
+int CScreen::iYtoSDW(int y)
+{
+	float f = ((float)y/(float)_iSizeY) * (float)768.0f;
+	return (int)f;
+}
+
+int CScreen::iYtoHDS(int y)
+{
+	float f = ((float)y/(float)_iSizeY) * (float)1536.0f;
+	return (int)f;
+}
+
+int CScreen::iYtoHDW(int y)
+{
+	float f = ((float)y/(float)_iSizeY) * (float)1080.0f;
+	return (int)f;
+}
+
+void CScreen::RenderX(int i)
+{
+	int iOffsetX = _iSizeX / 16;
+
+	_x0 = i + (iOffsetX*0);
+	_x1 = i + (iOffsetX*1);
+	_x2 = i + (iOffsetX*2);
+	_x3 = i + (iOffsetX*3);
+	_x4 = i + (iOffsetX*4);
+	_x5 = i + (iOffsetX*5);
+	_x6 = i + (iOffsetX*6);
+	_x7 = i + (iOffsetX*7);
+	_x8 = i + (iOffsetX*8);
+	_x9 = i + (iOffsetX*9);
+	_x10 = i + (iOffsetX*10);
+	_x11 = i + (iOffsetX*11);
+	_x12 = i + (iOffsetX*12);
+	_x13 = i + (iOffsetX*13);
+	_x14 = i + (iOffsetX*14);
+	_x15 = i + (iOffsetX*15);
+	_x16 = i + (iOffsetX*16);
+}
+
+void CScreen::RenderY(int i)
+{
+	int iOffsetY = _iSizeY / 16;
+
+	_y0 = i + (iOffsetY*0);
+	_y1 = i + (iOffsetY*1);
+	_y2 = i + (iOffsetY*2);
+	_y3 = i + (iOffsetY*3);
+	_y4 = i + (iOffsetY*4);
+	_y5 = i + (iOffsetY*5);
+	_y6 = i + (iOffsetY*6);
+	_y7 = i + (iOffsetY*7);
+	_y8 = i + (iOffsetY*8);
+	_y9 = i + (iOffsetY*9);
+	_y10 = i + (iOffsetY*10);
+	_y11 = i + (iOffsetY*11);
+	_y12 = i + (iOffsetY*12);
+	_y13 = i + (iOffsetY*13);
+	_y14 = i + (iOffsetY*14);
+	_y15 = i + (iOffsetY*15);
+	_y16 = i + (iOffsetY*16);
+
 }
 

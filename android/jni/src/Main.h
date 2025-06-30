@@ -5,37 +5,45 @@
 #include <time.h>
 #include <stdlib.h>
 
-#ifndef NULL
-#define NULL 0
-#endif
+// jezyki dla aplikacji
 
-//=== aplication state
+#define	LANG_ENGLAND	10
+#define LANG_RUSSIA		20
+#define	LANG_GERMANY	30
+#define LANG_FRANCE		40
 
-#define E_LANGUAGE			9			 // wybÛr jÍzyka
-#define E_PRELOAD			10           // wczytywanie aplikacji
-#define E_ADS				20           // banery, reklamy itd.
-#define E_INTRO				30           // intro do gry
-#define E_MAINMENU			40           // menu g≥Ûwne gry
-#define E_SETTINGS			50           // ustawienia gry
-#define E_CREDITS			60           // autorzy gry itd.
-#define E_PAUSE				70           // pauza w grze
-#define E_FREEZE			80           // zamroøenie stanu gry np. w przypadku gdy telefon dzwoni
-#define E_PROFILE			90           // ustawianie profilu gracza
-#define E_LEVELMENU			100          // wybor etapu w grze
-#define E_INGAME			110          // GLOWNY MODU£ GRY
-#define E_TROOPHY			120          // ekran z nagrodami
-#define E_GAMEOVER			130          // koniec gry
-#define E_ENDSCREEN			140          // ekran koÒcowy, kup pe≥nπ wersje itp.
-#define E_POSTGAME			150			 // po zakonczeniu gry (game over) - ekran zliczania punktow do profilu
-#define E_HELP				160			 // pomoc z instrukcja gry
-#define E_POST_TROOPHY		180
-#define E_CONGRATULATIONS	200			// zwyciestwo !!! wielki sukces !!!
-#define E_QUIT				255
+#define	LANG_ITALY		50
+#define	LANG_SPAIN		60
+#define LANG_POLAND		70
+#define LANG_TURKEY		80
+
+#define LANG_JAPAN		90
+#define LANG_KOREA		100
+#define LANG_CHINA		110
+#define LANG_INDIA		120
+
+#define LANG_ARABIA		130
+#define LANG_ISRAEL		140
+#define LANG_BRASIL		150
+#define LANG_INDONESIA	160
+
+#define LANG_PORTUGAL	170
+#define LANG_SWEDEN		180
+#define LANG_NORWAY		190
+#define LANG_DENMARK	200
 
 //=== zwraca min i max
 
 #define getMin(x,y) ((x) < (y)) ? (x) : (y)
 #define getMax(x,y) ((x) > (y)) ? (x) : (y)
+
+//=== aplication state
+
+#define E_PRELOAD			10           // wczytywanie aplikacji
+#define E_INTRO				20			 // intro do gry
+#define E_MAIN				40           // menu glowne
+#define E_KEYPAD			50			 // klawiatura manipulatora
+#define E_QUIT				255
 
 //=== klawiatura
 
@@ -104,7 +112,7 @@ template< class T > void SafeDeleteArray( T*& pVal )
     pVal = NULL;
 }
 
-// ustawianie bitĂ›w
+// ustawianie bitÛw
 
 #define FLAG(theBitIndex) (1 << (theBitIndex))
 
@@ -132,7 +140,7 @@ inline bool testBit(unsigned int theNumber, int theBitIndex)
 	}
 }  
 
-// przelicz proporcjonalnie i zwr—c wartosc
+// przelicz proporcjonalnie i zwr�c wartosc
 
 inline float fRecalc(float a, float b, float x)
 {

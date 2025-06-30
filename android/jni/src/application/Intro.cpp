@@ -25,13 +25,13 @@ CIntro::~CIntro()
 
 void CIntro::Open(void)
 {
-	_pBlack = new CSprite((char*)"black.png");
-	_pBlack->Resize(0, 0, _pScreen->_iSizeX, _pScreen->_iSizeY);
+	_pBlack = new CSprite("black.png");
+	_pBlack->Resize(0, 0, _pScreen->iSizeX(), _pScreen->iSizeY());
 
-	_pCompanyLogo = new CSprite(_pScreen,(char*)"shodan9");
-	_pCompanyLogo->Resize(0,0, _pScreen->_iSizeX, _pScreen->_iSizeY);
+	_pCompanyLogo = new CSprite(_pScreen, "shodan9");
+	_pCompanyLogo->Resize(0,0, _pScreen->iSizeX(), _pScreen->iSizeY());
 
-	_pGameLogo = new CSprite(_pScreen,(char*)"start");
+	_pGameLogo = new CSprite(_pScreen, "start");
 	_pGameLogo->Fullscreen(_pScreen);
 
 	_isActive = true;
@@ -61,7 +61,7 @@ int CIntro::iRender(unsigned long ulTimer, CTouch *pTouch)
 	if (!_isActive)
 		Open();
 
-	if (!pTouch->_isTouch)
+	if (!pTouch->isTouch())
 		_isMouseLock = false;
 
 	if (_ulTimerStart == 0)
@@ -75,17 +75,18 @@ int CIntro::iRender(unsigned long ulTimer, CTouch *pTouch)
 
 		if (iDelta<1000)
 		{
-			_pBlack->_fAlfa = 1.0f- ((float) iDelta * 0.001f);
+			_pBlack->fAlfa(1.0f- ((float) iDelta * 0.001f));
 			_pBlack->Render();
 		}
 
 		if (iDelta>5000)
 		{
 			iDelta-=5000;
-			_pBlack->_fAlfa = ((float) iDelta)*0.001f;
+			_pBlack->fAlfa(((float) iDelta)*0.001f);
 			_pBlack->Render();
 
 		}
+
 	}
 	else
 	{
@@ -94,20 +95,18 @@ int CIntro::iRender(unsigned long ulTimer, CTouch *pTouch)
 		if (iDelta<=7000)
 		{
 			iDelta -= 6000;
-			_pBlack->_fAlfa = 1.0f- ((float) iDelta * 0.001f);
+			_pBlack->fAlfa(1.0f- ((float) iDelta * 0.001f));
 			_pBlack->Render();
 		}
 
 		if (iDelta>12000)
 		{
-			_pBlack->_fAlfa = ((float) (iDelta-12000))*0.001f;
+			iDelta-=12000;
+			_pBlack->fAlfa(((float) iDelta)*0.001f);
 			_pBlack->Render();
 
 		}
 	}
-
-	if (iDelta>13000)
-		return 1;
 
 	return iReturn;
 }

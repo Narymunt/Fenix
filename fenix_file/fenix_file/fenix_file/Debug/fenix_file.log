@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  fenix_file.cpp
+c:\projekty\fenix\fenix_file\fenix_file\fenix_file\fenix_file.cpp(84): warning C4018: '<': signed/unsigned mismatch
+  Running Code Analysis for C/C++...
+  Generating Code...
+  fenix_file.vcxproj -> C:\Projekty\Fenix\fenix_file\fenix_file\Debug\fenix_file.exe
+c:\projekty\fenix\fenix_file\fenix_file\fenix_file\fenix_file.cpp(51): warning C6387: 'pFile' could be '0':  this does not adhere to the specification for the function 'fclose'. See line 49 for an earlier location where this can occur
+c:\projekty\fenix\fenix_file\fenix_file\fenix_file\fenix_file.cpp(49): warning C6387: 'pFile' could be '0':  this does not adhere to the specification for the function 'fseek'. 
+c:\projekty\fenix\fenix_file\fenix_file\fenix_file\fenix_file.cpp(50): warning C6387: 'pFile' could be '0':  this does not adhere to the specification for the function 'ftell'. See line 49 for an earlier location where this can occur
+c:\projekty\fenix\fenix_file\fenix_file\fenix_file\fenix_file.cpp(67): warning C6031: Return value ignored: 'fscanf'.

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FA3E87E0-F895-40D7-BF8D-AC58CC176781}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Game</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\SDL_ttf\include;..\..\SDL\include;..\..\SDL_image\include;..\..\SDL_mixer\include;C:\Program Files %28x86%29\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\SDL\lib\x86;..\..\SDL_image\lib\x86;..\..\SDL_mixer\lib\x86;..\..\SDL_ttf\lib\x86;vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL.lib;SDLmain.lib;SDL_image.lib;SDL_mixer.lib;SDL_ttf.lib;vld/lib/win32/vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\iProjects\GemsOfAtlantis\windows\SDL\include;C:\iProjects\GemsOfAtlantis\windows\SDL_image\include;C:\iProjects\GemsOfAtlantis\windows\SDL_mixer\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;SDL.lib;SDLmain.lib;SDL_image.lib;SDL_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalLibraryDirectories>C:\iProjects\GemsOfAtlantis\windows\SDL\lib\x86;C:\iProjects\GemsOfAtlantis\windows\SDL_image\lib\x86;C:\iProjects\GemsOfAtlantis\windows\SDL_mixer\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <MinimumRequiredVersion>
+      </MinimumRequiredVersion>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Game.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app\Congratulations.cpp" />
+    <ClCompile Include="app\Ingame.cpp" />
+    <ClCompile Include="clax\camera.cpp" />
+    <ClCompile Include="clax\clax.cpp" />
+    <ClCompile Include="clax\file_3ds.cpp" />
+    <ClCompile Include="clax\file_clx.cpp" />
+    <ClCompile Include="clax\matrix.cpp" />
+    <ClCompile Include="clax\quatern.cpp" />
+    <ClCompile Include="clax\spline.cpp" />
+    <ClCompile Include="clax\vector.cpp" />
+    <ClCompile Include="common\GameObject.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="gfx\Animation.cpp" />
+    <ClCompile Include="gfx\FontTTF.cpp" />
+    <ClCompile Include="gfx\FXManager.cpp" />
+    <ClCompile Include="gfx\Particle2D.cpp" />
+    <ClCompile Include="gfx\Particle2DManager.cpp" />
+    <ClCompile Include="gfx\Popup.cpp" />
+    <ClCompile Include="gfx\SpriteObject.cpp" />
+    <ClCompile Include="io\Datafile.cpp" />
+    <ClCompile Include="io\GameSettings.cpp" />
+    <ClCompile Include="io\HighScore.cpp" />
+    <ClCompile Include="io\Profile.cpp" />
+    <ClCompile Include="io\Unzip.cpp" />
+    <ClCompile Include="io\Zip.cpp" />
+    <ClCompile Include="math\Bezier.cpp" />
+    <ClCompile Include="math\BSpline.cpp" />
+    <ClCompile Include="math\Clamp.cpp" />
+    <ClCompile Include="math\CRSpline.cpp" />
+    <ClCompile Include="math\Hermite.cpp" />
+    <ClCompile Include="math\HSV.cpp" />
+    <ClCompile Include="math\SinTable.cpp" />
+    <ClCompile Include="math\Tween.cpp" />
+    <ClCompile Include="ui\Button.cpp" />
+    <ClCompile Include="ui\Checkbox.cpp" />
+    <ClCompile Include="ui\MobileKeyboard.cpp" />
+    <ClCompile Include="ui\Mouse.cpp" />
+    <ClCompile Include="ui\SpriteFont.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app\Congratulations.h" />
+    <ClInclude Include="app\Ingame.h" />
+    <ClInclude Include="clax\clax.h" />
+    <ClInclude Include="clax\claxi.h" />
+    <ClInclude Include="common\GameObject.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="gfx\Animation.h" />
+    <ClInclude Include="gfx\FontTTF.h" />
+    <ClInclude Include="gfx\FXManager.h" />
+    <ClInclude Include="gfx\Particle2D.h" />
+    <ClInclude Include="gfx\Particle2DManager.h" />
+    <ClInclude Include="gfx\Popup.h" />
+    <ClInclude Include="gfx\SpriteObject.h" />
+    <ClInclude Include="io\Datafile.h" />
+    <ClInclude Include="io\GameSettings.h" />
+    <ClInclude Include="io\HighScore.h" />
+    <ClInclude Include="io\Profile.h" />
+    <ClInclude Include="io\Unzip.h" />
+    <ClInclude Include="io\Zip.h" />
+    <ClInclude Include="math\Bezier.h" />
+    <ClInclude Include="math\BSpline.h" />
+    <ClInclude Include="math\Clamp.h" />
+    <ClInclude Include="math\CRSpline.h" />
+    <ClInclude Include="math\Hermite.h" />
+    <ClInclude Include="math\HSV.h" />
+    <ClInclude Include="math\SinTable.h" />
+    <ClInclude Include="math\Tween.h" />
+    <ClInclude Include="math\Vec3.h" />
+    <ClInclude Include="math\Vector.h" />
+    <ClInclude Include="rapidxml\rapidxml.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="ui\Button.h" />
+    <ClInclude Include="ui\Checkbox.h" />
+    <ClInclude Include="ui\MobileKeyboard.h" />
+    <ClInclude Include="ui\Mouse.h" />
+    <ClInclude Include="ui\SpriteFont.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
