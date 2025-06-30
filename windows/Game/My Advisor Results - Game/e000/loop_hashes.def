@@ -1,0 +1,28 @@
+# hash file version: 2
+1	84	G:\Fenix\trunk\windows\Debug\Game.exe	389722	389885	g:\fenix\trunk\windows\game\game.cpp	225	163	97cfcf13a550200b81fd8920688e4378	0	1	0	0	0
+2	88	G:\Fenix\trunk\windows\Debug\Game.exe	389996	391587	g:\fenix\trunk\windows\game\game.cpp	292	1591	97cfcf13a550200b81fd8920688e4378	0	1	0	0	0
+3	95	G:\Fenix\trunk\windows\Debug\Game.exe	390800	390996	g:\fenix\trunk\windows\game\game.cpp	431	196	97cfcf13a550200b81fd8920688e4378	0	1	0	0	0
+4	130	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	61393	61443		0	50	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+5	133	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	61346	61209		0	136	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+6	134	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	61184	61227		0	272	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+7	136	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	61116	61533,61241		0	394	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+8	137	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	61087	61558,61533		0	442	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+9	139	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	131472	132225		0	815	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+10	142	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	64535	64633		0	98	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+11	144	G:\Fenix\trunk\windows\Debug\libjpeg-8.dll	64480	64650		0	170	a3817c21f1e5cde30e87a7a7f661636f	0	1	0	0	0
+12	148	G:\Fenix\trunk\windows\Debug\SDL_image.dll	16290	16344		0	54	9272ad942a6788b025fc2cf16e3b1e1b	0	1	0	0	0
+13	179	G:\Fenix\trunk\windows\Debug\SDL.dll	9569	9618,9504,9618		0	49	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+14	234	G:\Fenix\trunk\windows\Debug\SDL.dll	191420	192164,192192,192214,192007,192103,192560		0	607	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+15	237	G:\Fenix\trunk\windows\Debug\SDL.dll	184736	184806		0	70	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+16	257	G:\Fenix\trunk\windows\Debug\SDL.dll	7336	7332,7631,7455,7631		0	281	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+17	259	G:\Fenix\trunk\windows\Debug\SDL.dll	7332	7455		0	322	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+18	260	G:\Fenix\trunk\windows\Debug\SDL.dll	233583	233536,233544,233697,233763		0	165	3ea7829589775f17f3b2bd13c646d2f7	0	1	0	0	0
+19	294	G:\Fenix\trunk\windows\Debug\zlib1.dll	35772	39820,35827		0	55	f8f1ecd412c4e753aa413aa23eb8a706	0	1	0	0	0
+20	326	G:\Fenix\trunk\windows\Game\SDL_ttf.dll	15777	15808		0	31	7140c1835488a94eebac9d848120488e	0	1	0	0	0
+21	328	G:\Fenix\trunk\windows\Game\SDL_ttf.dll	15696	15816		0	120	7140c1835488a94eebac9d848120488e	0	1	0	0	0
+22	330	G:\Fenix\trunk\windows\Game\SDL_ttf.dll	15573	16109,15865		0	445	7140c1835488a94eebac9d848120488e	0	1	0	0	0
+23	428	G:\Fenix\trunk\windows\Debug\libpng15-15.dll	37974	38010		0	36	dd66b547317df67b094aa6001671ea63	0	1	0	0	0
+24	430	G:\Fenix\trunk\windows\Debug\libpng15-15.dll	37968	38022		0	54	dd66b547317df67b094aa6001671ea63	0	1	0	0	0
+25	433	G:\Fenix\trunk\windows\Debug\libpng15-15.dll	36592	37563,37230,37579,36757		0	164	dd66b547317df67b094aa6001671ea63	0	1	0	0	0
+26	435	G:\Fenix\trunk\windows\Debug\libpng15-15.dll	36397	37216,36502,37639,37563,37579,37623,36903,36925		0	657	dd66b547317df67b094aa6001671ea63	0	1	0	0	0
+27	436	C:\Program Files (x86)\IntelSWTools\system_studio_2020\Advisor_2020\bin32\pincrt.dll	15186	15246,15241		0	55	254af315fafce458a052c7e9f3fbdc44	0	1	0	0	0

@@ -22,14 +22,14 @@ _renderTime(0), _deltaTime(0)
 
 {
 	memset(_objectName,0,255);	// nie zawsze ta tablica jest czyszczona
-	memset(_filename,0,255);
+	memset(_fileName,0,255);
 }
 
 
 SpriteObject::~SpriteObject()
 {
 	memset(_objectName, 0, 255);	// nie zawsze ta tablica jest czyszczona
-	memset(_filename, 0, 255);
+	memset(_fileName, 0, 255);
 }
 
 void SpriteObject::position(float x, float y) { _x = x; _y = y; }

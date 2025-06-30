@@ -16,6 +16,9 @@
 
 #define OGL_UNKNOWN 0
 
+// openGL texture
+static SDL_Surface* SCREEN = NULL;
+
 // Compares two SDL_PixelFormat structures, only works with RGBA or RGB surfaces and disregards everything but the color masks 
 
 /**
@@ -109,8 +112,6 @@ SDL_PixelFormat oglGetPixelFormat(GLenum glFormat)
 bool oglInit(int iScreenX, int iScreenY, int bpp, Uint32 flags)
 {
 
-	SDL_Surface *pScreen = NULL;
-
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	// aliasing
@@ -120,15 +121,15 @@ bool oglInit(int iScreenX, int iScreenY, int bpp, Uint32 flags)
 
 	// set video mode
 
-	pScreen = SDL_SetVideoMode(iScreenX, iScreenY, bpp, SDL_OPENGL | flags);
+	SCREEN = SDL_SetVideoMode(iScreenX, iScreenY, bpp, SDL_OPENGL | flags);
 
-	if (pScreen == NULL)
+	if (SCREEN == NULL)
 	{
 		printf("ERROR: Unable to set up video mode %dx%dx%dbpp.\n", iScreenX, iScreenY, bpp);
 		return 0;
 	}
 	
-	if (pScreen->flags & SDL_OPENGL)
+	if (SCREEN->flags & SDL_OPENGL)
 	{
 		printf("[openGL]: %s\n ", glGetString(GL_VERSION));
 		printf("[vendor]: %s\n ", glGetString(GL_VENDOR));

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename=""
+           line_no="-1"
+           routine="func@0x6b80fb90"
+           is_vectorized="0"
+           self_time="9.937493E-003"
+           total_time="9.937493E-003"
+           trip_counts=""
+           func_instance="142"
+           priority="0"/>
+  <hotspot filename="g:\fenix\trunk\windows\game\game.cpp"
+           line_no="431"
+           routine="SDL_main"
+           is_vectorized="0"
+           self_time="9.865020E-003"
+           total_time="5.902343E-002"
+           trip_counts=""
+           func_instance="95"
+           priority="0"/>
+  <hotspot filename=""
+           line_no="-1"
+           routine="jpeg_idct_islow"
+           is_vectorized="0"
+           self_time="9.860123E-003"
+           total_time="9.860123E-003"
+           trip_counts="8"
+           func_instance="139"
+           priority="0"/>
+  <hotspot filename=""
+           line_no="-1"
+           routine="TTF_RenderUNICODE_Blended"
+           is_vectorized="0"
+           self_time="9.714816E-003"
+           total_time="9.714816E-003"
+           trip_counts="9"
+           func_instance="326"
+           priority="0"/>
+  <hotspot filename=""
+           line_no="-1"
+           routine="inflate"
+           is_vectorized="0"
+           self_time="3.456836E-003"
+           total_time="3.456836E-003"
+           trip_counts=""
+           func_instance="294"
+           priority="0"/>
+</IntelParallelAdvisorSummary >

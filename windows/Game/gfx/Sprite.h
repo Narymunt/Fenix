@@ -5,6 +5,7 @@
 #include "Screen.h"
 #include "../io/Datafile.h"
 #include "../gfx/SpriteObject.h"
+#include "../gfx/SpriteManager.h"
 #include "../io/Zip.h"
 #include "../io/Unzip.h"
 
@@ -41,7 +42,6 @@ public:
 private:
 
 	oglTexture			*_sprite;
-
 };
 
  
