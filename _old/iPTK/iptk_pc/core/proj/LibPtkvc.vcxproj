@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B6818D1F-A0E4-4781-913A-7F61C32BFD6A}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\include;..\include\al;..\..;..\..\freetype2;..\..\dx9;..\..\ximage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/LibPtkvc.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalOptions>/NODEFAULTLIB:libc.lib
+winmm.lib  opengl32.lib  ..\..\dx9\d3d9.lib  ..\..\dx9\d3dx9.lib  ..\..\dx9\dinput8.lib  ..\..\dx9\dxguid.lib  ..\libs\vccximage.lib  ..\libs\freetype.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>..\libs\LibPtkvcd.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/LibPtkvc.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\include;..\include\al;..\..;..\..\freetype2;..\..\dx9;..\..\ximage;..\..\ksoundsource\modplayer\include;..\..\ksoundsource\modplayer\include\internal;..\..\modplayer\src\core;..\..\oggsource\Headers\ogg;..\..\oggsource\include\vorbis;..\..\oggsource\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\Release/LibPtkvc.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalOptions>/NODEFAULTLIB:libc.lib
+winmm.lib  opengl32.lib  ..\..\dx9\d3d9.lib  ..\..\dx9\d3dx9.lib  ..\..\dx9\dinput8.lib  ..\..\dx9\dxguid.lib  ..\libs\vccximage.lib  ..\libs\freetype.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>..\libs\LibPtkvc.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/LibPtkvc.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\srcs\K7Z.cpp" />
+    <ClCompile Include="..\srcs\KBatchDX9.cpp" />
+    <ClCompile Include="..\srcs\KBatchGL.cpp" />
+    <ClCompile Include="..\srcs\KDataExchange.cpp" />
+    <ClCompile Include="..\srcs\KDataItem.cpp" />
+    <ClCompile Include="..\srcs\KGraphicDX9.cpp" />
+    <ClCompile Include="..\srcs\KGraphicGL.cpp" />
+    <ClCompile Include="..\srcs\KIniReader.cpp" />
+    <ClCompile Include="..\srcs\KInput_Win.cpp" />
+    <ClCompile Include="..\srcs\KKeyTablePC.cpp" />
+    <ClCompile Include="..\srcs\KLog.cpp" />
+    <ClCompile Include="..\srcs\KMiscTools.cpp" />
+    <ClCompile Include="..\srcs\KMusic.cpp" />
+    <ClCompile Include="..\srcs\KNetwork.cpp" />
+    <ClCompile Include="..\srcs\KObjectBase.cpp" />
+    <ClCompile Include="..\srcs\KObjectListable.cpp" />
+    <ClCompile Include="..\srcs\KPTK.cpp" />
+    <ClCompile Include="..\srcs\KPTK9.cpp" />
+    <ClCompile Include="..\srcs\KResource.cpp" />
+    <ClCompile Include="..\srcs\KResourceArchive.cpp" />
+    <ClCompile Include="..\srcs\KSpline.cpp" />
+    <ClCompile Include="..\srcs\KSystem.cpp" />
+    <ClCompile Include="..\srcs\KText.cpp" />
+    <ClCompile Include="..\srcs\KTrueText.cpp" />
+    <ClCompile Include="..\srcs\KWeb.cpp" />
+    <ClCompile Include="..\srcs\KWebCam.cpp" />
+    <ClCompile Include="..\srcs\KWindowDX9.cpp" />
+    <ClCompile Include="..\srcs\KWindowGL.cpp" />
+    <ClCompile Include="..\srcs\LzmaDecode.cpp" />
+    <ClCompile Include="..\srcs\matrixdx9.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\codec.h" />
+    <ClInclude Include="..\include\config_types.h" />
+    <ClInclude Include="..\include\gl.h" />
+    <ClInclude Include="..\include\glati.h" />
+    <ClInclude Include="..\include\glu.h" />
+    <ClInclude Include="..\include\K3D.h" />
+    <ClInclude Include="..\include\K7Z.h" />
+    <ClInclude Include="..\include\KBatch.h" />
+    <ClInclude Include="..\include\KBatchDX9.h" />
+    <ClInclude Include="..\include\KBatchGL.h" />
+    <ClInclude Include="..\include\KDataExchange.h" />
+    <ClInclude Include="..\include\KDataItem.h" />
+    <ClInclude Include="..\include\KDebug.h" />
+    <ClInclude Include="..\include\KDebugPlatform.h" />
+    <ClInclude Include="..\include\KGlobals.h" />
+    <ClInclude Include="..\include\KGraphic.h" />
+    <ClInclude Include="..\include\KGraphicDX9.h" />
+    <ClInclude Include="..\include\KGraphicGL.h" />
+    <ClInclude Include="..\include\KIniReader.h" />
+    <ClInclude Include="..\include\KInput.h" />
+    <ClInclude Include="..\include\KKeyTable.h" />
+    <ClInclude Include="..\include\KList.h" />
+    <ClInclude Include="..\include\KLog.h" />
+    <ClInclude Include="..\include\KMessage.h" />
+    <ClInclude Include="..\include\KMiscTools.h" />
+    <ClInclude Include="..\include\KMusic.h" />
+    <ClInclude Include="..\include\KNetwork.h" />
+    <ClInclude Include="..\include\KObjectBase.h" />
+    <ClInclude Include="..\include\KObjectListable.h" />
+    <ClInclude Include="..\include\KPTK.h" />
+    <ClInclude Include="..\include\KResource.h" />
+    <ClInclude Include="..\include\KResourceArchive.h" />
+    <ClInclude Include="..\include\KSound.h" />
+    <ClInclude Include="..\include\KSound2.h" />
+    <ClInclude Include="..\include\KSpline.h" />
+    <ClInclude Include="..\include\KSystem.h" />
+    <ClInclude Include="..\include\KText.h" />
+    <ClInclude Include="..\include\KTrueText.h" />
+    <ClInclude Include="..\include\KTypes.h" />
+    <ClInclude Include="..\include\KWeb.h" />
+    <ClInclude Include="..\include\KWebCam.h" />
+    <ClInclude Include="..\include\KWindow.h" />
+    <ClInclude Include="..\include\KWindowDX9.h" />
+    <ClInclude Include="..\include\KWindowGL.h" />
+    <ClInclude Include="..\include\LzmaDecode.h" />
+    <ClInclude Include="..\include\matrixdx9.h" />
+    <ClInclude Include="..\include\ogg.h" />
+    <ClInclude Include="..\include\OpenPlay.h" />
+    <ClInclude Include="..\include\os_types.h" />
+    <ClInclude Include="..\include\ptk.h" />
+    <ClInclude Include="..\include\t3d.h" />
+    <ClInclude Include="..\include\trial.h" />
+    <ClInclude Include="..\include\vorbisenc.h" />
+    <ClInclude Include="..\include\vorbisfile.h" />
+    <ClInclude Include="..\include\al\al.h" />
+    <ClInclude Include="..\include\al\alc.h" />
+    <ClInclude Include="..\include\al\alctypes.h" />
+    <ClInclude Include="..\include\al\altypes.h" />
+    <ClInclude Include="..\include\al\alu.h" />
+    <ClInclude Include="..\include\al\alut.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
