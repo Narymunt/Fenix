@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SDL_image">
+</Property><Property Name="Solution File" Value="C:\iProjects\KING\SDL_image\VisualC\SDL_image.sln">
+</Property><Property Name="Date" Value="20 maja 2013">
+</Property><Property Name="Time" Value="13:21">
+</Property></Properties><Event ErrorLevel="0" Project="SDL_image" Source="SDL_image.vcproj" Description="Converting project file 'c:\iProjects\KING\SDL_image\VisualC\SDL_image.vcproj'.">
+</Event><Event ErrorLevel="1" Project="SDL_image" Source="SDL_image.vcproj" Description="Failed to upgrade platform 'x64'. Please make sure you have it installed under '%vctargetspath%\platforms\x64'">
+</Event><Event ErrorLevel="1" Project="SDL_image" Source="SDL_image.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="SDL_image" Source="SDL_image.vcproj" Description="Failed to upgrade 'Debug|x64'. Please make sure you have the corresponding platform installed under '%vctargetspath%\platforms\x64'">
+</Event><Event ErrorLevel="1" Project="c:\iProjects\KING\SDL_image\VisualC\SDL_image.vcproj" Source="" Description="Cannot load the project due to a corrupt project file.">
+</Event><Event ErrorLevel="2" Project="SDL_image" Source="SDL_image.vcproj" Description="The project configuration dimension name/value &quot;(Platform, Win32)&quot; was not found in the project manifest.">
+</Event><Event ErrorLevel="2" Project="c:\iProjects\KING\SDL_image\VisualC\SDL_image.vcproj" Source="" Description="The following error has occurred during XML parsing:&#xA;&#xA;File: c:\iProjects\KING\SDL_image\VisualC\SDL_image.vcproj&#xA;Line: 203&#xA;Column: 5&#xA;Error Message:&#xA;Błąd systemowy: -2147154677.&#xA;&#xA;The file 'c:\iProjects\KING\SDL_image\VisualC\SDL_image.vcproj' has failed to load.">
+</Event><Event ErrorLevel="2" Project="SDL_image" Source="SDL_image.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="SDL_image" Source="SDL_image.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="showimage" Source="showimage\showimage.vcproj" Description="Converting project file 'c:\iProjects\KING\SDL_image\VisualC\showimage\showimage.vcproj'.">
+</Event><Event ErrorLevel="1" Project="showimage" Source="showimage\showimage.vcproj" Description="Failed to upgrade platform 'x64'. Please make sure you have it installed under '%vctargetspath%\platforms\x64'">
+</Event><Event ErrorLevel="1" Project="showimage" Source="showimage\showimage.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="showimage" Source="showimage\showimage.vcproj" Description="Failed to upgrade 'Debug|x64'. Please make sure you have the corresponding platform installed under '%vctargetspath%\platforms\x64'">
+</Event><Event ErrorLevel="1" Project="c:\iProjects\KING\SDL_image\VisualC\showimage\showimage.vcproj" Source="" Description="Cannot load the project due to a corrupt project file.">
+</Event><Event ErrorLevel="2" Project="showimage" Source="showimage\showimage.vcproj" Description="The project configuration dimension name/value &quot;(Platform, Win32)&quot; was not found in the project manifest.">
+</Event><Event ErrorLevel="2" Project="c:\iProjects\KING\SDL_image\VisualC\showimage\showimage.vcproj" Source="" Description="The following error has occurred during XML parsing:&#xA;&#xA;File: c:\iProjects\KING\SDL_image\VisualC\showimage\showimage.vcproj&#xA;Line: 116&#xA;Column: 5&#xA;Error Message:&#xA;Błąd systemowy: -2147154677.&#xA;&#xA;The file 'c:\iProjects\KING\SDL_image\VisualC\showimage\showimage.vcproj' has failed to load.">
+</Event><Event ErrorLevel="2" Project="showimage" Source="showimage\showimage.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="showimage" Source="showimage\showimage.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SDL_image.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SDL_image.sln" Description="Converted">
+</Event></UpgradeLog>
