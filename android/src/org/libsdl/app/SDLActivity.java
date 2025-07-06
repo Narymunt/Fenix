@@ -24,6 +24,7 @@ import android.hardware.*;
 /**
     SDL Activity
 */
+@SuppressWarnings("deprecation")
 public class SDLActivity extends Activity {
     private static final String TAG = "SDL";
 
@@ -565,7 +566,8 @@ class SDLSurface extends SurfaceView implements SurfaceHolder.Callback,
     }
 
     // Called when we have a valid drawing surface
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void surfaceCreated(SurfaceHolder holder) {
         Log.v("SDL", "surfaceCreated()");
         holder.setType(SurfaceHolder.SURFACE_TYPE_GPU);

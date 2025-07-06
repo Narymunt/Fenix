@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Replace org.libsdl.app with the identifier of your game below, e.g.
-     com.gamemaker.game
--->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.shodan9.GemsOfAtlantis"
+      package="com.shodan9.Run1"
       android:versionCode="1"
       android:versionName="1.0"
       android:installLocation="auto">
@@ -13,7 +10,7 @@
                  android:allowBackup="true"
                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity android:name="Game"
-                  android:label="Gems Of Atlantis"
+                  android:label="Run1"
                   android:screenOrientation="landscape"
                   >                              
             <intent-filter>
@@ -23,8 +20,8 @@
         </activity>        
         </application>
 
-    <!-- Android 2.3.3 -->
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <!-- Android version -->
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="28" />
 
     <!-- OpenGL ES 2.0 -->
     <uses-feature android:glEsVersion="0x00010000" /> 
