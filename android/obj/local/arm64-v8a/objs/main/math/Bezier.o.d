@@ -1,10 +1,10 @@
 ./obj/local/arm64-v8a/objs/main/math/Bezier.o: jni\src\math\Bezier.cpp \
   jni\src\math\Bezier.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\math.h \
-  E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__config
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\math.h \
+  c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__config
 
 jni\src\math\Bezier.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\math.h:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\math.h:
 
-E:\ANDROID\ndk\build\\..\sources\cxx-stl\llvm-libc++\include\__config:
+c:\Users\JAREK\AppData\Local\Android\Sdk\ndk\current\build\\..\sources\cxx-stl\llvm-libc++\include\__config:
