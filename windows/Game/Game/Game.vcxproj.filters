@@ -9,30 +9,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="external">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{06d7ef87-b7b3-4e63-b91a-d260ff2b4669}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\clax">
+    <Filter Include="Source Files\clax">
       <UniqueIdentifier>{a90e0123-89e4-46cb-8d55-e28c35e2588c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\dune">
-      <UniqueIdentifier>{4244ed02-a272-44c8-896b-cc452e1d1089}</UniqueIdentifier>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{e43debc5-77b7-41a9-9aa5-157268736fa4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\dune\io">
-      <UniqueIdentifier>{f23c87e7-92aa-4865-8092-c89e7193657e}</UniqueIdentifier>
+    <Filter Include="Source Files\gfx">
+      <UniqueIdentifier>{2501316f-e8a4-4972-aed0-c97324da6c4c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\dune\gfx">
-      <UniqueIdentifier>{e0c12323-3ce4-457c-b5de-5624bf2d838d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\dune\math">
-      <UniqueIdentifier>{772ef0b7-d4b4-4f84-b5ec-ed2a7a688b4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\dune\ui">
-      <UniqueIdentifier>{7d4e2f81-bf5e-4e1d-aa74-342cc3a87088}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\rapidxml">
+    <Filter Include="Source Files\rapidxml">
       <UniqueIdentifier>{7487e26b-08ed-4deb-a217-f13068f444f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{cc77a34b-3a92-464e-9d43-d8702530b14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{5a0bca57-5d19-4d3c-b377-5e6f228460a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\io">
+      <UniqueIdentifier>{602f106a-8766-47fe-a2eb-1e7bc0d51c16}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,250 +44,232 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Congratulations.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ingame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Animation.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\FontTTF.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\FXManager.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\OGL.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Particle2D.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Particle2DManager.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Popup.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Screen.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\Sprite.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\gfx\SpriteObject.cpp">
-      <Filter>external\dune\gfx</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\Datafile.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\GameSettings.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\HighScore.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\Profile.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\Unzip.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\io\Zip.cpp">
-      <Filter>external\dune\io</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\math\Bezier.cpp">
-      <Filter>external\dune\math</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\math\CRSpline.cpp">
-      <Filter>external\dune\math</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\math\SinTable.cpp">
-      <Filter>external\dune\math</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\math\Tween.cpp">
-      <Filter>external\dune\math</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\ui\Button.cpp">
-      <Filter>external\dune\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\ui\Checkbox.cpp">
-      <Filter>external\dune\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\ui\MobileKeyboard.cpp">
-      <Filter>external\dune\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\ui\Mouse.cpp">
-      <Filter>external\dune\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\ui\SpriteFont.cpp">
-      <Filter>external\dune\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="dune\GameObject.cpp">
-      <Filter>external\dune</Filter>
-    </ClCompile>
     <ClCompile Include="clax\camera.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\clax.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\file_3ds.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\file_clx.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\matrix.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\quatern.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\spline.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
     <ClCompile Include="clax\vector.cpp">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClCompile>
-    <ClCompile Include="dune\math\Hermite.cpp">
-      <Filter>external\dune\math</Filter>
+    <ClCompile Include="common\GameObject.cpp">
+      <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="dune\math\BSpline.cpp">
-      <Filter>external\dune\math</Filter>
+    <ClCompile Include="gfx\Animation.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="dune\math\HSV.cpp">
-      <Filter>external\dune\math</Filter>
+    <ClCompile Include="gfx\FontTTF.cpp">
+      <Filter>Source Files\gfx</Filter>
     </ClCompile>
-    <ClCompile Include="dune\math\Clamp.cpp">
-      <Filter>external\dune\math</Filter>
+    <ClCompile Include="gfx\FXManager.cpp">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\Particle2D.cpp">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\Particle2DManager.cpp">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\Popup.cpp">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="gfx\SpriteObject.cpp">
+      <Filter>Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="app\Congratulations.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app\Ingame.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Bezier.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\BSpline.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Clamp.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\CRSpline.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Hermite.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\HSV.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\SinTable.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Tween.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\Button.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\Checkbox.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\MobileKeyboard.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\Mouse.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\SpriteFont.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Datafile.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\GameSettings.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\HighScore.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Profile.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Unzip.cpp">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\Zip.cpp">
+      <Filter>Source Files\io</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dune\gfx\Animation.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\FXManager.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\OGL.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\Particle2D.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\Particle2DManager.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\Popup.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\Screen.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\Sprite.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\SpriteObject.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\Datafile.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\GameSettings.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\HighScore.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\Profile.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\Unzip.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\io\Zip.h">
-      <Filter>external\dune\io</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\Bezier.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\CRSpline.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\SinTable.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\Tween.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\Vec3.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\ui\Button.h">
-      <Filter>external\dune\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\ui\Checkbox.h">
-      <Filter>external\dune\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\ui\MobileKeyboard.h">
-      <Filter>external\dune\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\ui\Mouse.h">
-      <Filter>external\dune\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\ui\SpriteFont.h">
-      <Filter>external\dune\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\GameObject.h">
-      <Filter>external\dune</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\gfx\FontTTF.h">
-      <Filter>external\dune\gfx</Filter>
-    </ClInclude>
     <ClInclude Include="clax\clax.h">
-      <Filter>external\clax</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClInclude>
     <ClInclude Include="clax\claxi.h">
-      <Filter>external\clax</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\Vector.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\Hermite.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="dune\math\BSpline.h">
-      <Filter>external\dune\math</Filter>
-    </ClInclude>
-    <ClInclude Include="Congratulations.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\clax</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ingame.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="rapidxml\rapidxml.hpp">
-      <Filter>external\rapidxml</Filter>
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
     <ClInclude Include="rapidxml\rapidxml_iterators.hpp">
-      <Filter>external\rapidxml</Filter>
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
     <ClInclude Include="rapidxml\rapidxml_print.hpp">
-      <Filter>external\rapidxml</Filter>
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
     <ClInclude Include="rapidxml\rapidxml_utils.hpp">
-      <Filter>external\rapidxml</Filter>
+      <Filter>Source Files\rapidxml</Filter>
     </ClInclude>
-    <ClInclude Include="dune\math\HSV.h">
-      <Filter>external\dune\math</Filter>
+    <ClInclude Include="common\GameObject.h">
+      <Filter>Source Files\common</Filter>
     </ClInclude>
-    <ClInclude Include="dune\math\Clamp.h">
-      <Filter>external\dune\math</Filter>
+    <ClInclude Include="gfx\Animation.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\FontTTF.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\FXManager.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\Particle2D.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\Particle2DManager.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\Popup.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx\SpriteObject.h">
+      <Filter>Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="app\Congratulations.h">
+      <Filter>Source Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\Ingame.h">
+      <Filter>Source Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Bezier.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\BSpline.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Clamp.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\CRSpline.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Hermite.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\HSV.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\SinTable.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Tween.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vec3.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vector.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\Button.h">
+      <Filter>Source Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\Checkbox.h">
+      <Filter>Source Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\MobileKeyboard.h">
+      <Filter>Source Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\Mouse.h">
+      <Filter>Source Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\SpriteFont.h">
+      <Filter>Source Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Datafile.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\GameSettings.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\HighScore.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Profile.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Unzip.h">
+      <Filter>Source Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\Zip.h">
+      <Filter>Source Files\io</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
