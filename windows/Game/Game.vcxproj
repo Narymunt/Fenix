@@ -55,7 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>SDL\include;SDL_image\include;SDL_mixer\include;SDL_ttf\include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>SDL\include;SDL_image\include;SDL_mixer\include;SDL_ttf\include;C:\Program Files (x86)\Visual Leak Detector\include;imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
@@ -128,6 +128,7 @@
     <ClCompile Include="gfx\Popup.cpp" />
     <ClCompile Include="gfx\Screen.cpp" />
     <ClCompile Include="gfx\Sprite.cpp" />
+    <ClCompile Include="gfx\SpriteManager.cpp" />
     <ClCompile Include="gfx\SpriteObject.cpp" />
     <ClCompile Include="io\Datafile.cpp" />
     <ClCompile Include="io\HighScore.cpp" />
@@ -189,7 +190,9 @@
     <ClInclude Include="gfx\Popup.h" />
     <ClInclude Include="gfx\Screen.h" />
     <ClInclude Include="gfx\Sprite.h" />
+    <ClInclude Include="gfx\SpriteManager.h" />
     <ClInclude Include="gfx\SpriteObject.h" />
+    <ClInclude Include="gfx\TextureObject.h" />
     <ClInclude Include="io\Datafile.h" />
     <ClInclude Include="io\HighScore.h" />
     <ClInclude Include="io\Profile.h" />

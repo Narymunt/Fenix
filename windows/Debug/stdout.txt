@@ -3,5 +3,5 @@
  [renderer]: GeForce RTX 2070 SUPER/PCIe/SSE2
  [shader]: 4.60 NVIDIA
 
-[SCREEN]: 1024x768 | pixelRatio 1.333333 | reverseRatio 0.750000 | 
-WIDE: NO HD: YES 
+[SCREEN]: 2560x1440 | pixelRatio 1.777778 | reverseRatio 0.562500 | 
+WIDE: YES HD: YES 

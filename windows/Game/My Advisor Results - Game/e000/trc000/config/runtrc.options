@@ -1,0 +1,14 @@
+-r
+G:\Fenix\trunk\windows\Game\My Advisor Results - Game\e000\trc000
+--return-app-exitcode
+--cs-mode=no-count-loops,no-count-flops,stl-profiling,stack-stitching
+--count-flops
+--benchmarks=dram,mcdram,cpu_cache,flop_peak,int
+--cs-file=G:\Fenix\trunk\windows\Game\My Advisor Results - Game\e000/callstacks.def
+--jit-profiling
+--search-dir
+sym=G:\Fenix\trunk\windows\Debug
+--search-dir
+bin=G:\Fenix\trunk\windows\Debug
+--
+G:\Fenix\trunk\windows\Debug\Game.exe

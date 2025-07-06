@@ -11,7 +11,6 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
 
-// openGL texture
 
 typedef struct
 {

@@ -1,0 +1,10 @@
+
+=== Start: [2020/12/30 16:52:56] === 
+Peak bandwidth measurement started...
+Peak bandwidth measurement finished.
+Analysis started...
+Result file: G:\Fenix\trunk\windows\Game\My Advisor Results - Game\e000\trc000\trc000.advixe 
+Application exit code: 0 
+Result file: G:\Fenix\trunk\windows\Game\My Advisor Results - Game\e000\trc000\trc000.advixe 
+Analysis completed
+=== End: [2020/12/30 16:53:34] === 
