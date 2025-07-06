@@ -2,64 +2,13 @@
 
 #pragma once
 
-#include <vector>
 #include "Main.h"
 #include "State.h"
 #include "../gfx/Screen.h"
 #include "../gfx/Button.h"
 #include "../gfx/Sprite.h"
-#include "../gfx/SpriteFont.h"
-#include "../gfx/Particle2DManager.h"
-#include "../gfx/FXManager.h"
 #include "../control/Touch.h"
-#include "../system/Profile.h"
-
-#define CRATE0 1	// #
-
-#define CRATE1 2	// < poczatek platformy
-#define CRATE2 3	// - œrodek platformy
-#define CRATE3 4	// > zamkniêcie platformy
-
-#define CRATE4 5	// [ otwarcie
-#define CRATE5 6 	// =
-#define CRATE6 7 	// ]
-
-
-#define FRUIT0 20 	// $
-#define FRUIT1 21
-#define FRUIT2 22
-#define FRUIT3 23
-#define FRUIT4 24
-#define FRUIT5 25
-#define FRUIT6 26
-#define FRUIT7 27
-#define FRUIT8 28
-#define FRUIT9 29
-
-#define ENEMY0 50	// statyczny
-#define ENEMY1 51	// lewo prawo powoli
-
-
-#define	EXIT_LEVEL	255
-
-const char rowA[]="# ## ### #### ##### #### ### ## # ################## ########################## ##################### ###################### #################### ############################### ######################### ####################### ## # ################ ################### ############ ### #############";
-
-const char rowX[]="     ###                                         $#                                    ##                  $#                     $$        ##       $     ###                  ##         ###    $     ##  #    $ # ###  $  ###             $    #$            $     ##          #        $         $     #";
-const char rowY[]="  $    $   #   $     $   $        $   #      $   ##    $   $    $    #     $           #$              $   ###       $    $$             $ ## $$            $         $$$     # $   $       $    ##   #     $$  ##  $$$           #$   $   $   $ ##   $       $ #  $#       $$ $   $  #$ # #  $   $  # $   #";
-const char rowZ[]="# ## ### ## # # # # ### ## # ## ##  #### ## ### ### ##### ### #### ## #### ## #### ## ### # ## ### # ####################### #################### ############################### ######################### ####################### ## # ################ ################### ############ ### #############";
-
-class CObject
-{
-public:
-
-	CObject(int a, int b, int c)
-	{
-		x=a; y=b; type =c;
-	}
-
-	int 	x,y, type;
-
-};
+#include "Profile.h"
 
 class CMainMenu : public CState
 {
@@ -69,19 +18,23 @@ public:
 	CMainMenu(CScreen *pScreen);
 	~CMainMenu();
 
-	int 		iOpen(void);			// load
+	int 		Open(void);			// load
 	void		Close(void);		// unload
 
 	int			iRender(unsigned long ulTimer, CTouch *pTouch);
 
-	void 		renderMap();
-	void 		buildMap(int item, int x, int y);
+    inline void ucLanguage(unsigned char c) { _ucLanguage = c; }
+    inline unsigned char ucLanguage(void) { return _ucLanguage; }
 
 protected:
 
-	unsigned long		_lastClick;
+	bool 				_bProfileView;				// czy przegladamy profile ?
+	bool				_bProfileEdit;				// czy wpisujemy dane ?
+	bool				_bProfileDelete;			// czy kasujemy profil ?
 
 	char				_cEditName[18];				// nowa nazwa gracza
+	char				_cIndex;					// ktory znak teraz piszemy ?
+	bool				_bPrevBack;					// backspace na ostatniej literze dzia¸a inaczej
 
 	bool				_isFirstRun;				// czy to pierwsze uruchomienie ?
 
@@ -91,33 +44,37 @@ protected:
 	CSprite				*_pBlack;					// czarny ekran
 	CSprite				*_pWhite;					// bialy ekran
 
-	CSprite				*_taptapText;				// migajacy napis taptap
+	CSprite				*_pWall_L;					// rozsuwane æciany
+	CSprite				*_pWall_R;
 
-	// elementy do planszy
+	CSprite				*_pProfileEdit;				// tlo do edycji profilu
+	CSprite				*_pProfileDelete;			// tlo do kasowania profilu
 
-	CSprite				*_crate0;
+	CButton				*_pButtonStart;
+	CButton				*_pButtonOptions;
+	CButton				*_pButtonHelp;
+	CButton				*_pButtonSupport;
+	CButton				*_pButtonTroophy;
 
-	CSprite				*_fruit0;
-	CSprite				*_fruit1;
-	CSprite				*_fruit2;
-	CSprite				*_fruit3;
-	CSprite				*_fruit4;
-	CSprite				*_fruit5;
-	CSprite				*_fruit6;
-	CSprite				*_fruit7;
-	CSprite				*_fruit8;
-	CSprite				*_fruit9;
-
-	char				_fruitCount;
-
-    vector <CObject*>   _lane;
+	CButton				*_pButtonSwitch;
+	CButton				*_pButtonYes;
+	CButton				*_pButtonNo;
+	CButton				*_pButtonEdit;
 
 	CSpriteFont			*_pFont;
 
 	char				_cUserName[8][20];
 	unsigned char		_ucCurrentProfile;
 
+	unsigned char		_ucLanguage;
+
+	CButton				*_pFlag;
+
+	CMobileKeyboard		*_pMobileKeyboard;
+
 	CParticle2DManager	*_pParticleManager;
+
+	CFXManager			*_pFXManager;
 
 };
 

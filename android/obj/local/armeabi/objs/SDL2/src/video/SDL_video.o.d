@@ -1,375 +1,236 @@
-obj/local/armeabi/objs/SDL2/src/video/SDL_video.o: \
- jni/SDL/src/video/SDL_video.c jni/SDL/src/video/../SDL_internal.h \
- jni/SDL/src/video/../dynapi/SDL_dynapi.h \
- jni/SDL/src/video/../dynapi/SDL_dynapi_overrides.h \
- jni/SDL/include/SDL_config.h jni/SDL/include/SDL_platform.h \
- jni/SDL/include/begin_code.h jni/SDL/include/close_code.h \
- jni/SDL/include/SDL_config_android.h jni/SDL/include/SDL.h \
- jni/SDL/include/SDL_main.h jni/SDL/include/SDL_stdinc.h \
- jni/SDL/include/SDL_config.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/inttypes.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/ctype.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/math.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h \
- jni/SDL/include/SDL_assert.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h \
- jni/SDL/include/SDL_atomic.h jni/SDL/include/SDL_audio.h \
- jni/SDL/include/SDL_error.h jni/SDL/include/SDL_endian.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/endian.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/endian.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/endian.h \
- jni/SDL/include/SDL_mutex.h jni/SDL/include/SDL_thread.h \
- jni/SDL/include/SDL_rwops.h jni/SDL/include/SDL_clipboard.h \
- jni/SDL/include/SDL_cpuinfo.h jni/SDL/include/SDL_events.h \
- jni/SDL/include/SDL_video.h jni/SDL/include/SDL_pixels.h \
- jni/SDL/include/SDL_rect.h jni/SDL/include/SDL_surface.h \
- jni/SDL/include/SDL_blendmode.h jni/SDL/include/SDL_keyboard.h \
- jni/SDL/include/SDL_keycode.h jni/SDL/include/SDL_scancode.h \
- jni/SDL/include/SDL_mouse.h jni/SDL/include/SDL_joystick.h \
- jni/SDL/include/SDL_gamecontroller.h jni/SDL/include/SDL_quit.h \
- jni/SDL/include/SDL_gesture.h jni/SDL/include/SDL_touch.h \
- jni/SDL/include/SDL_filesystem.h jni/SDL/include/SDL_haptic.h \
- jni/SDL/include/SDL_hints.h jni/SDL/include/SDL_loadso.h \
- jni/SDL/include/SDL_log.h jni/SDL/include/SDL_messagebox.h \
- jni/SDL/include/SDL_power.h jni/SDL/include/SDL_render.h \
- jni/SDL/include/SDL_system.h jni/SDL/include/SDL_timer.h \
- jni/SDL/include/SDL_version.h jni/SDL/include/SDL_video.h \
- jni/SDL/src/video/SDL_sysvideo.h jni/SDL/include/SDL_messagebox.h \
- jni/SDL/include/SDL_shape.h jni/SDL/include/SDL_thread.h \
- jni/SDL/src/video/SDL_blit.h jni/SDL/include/SDL_cpuinfo.h \
- jni/SDL/include/SDL_endian.h jni/SDL/include/SDL_surface.h \
- jni/SDL/src/video/SDL_pixels_c.h jni/SDL/src/video/SDL_rect_c.h \
- jni/SDL/src/video/../events/SDL_events_c.h \
- jni/SDL/src/video/../events/../SDL_internal.h \
- jni/SDL/include/SDL_events.h \
- jni/SDL/src/video/../events/SDL_clipboardevents_c.h \
- jni/SDL/src/video/../events/SDL_dropevents_c.h \
- jni/SDL/src/video/../events/SDL_gesture_c.h \
- jni/SDL/src/video/../events/SDL_keyboard_c.h \
- jni/SDL/include/SDL_keycode.h jni/SDL/src/video/../events/SDL_mouse_c.h \
- jni/SDL/include/SDL_mouse.h jni/SDL/src/video/../events/SDL_touch_c.h \
- jni/SDL/src/video/../events/../../include/SDL_touch.h \
- jni/SDL/src/video/../events/SDL_windowevents_c.h \
- jni/SDL/src/video/../timer/SDL_timer_c.h \
- jni/SDL/src/video/../timer/../SDL_internal.h jni/SDL/include/SDL_timer.h \
- jni/SDL/include/SDL_syswm.h jni/SDL/include/SDL_opengles.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/gl.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/glplatform.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/KHR/khrplatform.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/glext.h \
- jni/SDL/include/SDL_opengles2.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2platform.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2.h \
- d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2ext.h
+/opt/Fenix/fenix/android/project/obj/local/armeabi/objs/SDL2/src/video/SDL_video.o: \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_video.c \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../SDL_internal.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../dynapi/SDL_dynapi.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../dynapi/SDL_dynapi_overrides.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_platform.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/begin_code.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/close_code.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config_android.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_main.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_stdinc.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_assert.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_atomic.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_audio.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_error.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_endian.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mutex.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_rwops.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_clipboard.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_cpuinfo.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_events.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_video.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_pixels.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_rect.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_surface.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_blendmode.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keyboard.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keycode.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_scancode.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mouse.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_joystick.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_gamecontroller.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_quit.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_gesture.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_touch.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_filesystem.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_haptic.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_hints.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_loadso.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_log.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_messagebox.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_power.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_render.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_system.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_timer.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_version.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_video.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_sysvideo.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_messagebox.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_shape.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_blit.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_cpuinfo.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_endian.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_surface.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_pixels_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_rect_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_events_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/../SDL_internal.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_events.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_clipboardevents_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_dropevents_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_gesture_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_keyboard_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keycode.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_mouse_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mouse.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_touch_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/../../include/SDL_touch.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_windowevents_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../timer/SDL_timer_c.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/src/video/../timer/../SDL_internal.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_timer.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_syswm.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_opengles.h \
+ /opt/Fenix/fenix/android/project/jni/SDL/include/SDL_opengles2.h
 
-jni/SDL/src/video/../SDL_internal.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../SDL_internal.h:
 
-jni/SDL/src/video/../dynapi/SDL_dynapi.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../dynapi/SDL_dynapi.h:
 
-jni/SDL/src/video/../dynapi/SDL_dynapi_overrides.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../dynapi/SDL_dynapi_overrides.h:
 
-jni/SDL/include/SDL_config.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h:
 
-jni/SDL/include/SDL_platform.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_platform.h:
 
-jni/SDL/include/begin_code.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/begin_code.h:
 
-jni/SDL/include/close_code.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/close_code.h:
 
-jni/SDL/include/SDL_config_android.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config_android.h:
 
-jni/SDL/include/SDL.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL.h:
 
-jni/SDL/include/SDL_main.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_main.h:
 
-jni/SDL/include/SDL_stdinc.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_stdinc.h:
 
-jni/SDL/include/SDL_config.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_config.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_assert.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdint.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_atomic.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/wchar_limits.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_audio.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_error.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_endian.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/android/api-level.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mutex.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_rwops.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_clipboard.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/int-ll64.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_cpuinfo.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/bitsperlong.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_events.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/bitsperlong.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_video.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/posix_types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_pixels.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/stddef.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_rect.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/compiler.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_surface.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/posix_types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_blendmode.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keyboard.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keycode.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdio.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_scancode.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/stdlib.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mouse.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/string.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_joystick.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/malloc.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_gamecontroller.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/xlocale.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_quit.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/alloca.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_gesture.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/strings.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_touch.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/memory.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_filesystem.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/inttypes.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_haptic.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/ctype.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_hints.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/math.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_loadso.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/limits.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_log.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/limits.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_messagebox.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/limits.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_power.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/syslimits.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_render.h:
 
-jni/SDL/include/SDL_assert.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_system.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/signal.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_timer.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/errno.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_version.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/errno.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_video.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/errno.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_sysvideo.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_messagebox.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/errno-base.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_shape.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/sigcontext.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_thread.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/linux/signal.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_blit.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/signal.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_cpuinfo.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/signal-defs.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_endian.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm/siginfo.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_surface.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/asm-generic/siginfo.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_pixels_c.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/ucontext.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/SDL_rect_c.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/user.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_events_c.h:
 
-jni/SDL/include/SDL_atomic.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/../SDL_internal.h:
 
-jni/SDL/include/SDL_audio.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_events.h:
 
-jni/SDL/include/SDL_error.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_clipboardevents_c.h:
 
-jni/SDL/include/SDL_endian.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_dropevents_c.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/endian.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_gesture_c.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/sys/endian.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_keyboard_c.h:
 
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/machine/endian.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_keycode.h:
 
-jni/SDL/include/SDL_mutex.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_mouse_c.h:
 
-jni/SDL/include/SDL_thread.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_mouse.h:
 
-jni/SDL/include/SDL_rwops.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_touch_c.h:
 
-jni/SDL/include/SDL_clipboard.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/../../include/SDL_touch.h:
 
-jni/SDL/include/SDL_cpuinfo.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../events/SDL_windowevents_c.h:
 
-jni/SDL/include/SDL_events.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../timer/SDL_timer_c.h:
 
-jni/SDL/include/SDL_video.h:
+/opt/Fenix/fenix/android/project/jni/SDL/src/video/../timer/../SDL_internal.h:
 
-jni/SDL/include/SDL_pixels.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_timer.h:
 
-jni/SDL/include/SDL_rect.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_syswm.h:
 
-jni/SDL/include/SDL_surface.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_opengles.h:
 
-jni/SDL/include/SDL_blendmode.h:
-
-jni/SDL/include/SDL_keyboard.h:
-
-jni/SDL/include/SDL_keycode.h:
-
-jni/SDL/include/SDL_scancode.h:
-
-jni/SDL/include/SDL_mouse.h:
-
-jni/SDL/include/SDL_joystick.h:
-
-jni/SDL/include/SDL_gamecontroller.h:
-
-jni/SDL/include/SDL_quit.h:
-
-jni/SDL/include/SDL_gesture.h:
-
-jni/SDL/include/SDL_touch.h:
-
-jni/SDL/include/SDL_filesystem.h:
-
-jni/SDL/include/SDL_haptic.h:
-
-jni/SDL/include/SDL_hints.h:
-
-jni/SDL/include/SDL_loadso.h:
-
-jni/SDL/include/SDL_log.h:
-
-jni/SDL/include/SDL_messagebox.h:
-
-jni/SDL/include/SDL_power.h:
-
-jni/SDL/include/SDL_render.h:
-
-jni/SDL/include/SDL_system.h:
-
-jni/SDL/include/SDL_timer.h:
-
-jni/SDL/include/SDL_version.h:
-
-jni/SDL/include/SDL_video.h:
-
-jni/SDL/src/video/SDL_sysvideo.h:
-
-jni/SDL/include/SDL_messagebox.h:
-
-jni/SDL/include/SDL_shape.h:
-
-jni/SDL/include/SDL_thread.h:
-
-jni/SDL/src/video/SDL_blit.h:
-
-jni/SDL/include/SDL_cpuinfo.h:
-
-jni/SDL/include/SDL_endian.h:
-
-jni/SDL/include/SDL_surface.h:
-
-jni/SDL/src/video/SDL_pixels_c.h:
-
-jni/SDL/src/video/SDL_rect_c.h:
-
-jni/SDL/src/video/../events/SDL_events_c.h:
-
-jni/SDL/src/video/../events/../SDL_internal.h:
-
-jni/SDL/include/SDL_events.h:
-
-jni/SDL/src/video/../events/SDL_clipboardevents_c.h:
-
-jni/SDL/src/video/../events/SDL_dropevents_c.h:
-
-jni/SDL/src/video/../events/SDL_gesture_c.h:
-
-jni/SDL/src/video/../events/SDL_keyboard_c.h:
-
-jni/SDL/include/SDL_keycode.h:
-
-jni/SDL/src/video/../events/SDL_mouse_c.h:
-
-jni/SDL/include/SDL_mouse.h:
-
-jni/SDL/src/video/../events/SDL_touch_c.h:
-
-jni/SDL/src/video/../events/../../include/SDL_touch.h:
-
-jni/SDL/src/video/../events/SDL_windowevents_c.h:
-
-jni/SDL/src/video/../timer/SDL_timer_c.h:
-
-jni/SDL/src/video/../timer/../SDL_internal.h:
-
-jni/SDL/include/SDL_timer.h:
-
-jni/SDL/include/SDL_syswm.h:
-
-jni/SDL/include/SDL_opengles.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/gl.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/glplatform.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/KHR/khrplatform.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES/glext.h:
-
-jni/SDL/include/SDL_opengles2.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2platform.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2.h:
-
-d:/ANDROID/ndk/platforms/android-21/arch-arm/usr/include/GLES2/gl2ext.h:
+/opt/Fenix/fenix/android/project/jni/SDL/include/SDL_opengles2.h:

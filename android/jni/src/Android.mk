@@ -16,24 +16,17 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \
 # Add your application source files here...
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	Main.cpp \
-	GameObject.cpp \
-	application/Ingame.cpp \
 	application/State.cpp \
+	application/uiMain.cpp \
+	application/uiKeypad.cpp \
 	application/Intro.cpp \
 	application/MainMenu.cpp \
 	control/Touch.cpp \
-	system/AndroidFile.cpp \
-	system/Profile.cpp \
+	filesystem/AndroidFile.cpp \
 	gfx/Button.cpp \
 	gfx/Screen.cpp \
 	gfx/Sprite.cpp \
 	gfx/OGL.cpp \
-	gfx/SpriteFont.cpp \
-	gfx/Particle2D.cpp \
-	gfx/Particle2DManager.cpp \
-	gfx/FXManager.cpp \
-	gfx\Animation.cpp \
-	gfx\Popup.cpp \
 	math/Bezier.cpp \
 	math/CRSpline.cpp \
 	math/Tween.cpp

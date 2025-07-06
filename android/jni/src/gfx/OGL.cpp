@@ -145,7 +145,7 @@ void oglBlit(oglTexture *texture, SDL_Rect* clipping, int x, int y, GLfloat hZoo
 	glTranslatef((GLfloat)x, (GLfloat)y, 0);
 	glRotatef(rotation, 0, 0, 1.0f);
 
-	GLfloat box[] = {(GLfloat)x,(GLfloat)y+hch,0,(GLfloat)x+hcw,(GLfloat)y+hch,0,(GLfloat)x+hcw,(GLfloat)y,0,(GLfloat)x,(GLfloat)y,0};
+	GLfloat box[] = {x,y+hch,0,x+hcw,y+hch,0,x+hcw,y,0,x,y,0};
 	GLfloat tex[] = {0,1, 1,1, 1,0, 0,0};
 
 	glEnableClientState(GL_VERTEX_ARRAY);

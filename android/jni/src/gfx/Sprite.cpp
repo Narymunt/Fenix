@@ -120,7 +120,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
 
     if (pScreen!=NULL)	    	// konwersja z rozdzielczoscia, "plik" = "plik_SDS.png"
     {
-    	if (pScreen->_isSDS)
+    	if (pScreen->isSDS())
     	{
     		sprintf(cFilenameExt,"%s_SDS.png", cFilename);
     		plik = SDL_RWFromFile(cFilenameExt, "rb");
@@ -174,7 +174,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
     		}
     	} // isSDS
 
-    	if (pScreen->_isSDW)
+    	if (pScreen->isSDW())
     	{
     		sprintf(cFilenameExt,"%s_SDW.png", cFilename);
     		plik = SDL_RWFromFile(cFilenameExt, "rb");
@@ -228,7 +228,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
     		}
     	} // isSDW
 
-    	if (pScreen->_isHDS)
+    	if (pScreen->isHDS())
     	{
     		sprintf(cFilenameExt,"%s_HDS.png", cFilename);
     		plik = SDL_RWFromFile(cFilenameExt, "rb");
@@ -282,7 +282,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
     		}
     	} // isHDS
 
-    	if (pScreen->_isHDW)
+    	if (pScreen->isHDW())
     	{
     		sprintf(cFilenameExt,"%s_HDW.png", cFilename);
     		plik = SDL_RWFromFile(cFilenameExt, "rb");
@@ -349,6 +349,13 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
     // get the number of channels in the SDL surface
 
 	nOfColors = surface->format->BytesPerPixel;
+/*
+	format = oglGetPixelFormat(GL_RGBA);
+
+	pConvertedSurface = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE, surface->w, surface->h, 32, format.Rmask, format.Gmask, format.Bmask, format.Amask);
+
+	SDL_BlitSurface(surface, NULL, pConvertedSurface, NULL);
+*/
 
     if (nOfColors == 4)     // contains an alpha channel
     {
@@ -387,6 +394,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
         	pConvertedSurface = SDL_CreateRGBSurface(0, surface->w, surface->h, 32, format.Rmask, format.Gmask, format.Bmask, format.Amask);
         	SDL_BlitSurface(surface, NULL, pConvertedSurface, NULL);
         }
+
     }
     else
     {
@@ -415,7 +423,7 @@ void CSprite::Init(CScreen *pScreen, char cFilename[])
 
 	if (!_pSprite)
 	{
-		printf("ERROR : SPRITE %s not found!\n",cFilename);
+		printf("ERROR : %s not found!\n",cFilename);
 	}
 
 	_fOriginalX = (float) surface->w;
@@ -442,7 +450,7 @@ CSprite::~CSprite()
 void CSprite::Render(int x, int y, float a)
 {
 	Position(x,y);
-	_fAlfa = a;
+	fAlfa(a);
 	Render();
 }
 
@@ -551,6 +559,67 @@ void CSprite::UpdateC(void)
 
 	_fAlfa += _fAlfaI;
 }
+	
+// set & get rotation
+
+void CSprite::AddRotation(float fRot)
+{
+	_fRotation += fRot;
+}
+
+void CSprite::fRotation(float fRot)
+{
+	_fRotation = fRot;
+}
+	
+float CSprite::fRotation(void)
+{
+	return _fRotation;
+}
+
+// set & get position
+
+void CSprite::Position(float fX, float fY)
+{
+	_fPositionX = fX;
+	_fPositionY = fY;
+}
+
+void CSprite::AddPosition(float fX, float fY)
+{
+	_fPositionX += fX; 
+	_fPositionY += fY;
+}
+
+float CSprite::fPositionX(void)
+{
+	return _fPositionX;
+}
+
+void CSprite::fPositionX(float fX)
+{
+	_fPositionX = fX;
+}
+
+void CSprite::AddPositionX(float fX)
+{
+	_fPositionX += fX;
+}
+
+float CSprite::fPositionY(void)
+{
+	return _fPositionY;
+}
+
+void CSprite::fPositionY(float fY)
+{
+	_fPositionY = fY;
+}
+
+void CSprite::AddPositionY(float fY)
+{
+	_fPositionY += fY;
+}
 
 // set & get scale, update size
 
@@ -591,15 +660,72 @@ void CSprite::Render(unsigned long ulTimer)
 	_ulRenderTime = ulTimer;	// zapamietaj kiedy narysowalismy klatke
 }
 
+
+void CSprite::fScaleX(float fX)
+{
+	_fScaleX = fX;
+	_fSizeX = _fOriginalX * _fScaleX;
+}
+
+float CSprite::fScaleX(void)
+{
+	return _fScaleX;
+}
+
+void CSprite::fScaleY(float fY)
+{
+	_fScaleY = fY;
+	_fSizeY = _fOriginalY * _fScaleY;
+}
+
+float CSprite::fScaleY(void)
+{
+	return _fScaleY;
+}
+
+// set & get alfa
+
+void CSprite::fAlfa(float f)
+{
+	_fAlfa = f;
+}
+
+float CSprite::fAlfa(void)
+{
+	return _fAlfa;
+}
+
+
+void CSprite::AddAlfa(float f)
+{
+	_fAlfa += f;
+
+	if (_fAlfa>1.0f) 
+		_fAlfa = 1.0f;
+
+	if (_fAlfa<0.0f)
+		_fAlfa = 0.0f;
+}
+
 void CSprite::Resize(int x1, int y1, int x2, int y2)
 {
 	Position((float)x1, (float)y1);
 	Scale( (float)(x2-x1)/(float)(_fOriginalX), (float)(y2-y1)/(float)(_fOriginalY) );
 }
 
+float CSprite::fSizeX(void)
+{
+	return _fSizeX;
+}
+
+float CSprite::fSizeY(void)
+{
+	return _fSizeY;
+}
+
 void CSprite::Fullscreen(CScreen *pScreen)
 {
-	Resize(0,0,pScreen->_iSizeX, pScreen->_iSizeY);
+	Resize(0,0,pScreen->iSizeX(), pScreen->iSizeY());
 }
 
 SDL_PixelFormat CSprite::oglGetPixelFormat(GLenum glFormat)
@@ -637,27 +763,4 @@ SDL_PixelFormat CSprite::oglGetPixelFormat(GLenum glFormat)
 	}
 
 	return format;
-}
-
-// set & get position
-
-void CSprite::Position(float fX, float fY)
-{
-	_fPositionX = fX;
-	_fPositionY = fY;
-}
-
-void CSprite::Color(float r, float g, float b, float a)
-{
-	_r = r;
-	_g = g;
-	_b = b;
-	_a = a;
-}
-
-void CSprite::Color(float r, float g, float b)
-{
-	_r = r;
-	_g = g;
-	_b = b;
 }
