@@ -11,8 +11,12 @@ CAnim::CAnim(char cFilename[], int iCount, int iSizeX, int iSizeY)
 
     for (unsigned long i=0; i<=iCount; i++)
     {
-        sprintf(cName,"%s_%.2lu.png",cFilename,i);
+        if (i<10) sprintf(cName,"%s000%lu.png",cFilename,i);
+        if (i>9 && i<100) sprintf(cName,"%s00%lu.png",cFilename,i);
+        if (i>99 && i<1000) sprintf(cName,"%s0%lu.png",cFilename,i);
+
         m_pAnimation.push_back(new CSprite(cName,0,0,iSizeX,iSizeY));
+        
     }
     
     m_fAngle = 0.0f;
@@ -36,7 +40,7 @@ void CAnim::Render(int iFrame)
 }
 
 
-void CAnim::Render(int iFrame, int iX, int iY)
+void CAnim::Render(int iX, int iY, int iFrame)
 {
     if (iFrame > m_iCount) iFrame %= m_iCount;
         

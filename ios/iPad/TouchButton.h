@@ -55,13 +55,6 @@ public:
         pVal = NULL;
     }
     
-    inline int x1(void) { return m_iHotX1; }
-    inline int y1(void) { return m_iHotY1; }
-    inline int x2(void) { return m_iHotX2; }
-    inline int y2(void) { return m_iHotY2; }
-    
-    inline int iSizeX(void) { return m_iXSize; }
-    inline int iSizeY(void) { return m_iYSize; }
     
 private:	                                  
     
@@ -77,7 +70,7 @@ private:
     
     char        m_cType;        // 1 - tekstura
                                 // 3 - 3 pliki 
-    bool        _isPressed;     
+    
     bool        m_bActive;
     
     CSprite     *m_pTexture;    // textura dla przycisku gdzie wszystkie stany są w jednym pliku
@@ -85,8 +78,7 @@ private:
     CSprite     *m_pIdle;       // stan idle
     CSprite     *m_pOnOver;     // palec znajduje się nad przyciskiem
     CSprite     *m_pOnClick;    // palec zdjęty z przycisku
-
-    
+	
 };
 
 #endif

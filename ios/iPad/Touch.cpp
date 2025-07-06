@@ -1,12 +1,10 @@
 // main class
 
-#include <stdio.h>
 #include "Touch.h"
 
 // konstruktor, tutaj pakujemy najmniej jak tylko możliwe
 
-CTouch::CTouch() :
-_iStartX(0), _iStartY(0), _fClickDeltaX(0), _fClickDeltaY(0)
+CTouch::CTouch()
 {
     m_bPressed = false;
     m_bReleased = false;
@@ -26,31 +24,10 @@ void CTouch::Update(bool bPressed, bool bReleased, int iX, int iY, int iTap)
     m_bPressed = bPressed;
     m_bReleased = bReleased;
     
-    m_iX = iX;
-    m_iY = iY;
-
+    m_iX = iX; m_iY = iY; 
+    
     m_iTap = iTap;
     
-    if (bReleased)
-    {
-        _iStartX = 0;
-        _iStartY = 0;
-        
-        _fClickDeltaX = 0.0f;
-        _fClickDeltaY = 0.0f;
-    }
-
-    if (bPressed)
-    {
-        if (_iStartX==0 && _iStartY==0)
-        {
-            _iStartX = m_iX;
-            _iStartY = m_iY;
-        }
-        
-        _fClickDeltaX = m_iX - _iStartX;
-        _fClickDeltaY = m_iY - _iStartY;
-    }
 }
 
 bool CTouch::isPressed(void)
@@ -76,10 +53,4 @@ int CTouch::iGetY(void)
 int CTouch::iGetTap()
 {
     return m_iTap;
-}
-
-void CTouch::Reset()
-{
-    m_iX = 0;
-    m_iY = 0;
 }
