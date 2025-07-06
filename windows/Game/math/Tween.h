@@ -3,55 +3,52 @@
 #include <math.h>
 #include <vector>
 
-class CTween
+class Tween
 {
     
 public:
     
-    CTween();
-    CTween(int iSize);                      // tutaj tworzymy na starcie tablice o wskazanym rozmiarze
-    CTween(float fv1, float fv2, int i);    // podajemy dwie wartości i ilość elementów, które chcemy mieć w tablicy
-    CTween(float fv1, float fv2, float f);  // automatycznie tworzy tablice o rozmiarze potrzebnym dla danych wartosci
-    CTween(float fv1, float fv2);           // podajemy dwie wartości, nie tworzymy tablicy
-    ~CTween();
+    Tween();
+    Tween(int iSize);                      // tutaj tworzymy na starcie tablice o wskazanym rozmiarze
+    Tween(float fv1, float fv2, int i);    // podajemy dwie wartości i ilość elementów, które chcemy mieć w tablicy
+    Tween(float fv1, float fv2, float f);  // automatycznie tworzy tablice o rozmiarze potrzebnym dla danych wartosci
+    Tween(float fv1, float fv2);           // podajemy dwie wartości, nie tworzymy tablicy
+    ~Tween();
     
-    float       fBack(float t);
-    float       fBack(float f1, float f2, float t);
+    float       back(float t);
+    float       back(float f1, float f2, float t);
     
-    float       fBounce(float t);
-    float       fBounce(float f1, float f2, float t);
+    float       bounce(float t);
+    float       bounce(float f1, float f2, float t);
     
-    float       fCirc(float t);
-    float       fCirc(float f1, float f2, float t);
+    float       circ(float t);
+    float       circ(float f1, float f2, float t);
     
-    float       fCubic(float t);
-    float       fCubic(float f1, float f2, float t);
+    float       cubic(float t);
+    float       cubic(float f1, float f2, float t);
     
-    float       fElastic(float t);
-    float       fElastic(float f1, float f2, float t);
+    float       elastic(float t);
+    float       elastic(float f1, float f2, float t);
     
-    float       fExpo(float t);
-    float       fExpo(float f1, float f2, float t);
+    float       expo(float t);
+    float       expo(float f1, float f2, float t);
     
-    float       fLinear(float t);
-    float       fLinear(float f1, float f2, float t);
+    float       linear(float t);
+    float       linear(float f1, float f2, float t);
     
-    float       fQuad(float t);
-    float       fQuad(float f1, float f2, float t);
+    float       quad(float t);
+    float       quad(float f1, float f2, float t);
     
-    float       fQuart(float t);
-    float       fQuart(float f1, float f2, float t);
+    float       quart(float t);
+    float       quart(float f1, float f2, float t);
     
-    float       fQuint(float t);
-    float       fQuint(float f1, float f2, float t);
+    float       quint(float t);
+    float       quint(float f1, float f2, float t);
     
-    float       fSine(float t);
-    float       fSine(float f1, float f2, float t);
-    
-private:
+    float       sine(float t);
+    float       sine(float f1, float f2, float t);   
     
     float                   _fV1, _fV2;     // nasze dwa punkty, wartości pomiędzy którymi się poruszamy
     std::vector <float>     _pTable;        // tablica z wartościami, nie zawsze używana
-    
     
 };

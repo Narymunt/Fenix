@@ -8,20 +8,19 @@
 #include <stdio.h>
 #include "../Game.h"
 
-class CDatafile
+class Datafile
 {
 
 public:
 
-	CDatafile(unsigned long offset, unsigned long size);
-	CDatafile(char filename[]);
-	~CDatafile();
+	Datafile(unsigned long offset, unsigned long size);
+	Datafile(char filename[]);
+	~Datafile();
 
 	void load(unsigned long offset, unsigned long size);	// wczytaj dane
 
 	unsigned char *_buffer;
 	unsigned long _size;
 	bool _empty;
-
 };
 

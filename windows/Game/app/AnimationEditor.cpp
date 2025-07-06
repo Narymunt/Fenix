@@ -1,6 +1,6 @@
 #include "AnimationEditor.h"
 
-CAnimationEditor::CAnimationEditor()
+AnimationEditor::AnimationEditor()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,24 +8,23 @@ CAnimationEditor::CAnimationEditor()
 	_isOpen = false;
 }
 
-CAnimationEditor::~CAnimationEditor()
+AnimationEditor::~AnimationEditor()
 {
 	close();
 }
 
-
-void CAnimationEditor::open(CScreen* pScreen)
+void AnimationEditor::open(Screen* screen)
 {
-	_background = new CSprite((char*)"level04.jpg");
+	_background = new Sprite((char*)"level04.jpg");
 
-	_exitButton = new CButton((char*)"x1.png", (char*) "x2.png", (char*)"x3.png");
+	_exitButton = new Button((char*)"x1.png", (char*) "x2.png", (char*)"x3.png");
 	_exitButton->position(128, 64 - 32);
 	_exitButton->setHotCoords(128, 32, 128 + 128, 32 + 128);
 
 	_isOpen = true;
 }
 
-void CAnimationEditor::close(void)
+void AnimationEditor::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
@@ -33,7 +32,7 @@ void CAnimationEditor::close(void)
 }
 
 
-int CAnimationEditor::render(unsigned long timer, CMouse* mouse)
+int AnimationEditor::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

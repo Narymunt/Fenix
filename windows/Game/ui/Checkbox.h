@@ -7,23 +7,23 @@
 #include "../ui/Mouse.h"
 #include "../gfx/Screen.h"
 
-class CCheckbox
+class Checkbox
 {
 public:
 
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[]);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], bool b);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, bool b);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x1, int y1, int x2, int y2);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x1, int y1, int x2, int y2, bool b);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, int x1, int y1, int x2, int y2);
-	CCheckbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, int x1, int y1, int x2, int y2, bool b);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[]);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], bool b);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, bool b);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x1, int y1, int x2, int y2);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x1, int y1, int x2, int y2, bool b);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, int x1, int y1, int x2, int y2);
+	Checkbox(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, int x1, int y1, int x2, int y2, bool b);
 		
-	~CCheckbox();
+	~Checkbox();
 
-	int	render(unsigned long timer, CMouse *mouse);	// 0 - mysz poza, 1 - clicked, 2 on over
-	int	render(int x, int y, unsigned long timer, CMouse *mouse);
+	int	render(unsigned long timer, Mouse *mouse);	// 0 - mysz poza, 1 - clicked, 2 on over
+	int	render(int x, int y, unsigned long timer, Mouse *mouse);
 		
 	void position(int x, int y);
 	void position(int x, int y, int x1, int y1, int x2, int y2);
@@ -37,8 +37,7 @@ public:
 	int		_x, _y;
 	int		_x1, _y1, _x2, _y2;
 				
-private : 
-		CSprite	*_onStatic, *_onOver, *_offStatic, *_offOver;
+	Sprite	*_onStatic, *_onOver, *_offStatic, *_offOver;
 	
 	void	init(char onStatic[], char onOver[], char offStatic[], char offOver[], int x, int y, int x1, int y1, int x2, int y2, bool b);
 

@@ -1,6 +1,6 @@
 #include "ParticleEditor.h"
 
-CParticleEditor::CParticleEditor()
+ParticleEditor::ParticleEditor()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,24 +8,24 @@ CParticleEditor::CParticleEditor()
 	_isOpen = false;
 }
 
-CParticleEditor::~CParticleEditor()
+ParticleEditor::~ParticleEditor()
 {
 	close();
 }
 
 
-void CParticleEditor::open(CScreen* pScreen)
+void ParticleEditor::open(Screen* pScreen)
 {
-	_background = new CSprite((char*)"level04.jpg");
+	_background = new Sprite((char*)"level04.jpg");
 
-	_exitButton = new CButton((char*)"x1.png", (char*) "x2.png", (char*)"x3.png");
+	_exitButton = new Button((char*)"x1.png", (char*) "x2.png", (char*)"x3.png");
 	_exitButton->position(128, 64 - 32);
 	_exitButton->setHotCoords(128, 32, 128 + 128, 32 + 128);
 
 	_isOpen = true;
 }
 
-void CParticleEditor::close(void)
+void ParticleEditor::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
@@ -33,7 +33,7 @@ void CParticleEditor::close(void)
 }
 
 
-int CParticleEditor::render(unsigned long timer, CMouse* mouse)
+int ParticleEditor::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

@@ -67,31 +67,31 @@ unsigned char	musicVolume;			// glosnosc muzyki
 
 // stany aplikacji
 
-CIngame				*appIngame;			// MATCH3
-CCongratulations	*appCongratulations;	// zwyciêstwo, koniec gry
+Ingame				*appIngame;				// MATCH3
+Congratulations		*appCongratulations;	// zwyciêstwo, koniec gry
 
 // edytory
 
-CSceneEditor		*appSceneEditor;
+SceneEditor		*appSceneEditor;
 
 // elementy g³ówne
 
-CScreen				*screen;	// our screen, there can be more than 1
-CFontTTF			*font;
-CMouse				*mouse; // myszka  
+Screen				*screen;	// our screen, there can be more than 1
+FontTTF				*font;
+Mouse				*mouse; // myszka  
 
 // grafiki do preload screen
 
-CSprite *background = NULL;
-CSprite *loadScreen = NULL;
-CSprite *confirmQuit = NULL;					// czy na pewno wyjscie z gry ? 
+Sprite *background = NULL;
+Sprite *loadScreen = NULL;
+Sprite *confirmQuit = NULL;					// czy na pewno wyjscie z gry ? 
 
 // do potwierdzenia wyjscia z gry
 
-CButton *yesButton = NULL;
-CButton *noButton = NULL;
+Button *yesButton = NULL;
+Button *noButton = NULL;
 
-CSpriteFont *spriteFont = NULL; // czcionka
+SpriteFont *spriteFont = NULL; // czcionka
 SDL_Event event;		// sdl event 
 
 // muzyka
@@ -160,11 +160,11 @@ void LoadScreen(int iProgress)
 
 void reloadSettings(void)
 {
-	CGameSettings *setup = new CGameSettings();
+	GameSettings *setup = new GameSettings();
 	setup->load();
 
-	msxSettings = setup->_isMSX;
-	sfxSettings = setup->_isSFX;
+	msxSettings = setup->_isMSX!=0 ? true : false;
+	sfxSettings = setup->_isSFX!=0 ? true : false;
 
 	delete setup;
 }
@@ -192,23 +192,23 @@ int main(int argc, char *argv[])
 
 	if (FULLSCREEN)
 	{
-		screen = new CScreen();
+		screen = new Screen();
 		screenX = screen->_sizeX;
 		screenY = screen->_sizeY;
 	}
 	else
 	{
-		screen = new CScreen(WINDOW_X, WINDOW_Y, false);
+		screen = new Screen(WINDOW_X, WINDOW_Y, false);
 	}
 
-	font = new CFontTTF((char*)"data/consola.ttf",20);
-	mouse = new CMouse(true); // inicjalizacja myszki
+	font = new FontTTF((char*)"data/consola.ttf",20);
+	mouse = new Mouse(true); // inicjalizacja myszki
 
 	//pSpriteFont = new CSpriteFont(pMainScreen); // czcionka g³ówna
 
 	reloadSettings(); // sprawdz ustawienia
 
-	loadScreen = new CSprite((char*)"background.jpg"); // ekran wczytywania danych
+	loadScreen = new Sprite((char*)"background.jpg"); // ekran wczytywania danych
 	loadScreen->fullscreen(screen);
 	loadScreen->render();
 
@@ -244,7 +244,7 @@ int main(int argc, char *argv[])
 
 	// inicjalizacja komponentow
 
-	appSceneEditor = new CSceneEditor();
+	appSceneEditor = new SceneEditor();
 
 	//	pIngame = new CIngame();
 	//	pCongratulations = new CCongratulations();
@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
 
 			case INGAME:
 
-            font->Print("INGAME",255,128,64,10,10);
+            font->print("INGAME",255,128,64,10,10);
 /*            
             if (!pIngame->isActive())
 				{
@@ -383,7 +383,7 @@ int main(int argc, char *argv[])
 
 				if (!appCongratulations->_isOpen)
 				{
-					appCongratulations->Open(screen);
+					appCongratulations->open(screen);
 
 					if (msxSettings)
 					{
@@ -400,11 +400,11 @@ int main(int argc, char *argv[])
 					}
 				}
 
-				if (appCongratulations->Render(timer,mouse))
+				if (appCongratulations->render(timer,mouse))
 				{
 					appState = MAINMENU;
 					prevState = CONGRATULATIONS;
-					appCongratulations->Close();
+					appCongratulations->close();
 				}
 
 			break;
@@ -418,20 +418,20 @@ int main(int argc, char *argv[])
 		sprintf(buffer, "%d", fps);
 		
 		std::string s = std::to_string((unsigned long long)fps);
-		font->Print(s, 255, 255, 255, 0, 200);
-		font->Print("FPS", 255, 255, 255, 30, 200);
+		font->print(s, 255, 255, 255, 0, 200);
+		font->print("FPS", 255, 255, 255, 30, 200);
 
 		std::string strX = std::to_string((unsigned long long)mouse->_x);
-		font->Print(strX, 255, 255, 255, 0, 0);
+		font->print(strX, 255, 255, 255, 0, 0);
 
 		std::string strY = std::to_string((unsigned long long)mouse->_y);
-		font->Print(strY, 255, 255, 255, 200, 0);
+		font->print(strY, 255, 255, 255, 200, 0);
 
 		std::string cX = std::to_string((unsigned long long)(mouse->_x*screen->_revPixelX));
-		font->Print(cX, 255, 255, 255, 0, 100);
+		font->print(cX, 255, 255, 255, 0, 100);
 
 		std::string cY = std::to_string((unsigned long long)(mouse->_y*screen->_revPixelY));
-		font->Print(cY, 255, 255, 255, 200, 100);
+		font->print(cY, 255, 255, 255, 200, 100);
 
 //		spriteFont->print(10, 10, 1, 0.05f, 0.05f, buffer);
 

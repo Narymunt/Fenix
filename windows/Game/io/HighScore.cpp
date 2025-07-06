@@ -2,27 +2,27 @@
 
 #pragma warning(disable : 4996)
 
-CHighScore::CHighScore()
+HighScore::HighScore()
 {
-	bLoad();
+	load();
 }
 
-CHighScore::~CHighScore()
+HighScore::~HighScore()
 {
-	bSave();
+	save();
 }
 
-unsigned long CHighScore::ulGetScore(unsigned char ucIndex)		// zwraca liczbe puntkow dla danego indeksu
+unsigned long HighScore::getScore(unsigned char ucIndex)		// zwraca liczbe puntkow dla danego indeksu
 {
-	return m_ulScoreTable[ucIndex];
+	return _scoreTable[ucIndex];
 }
 
-char *CHighScore::cGetName(unsigned char ucIndex)
+char *HighScore::getName(unsigned char ucIndex)
 {
-	return m_cNameTable[ucIndex];
+	return _nameTable[ucIndex];
 }
 
-void CHighScore::AddScore(char cName[], unsigned long ulScore)			// dodaje punkty do tablicy jezeli potrzebne
+void HighScore::addScore(char cName[], unsigned long ulScore)			// dodaje punkty do tablicy jezeli potrzebne
 {
 	bool bInsert;
 	
@@ -30,16 +30,16 @@ void CHighScore::AddScore(char cName[], unsigned long ulScore)			// dodaje punkt
 
 	for (char i=0; i<10; i++)
 	{
-		if (ulScore >= m_ulScoreTable[i] && !bInsert)
+		if (ulScore >= _scoreTable[i] && !bInsert)
 		{
 			for (char j=10; j>i; j--)	// scroll punktow na dol
 			{
-				m_ulScoreTable[j] = m_ulScoreTable[j-1];
-				strcpy(m_cNameTable[j],m_cNameTable[j-1]);				
+				_scoreTable[j] = _scoreTable[j-1];
+				strcpy(_nameTable[j],_nameTable[j-1]);				
 			}
 			
-			m_ulScoreTable[i] = ulScore;	// wpisz nowe punkty
-			strcpy(m_cNameTable[i],cName);
+			_scoreTable[i] = ulScore;	// wpisz nowe punkty
+			strcpy(_nameTable[i],cName);
 
 			bInsert = true;
 		}
@@ -47,7 +47,7 @@ void CHighScore::AddScore(char cName[], unsigned long ulScore)			// dodaje punkt
 
 }	
 
-bool CHighScore::bLoad(void)			// wczytanie danych
+bool HighScore::load(void)			// wczytanie danych
 {
 	FILE 	*plik;
 	
@@ -57,14 +57,14 @@ bool CHighScore::bLoad(void)			// wczytanie danych
 		return false;
 		
 	for (char i=0; i<10;i++)
-		fscanf(plik,"%s %ld\n",m_cNameTable[i],&m_ulScoreTable[i]);
+		fscanf(plik,"%s %ld\n",_nameTable[i],&_scoreTable[i]);
 		
 	fclose(plik);
 	
 	return true;
 }
 
-bool CHighScore::bSave(void)			// zapisanie danych
+bool HighScore::save(void)			// zapisanie danych
 {
 	FILE	*plik;
 	
@@ -74,7 +74,7 @@ bool CHighScore::bSave(void)			// zapisanie danych
 		return false;
 	
 	for (char i=0; i<10; i++)
-		fprintf(plik,"%s %ld\n",m_cNameTable[i],m_ulScoreTable[i]);
+		fprintf(plik,"%s %ld\n",_nameTable[i],_scoreTable[i]);
 	
 	fclose(plik);
 	

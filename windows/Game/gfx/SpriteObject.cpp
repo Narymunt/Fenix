@@ -2,7 +2,7 @@
 
 #pragma warning(disable : 4996)
 
-CSpriteObject::CSpriteObject() :
+SpriteObject::SpriteObject() :
 
 _isCenter(false),
 _sizeX(0.0f), _sizeY(0.0f),
@@ -26,16 +26,16 @@ _renderTime(0), _deltaTime(0)
 }
 
 
-CSpriteObject::~CSpriteObject()
+SpriteObject::~SpriteObject()
 {
 	memset(_objectName, 0, 255);	// nie zawsze ta tablica jest czyszczona
 	memset(_filename, 0, 255);
 }
 
-void CSpriteObject::position(float x, float y) { _x = x; _y = y; }
-void CSpriteObject::positionI(float x, float y) { _xI = x; _yI = y; }
+void SpriteObject::position(float x, float y) { _x = x; _y = y; }
+void SpriteObject::positionI(float x, float y) { _xI = x; _yI = y; }
 
-void CSpriteObject::scale(float x, float y)
+void SpriteObject::scale(float x, float y)
 {
 	_scaleX = x; _scaleY = y;
 	
@@ -43,36 +43,43 @@ void CSpriteObject::scale(float x, float y)
 	_sizeY = _originalY * _scaleY;
 }
 
-void CSpriteObject::scale(float s) { scale(s, s); }
+void SpriteObject::scale(float s) { scale(s, s); }
 
-void CSpriteObject::scaleI(float x, float y) { _scaleXI = x; _scaleYI = y; }
-void CSpriteObject::scaleI(float s) { scaleI(s, s); }
+void SpriteObject::scaleI(float x, float y) { _scaleXI = x; _scaleYI = y; }
+void SpriteObject::scaleI(float s) { scaleI(s, s); }
 
-void CSpriteObject::color(float r, float g, float b, float a)
+void SpriteObject::color(float r, float g, float b, float a)
 {
 	_r = r; _g = g; _b = b; _a = a;
 }
 
-void CSpriteObject::color(float r, float g, float b)
+void SpriteObject::color(float r, float g, float b)
 {
 	_r = r; _g = g; _b = b; 
 }
 
 
-void CSpriteObject::colorI(float r, float g, float b, float a)
+void SpriteObject::colorI(float r, float g, float b, float a)
 {
 	_rI = r; _gI = g; _bI = b; _aI = a;
 }
 
-void CSpriteObject::pivot(float x, float y) { _pivotX = x; _pivotY = y; }
+void SpriteObject::pivot(float x, float y) { _pivotX = x; _pivotY = y; }
 
-void CSpriteObject::resize(int x1, int y1, int x2, int y2) 
+void SpriteObject::resize(int x1, int y1, int x2, int y2) 
 {
 	position((float)x1, (float)y1);
 	scale((float)(x2 - x1) / (float)(_originalX), (float)(y2 - y1) / (float)(_originalY));
 }
 
-void CSpriteObject::fullscreen(CScreen *screen) { resize(0, 0, screen->_sizeX, screen->_sizeY); };
-bool CSpriteObject::isName(char name[]) { return !strcmp(name,_objectName); }
+void SpriteObject::fullscreen(Screen *screen) 
+{ 
+	resize(0, 0, screen->_sizeX, screen->_sizeY); 
+}
+
+bool SpriteObject::isName(char name[]) 
+{ 
+	return !strcmp(name,_objectName); 
+}
 	
 

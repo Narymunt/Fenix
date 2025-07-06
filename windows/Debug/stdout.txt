@@ -1,4 +1,4 @@
-[openGL]: 4.6.0 NVIDIA 431.36
+[openGL]: 4.6.0 NVIDIA 442.19
  [vendor]: NVIDIA Corporation
  [renderer]: GeForce RTX 2070 SUPER/PCIe/SSE2
  [shader]: 4.60 NVIDIA

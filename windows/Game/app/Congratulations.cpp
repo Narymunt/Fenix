@@ -1,6 +1,6 @@
 #include "Congratulations.h"
 
-CCongratulations::CCongratulations()
+Congratulations::Congratulations()
 {
 	_background = NULL;
 	_black = NULL;	
@@ -12,23 +12,23 @@ CCongratulations::CCongratulations()
 }
 
 
-CCongratulations::~CCongratulations()
+Congratulations::~Congratulations()
 {
-	Close();
+	close();
 }
 
 
-void CCongratulations::Open(CScreen *pScreen)
+void Congratulations::open(Screen *screen)
 {	
 	_timerStart = 0;
-	_font = new CSpriteFont(pScreen);
+	_font = new SpriteFont(screen);
 	_isMouseLock = true;
 	_isOpen = true;
-	_screen = pScreen;
+	_screen = screen;
 }
 
 
-void CCongratulations::Close(void)
+void Congratulations::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_black);
@@ -38,26 +38,25 @@ void CCongratulations::Close(void)
 	_isOpen = false;
 }
 
-
-int CCongratulations::Render(unsigned long ulTimer, CMouse *pMouse)
+int Congratulations::render(unsigned long timer, Mouse *mouse)
 {
-	if (!pMouse->_isL)
+	if (!mouse->_isL)
 		_isMouseLock = false;
 
 	if (_timerStart == 0)
-		_timerStart = ulTimer;
+		_timerStart = timer;
 
 	_background->render();		
 
-	if (ulTimer - _timerStart < 1000)
+	if (timer - _timerStart < 1000)
 	{
-		_black->_a = (1-(ulTimer - _timerStart)*0.001f);
+		_black->_a = (1-(timer - _timerStart)*0.001f);
 		_black->render();
 	}
 
 	_font->print(250, 300, 1, 0.1f, 0.1f, (char*)"congratulations");
 
-	return (_exitButton->render(pMouse) == ON_LEFT && !_isMouseLock) ? 1 : 0;
+	return (_exitButton->render(mouse) == ON_LEFT && !_isMouseLock) ? 1 : 0;
 }
 
 

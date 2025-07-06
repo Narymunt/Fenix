@@ -15,20 +15,20 @@
 #include <SDL_ttf.h>
 #include "../Game.h"
 
-class CFontTTF
+class FontTTF
 {
 	
 public: 
 	
-   CFontTTF(char cFilenameTTF[], int iSize);   // plik z czcionk¹ np. arial.txt
-   ~CFontTTF();
+   FontTTF(char cFilenameTTF[], int iSize);   // plik z czcionk¹ np. arial.txt
+   ~FontTTF();
 
-   void Print(const std::string &message, unsigned char r, unsigned char g, unsigned char b, int x, int y);
+   void print(const std::string &message, unsigned char r, unsigned char g, unsigned char b, int x, int y);
 
 private:	
-
-   unsigned int   _iTexture;
-	TTF_Font       *_pFont;
-   SDL_Surface    *_pSurface;
+    
+    unsigned int   _iTexture;
+    TTF_Font       *_pFont;
+    SDL_Surface    *_pSurface;
 };
 

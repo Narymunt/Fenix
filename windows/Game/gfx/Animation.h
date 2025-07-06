@@ -1,5 +1,7 @@
-// Animacja to stos klatek animacji, nie powtarzaj¹cych siê.
-// Dopiero event okreœla, które klatki z animacji nale¿y odtwarzaæ i w jakiej kolejnoœci
+// Animacja to stos klatek animacji, nie powtarzaj¹cych siê., czyli np. klatki ruchu ludka
+// AnimationEvent - ktore klatki po kolei ma odtworzyc + ma³e modyfikatory pozycji, czyli np. ludek idzie, klatki 1,2,3,4,3,2,1 itp
+// AnimationTrack - dodanie modyfikatorów w postaci spline z okreœleniem predkosci odtwarzania, czyli od 0 do 1920 w petli AnimationEvent
+
 
 #pragma once
 
@@ -11,12 +13,12 @@
 #include "Sprite.h"
 #include "Screen.h"
 
-class CAnimation : public CGameObject
+class Animation : public GameObject
 {
 	public:
-		CAnimation(); // pusta kolejka, bedziemy recznie dodawac klatki
-		CAnimation(char cFile[], int iFrameCount, char cExt[]); // dodaje animacje plikXXX.ext, klatki liczone sa od 0, NIE WCZYTUJE
-		~CAnimation();
+		Animation(); // pusta kolejka, bedziemy recznie dodawac klatki
+		Animation(char cFile[], int iFrameCount, char cExt[]); // dodaje animacje plikXXX.ext, klatki liczone sa od 0, NIE WCZYTUJE
+		~Animation();
 
 		void	add(char cFilename[]); // Dodajemy klatkê na koniec kolejki
 
@@ -34,5 +36,5 @@ class CAnimation : public CGameObject
 		char	_file[1024];
 		char	_ext[3];
 
-		std::vector <CSprite*>	_sprite;		                     // tutaj nasze bitmapy
+		std::vector <Sprite*>	_sprite;		                     // tutaj nasze bitmapy
 };

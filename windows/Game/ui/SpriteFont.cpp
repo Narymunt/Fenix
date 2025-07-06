@@ -2,58 +2,58 @@
 
 #pragma warning (disable:4244)
 
-CSpriteFont::CSpriteFont(CScreen *pScreen)
+SpriteFont::SpriteFont(Screen *pScreen)
 {
 	for (int i=0; i<37; i++)
 		_charTable[i] = NULL;
 
-	_charTable[0] = new CSprite((char*)"FONT_A");
-	_charTable[1] = new CSprite((char*)"FONT_B");
-	_charTable[2] = new CSprite((char*)"FONT_C");
-	_charTable[3] = new CSprite((char*)"FONT_D");
-	_charTable[4] = new CSprite((char*)"FONT_E");
-	_charTable[5] = new CSprite((char*)"FONT_F");
-	_charTable[6] = new CSprite((char*)"FONT_G");
-	_charTable[7] = new CSprite((char*)"FONT_H");
-	_charTable[8] = new CSprite((char*)"FONT_I");
-	_charTable[9] = new CSprite((char*)"FONT_J");
-	_charTable[10] = new CSprite((char*)"FONT_K");
-	_charTable[11] = new CSprite((char*)"FONT_L");
-	_charTable[12] = new CSprite((char*)"FONT_M");
-	_charTable[13] = new CSprite((char*)"FONT_N");
-	_charTable[14] = new CSprite((char*)"FONT_O");
-	_charTable[15] = new CSprite((char*)"FONT_P");
-	_charTable[16] = new CSprite((char*)"FONT_Q");
-	_charTable[17] = new CSprite((char*)"FONT_R");
-	_charTable[18] = new CSprite((char*)"FONT_S");
-	_charTable[19] = new CSprite((char*)"FONT_T");
-	_charTable[20] = new CSprite((char*)"FONT_U");
-	_charTable[21] = new CSprite((char*)"FONT_V");
-	_charTable[22] = new CSprite((char*)"FONT_W");
-	_charTable[23] = new CSprite((char*)"FONT_X");
-	_charTable[24] = new CSprite((char*)"FONT_Y");
-	_charTable[25] = new CSprite((char*)"FONT_Z");
-	_charTable[26] = new CSprite((char*)"FONT_COMA");
-	_charTable[27] = new CSprite((char*)"FONT_0");
-	_charTable[28] = new CSprite((char*)"FONT_1");
-	_charTable[29] = new CSprite((char*)"FONT_2");
-	_charTable[30] = new CSprite((char*)"FONT_3");
-	_charTable[31] = new CSprite((char*)"FONT_4");
-	_charTable[32] = new CSprite((char*)"FONT_5");
-	_charTable[33] = new CSprite((char*)"FONT_6");
-	_charTable[34] = new CSprite((char*)"FONT_7");
-	_charTable[35] = new CSprite((char*)"FONT_8");
-	_charTable[36] = new CSprite((char*)"FONT_9");
+	_charTable[0] = new Sprite((char*)"FONT_A");
+	_charTable[1] = new Sprite((char*)"FONT_B");
+	_charTable[2] = new Sprite((char*)"FONT_C");
+	_charTable[3] = new Sprite((char*)"FONT_D");
+	_charTable[4] = new Sprite((char*)"FONT_E");
+	_charTable[5] = new Sprite((char*)"FONT_F");
+	_charTable[6] = new Sprite((char*)"FONT_G");
+	_charTable[7] = new Sprite((char*)"FONT_H");
+	_charTable[8] = new Sprite((char*)"FONT_I");
+	_charTable[9] = new Sprite((char*)"FONT_J");
+	_charTable[10] = new Sprite((char*)"FONT_K");
+	_charTable[11] = new Sprite((char*)"FONT_L");
+	_charTable[12] = new Sprite((char*)"FONT_M");
+	_charTable[13] = new Sprite((char*)"FONT_N");
+	_charTable[14] = new Sprite((char*)"FONT_O");
+	_charTable[15] = new Sprite((char*)"FONT_P");
+	_charTable[16] = new Sprite((char*)"FONT_Q");
+	_charTable[17] = new Sprite((char*)"FONT_R");
+	_charTable[18] = new Sprite((char*)"FONT_S");
+	_charTable[19] = new Sprite((char*)"FONT_T");
+	_charTable[20] = new Sprite((char*)"FONT_U");
+	_charTable[21] = new Sprite((char*)"FONT_V");
+	_charTable[22] = new Sprite((char*)"FONT_W");
+	_charTable[23] = new Sprite((char*)"FONT_X");
+	_charTable[24] = new Sprite((char*)"FONT_Y");
+	_charTable[25] = new Sprite((char*)"FONT_Z");
+	_charTable[26] = new Sprite((char*)"FONT_COMA");
+	_charTable[27] = new Sprite((char*)"FONT_0");
+	_charTable[28] = new Sprite((char*)"FONT_1");
+	_charTable[29] = new Sprite((char*)"FONT_2");
+	_charTable[30] = new Sprite((char*)"FONT_3");
+	_charTable[31] = new Sprite((char*)"FONT_4");
+	_charTable[32] = new Sprite((char*)"FONT_5");
+	_charTable[33] = new Sprite((char*)"FONT_6");
+	_charTable[34] = new Sprite((char*)"FONT_7");
+	_charTable[35] = new Sprite((char*)"FONT_8");
+	_charTable[36] = new Sprite((char*)"FONT_9");
 }
 
 
-CSpriteFont::~CSpriteFont()
+SpriteFont::~SpriteFont()
 {
 	for (int i=0; i<37; i++)
 		safeDelete(_charTable[i]);
 }
 
-void CSpriteFont::print(int iX, int iY, int iAlfa, float fSizeX, float fSizeY, char cText[])
+void SpriteFont::print(int iX, int iY, int iAlfa, float fSizeX, float fSizeY, char cText[])
 {
 	int iCurrentX;
 	char cLetter;
@@ -333,7 +333,7 @@ void CSpriteFont::print(int iX, int iY, int iAlfa, float fSizeX, float fSizeY, c
 	}
 }
 
-int CSpriteFont::size(float fSizeX, char cText[])	// zwraca ile szerokoœci bêdzie zajmowaæ dany napis
+int SpriteFont::size(float fSizeX, char cText[])	// zwraca ile szerokoœci bêdzie zajmowaæ dany napis
 {
 	int iCurrentX;
 	char cLetter;

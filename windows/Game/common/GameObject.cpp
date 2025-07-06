@@ -5,7 +5,7 @@
    bez parametrów, _pScreen NULL
 */
 
-CGameObject::CGameObject():
+GameObject::GameObject():
 _isOpen(false),
 _isMouseLock(true),
 _screen(NULL)
@@ -18,10 +18,10 @@ _screen(NULL)
    @param pScreen wskaŸnik do ekranu do zapamiêtania
 */
 
-CGameObject::CGameObject(CScreen *pScreen):
+GameObject::GameObject(Screen *screen):
 _isOpen(false),
 _isMouseLock(true),
-_screen(pScreen)
+_screen(screen)
 {
 
 }
@@ -31,7 +31,7 @@ _screen(pScreen)
    destruktor nie uwalnia wskaŸnika do ekranu
 */
 
-CGameObject::~CGameObject()
+GameObject::~GameObject()
 {
 	_isOpen = false;
 	_isMouseLock = true;
@@ -44,7 +44,7 @@ CGameObject::~CGameObject()
    @return none
 */
 
-void CGameObject::open(void)	
+void GameObject::open(void)	
 {
 	_isOpen = true;
 	_isMouseLock = true;
@@ -56,7 +56,7 @@ void CGameObject::open(void)
    @return none
 */
 
-void CGameObject::close(void)				
+void GameObject::close(void)				
 {
 	_isOpen = false;
 	_isMouseLock = true;

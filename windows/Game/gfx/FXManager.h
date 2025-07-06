@@ -1,11 +1,3 @@
-/**
-   FXManager.h
-   Manager do zarz¹dzania efektami specjalnymi opartymi o system particles.
-
-   @author Jaros³aw N. Ro¿yñski
-
-*/
-
 #pragma once
 
 #include <windows.h>
@@ -41,13 +33,13 @@
 #define  FX_LAYER_8				8
 #define  FX_LAYER_9				9
 
-class CFXManager
+class FXManager
 {
 
 public:
 
-	CFXManager(CScreen *pScreen);
-	~CFXManager();
+	FXManager(Screen *pScreen);
+	~FXManager();
 
 	int add(int type, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long time);
 	int add(int type, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long time, char layer);
@@ -57,16 +49,16 @@ public:
 	void render(unsigned long timer);
 	void render(unsigned long timer, char layer);
 
-	CScreen		*_screen;
+	Screen		*_screen;
 
 	vector <unsigned long>_timerStart; // kiedy efekt ma siê zacz¹æ
 	vector <unsigned long>_timerEnd; // kiedy efekt ma siê skoñczyæ
 
-	vector <CParticle2DManager*> _particles; // nasze generatory particli
+	vector <Particle2DManager*> _particles; // nasze generatory particli
 
 	vector <char>_layer; // warstwy, ¿eby mo¿na by³o ³atwiej kontrolowaæ to co ma siê wyœwietlaæ pod tablic¹ i nad tablic¹
 
-	CSprite *_image[14];
+	Sprite *_image[14];
 
 };
 

@@ -18,34 +18,27 @@
    @return none
 */
 
-CFXManager::CFXManager(CScreen *screen) :
+FXManager::FXManager(Screen *screen) :
 _screen(screen)
 {
-	_image[0] = new CSprite((char*)"m1.png");
-	_image[1] = new CSprite((char*)"m2.png");
-	_image[2] = new CSprite((char*)"m3.png");
-	_image[3] = new CSprite((char*)"m4.png");
-	_image[4] = new CSprite((char*)"m5.png");
-	_image[5] = new CSprite((char*)"m6.png");
-	_image[6] = new CSprite((char*)"m7.png");
-	_image[7] = new CSprite((char*)"m8.png");
-	_image[8] = new CSprite((char*)"m9.png");
-	_image[9] = new CSprite((char*)"ma.png");
-	_image[10] = new CSprite((char*)"mb.png");
-	_image[11] = new CSprite((char*)"mc.png");
-	_image[12] = new CSprite((char*)"md.png");
-	_image[13] = new CSprite((char*)"me.png");
+	_image[0] = new Sprite((char*)"m1.png");
+	_image[1] = new Sprite((char*)"m2.png");
+	_image[2] = new Sprite((char*)"m3.png");
+	_image[3] = new Sprite((char*)"m4.png");
+	_image[4] = new Sprite((char*)"m5.png");
+	_image[5] = new Sprite((char*)"m6.png");
+	_image[6] = new Sprite((char*)"m7.png");
+	_image[7] = new Sprite((char*)"m8.png");
+	_image[8] = new Sprite((char*)"m9.png");
+	_image[9] = new Sprite((char*)"ma.png");
+	_image[10] = new Sprite((char*)"mb.png");
+	_image[11] = new Sprite((char*)"mc.png");
+	_image[12] = new Sprite((char*)"md.png");
+	_image[13] = new Sprite((char*)"me.png");
 
 }
 
-/**
-   Desktruktor klasy.
-   @param none
-   @return none
-*/
-
-
-CFXManager::~CFXManager()
+FXManager::~FXManager()
 {
 	for (int i = 0; i < 14; i++)
 		safeDelete(_image[i]);
@@ -84,7 +77,7 @@ CFXManager::~CFXManager()
    @return none
 */
 
-int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long ulTime)
+int FXManager::add(int iType, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long ulTime)
 {
 	return add(iType, x, y, r, g, b, a, timerStart, ulTime, 0);
 }
@@ -106,14 +99,14 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
    @return none
 */
 
-int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long ulTime, char cLayer)
+int FXManager::add(int iType, int x, int y, float r, float g, float b, float a, unsigned long timerStart, unsigned long ulTime, char cLayer)
 {
 	int ret = 0; // zadeklarowana tutaj, poniewaz zmeniamy rozmiary przed zwrotem, oraz lokalnie zwrot bylby poza scope
 
 	switch (iType)
 	{
 		case FX_SHOW_BOMB:
-			_particles.push_back(new CParticle2DManager(_image[3], 25,
+			_particles.push_back(new Particle2DManager(_image[3], 25,
 				x - 8, y - 8, x + 8, y + 8,
 				-.003f, -.003f, .003f, .003f,
 				1.0f, -.01f, -.05f,
@@ -129,7 +122,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 		break;
 
 		case FX_RAINBOW_EXPLOSION:
-			_particles.push_back(new CParticle2DManager(_image[3], 50,
+			_particles.push_back(new Particle2DManager(_image[3], 50,
 				x - 50, y - 50, x + 50, y + 50,
 				-.30f, -.30f, .30f, .30f,
 				1.0f, -.01f, -.05f,
@@ -145,7 +138,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_DIAMOND_EXPLOSION:
-			_particles.push_back(new CParticle2DManager(_image[3], 50,
+			_particles.push_back(new Particle2DManager(_image[3], 50,
 				x - 50, y - 50, x + 50, y + 50,
 				-.30f, -.30f, .30f, .30f,
 				1.0f, -.01f, -.05f,
@@ -161,7 +154,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_SMALL_EXPLOSION:
-			_particles.push_back(new CParticle2DManager(_image[1], 150,
+			_particles.push_back(new Particle2DManager(_image[1], 150,
 				x-50, y-50, x+50, y+ 50,
 				-3.0f, -3.0f, 3.0f, 3.0f,
 				1.0f, -.01f, -.05f,
@@ -177,7 +170,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_BIG_EXPLOSION:
-			_particles.push_back(new CParticle2DManager(_image[10], 300,
+			_particles.push_back(new Particle2DManager(_image[10], 300,
 				x - 50, y - 50, x + 50, y + 50,
 				-3.0f, -3.0f, 3.0f, 3.0f,
 				1.0f, -.001f, -.005f,
@@ -193,7 +186,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_SMALL_LOOP:
-			_particles.push_back(new CParticle2DManager(_image[1], 100,
+			_particles.push_back(new Particle2DManager(_image[1], 100,
 				x - 5, y - 5, x + 5, y + 5,
 				-0.25f, -0.25f, 0.25f, 0.25f,
 				1.0f, -.0025f, -.0075f,
@@ -209,7 +202,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_BIG_LOOP:
-			_particles.push_back(new CParticle2DManager(_image[1], 300,
+			_particles.push_back(new Particle2DManager(_image[1], 300,
 				x - 50, y - 50, x + 50, y + 50,
 				-3.0f, -3.0f, 3.0f, 3.0f,
 				1.0f, -.001f, -.005f,
@@ -225,7 +218,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_HINT:
-			_particles.push_back(new CParticle2DManager(_image[3], 25,
+			_particles.push_back(new Particle2DManager(_image[3], 25,
 				x - 8, y - 8, x + 8, y + 8,
 				-.003f, -.003f, .003f, .003f,
 				1.0f, -.01f, -.05f,
@@ -241,7 +234,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
 			break;
 
 		case FX_MENU_BUTTON:
-			_particles.push_back(new CParticle2DManager(_image[3], 3,
+			_particles.push_back(new Particle2DManager(_image[3], 3,
 				x - 16, y - 16, x + 32, y + 32,
 				-.003f, -.003f, .003f, .003f,
 				0.0f, .001f, .005f,
@@ -265,7 +258,7 @@ int CFXManager::add(int iType, int x, int y, float r, float g, float b, float a,
    @return none
 */
 
-void CFXManager::remove(int id)
+void FXManager::remove(int id)
 {
 	_particles[id]->_image = (NULL); // memory leak ??
 	safeDelete(_particles[id]);
@@ -278,7 +271,7 @@ void CFXManager::remove(int id)
    @return none
 */
 
-void CFXManager::render(unsigned long timer)
+void FXManager::render(unsigned long timer)
 {
 	for (unsigned int i = 0; i < _particles.size(); i++)
 	{
@@ -305,7 +298,7 @@ void CFXManager::render(unsigned long timer)
    @return none
 */
 
-void CFXManager::render(unsigned long timer, char cLayer)
+void FXManager::render(unsigned long timer, char cLayer)
 {
 	for (unsigned int i = 0; i < _particles.size(); i++)
 	{

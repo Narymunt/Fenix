@@ -11,21 +11,19 @@
 #include "../gfx/Sprite.h"
 #include "../gfx/Screen.h"
 
-class CSettings : public CGameObject
+class Settings : public GameObject
 {
 public:
-	CSettings();
-	~CSettings();
+	Settings();
+	~Settings();
 
-	void	open(CScreen* pScreen);		// load data
+	void	open(Screen* pScreen);		// load data
 	void	close(void);				// unload 
 
-	int		render(unsigned long lTimer, CMouse* pMouse);		// render frame																					
+	int		render(unsigned long lTimer, Mouse* pMouse);		// render frame																					
 
-private:
-
-	CSprite* _background;
-	CButton* _exitButton;
+	Sprite* _background;
+	Button* _exitButton;
 
 	unsigned long	_timerStart;	// start
 };

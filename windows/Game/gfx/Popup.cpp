@@ -13,7 +13,7 @@
 #include "../common/GameSettings.h"
 #include "../Game.h"
 
-CPopup::CPopup() 
+Popup::Popup() 
 {
 	_whiteFlash = NULL;
 	_blackFlash = NULL;
@@ -31,7 +31,7 @@ CPopup::CPopup()
 	_isOpen = false;
 }
 
-CPopup::~CPopup()
+Popup::~Popup()
 {
 	close();
 }
@@ -41,210 +41,210 @@ CPopup::~CPopup()
    @param pScreen wskaznik do ekranu
 */
 
-void CPopup::open(void)
+void Popup::open(void)
 {
-	CGameSettings *pSetup;
+	GameSettings *pSetup;
 	unsigned char ucLang;
 
-	pSetup = new CGameSettings();
+	pSetup = new GameSettings();
 	pSetup->load();
 
 	ucLang = pSetup->_language;
 
 	delete pSetup;
 
-	_whiteFlash = new CSprite((char*)"GFX_WHITE50_SCREEN");
-	_blackFlash = new CSprite((char*)"GFX_BLACK100_SCREEN");
+	_whiteFlash = new Sprite((char*)"GFX_WHITE50_SCREEN");
+	_blackFlash = new Sprite((char*)"GFX_BLACK100_SCREEN");
 
 	switch (ucLang)
 	{
 		case (ARABIA):
-			_start = new CSprite((char*)"AR_POPUP_START");
-			_good1 = new CSprite((char*)"AR_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"AR_POPUP_GOOD");
-			_good3 = new CSprite((char*)"AR_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"AR_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"AR_POPUP_SUPER");
+			_start = new Sprite((char*)"AR_POPUP_START");
+			_good1 = new Sprite((char*)"AR_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"AR_POPUP_GOOD");
+			_good3 = new Sprite((char*)"AR_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"AR_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"AR_POPUP_SUPER");
 		break;
 
 		case (BRASIL):
-			_start = new CSprite((char*)"BR_POPUP_START");
-			_good1 = new CSprite((char*)"BR_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"BR_POPUP_GOOD");
-			_good3 = new CSprite((char*)"BR_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"BR_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"BR_POPUP_SUPER");
+			_start = new Sprite((char*)"BR_POPUP_START");
+			_good1 = new Sprite((char*)"BR_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"BR_POPUP_GOOD");
+			_good3 = new Sprite((char*)"BR_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"BR_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"BR_POPUP_SUPER");
 		break;
 
 		case (CHINA):
-			_start = new CSprite((char*)"CH_POPUP_START");
-			_good1 = new CSprite((char*)"CH_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"CH_POPUP_GOOD");
-			_good3 = new CSprite((char*)"CH_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"CH_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"CH_POPUP_SUPER");
+			_start = new Sprite((char*)"CH_POPUP_START");
+			_good1 = new Sprite((char*)"CH_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"CH_POPUP_GOOD");
+			_good3 = new Sprite((char*)"CH_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"CH_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"CH_POPUP_SUPER");
 		break;
 
 		case (GERMANY):
-			_start = new CSprite((char*)"DE_POPUP_START");
-			_good1 = new CSprite((char*)"DE_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"DE_POPUP_GOOD");
-			_good3 = new CSprite((char*)"DE_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"DE_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"DE_POPUP_SUPER");
+			_start = new Sprite((char*)"DE_POPUP_START");
+			_good1 = new Sprite((char*)"DE_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"DE_POPUP_GOOD");
+			_good3 = new Sprite((char*)"DE_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"DE_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"DE_POPUP_SUPER");
 		break;
 
 		case (DENMARK):
-			_start = new CSprite((char*)"DK_POPUP_START");
-			_good1 = new CSprite((char*)"DK_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"DK_POPUP_GOOD");
-			_good3 = new CSprite((char*)"DK_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"DK_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"DK_POPUP_SUPER");
+			_start = new Sprite((char*)"DK_POPUP_START");
+			_good1 = new Sprite((char*)"DK_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"DK_POPUP_GOOD");
+			_good3 = new Sprite((char*)"DK_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"DK_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"DK_POPUP_SUPER");
 		break;
 
 		case (ENGLAND):
-			_start = new CSprite((char*)"EN_POPUP_START");
-			_good1 = new CSprite((char*)"EN_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"EN_POPUP_GOOD");
-			_good3 = new CSprite((char*)"EN_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"EN_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"EN_POPUP_SUPER");
+			_start = new Sprite((char*)"EN_POPUP_START");
+			_good1 = new Sprite((char*)"EN_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"EN_POPUP_GOOD");
+			_good3 = new Sprite((char*)"EN_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"EN_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"EN_POPUP_SUPER");
 		break;
 		
 		case (SPAIN):
-			_start = new CSprite((char*)"ES_POPUP_START");
-			_good1 = new CSprite((char*)"ES_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"ES_POPUP_GOOD");
-			_good3 = new CSprite((char*)"ES_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"ES_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"ES_POPUP_SUPER");
+			_start = new Sprite((char*)"ES_POPUP_START");
+			_good1 = new Sprite((char*)"ES_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"ES_POPUP_GOOD");
+			_good3 = new Sprite((char*)"ES_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"ES_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"ES_POPUP_SUPER");
 		break;
 
 		case (FRANCE):
-			_start = new CSprite((char*)"FR_POPUP_START");
-			_good1 = new CSprite((char*)"FR_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"FR_POPUP_GOOD");
-			_good3 = new CSprite((char*)"FR_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"FR_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"FR_POPUP_SUPER");
+			_start = new Sprite((char*)"FR_POPUP_START");
+			_good1 = new Sprite((char*)"FR_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"FR_POPUP_GOOD");
+			_good3 = new Sprite((char*)"FR_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"FR_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"FR_POPUP_SUPER");
 		break;
 
 		case (INDONESIA):
-			_start = new CSprite((char*)"ID_POPUP_START");
-			_good1 = new CSprite((char*)"ID_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"ID_POPUP_GOOD");
-			_good3 = new CSprite((char*)"ID_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"ID_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"ID_POPUP_SUPER");
+			_start = new Sprite((char*)"ID_POPUP_START");
+			_good1 = new Sprite((char*)"ID_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"ID_POPUP_GOOD");
+			_good3 = new Sprite((char*)"ID_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"ID_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"ID_POPUP_SUPER");
 		break;
 
 		case (INDIA):
-			_start = new CSprite((char*)"IN_POPUP_START");
-			_good1 = new CSprite((char*)"IN_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"IN_POPUP_GOOD");
-			_good3 = new CSprite((char*)"IN_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"IN_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"IN_POPUP_SUPER");
+			_start = new Sprite((char*)"IN_POPUP_START");
+			_good1 = new Sprite((char*)"IN_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"IN_POPUP_GOOD");
+			_good3 = new Sprite((char*)"IN_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"IN_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"IN_POPUP_SUPER");
 		break;
 
 		case (ISRAEL):
-			_start = new CSprite((char*)"IS_POPUP_START");
-			_good1 = new CSprite((char*)"IS_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"IS_POPUP_GOOD");
-			_good3 = new CSprite((char*)"IS_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"IS_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"IS_POPUP_SUPER");
+			_start = new Sprite((char*)"IS_POPUP_START");
+			_good1 = new Sprite((char*)"IS_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"IS_POPUP_GOOD");
+			_good3 = new Sprite((char*)"IS_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"IS_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"IS_POPUP_SUPER");
 		break;
 
 		case (ITALY):
-			_start = new CSprite((char*)"IT_POPUP_START");
-			_good1 = new CSprite((char*)"IT_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"IT_POPUP_GOOD");
-			_good3 = new CSprite((char*)"IT_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"IT_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"IT_POPUP_SUPER");
+			_start = new Sprite((char*)"IT_POPUP_START");
+			_good1 = new Sprite((char*)"IT_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"IT_POPUP_GOOD");
+			_good3 = new Sprite((char*)"IT_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"IT_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"IT_POPUP_SUPER");
 		break;
 
 		case (JAPAN):
-			_start = new CSprite((char*)"JP_POPUP_START");
-			_good1 = new CSprite((char*)"JP_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"JP_POPUP_GOOD");
-			_good3 = new CSprite((char*)"JP_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"JP_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"JP_POPUP_SUPER");
+			_start = new Sprite((char*)"JP_POPUP_START");
+			_good1 = new Sprite((char*)"JP_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"JP_POPUP_GOOD");
+			_good3 = new Sprite((char*)"JP_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"JP_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"JP_POPUP_SUPER");
 		break;
 
 		case (KOREA):
-			_start = new CSprite((char*)"KO_POPUP_START");
-			_good1 = new CSprite((char*)"KO_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"KO_POPUP_GOOD");
-			_good3 = new CSprite((char*)"KO_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"KO_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"KO_POPUP_SUPER");
+			_start = new Sprite((char*)"KO_POPUP_START");
+			_good1 = new Sprite((char*)"KO_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"KO_POPUP_GOOD");
+			_good3 = new Sprite((char*)"KO_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"KO_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"KO_POPUP_SUPER");
 		break;
 
 		case (NORWAY):
-			_start = new CSprite((char*)"NO_POPUP_START");
-			_good1 = new CSprite((char*)"NO_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"NO_POPUP_GOOD");
-			_good3 = new CSprite((char*)"NO_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"NO_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"NO_POPUP_SUPER");
+			_start = new Sprite((char*)"NO_POPUP_START");
+			_good1 = new Sprite((char*)"NO_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"NO_POPUP_GOOD");
+			_good3 = new Sprite((char*)"NO_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"NO_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"NO_POPUP_SUPER");
 		break;
 
 		case (POLAND):
-			_start = new CSprite((char*)"PL_POPUP_START");
-			_good1 = new CSprite((char*)"PL_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"PL_POPUP_GOOD");
-			_good3 = new CSprite((char*)"PL_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"PL_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"PL_POPUP_SUPER");
+			_start = new Sprite((char*)"PL_POPUP_START");
+			_good1 = new Sprite((char*)"PL_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"PL_POPUP_GOOD");
+			_good3 = new Sprite((char*)"PL_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"PL_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"PL_POPUP_SUPER");
 		break;
 
 		case (PORTUGAL):
-			_start = new CSprite((char*)"PO_POPUP_START");
-			_good1 = new CSprite((char*)"PO_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"PO_POPUP_GOOD");
-			_good3 = new CSprite((char*)"PO_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"PO_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"PO_POPUP_SUPER");
+			_start = new Sprite((char*)"PO_POPUP_START");
+			_good1 = new Sprite((char*)"PO_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"PO_POPUP_GOOD");
+			_good3 = new Sprite((char*)"PO_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"PO_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"PO_POPUP_SUPER");
 		break;
 
 		case (RUSSIA):
-			_start = new CSprite((char*)"RU_POPUP_START");
-			_good1 = new CSprite((char*)"RU_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"RU_POPUP_GOOD");
-			_good3 = new CSprite((char*)"RU_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"RU_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"RU_POPUP_SUPER");
+			_start = new Sprite((char*)"RU_POPUP_START");
+			_good1 = new Sprite((char*)"RU_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"RU_POPUP_GOOD");
+			_good3 = new Sprite((char*)"RU_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"RU_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"RU_POPUP_SUPER");
 		break;
 
 		case (SWEDEN):
-			_start = new CSprite((char*)"SE_POPUP_START");
-			_good1 = new CSprite((char*)"SE_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"SE_POPUP_GOOD");
-			_good3 = new CSprite((char*)"SE_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"SE_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"SE_POPUP_SUPER");
+			_start = new Sprite((char*)"SE_POPUP_START");
+			_good1 = new Sprite((char*)"SE_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"SE_POPUP_GOOD");
+			_good3 = new Sprite((char*)"SE_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"SE_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"SE_POPUP_SUPER");
 		break;
 
 		case (TURKEY):
-			_start = new CSprite((char*)"TU_POPUP_START");
-			_good1 = new CSprite((char*)"TU_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"TU_POPUP_GOOD");
-			_good3 = new CSprite((char*)"TU_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"TU_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"TU_POPUP_SUPER");
+			_start = new Sprite((char*)"TU_POPUP_START");
+			_good1 = new Sprite((char*)"TU_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"TU_POPUP_GOOD");
+			_good3 = new Sprite((char*)"TU_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"TU_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"TU_POPUP_SUPER");
 		break;
 
 		default:
-			_start = new CSprite((char*)"EN_POPUP_START");
-			_good1 = new CSprite((char*)"EN_POPUP_EXCELENT");
-			_good2 = new CSprite((char*)"EN_POPUP_GOOD");
-			_good3 = new CSprite((char*)"EN_POPUP_OUTSTANDING");
-			_good4 = new CSprite((char*)"EN_POPUP_PERFECT");
-			_good5 = new CSprite((char*)"EN_POPUP_SUPER");
+			_start = new Sprite((char*)"EN_POPUP_START");
+			_good1 = new Sprite((char*)"EN_POPUP_EXCELENT");
+			_good2 = new Sprite((char*)"EN_POPUP_GOOD");
+			_good3 = new Sprite((char*)"EN_POPUP_OUTSTANDING");
+			_good4 = new Sprite((char*)"EN_POPUP_PERFECT");
+			_good5 = new Sprite((char*)"EN_POPUP_SUPER");
 		break;
 	}
    
@@ -255,7 +255,7 @@ void CPopup::open(void)
    Zwalnia wszystkie wczytane grafiki.
 */
 
-void CPopup::close(void)
+void Popup::close(void)
 {
 	safeDelete(_whiteFlash);
 	safeDelete(_blackFlash);
@@ -278,7 +278,7 @@ void CPopup::close(void)
    @param ulTimer czas wystartowania popupu
 */
 
-void CPopup::add(int type, unsigned long timer)
+void Popup::add(int type, unsigned long timer)
 {
 	int index=-1;
 
@@ -301,7 +301,7 @@ void CPopup::add(int type, unsigned long timer)
    @param ulTimer aktualny czas
 */
 
-void CPopup::render(unsigned long timer)
+void Popup::render(unsigned long timer)
 {
 	for (int i=0; i<64; i++)
 	{
@@ -451,7 +451,7 @@ void CPopup::render(unsigned long timer)
    Zatrzymaj i wyzeruj wszystkie popupy.
 */
 
-void CPopup::stop(void)
+void Popup::stop(void)
 {
 	for (int i = 0; i < 64; i++)
 	{
@@ -465,7 +465,7 @@ void CPopup::stop(void)
    Uruchom wszystkie popupy.
 */
 
-void CPopup::start(void)
+void Popup::start(void)
 {
 	for (int i=0; i<64; i++)
 		_isActive[i] = true;
@@ -477,7 +477,7 @@ void CPopup::start(void)
 */
 
 
-void CPopup::stop(int i)
+void Popup::stop(int i)
 {
 	_isActive[i] = false;
 }
@@ -487,7 +487,7 @@ void CPopup::stop(int i)
    @param i indeks popupu
 */
 
-void CPopup::start(int i)
+void Popup::start(int i)
 {
 	_isActive[i] = true;
 }
