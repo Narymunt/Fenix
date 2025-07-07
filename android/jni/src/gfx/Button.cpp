@@ -88,8 +88,8 @@ void CButton::Init(CScreen *pScreen, char cImage[], char cOnOver[], char cOnClic
 		_pOnOver->Position(x1,y1);
 		_pOnClick->Position(x1,y1);
 
-		_x2 = x1 + _pImage->_fSizeX;
-		_y2 = y1 + _pImage->_fSizeY;
+		_x2 = x1 + _pImage->fSizeX();
+		_y2 = y1 + _pImage->fSizeY();
 	}
 
 	_pImage->Resize(_x1, _y1, _x2, _y2);
@@ -114,7 +114,7 @@ int CButton::Render(CTouch *pTouch)
 
 	if ((pTouch->iX()>_x1) && (pTouch->iX()<_x2) && (pTouch->iY()>_y1) && (pTouch->iY()<_y2))
 	{
-		if (pTouch->_isTouch)
+		if (pTouch->isTouch())
 		{
 			_pOnClick->Render();
 			return ON_LEFT;
@@ -133,8 +133,8 @@ int CButton::Render(CTouch *pTouch)
 
 int CButton::RenderC(CTouch *pTouch)
 {
-	int a = (int)(_pImage->_fOriginalX/2);
-	int b = (int)(_pImage->_fOriginalY/2);
+	int a = (int)(_pImage->fOriginalX()/2);
+	int b = (int)(_pImage->fOriginalY()/2);
 	int x1 = _x1 - a;
 	int	y1 = _y1 - b;
 	int x2 = _x2 + a;
@@ -142,7 +142,7 @@ int CButton::RenderC(CTouch *pTouch)
 
 	if ((pTouch->iX()>x1) && (pTouch->iX()<x2) && (pTouch->iY()>y1) && (pTouch->iY()<y2))
 	{
-		if (pTouch->_isTouch)
+		if (pTouch->isTouch())
 		{
 			_pOnClick->RenderC();
 			return ON_LEFT;

@@ -14,6 +14,9 @@ public:
 
 	void Update(bool isTouch, int iX, int iY);
 
+	inline bool isTouch(void) { return _isTouch; }
+	inline void isTouch(bool b) { _isTouch = b; }
+
 	inline int	iStartX(void) { return _iStartX; }
 	inline void iStartX(int i) { _iStartX = i; }
 
@@ -31,6 +34,8 @@ public:
 
 	inline int iX(void) { return _iX; }
 	inline int iY(void) { return _iY; }
+
+private:
 
 	bool	_isTouch;
 	int		_iStartX, _iStartY, _iX, _iY, _iDeltaX, _iDeltaY;
