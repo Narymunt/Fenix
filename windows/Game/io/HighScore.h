@@ -4,27 +4,23 @@
 #include <string.h>
 #include "../Game.h"
 
-class CHighScore
+class HighScore
 {
 
-	public:
-
-	CHighScore();
-	~CHighScore();
+public:
+	HighScore();
+	~HighScore();
 	
-	
-		unsigned long 	ulGetScore(unsigned char ucIndex);		// zwraca liczbe puntkow dla danego indeksu
-		char 			*cGetName(unsigned char ucIndex);
+	unsigned long 	getScore(unsigned char ucIndex);		// zwraca liczbe puntkow dla danego indeksu
+	char 			*getName(unsigned char ucIndex);
 		
-		void			AddScore(char cName[], unsigned long ulScore);			// dodaje punkty do tablicy jezeli potrzebne
+	void			addScore(char cName[], unsigned long ulScore);			// dodaje punkty do tablicy jezeli potrzebne
 	
-		bool			bLoad(void);			// wczytanie danych
-		bool			bSave(void);			// zapisanie danych
+	bool			load(void);			// wczytanie danych
+	bool			save(void);			// zapisanie danych
 		
-	private:
-	
-		unsigned long	m_ulScoreTable[11];
-		char			m_cNameTable[11][100];
+	unsigned long	_scoreTable[11];
+	char			_nameTable[11][100];
 				
 };
 

@@ -20,7 +20,7 @@ CRSpline::~CRSpline()
 }
 
 // Solve the Catmull-Rom parametric equation for a given time(t) and vector quadruple (p1,p2,p3,p4)
-Vec3 CRSpline::Eq(float t, const Vec3 &p1, const Vec3 &p2, const Vec3 &p3, const Vec3 &p4)
+Vec3 CRSpline::eq(float t, const Vec3 &p1, const Vec3 &p2, const Vec3 &p3, const Vec3 &p4)
 {
     float t2 = t * t;
     float t3 = t2 * t;
@@ -33,13 +33,13 @@ Vec3 CRSpline::Eq(float t, const Vec3 &p1, const Vec3 &p2, const Vec3 &p3, const
     return (p1*b1 + p2*b2 + p3*b3 + p4*b4); 
 }
 
-void CRSpline::AddPoint(const Vec3 &v)
+void CRSpline::addPoint(const Vec3 &v)
 {
     vp.push_back(v);
     delta_t = (float)1 / (float)(vp.size()-1);
 }
 
-Vec3 CRSpline::GetPoint(float t)
+Vec3 CRSpline::getPoint(float t)
 {
     // Find out in which interval we are on the spline
     int p = (int)(t / delta_t);
@@ -52,15 +52,15 @@ Vec3 CRSpline::GetPoint(float t)
     // Relative (local) time 
 	float lt = (t - delta_t*(float)p) / delta_t;
 	// Interpolate
-    return CRSpline::Eq(lt, vp[p0], vp[p1], vp[p2], vp[p3]);
+    return CRSpline::eq(lt, vp[p0], vp[p1], vp[p2], vp[p3]);
 }
 
-int CRSpline::GetNumPoints()
+int CRSpline::getNumPoints()
 {
 	return vp.size();
 }
 
-Vec3& CRSpline::GetNthPoint(int n)
+Vec3& CRSpline::getNthPoint(int n)
 {
 	return vp[n];
 }

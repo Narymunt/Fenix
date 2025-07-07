@@ -1,23 +1,26 @@
 #include "ytable.h"
 
-CYtable::CYtable()
+#ifndef NULL
+#define NULL nullptr
+#endif
+
+Ytable::Ytable()
 {
 
 }
 
-CYtable::~CYtable()
+Ytable::~Ytable()
 {
 	if (m_ulLine!=NULL) delete m_ulLine;
 }
 
-CYtable::CYtable(unsigned long ulSize, unsigned long ulResolution)
+Ytable::Ytable(unsigned long ulSize, unsigned long ulResolution)
 {
 
 	unsigned long t1;
 
 	if ((m_ulLine= new unsigned long[ulSize+1])==NULL)
 	{
-		fx_debug("ERROR! Out of memory for YTable!");
 		return;
 	}
 
@@ -28,7 +31,7 @@ CYtable::CYtable(unsigned long ulSize, unsigned long ulResolution)
 
 }
 
-unsigned long CYtable::ulLine(int iIndex)
+unsigned long Ytable::ulLine(int iIndex)
 {
 	return m_ulLine[iIndex];
 }

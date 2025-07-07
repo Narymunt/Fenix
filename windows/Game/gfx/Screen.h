@@ -5,15 +5,15 @@
 #include "../gfx/OGL.h"
 #include "../Game.h"
 
-class CScreen
+class Screen
 {
 
 public : 
 	
-	CScreen();											// fullscreen, rozdzielczosc taka sama jak desktop
-	CScreen(int x, int y, bool fullscreen);				// okno lub fullscreen o podanym wymiarze
+	Screen();											// fullscreen, rozdzielczosc taka sama jak desktop
+	Screen(int x, int y, bool fullscreen);				// okno lub fullscreen o podanym wymiarze
 
-	~CScreen() {};
+	~Screen() {};
 
 	inline int x(int x) { return (int)((float)x * _sizePixelX); };
 	inline int y(int y) { return (int)((float)y * _sizePixelY); };			// podaje zwrotny parametr dla podanego pixela, samemu trzeba pamietac o limitach

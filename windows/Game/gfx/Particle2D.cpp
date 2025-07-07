@@ -24,7 +24,7 @@
    @return none
 */
 
-CParticle2D::CParticle2D(double fX, double fY, double fAlpha, double fAngle, double fIncX, double fIncY, double fIncAlpha, double fIncAngle, unsigned long ulLifeTime) :
+Particle2D::Particle2D(double fX, double fY, double fAlpha, double fAngle, double fIncX, double fIncY, double fIncAlpha, double fIncAngle, unsigned long ulLifeTime) :
    _x(fX),
    _y(fY),
    _dAlpha(fAlpha),
@@ -40,15 +40,7 @@ CParticle2D::CParticle2D(double fX, double fY, double fAlpha, double fAngle, dou
     
 }
 
-/**
-   Destruktor klasy.
-
-   @param none
-   @return none
-
-*/
-
-CParticle2D::~CParticle2D()
+Particle2D::~Particle2D()
 {
 }
 
@@ -68,7 +60,7 @@ CParticle2D::~CParticle2D()
    @return none
 */
 
-void CParticle2D::Regenerate(double fX, double fY, double fAlpha, double fAngle, double fIncX, double fIncY, double fIncAlpha, double fIncAngle, unsigned long ulLifeTime)
+void Particle2D::regenerate(double fX, double fY, double fAlpha, double fAngle, double fIncX, double fIncY, double fIncAlpha, double fIncAngle, unsigned long ulLifeTime)
 {
     _x = fX; 
     _y = fY;
@@ -98,7 +90,7 @@ void CParticle2D::Regenerate(double fX, double fY, double fAlpha, double fAngle,
 
 */
 
-int CParticle2D::Update(unsigned long ulTimer)
+int Particle2D::update(unsigned long ulTimer)
 {
     if (_ulStartTime == 0)
     {

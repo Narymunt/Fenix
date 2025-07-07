@@ -1,27 +1,24 @@
-
 #pragma once
 // sin^cos tables for integers
 
-class CSinTable
+class SinTable
 {
 
 public : 
     
-	CSinTable();
-	~CSinTable();
+	SinTable();
+	~SinTable();
     
-	inline int iSin256(int i) { return _iSin256[i]; }
-	inline int iCos256(int i) { return _iCos256[i]; }
+	inline int sin256(int i) { return _sin256[i]; }
+	inline int cos256(int i) { return _cos256[i]; }
 
-	inline int iSin1024(int i) { return _iSin1024[i]; }
-	inline int iCos1024(int i) { return _iCos1024[i]; }
+	inline int sin1024(int i) { return _sin1024[i]; }
+	inline int cos1024(int i) { return _cos1024[i]; }
 
-protected : 
-
-    int _iSin256[256];
-    int _iCos256[256];
+    int _sin256[256];
+    int _cos256[256];
     
-    int _iSin1024[256];
-    int _iCos1024[256];
+    int _sin1024[256];
+    int _cos1024[256];
 
 };

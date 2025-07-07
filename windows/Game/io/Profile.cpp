@@ -4,266 +4,266 @@
 
 #include "Profile.h"
 
-CProfile::CProfile(char cFilename[])
+Profile::Profile(char cFilename[])
 {
-	strcpy(m_cFilename,cFilename);	// zapamietaj nazwe pliku
+	strcpy(_cFilename,cFilename);	// zapamietaj nazwe pliku
 
 	for (int i=0; i<8; i++)
 	{
-		m_ulTotalScore[i] = 0;
-		m_ulScore[i] = 0;
-		m_ulMap[i] = 0;
-		m_ulLevel[i] = 0;
+		_ulTotalScore[i] = 0;
+		_ulScore[i] = 0;
+		_ulMap[i] = 0;
+		_ulLevel[i] = 0;
 
-		sprintf(m_cName[i],"_____");
+		sprintf(_cName[i],"_____");
 	}
 
-	m_ucCurrentProfile = 0;
+	_ucCurrentProfile = 0;
 }
 
-CProfile::~CProfile()
+Profile::~Profile()
 {
 
 }
 
-void CProfile::SetName(char cNewName[])
+void Profile::setName(char cNewName[])
 {
-	strcpy(m_cName[m_ucCurrentProfile],cNewName);	// zapamietaj nazwe gracza
+	strcpy(_cName[_ucCurrentProfile],cNewName);	// zapamietaj nazwe gracza
 }
 
-char *CProfile::pGetName(void)
+char *Profile::getName(void)
 {
-	return m_cName[m_ucCurrentProfile];
+	return _cName[_ucCurrentProfile];
 }
 
-void CProfile::SetTotalScore(unsigned long ulScore)
+void Profile::setTotalScore(unsigned long ulScore)
 {
-	m_ulTotalScore[m_ucCurrentProfile] = ulScore;
+	_ulTotalScore[_ucCurrentProfile] = ulScore;
 }
 
-void CProfile::AddTotalScore(unsigned long ulScore)
+void Profile::addTotalScore(unsigned long ulScore)
 {
-	m_ulTotalScore[m_ucCurrentProfile] += ulScore;
+	_ulTotalScore[_ucCurrentProfile] += ulScore;
 }
 
-unsigned long CProfile::ulGetTotalScore(void)
+unsigned long Profile::getTotalScore(void)
 {
-	return m_ulTotalScore[m_ucCurrentProfile];
+	return _ulTotalScore[_ucCurrentProfile];
 }
 
-void CProfile::SetScore(unsigned long ulScore)
+void Profile::setScore(unsigned long ulScore)
 {
-	m_ulScore[m_ucCurrentProfile] = ulScore;
+	_ulScore[_ucCurrentProfile] = ulScore;
 }
 
-void CProfile::AddScore(unsigned long ulScore)
+void Profile::addScore(unsigned long ulScore)
 {
-	m_ulScore[m_ucCurrentProfile] += ulScore;
+	_ulScore[_ucCurrentProfile] += ulScore;
 }
 
-unsigned long CProfile::ulGetScore(void)
+unsigned long Profile::getScore(void)
 {
-	return m_ulScore[m_ucCurrentProfile];
+	return _ulScore[_ucCurrentProfile];
 }
 
-void CProfile::SetLevel(unsigned long ulLevel)
+void Profile::setLevel(unsigned long ulLevel)
 {
-	m_ulLevel[m_ucCurrentProfile] = ulLevel;
+	_ulLevel[_ucCurrentProfile] = ulLevel;
 }
 
-void CProfile::AddLevel(unsigned long ulLevel)
+void Profile::addLevel(unsigned long ulLevel)
 {
-	m_ulLevel[m_ucCurrentProfile] += ulLevel;
+	_ulLevel[_ucCurrentProfile] += ulLevel;
 }
 
-unsigned long CProfile::ulGetLevel(void)
+unsigned long Profile::getLevel(void)
 {
-	if (m_ulTotalScore[m_ucCurrentProfile] < 10000)
-		m_ulLevel[m_ucCurrentProfile] = 1; 
+	if (_ulTotalScore[_ucCurrentProfile] < 10000)
+		_ulLevel[_ucCurrentProfile] = 1; 
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=10000 && m_ulTotalScore[m_ucCurrentProfile] < 30000)
-		m_ulLevel[m_ucCurrentProfile] = 2;
+	if (_ulTotalScore[_ucCurrentProfile] >=10000 && _ulTotalScore[_ucCurrentProfile] < 30000)
+		_ulLevel[_ucCurrentProfile] = 2;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=30000 && m_ulTotalScore[m_ucCurrentProfile] < 60000)
-		m_ulLevel[m_ucCurrentProfile] = 3;
+	if (_ulTotalScore[_ucCurrentProfile] >=30000 && _ulTotalScore[_ucCurrentProfile] < 60000)
+		_ulLevel[_ucCurrentProfile] = 3;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=60000 && m_ulTotalScore[m_ucCurrentProfile] < 100000)
-		m_ulLevel[m_ucCurrentProfile] = 4;
+	if (_ulTotalScore[_ucCurrentProfile] >=60000 && _ulTotalScore[_ucCurrentProfile] < 100000)
+		_ulLevel[_ucCurrentProfile] = 4;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=100000 && m_ulTotalScore[m_ucCurrentProfile] < 150000)
-		m_ulLevel[m_ucCurrentProfile] = 5;
+	if (_ulTotalScore[_ucCurrentProfile] >=100000 && _ulTotalScore[_ucCurrentProfile] < 150000)
+		_ulLevel[_ucCurrentProfile] = 5;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=150000 && m_ulTotalScore[m_ucCurrentProfile] < 210000)
-		m_ulLevel[m_ucCurrentProfile] = 6;
+	if (_ulTotalScore[_ucCurrentProfile] >=150000 && _ulTotalScore[_ucCurrentProfile] < 210000)
+		_ulLevel[_ucCurrentProfile] = 6;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=210000 && m_ulTotalScore[m_ucCurrentProfile] < 280000)
-		m_ulLevel[m_ucCurrentProfile] = 7;
+	if (_ulTotalScore[_ucCurrentProfile] >=210000 && _ulTotalScore[_ucCurrentProfile] < 280000)
+		_ulLevel[_ucCurrentProfile] = 7;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=280000 && m_ulTotalScore[m_ucCurrentProfile] < 360000)
-		m_ulLevel[m_ucCurrentProfile] = 8;
+	if (_ulTotalScore[_ucCurrentProfile] >=280000 && _ulTotalScore[_ucCurrentProfile] < 360000)
+		_ulLevel[_ucCurrentProfile] = 8;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=360000 && m_ulTotalScore[m_ucCurrentProfile] < 450000)
-		m_ulLevel[m_ucCurrentProfile] = 9;
+	if (_ulTotalScore[_ucCurrentProfile] >=360000 && _ulTotalScore[_ucCurrentProfile] < 450000)
+		_ulLevel[_ucCurrentProfile] = 9;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=450000 && m_ulTotalScore[m_ucCurrentProfile] < 550000)
-		m_ulLevel[m_ucCurrentProfile] = 10;
+	if (_ulTotalScore[_ucCurrentProfile] >=450000 && _ulTotalScore[_ucCurrentProfile] < 550000)
+		_ulLevel[_ucCurrentProfile] = 10;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=550000 && m_ulTotalScore[m_ucCurrentProfile] < 660000)
-		m_ulLevel[m_ucCurrentProfile] = 11;
+	if (_ulTotalScore[_ucCurrentProfile] >=550000 && _ulTotalScore[_ucCurrentProfile] < 660000)
+		_ulLevel[_ucCurrentProfile] = 11;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=660000 && m_ulTotalScore[m_ucCurrentProfile] < 780000)
-		m_ulLevel[m_ucCurrentProfile] = 12;
+	if (_ulTotalScore[_ucCurrentProfile] >=660000 && _ulTotalScore[_ucCurrentProfile] < 780000)
+		_ulLevel[_ucCurrentProfile] = 12;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=780000 && m_ulTotalScore[m_ucCurrentProfile] < 910000)
-		m_ulLevel[m_ucCurrentProfile] = 13;
+	if (_ulTotalScore[_ucCurrentProfile] >=780000 && _ulTotalScore[_ucCurrentProfile] < 910000)
+		_ulLevel[_ucCurrentProfile] = 13;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=910000 && m_ulTotalScore[m_ucCurrentProfile] < 1050000)
-		m_ulLevel[m_ucCurrentProfile] = 14;
+	if (_ulTotalScore[_ucCurrentProfile] >=910000 && _ulTotalScore[_ucCurrentProfile] < 1050000)
+		_ulLevel[_ucCurrentProfile] = 14;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1050000 && m_ulTotalScore[m_ucCurrentProfile] < 1200000)
-		m_ulLevel[m_ucCurrentProfile] = 15;
+	if (_ulTotalScore[_ucCurrentProfile] >=1050000 && _ulTotalScore[_ucCurrentProfile] < 1200000)
+		_ulLevel[_ucCurrentProfile] = 15;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1200000 && m_ulTotalScore[m_ucCurrentProfile] < 1360000)
-		m_ulLevel[m_ucCurrentProfile] = 16;
+	if (_ulTotalScore[_ucCurrentProfile] >=1200000 && _ulTotalScore[_ucCurrentProfile] < 1360000)
+		_ulLevel[_ucCurrentProfile] = 16;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1360000 && m_ulTotalScore[m_ucCurrentProfile] < 1530000)
-		m_ulLevel[m_ucCurrentProfile] = 17;
+	if (_ulTotalScore[_ucCurrentProfile] >=1360000 && _ulTotalScore[_ucCurrentProfile] < 1530000)
+		_ulLevel[_ucCurrentProfile] = 17;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1530000 && m_ulTotalScore[m_ucCurrentProfile] < 1720000)
-		m_ulLevel[m_ucCurrentProfile] = 18;
+	if (_ulTotalScore[_ucCurrentProfile] >=1530000 && _ulTotalScore[_ucCurrentProfile] < 1720000)
+		_ulLevel[_ucCurrentProfile] = 18;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1720000 && m_ulTotalScore[m_ucCurrentProfile] < 1910000)
-		m_ulLevel[m_ucCurrentProfile] = 19;
+	if (_ulTotalScore[_ucCurrentProfile] >=1720000 && _ulTotalScore[_ucCurrentProfile] < 1910000)
+		_ulLevel[_ucCurrentProfile] = 19;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1910000 )
-		m_ulLevel[m_ucCurrentProfile] = 20;
+	if (_ulTotalScore[_ucCurrentProfile] >=1910000 )
+		_ulLevel[_ucCurrentProfile] = 20;
 
-	return m_ulLevel[m_ucCurrentProfile];
+	return _ulLevel[_ucCurrentProfile];
 }
 
 
-float CProfile::fGetProgress(void)
+float Profile::getProgress(void)
 {
 
 	float fProgress;
 
-	if (m_ulTotalScore[m_ucCurrentProfile] < 10000)
+	if (_ulTotalScore[_ucCurrentProfile] < 10000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 1; 
-		fProgress = (float)(m_ulTotalScore[m_ucCurrentProfile] / 10000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 1; 
+		fProgress = (float)(_ulTotalScore[_ucCurrentProfile] / 10000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=10000 && m_ulTotalScore[m_ucCurrentProfile] < 30000)
+	if (_ulTotalScore[_ucCurrentProfile] >=10000 && _ulTotalScore[_ucCurrentProfile] < 30000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 2;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-10000) / 20000.0f ) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 2;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-10000) / 20000.0f ) * 100.0f;
 	}
 	
-	if (m_ulTotalScore[m_ucCurrentProfile] >=30000 && m_ulTotalScore[m_ucCurrentProfile] < 60000)
+	if (_ulTotalScore[_ucCurrentProfile] >=30000 && _ulTotalScore[_ucCurrentProfile] < 60000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 3;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-30000) / 30000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 3;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-30000) / 30000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=60000 && m_ulTotalScore[m_ucCurrentProfile] < 100000)
+	if (_ulTotalScore[_ucCurrentProfile] >=60000 && _ulTotalScore[_ucCurrentProfile] < 100000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 4;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-60000) / 40000.0f) * 100.0f;		
+		_ulLevel[_ucCurrentProfile] = 4;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-60000) / 40000.0f) * 100.0f;		
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=100000 && m_ulTotalScore[m_ucCurrentProfile] < 150000)
+	if (_ulTotalScore[_ucCurrentProfile] >=100000 && _ulTotalScore[_ucCurrentProfile] < 150000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 5;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-100000) / 50000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 5;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-100000) / 50000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=150000 && m_ulTotalScore[m_ucCurrentProfile] < 210000)
+	if (_ulTotalScore[_ucCurrentProfile] >=150000 && _ulTotalScore[_ucCurrentProfile] < 210000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 6;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-150000) / 60000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 6;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-150000) / 60000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=210000 && m_ulTotalScore[m_ucCurrentProfile] < 280000)
+	if (_ulTotalScore[_ucCurrentProfile] >=210000 && _ulTotalScore[_ucCurrentProfile] < 280000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 7;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-210000) / 70000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 7;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-210000) / 70000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=280000 && m_ulTotalScore[m_ucCurrentProfile] < 360000)
+	if (_ulTotalScore[_ucCurrentProfile] >=280000 && _ulTotalScore[_ucCurrentProfile] < 360000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 8;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-280000) / 80000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 8;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-280000) / 80000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=360000 && m_ulTotalScore[m_ucCurrentProfile] < 450000)
+	if (_ulTotalScore[_ucCurrentProfile] >=360000 && _ulTotalScore[_ucCurrentProfile] < 450000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 9;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-360000) / 90000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 9;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-360000) / 90000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=450000 && m_ulTotalScore[m_ucCurrentProfile] < 550000)
+	if (_ulTotalScore[_ucCurrentProfile] >=450000 && _ulTotalScore[_ucCurrentProfile] < 550000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 10;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-450000) / 100000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 10;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-450000) / 100000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=550000 && m_ulTotalScore[m_ucCurrentProfile] < 660000)
+	if (_ulTotalScore[_ucCurrentProfile] >=550000 && _ulTotalScore[_ucCurrentProfile] < 660000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 11;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-550000) / 110000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 11;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-550000) / 110000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=660000 && m_ulTotalScore[m_ucCurrentProfile] < 780000)
+	if (_ulTotalScore[_ucCurrentProfile] >=660000 && _ulTotalScore[_ucCurrentProfile] < 780000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 12;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-660000) / 120000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 12;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-660000) / 120000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=780000 && m_ulTotalScore[m_ucCurrentProfile] < 910000)
+	if (_ulTotalScore[_ucCurrentProfile] >=780000 && _ulTotalScore[_ucCurrentProfile] < 910000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 13;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-780000) / 130000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 13;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-780000) / 130000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=910000 && m_ulTotalScore[m_ucCurrentProfile] < 1050000)
+	if (_ulTotalScore[_ucCurrentProfile] >=910000 && _ulTotalScore[_ucCurrentProfile] < 1050000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 14;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-910000) / 140000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 14;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-910000) / 140000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1050000 && m_ulTotalScore[m_ucCurrentProfile] < 1200000)
+	if (_ulTotalScore[_ucCurrentProfile] >=1050000 && _ulTotalScore[_ucCurrentProfile] < 1200000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 15;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-1050000) / 150000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 15;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-1050000) / 150000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1200000 && m_ulTotalScore[m_ucCurrentProfile] < 1360000)
+	if (_ulTotalScore[_ucCurrentProfile] >=1200000 && _ulTotalScore[_ucCurrentProfile] < 1360000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 16;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-1200000) / 160000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 16;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-1200000) / 160000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1360000 && m_ulTotalScore[m_ucCurrentProfile] < 1530000)
+	if (_ulTotalScore[_ucCurrentProfile] >=1360000 && _ulTotalScore[_ucCurrentProfile] < 1530000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 17;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-1360000) / 170000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 17;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-1360000) / 170000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1530000 && m_ulTotalScore[m_ucCurrentProfile] < 1720000)
+	if (_ulTotalScore[_ucCurrentProfile] >=1530000 && _ulTotalScore[_ucCurrentProfile] < 1720000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 18;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-1530000) / 180000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 18;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-1530000) / 180000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1720000 && m_ulTotalScore[m_ucCurrentProfile] < 1910000)
+	if (_ulTotalScore[_ucCurrentProfile] >=1720000 && _ulTotalScore[_ucCurrentProfile] < 1910000)
 	{
-		m_ulLevel[m_ucCurrentProfile] = 19;
-		fProgress = (float)( (m_ulTotalScore[m_ucCurrentProfile]-1720000) / 190000.0f) * 100.0f;
+		_ulLevel[_ucCurrentProfile] = 19;
+		fProgress = (float)( (_ulTotalScore[_ucCurrentProfile]-1720000) / 190000.0f) * 100.0f;
 	}
 
-	if (m_ulTotalScore[m_ucCurrentProfile] >=1910000 )
+	if (_ulTotalScore[_ucCurrentProfile] >=1910000 )
 	{
-		m_ulLevel[m_ucCurrentProfile] = 20;
+		_ulLevel[_ucCurrentProfile] = 20;
 		fProgress = 100.0f;
 	}
 
@@ -272,24 +272,24 @@ float CProfile::fGetProgress(void)
 
 // zapis profilu
 
-bool CProfile::bSave(void)
+bool Profile::save(void)
 {
 	FILE	*plik;
 
-	if ((plik=fopen(m_cFilename,"wb"))==NULL)
+	if ((plik=fopen(_cFilename,"wb"))==NULL)
 	{
 		return false;
 	}
 	else
 	{
-		fprintf(plik,"%d\n",m_ucCurrentProfile);
+		fprintf(plik,"%d\n",_ucCurrentProfile);
 
 		for (int i=0; i<8; i++)
 		{
-			fprintf(plik,"%s\n%d\n%d\n%d\n%d\n", m_cName[i], m_ulTotalScore[i], m_ulScore[i], m_ulMap[i], m_ulLevel[i]);
+			fprintf(plik,"%s\n%d\n%d\n%d\n%d\n", _cName[i], _ulTotalScore[i], _ulScore[i], _ulMap[i], _ulLevel[i]);
 
 			for (int j=0; j<21;j++)
-				fprintf(plik,"%d\n",m_ucTroophy[i][j]);
+				fprintf(plik,"%d\n",_ucTroophy[i][j]);
 		}
 	}
 	
@@ -298,26 +298,26 @@ bool CProfile::bSave(void)
 	return true;
 }
 
-bool CProfile::bLoad(void)
+bool Profile::load(void)
 {
 	FILE	*plik;
 
 	plik = NULL;
 
-	if ((plik=fopen(m_cFilename,"rt"))==NULL)
+	if ((plik=fopen(_cFilename,"rt"))==NULL)
 	{
 		return false;
 	}
 	else
 	{
-		fscanf(plik,"%d\n",&m_ucCurrentProfile);
+		fscanf(plik,"%d\n",&_ucCurrentProfile);
 
 		for (int i=0; i!=8; i++)
 		{
-			fscanf(plik,"%s\n%d\n%d\n%d\n%d\n", m_cName[i], &m_ulTotalScore[i], &m_ulScore[i], &m_ulMap[i], &m_ulLevel[i]);
+			fscanf(plik,"%s\n%d\n%d\n%d\n%d\n", _cName[i], &_ulTotalScore[i], &_ulScore[i], &_ulMap[i], &_ulLevel[i]);
 
 			for (int j=0; j!=21; j++)
-				fscanf(plik,"%d\n",&m_ucTroophy[i][j]);
+				fscanf(plik,"%d\n",&_ucTroophy[i][j]);
 		}
 	}
 
@@ -327,47 +327,47 @@ bool CProfile::bLoad(void)
 
 	for (int i=0; i<8; i++)
 	{
-		if (m_ulLevel[i]>9 || m_ulLevel[i]<1)
-			m_ulLevel[i] = 1;
+		if (_ulLevel[i]>9 || _ulLevel[i]<1)
+			_ulLevel[i] = 1;
 	}
 
 	return true;
 }
 
-void CProfile::ucTroophy(int iIndex, unsigned char ucValue)
+void Profile::troophy(int iIndex, unsigned char ucValue)
 {
-	m_ucTroophy[m_ucCurrentProfile][iIndex] = ucValue;
+	_ucTroophy[_ucCurrentProfile][iIndex] = ucValue;
 }
 
-unsigned char CProfile::ucTroophy(int iIndex)
+unsigned char Profile::troophy(int iIndex)
 {
-	return m_ucTroophy[m_ucCurrentProfile][iIndex];
+	return _ucTroophy[_ucCurrentProfile][iIndex];
 }
 
 //=== mapa oznacza poziom / miejsce na mapie, ktore wybieramy w eLevelMenu
 
-void CProfile::ulMap(unsigned long ul)
+void Profile::map(unsigned long ul)
 {
-	m_ulMap[m_ucCurrentProfile] = ul;
+	_ulMap[_ucCurrentProfile] = ul;
 }
 
-unsigned long CProfile::ulMap(void)
+unsigned long Profile::map(void)
 {
-	return m_ulMap[m_ucCurrentProfile];
+	return _ulMap[_ucCurrentProfile];
 }
 
-void CProfile::ucCurrentProfile(unsigned char ucProfile)	// ktory profil jest aktualnie u¿ywany
+void Profile::currentProfile(unsigned char uProfile)	// ktory profil jest aktualnie u¿ywany
 {
-	m_ucCurrentProfile = ucProfile;
+	_ucCurrentProfile = uProfile;
 }
 
-unsigned char CProfile::ucCurrentProfile(void)
+unsigned char Profile::currentProfile(void)
 {
-	return m_ucCurrentProfile;
+	return _ucCurrentProfile;
 }
 
-int CProfile::iNameSize(void)
+int Profile::nameSize(void)
 {
-	return strlen(m_cName[m_ucCurrentProfile]);
+	return strlen(_cName[_ucCurrentProfile]);
 }
 

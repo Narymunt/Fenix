@@ -1,23 +1,18 @@
 #pragma once
 
-#include "debug.h"
-
-class CYtable  
+class Ytable  
 {
 						
 public:
 
-	CYtable();
-	CYtable(unsigned long ulSize, unsigned long ulResolution);	// size * resolution
+	Ytable();
+	Ytable(unsigned long ulSize, unsigned long ulResolution);	// size * resolution
 
-	virtual ~CYtable();
+	virtual ~Ytable();
 
 	unsigned long ulLine(int iIndex);
 	
-private: 
 
 	unsigned long	*m_ulLine;
 
 };
-
-#endif 

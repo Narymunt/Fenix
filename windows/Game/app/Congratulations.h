@@ -10,25 +10,25 @@
 #include "../gfx/Screen.h"
 #include "../ui/SpriteFont.h"
 
-class CCongratulations: public CGameObject
+class Congratulations: public GameObject
 {
 public:
-	CCongratulations();
-	~CCongratulations();
+	Congratulations();
+	~Congratulations();
 
-	void	Open(CScreen *pScreen);		// load data
-	void	Close(void);				// unload 
+	void	open(Screen *screen);		// load data
+	void	close(void);				// unload 
 
-	int		Render(unsigned long lTimer, CMouse *pMouse);		// render frame																					
+	int		render(unsigned long timer, Mouse *mouse);		// render frame																					
 
 private:
 
-	CSprite					*_background;	
-	CSprite					*_black;
+	Sprite					*_background;	
+	Sprite					*_black;
 
-	CButton					*_exitButton;
+	Button					*_exitButton;
 
-	CSpriteFont				*_font;
+	SpriteFont				*_font;
 
 	unsigned long			_timerStart;	// start
 

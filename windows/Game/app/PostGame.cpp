@@ -1,6 +1,6 @@
 #include "PostGame.h"
 
-CPostGame::CPostGame()
+PostGame::PostGame()
 {
 	_background = NULL;
 	_exitButton = NULL;
@@ -8,30 +8,30 @@ CPostGame::CPostGame()
 	_isOpen = false;
 }
 
-CPostGame::~CPostGame()
+PostGame::~PostGame()
 {
 	close();
 }
 
-void CPostGame::open(CScreen* pScreen)
+void PostGame::open(Screen* pScreen)
 {
-	_background = new CSprite((char*)"level04.jpg");
+	_background = new Sprite((char*)"level04.jpg");
 
-	_exitButton = new CButton((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
+	_exitButton = new Button((char*)"x1.png", (char*) "x2.png", (char*) "x3.png");
 	_exitButton->position(128, 64 - 32);
 	_exitButton->setHotCoords(128, 32, 128 + 128, 32 + 128);
 
 	_isOpen = true;
 }
 
-void CPostGame::close(void)
+void PostGame::close(void)
 {
 	safeDelete(_background);
 	safeDelete(_exitButton);
 	_isOpen = false;
 }
 
-int CPostGame::render(unsigned long timer, CMouse* mouse)
+int PostGame::render(unsigned long timer, Mouse* mouse)
 {
 	if (!mouse->_isL)
 		_isMouseLock = false;

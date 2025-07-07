@@ -5,13 +5,13 @@
 #include <stdio.h>
 #include "../Game.h"
 
-class CGameSettings
+class GameSettings
 {
 
 public:
 
-	CGameSettings();
-    ~CGameSettings();
+	GameSettings();
+    ~GameSettings();
     
     bool    load(void);
     bool    save(void);   

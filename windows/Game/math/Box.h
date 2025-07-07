@@ -1,13 +1,15 @@
+// do sprawdzania kolizji, oraz czy jeden prostokat jest w drugim
+
 #pragma once
 
-class CBox
+class Box
 {
 
 public:
 
-	CBox();
-	CBox(float x1, float y1, float x2, float y2);
-	CBox~();
+	Box();
+	Box(float x1, float y1, float x2, float y2);
+	~Box();
 
 	void set(float x1, float y1, float x2, float y2);
 	void get(float *x1, float *y1, float *x2, float *y2);
@@ -26,11 +28,10 @@ public:
 
 	void	update();
 	
-	bool	isIntersect(CBox box1, CBox box2);
-	bool	isInside(CBox box1, CBox box2);
-	
-protected:
+	bool	sort(void);		// posortuj wierzcholki przed sprawdzeniem intersekcji, tak aby x1,y1 to byl zawsze lewy gorny rog, zwraca true jezeli wierzcholki pokrywaja sie
+	bool	isIntersect(Box box1, Box box2);
+	bool	isInside(Box box1, Box box2);
 
 	float	m_fX1, m_fY1, m_fX2, m_fY2;
 
-};
+}; 

@@ -32,11 +32,11 @@
 #define POPUP_INGAME_GOOD4		90
 #define POPUP_INGAME_GOOD5		100
 
-class CPopup: public CGameObject
+class Popup: public GameObject
 {
 	public:
-		CPopup();
-		~CPopup();
+		Popup();
+		~Popup();
 
 		void	open(void);				// load 
 		void	close(void);						// unload 
@@ -55,14 +55,14 @@ class CPopup: public CGameObject
 		int				_type[64];				// type popup
 		unsigned long	_timerStart[64];		// popup start timer 
 		
-		CSprite		*_whiteFlash;			// white screen 
-		CSprite		*_blackFlash;			// black screen 
+		Sprite		*_whiteFlash;			// white screen 
+		Sprite		*_blackFlash;			// black screen 
 
-		CSprite		*_start;
-		CSprite		*_good1;				// do not look here  ;)
-		CSprite		*_good2;
-		CSprite		*_good3;
-		CSprite		*_good4;
-		CSprite		*_good5;		
+		Sprite		*_start;
+		Sprite		*_good1;				// do not look here  ;)
+		Sprite		*_good2;
+		Sprite		*_good3;
+		Sprite		*_good4;
+		Sprite		*_good5;		
 
 };

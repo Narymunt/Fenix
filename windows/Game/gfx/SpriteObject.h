@@ -12,13 +12,13 @@
 #include "../gfx/OGL.h"
 #include "../gfx/Screen.h"
 		
-class CSpriteObject
+class SpriteObject
 {
 
 public:
 
-	CSpriteObject();												// najpierw uruchomiony jest ten konstruktor, a potem od sprite
-	~CSpriteObject();
+	SpriteObject();												// najpierw uruchomiony jest ten konstruktor, a potem od sprite
+	~SpriteObject();
 
 	// do porownywania nazw
 
@@ -37,7 +37,7 @@ public:
 	void				colorI(float r, float g, float b, float a);	// modifikator koloru
 
 	void				resize(int x1, int y1, int x2, int y2);		// rozmiar na podstawie wspolrzednych ekranu
-	void				fullscreen(CScreen *screen);				// zmien rozmiar na taki sam jak rozmiar okna renderowania
+	void				fullscreen(Screen *screen);					// zmien rozmiar na taki sam jak rozmiar okna renderowania
 
 	// modyfikator dla kana³u alfa
 
