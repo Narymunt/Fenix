@@ -93,6 +93,8 @@ int CMainMenu::iOpen(void)
 		return 100;
 	}
 
+	SDL_Log("=> NO ERROR");
+
 	if (_pScreen->_isHD)
 	{
 		_crate0 = new CSprite((char*)"128obj1.png");
@@ -111,7 +113,7 @@ int CMainMenu::iOpen(void)
 
 	// budowanie mapy
 
-	for (int i=0; i<300; i++)
+	for (int i=0; i<sizeof(rowA); i++)
 	{
 		buildMap(rowA[i],i*128,0);
 
@@ -209,7 +211,7 @@ void CMainMenu::renderMap()
 {
 	// renderowanie planszy
 
-	for (int i=0;i<300; i++)
+	for (int i=0;i<_lane.size(); i++)
 	{
 		switch(_lane[i]->type)
 		{
@@ -272,7 +274,7 @@ void CMainMenu::renderMap()
 
 	// przesuwanie planszy
 
-	for (int i=0;i<300; i++)
+	for (int i=0;i<_lane.size(); i++)
 	{
 		switch(_lane[i]->type)
 		{

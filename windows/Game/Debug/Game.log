@@ -1,1 +1,102 @@
-﻿
+﻿  SpriteFont.cpp
+  Mouse.cpp
+  MobileKeyboard.cpp
+  Checkbox.cpp
+  ButtonTTF.cpp
+  Button.cpp
+  Ytable.cpp
+  Vector2d.cpp
+  Tween.cpp
+  SinTable.cpp
+  Interpolate.cpp
+  HSV.cpp
+  Hermite.cpp
+  EquationSystem.cpp
+  CRSpline.cpp
+  Clamp.cpp
+  BSpline.cpp
+  Box.cpp
+  Bezier.cpp
+  Zip.cpp
+  Generating Code...
+  Compiling...
+  Unzip.cpp
+  Profile.cpp
+  HighScore.cpp
+  Datafile.cpp
+  SpriteObject.cpp
+  Sprite.cpp
+  Screen.cpp
+g:\fenix\trunk\windows\game\gfx\screen.cpp(87): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+g:\fenix\trunk\windows\game\gfx\screen.cpp(90): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+  Popup.cpp
+  Particle2DManager.cpp
+  Particle2D.cpp
+  OGL.cpp
+  FXManager.cpp
+  FontTTF.cpp
+  AnimationTrack.cpp
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(100): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(108): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(117): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(119): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(125): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(139): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(145): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(147): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(175): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(253) : see declaration of 'fscanf'
+g:\fenix\trunk\windows\game\gfx\animationtrack.cpp(191): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+  AnimationEvent.cpp
+g:\fenix\trunk\windows\game\gfx\animationevent.cpp(24): warning C4101: 'buffer' : unreferenced local variable
+  Animation.cpp
+  Game.cpp
+  GameSettings.cpp
+  GameObject.cpp
+  vector.cpp
+  Generating Code...
+  Compiling...
+  spline.cpp
+  quatern.cpp
+  matrix.cpp
+  file_clx.cpp
+  file_3ds.cpp
+  clax.cpp
+  camera.cpp
+  Troophy.cpp
+  SkeletalEditor.cpp
+g:\fenix\trunk\windows\game\app\skeletaleditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+g:\fenix\trunk\windows\game\app\skeletaleditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Settings.cpp
+  SeqEditor.cpp
+g:\fenix\trunk\windows\game\app\seqeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+g:\fenix\trunk\windows\game\app\seqeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneEditor.cpp
+g:\fenix\trunk\windows\game\app\sceneeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+g:\fenix\trunk\windows\game\app\sceneeditor.cpp(49): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Preload.cpp
+  PostTroophy.cpp
+  PostGame.cpp
+  ParticleEditor.cpp
+  MainMenu.cpp
+  LevelMenu.cpp
+  Language.cpp
+  Intro.cpp
+  Generating Code...
+  Compiling...
+  Ingame.cpp
+  Help.cpp
+  Credits.cpp
+  Congratulations.cpp
+  AnimationEditor.cpp
+  Generating Code...
+  Game.vcxproj -> G:\Fenix\trunk\windows\Debug\Game.exe

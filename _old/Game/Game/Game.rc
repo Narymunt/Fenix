@@ -1,0 +1,6 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+GAME_ICO ICON "Creator.ico"
+
