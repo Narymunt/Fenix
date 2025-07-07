@@ -17,9 +17,10 @@ void SceneEditor::open(Screen* screen)
 {
 	_background = new Sprite((char*)"grid.jpg");
 
-	_exitButton = new ButtonTTF((char*)"orange.png", (char*) "blue.png", (char*)"green.png",(char*)"exit");
+//	_exitButton = new ButtonTTF((char*)"orange.png", (char*) "blue.png", (char*)"green.png",(char*)"tutaj JAKIŒ exit");
+	_exitButton = new ButtonTTF((char*)"green_0.png", (char*)"green_1.png", (char*)"green.png", (char*)"some text");
 	_exitButton->set(screen->_x[500], screen->_y[500], screen->_x[600], screen->_y[550]);
-	_exitButton->alfa(0.5f);
+	_exitButton->alfa(1.f);
 
 	_isOpen = true;
 }

@@ -61,7 +61,7 @@ public:
 	float				_rI, _gI, _bI, _aI;
 
 	char				_objectName[256];	// nazwa naszego obiektu
-	char				_filename[256];		// nazwa pliku
+	char				_fileName[256];		// nazwa pliku
 
 };
 

@@ -23,8 +23,8 @@
 // EDIT_MODE jest do ustawiania leveli, wtedy 2560x1440 fullscreen, z dodatkowymi kontrolkami do edycji obiektow itp
 
 #define DEBUG_MODE		1
-#define FULLSCREEN		0
-#define WINDOW_X		1024
+#define FULLSCREEN		1
+#define WINDOW_X		1366
 #define WINDOW_Y		768
 #define EDIT_MODE		0
 
@@ -35,11 +35,13 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
+#include <SDL_opengl.h>
 
 #include "Game.h"
 
 #include "gfx/OGL.h"
 #include "gfx/Screen.h"
+#include "gfx/SpriteManager.h"
 #include "gfx/Sprite.h"
 #include "ui/Mouse.h"	
 #include "common/GameSettings.h"
@@ -47,12 +49,15 @@
 #include "ui/SpriteFont.h"
 #include "gfx/FontTTF.h"
 
-//=== stany aplikacji 
+//=== modu³y aplikacji 
 
 #include "app/Ingame.h"					// in game - tutaj ukladamy klocki
 #include "app/Congratulations.h"		// zwyciêstwo !!! koniec gry !!!
 
 #include "app/SceneEditor.h"			// edytor do scenek
+
+static SpriteManager spriteManager;
+
 
 int		appState= SCENE_EDITOR;			// current application state
 int		prevState = SETTINGS;			// poprzedni stan aplikacji
@@ -65,7 +70,7 @@ int		ret;							// funkcje renderujace moga zwracac rozne wartosci
 unsigned char	appLanguage;			// w jakim jezyku wyswietlamy menu etc.
 unsigned char	musicVolume;			// glosnosc muzyki
 
-// stany aplikacji
+// modu³y aplikacji
 
 Ingame				*appIngame;				// MATCH3
 Congratulations		*appCongratulations;	// zwyciêstwo, koniec gry
@@ -76,7 +81,7 @@ SceneEditor		*appSceneEditor;
 
 // elementy g³ówne
 
-Screen				*screen;	// our screen, there can be more than 1
+static Screen				*screen;	// our screen, there can be more than 1
 FontTTF				*font;
 Mouse				*mouse; // myszka  
 
@@ -85,6 +90,11 @@ Mouse				*mouse; // myszka
 Sprite *background = NULL;
 Sprite *loadScreen = NULL;
 Sprite *confirmQuit = NULL;					// czy na pewno wyjscie z gry ? 
+
+
+#define POOL 1000
+
+Sprite* spritePool[POOL];
 
 // do potwierdzenia wyjscia z gry
 
@@ -212,6 +222,12 @@ int main(int argc, char *argv[])
 	loadScreen->fullscreen(screen);
 	loadScreen->render();
 
+	for (int i = 0; i < POOL; i++)
+	{
+		spritePool[i] = new Sprite((char*)"a07_u.png");
+		spritePool[i]->_x = i * 2;
+		spritePool[i]->_y = i;
+	}
 	// to potrzebne aby w dowolnym momencie reagowac na ESC
 	//	pConfirmQuit = new CSprite(pMainScreen, "QUIT_SCREEN");
 	//	pButtonYES = new CButton(pMainScreen, "BUTTON_OK_PROFILE");
@@ -411,6 +427,14 @@ int main(int argc, char *argv[])
 
 		}	// switch
 
+
+		for (int i = 0; i < POOL; i++)
+		{
+			spritePool[i]->_x = spritePool[i]->_x > WINDOW_X ? 0 : spritePool[i]->_x + i;
+			spritePool[i]->_y = spritePool[i]->_y > WINDOW_Y ? 0 : spritePool[i]->_y + i;
+			spritePool[i]->render();
+		}
+
 		mouse->render();
 
 		// info debugowe
@@ -434,6 +458,8 @@ int main(int argc, char *argv[])
 		font->print(cY, 255, 255, 255, 200, 100);
 
 //		spriteFont->print(10, 10, 1, 0.05f, 0.05f, buffer);
+
+
 
 		oglFlip();		// show the screen
 
@@ -477,6 +503,9 @@ int main(int argc, char *argv[])
 	safeDelete (spriteFont);
 	safeDelete (mouse);
 	safeDelete (screen);
+
+	for (int i = 0; i < POOL; i++)
+		safeDelete(spritePool[i]);
 
 	TTF_Quit();
 	SDL_Quit();

@@ -52,10 +52,17 @@ Sprite::Sprite(char filename[], float a) : _sprite(NULL)
 
 bool Sprite::load(char filename[])
 {
+	static SpriteManager spriteManager;
+
+	_sprite = spriteManager.get(filename);		// najpierw sprawdzamy, czy mamy juz taki wskaznik do takiej nazwy pliku, jezeli tak, to pobieramy go i nie tworzymy nowej textury
+
 	if (!_sprite) loadFromZip(filename);
 	if (!_sprite) loadFromDatafile(filename);
 	if (!_sprite) loadFromFile(filename);
 	if (!_sprite) loadFromPAQ(filename);
+
+	if (_sprite) spriteManager.add(filename, _sprite);	// dodajemy, sprawdzamy wewnatrz spriteManagera czy to nie jest duplikat przypadkiem
+
 
 	if (_sprite != NULL)
 	{
@@ -63,6 +70,8 @@ bool Sprite::load(char filename[])
 		_sizeY = (float)_sprite->h;
 		_originalX = _sizeX;
 		_originalY = _sizeY;
+		
+		strcpy(_fileName, filename);	// zachowujemy nazwe na pozniej, bedzie potrzebna przy kasowaniu textury
 	}
 	else
 	{
@@ -98,8 +107,12 @@ void Sprite::loadFromDatafile(char filename[])
 	Datafile *datafile;
 
 	datafile = new Datafile(filename);       // szukamy ze s³ownika
-	rw = SDL_RWFromMem(datafile->_buffer, datafile->_size);
-	_sprite = oglFromSurfaceFree(IMG_Load_RW(rw, 1));
+	
+	if (!datafile->_empty)
+	{
+		rw = SDL_RWFromMem(datafile->_buffer, datafile->_size);
+		_sprite = oglFromSurfaceFree(IMG_Load_RW(rw, 1));
+	}
 
 	delete datafile;
 }
@@ -118,10 +131,16 @@ void Sprite::loadFromFile(char filename[])
 
 Sprite::~Sprite()
 {
+	SpriteManager spriteManager;
+
 	if (_sprite!=NULL)
 	{
-		oglFreeTexture(_sprite);
-		_sprite = NULL;
+		if (spriteManager.get(_fileName))
+		{
+			oglFreeTexture(_sprite);
+			spriteManager.set(_fileName, NULL);
+			_sprite = NULL;
+		}
 	}
 }
 
@@ -136,28 +155,16 @@ void Sprite::render(int x, int y, float a)
 
 void Sprite::render(void)
 {
-	if (_isCenter)
-	{
-		oglCBlit(_sprite, NULL, (int)_x, (int)_y, _r, _g, _b, _a, _scaleX, _scaleY, _rotation);
-	}
-	else
-	{
+	_isCenter ? 
+		oglCBlit(_sprite, NULL, (int)_x, (int)_y, _r, _g, _b, _a, _scaleX, _scaleY, _rotation) :
 		oglBlit(_sprite, NULL, (int)_x, (int)_y, _r, _g, _b, _a, _scaleX, _scaleY, _rotation);
-	}
 }
 
 // updates parameters after rendering
 
 void Sprite::update(void)
 {
-	if (_isCenter)
-	{
-		oglCBlit(_sprite, NULL, (int)_x, (int)_y, _r, _g, _b, _a, _scaleX, _scaleY, _rotation);
-	}
-	else
-	{
-		oglBlit(_sprite, NULL, (int)_x, (int)_y, _r, _g, _b, _a, _scaleX, _scaleY, _rotation);
-	}
+	render();
 
 	_rotation += _rotationI;
 
