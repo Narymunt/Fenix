@@ -23,9 +23,9 @@
 // EDIT_MODE jest do ustawiania leveli, wtedy 2560x1440 fullscreen, z dodatkowymi kontrolkami do edycji obiektow itp
 
 #define DEBUG_MODE		1
-#define FULLSCREEN		1
-#define WINDOW_X		1366
-#define WINDOW_Y		768
+#define FULLSCREEN		0
+#define WINDOW_X		1920
+#define WINDOW_Y		1080
 #define EDIT_MODE		0
 
 #include <Windows.h>
@@ -427,14 +427,14 @@ int main(int argc, char *argv[])
 
 		}	// switch
 
-
+/*
 		for (int i = 0; i < POOL; i++)
 		{
 			spritePool[i]->_x = spritePool[i]->_x > WINDOW_X ? 0 : spritePool[i]->_x + i;
 			spritePool[i]->_y = spritePool[i]->_y > WINDOW_Y ? 0 : spritePool[i]->_y + i;
 			spritePool[i]->render();
 		}
-
+*/
 		mouse->render();
 
 		// info debugowe
