@@ -40,15 +40,19 @@
 enum screenOrientation
 {
 	// IPHONE
-	
-	K_320x480,
-	K_480x320,
-	
+    
+	IPHONE_320x480,
+	IPHONE_480x320,
+
+    // iPhone retina
+    
+    IPHONE_960x640,
+    IPHONE_1136x640,
 	
 	// IPAD
 	
-	K_768x1024,
-	K_1024x768
+	IPAD_1024x768,
+    IPAD_2048x1536
 };
 
 
@@ -61,9 +65,8 @@ public:
 	
 	static KWindow		* createKWindow(screenOrientation orientation);
 	static KGraphic		* createKGraphic();
+    static KGraphic     * create(int x, int y);
 	static KBatch		* createKBatch();
-//	static int			getWindowWidth();
-//	static int			getWindowHeight();
 };
 
 

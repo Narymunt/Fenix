@@ -43,63 +43,77 @@ KWindow * KPTK::createKWindow(screenOrientation orientation)
 
 KGraphic * KPTK::createKGraphic()
 {
-	if ( _screenOrientation == K_320x480 )
-	{
-		KGraphicGL  *kgl ;
-		kgl = new KGraphicGL(320, 480);
-		return kgl ;
-	}
-	else if ( _screenOrientation == K_768x1024 )
-	{
-		KGraphicGL  *kgl ;
-		kgl = new KGraphicGL(768, 1024);
-		return kgl ;
-	}
-	
-	if ( _screenOrientation == K_480x320 )
+
+	if( _screenOrientation == IPHONE_1136x640 )
 	{
 		KGraphicGLLAND  *kgll ;
-		kgll = new KGraphicGLLAND(480, 320);
+		kgll = new KGraphicGLLAND(1136, 640);
 		return kgll ;
 	}
-	else if( _screenOrientation == K_1024x768 )
+
+	if( _screenOrientation == IPHONE_960x640 )
+	{
+		KGraphicGLLAND  *kgll ;
+		kgll = new KGraphicGLLAND(960, 640);
+		return kgll ;
+	}
+    
+	if( _screenOrientation == IPAD_1024x768 )
 	{
 		KGraphicGLLAND  *kgll ;
 		kgll = new KGraphicGLLAND(1024, 768);
-		return kgll ;		
+		return kgll ;
 	}
-	
+
+	if( _screenOrientation == IPAD_2048x1536)
+	{
+		KGraphicGLLAND  *kgll ;
+		kgll = new KGraphicGLLAND(2048, 1536);
+		return kgll ;
+	}
+    
 	return 0;
 }
 
+KGraphic * KPTK::create(int x, int y)
+{
+		KGraphicGLLAND  *kgll ;
+		kgll = new KGraphicGLLAND(x,y);
+		return kgll ;
+}
+
+
 KBatch * KPTK::createKBatch()
 {
-	if ( _screenOrientation == K_320x480 )
-	{
-		KBatch  *kgl ;
-		kgl = new KBatch(320, 480);
-		return kgl ;
-	}
-	else if ( _screenOrientation == K_768x1024 )
-	{
-		KBatch  *kgl ;
-		kgl = new KBatch(768, 1024);
-		return kgl ;
-	}
-	
-	if ( _screenOrientation == K_480x320 )
+
+	if ( _screenOrientation == IPHONE_960x640 )
 	{
 		KBatch  *kgll ;
-		kgll = new KBatch(480, 320);
+		kgll = new KBatch(960, 640);
 		return kgll ;
 	}
-	else if ( _screenOrientation == K_1024x768 )
+
+	if ( _screenOrientation == IPHONE_1136x640 )
+	{
+		KBatch  *kgll ;
+		kgll = new KBatch(1136, 640);
+		return kgll ;
+	}
+    
+	if ( _screenOrientation == IPAD_2048x1536 )
+	{
+		KBatch  *kgll ;
+		kgll = new KBatch(2048, 1536);
+		return kgll ;
+	}
+    
+	if ( _screenOrientation == IPAD_1024x768 )
 	{
 		KBatch  *kgll ;
 		kgll = new KBatch(1024, 768);
 		return kgll ;
 	}
-	
+    
 	return 0;
 }
 

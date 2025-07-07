@@ -4,7 +4,8 @@
 
 // konstruktor, tutaj pakujemy najmniej jak tylko możliwe
 
-CTouchButton::CTouchButton(int iX1, int iY1, int iX2, int iY2, char cIdle[], char cOnOver[],char cOnClick[])
+CTouchButton::CTouchButton(int iX1, int iY1, int iX2, int iY2, char cIdle[], char cOnOver[],char cOnClick[]) :
+_isPressed(false)
 {
     m_cType = 3;    // 3 plikowy przycisk
     
@@ -19,9 +20,11 @@ CTouchButton::CTouchButton(int iX1, int iY1, int iX2, int iY2, char cIdle[], cha
 
     m_iX = iX1; m_iY = iY1;     // wspolrzedne na ekranie
     
-    m_iXSize = iX2; m_iYSize = iY2; // rozmiar przycisku        
+    m_iXSize = iX2-iX1;
+    m_iYSize = iY2-iY1; // rozmiar przycisku
 
-    m_iHotX1 = iX1; m_iHotY1 = iY1;
+    m_iHotX1 = iX1;
+    m_iHotY1 = iY1;
 
     m_iHotX2 = iX1+iX2;
     m_iHotY2 = iY1+iY2;
@@ -35,7 +38,8 @@ CTouchButton::CTouchButton(int iX1, int iY1, int iX2, int iY2,
              int iU1, int iV1, int iDU1, int iDV1, 
              int iU2, int iV2, int iDU2, int iDV2, 
              int iU3, int iV3, int iDU3, int iDV3,
-             char cTexture[])
+                           char cTexture[]) :
+_isPressed(false)
 {
     m_cType = 1; 
     
@@ -44,9 +48,11 @@ CTouchButton::CTouchButton(int iX1, int iY1, int iX2, int iY2,
     
     m_iX = iX1; m_iY = iY1; 
 
-    m_iXSize = iX2; m_iYSize = iY2; // rozmiar przycisku        
+    m_iXSize = iX2-iX1;
+    m_iYSize = iY2-iY1; // rozmiar przycisku
     
-    m_iHotX1 = iX1; m_iHotY1 = iY1;
+    m_iHotX1 = iX1;
+    m_iHotY1 = iY1;
     
     m_iHotX2 = iX1+iX2;
     m_iHotY2 = iY1+iY2;
@@ -84,19 +90,21 @@ int CTouchButton::Render(CTouch *pTouch)
         if (pTouch->iGetX() > m_iX && pTouch->iGetX() < (m_iX+m_iXSize) && 
             pTouch->iGetY() > m_iY && pTouch->iGetY() < (m_iY+m_iYSize))
         {
-            if (pTouch->isReleased())
+            if (pTouch->isReleased() && _isPressed)
             {
                 m_pOnClick->Render();
-                return 2;
+                return 10;
             }
             
             if (pTouch->isPressed())
             {
+                _isPressed = true;
                 m_pOnOver->Render();
-                return 1;   
+                return 40;
             }
         }
-        
+       
+        _isPressed = false;
        m_pIdle->Render();
     }
     
@@ -110,14 +118,14 @@ int CTouchButton::Render(CTouch *pTouch)
             {
                 m_pTexture->SetTexture(m_iU3, m_iV3, m_iDU3, m_iDV3);
                 m_pTexture->Render();
-                return 2;
+                return 10;
             }
             
             if (pTouch->isPressed())
             {
                 m_pTexture->SetTexture(m_iU2, m_iV2, m_iDU2, m_iDV2);
                 m_pTexture->Render();
-                return 1;   
+                return 40;
             }
         }
         
@@ -133,8 +141,14 @@ int CTouchButton::Render(CTouch *pTouch)
 
 void CTouchButton::SetPosition(int iX1, int iY1)
 {
-    m_iX = iX1; m_iY = iY1;
+    m_iX = iX1;
+    m_iY = iY1;
 
+    m_iHotX1 = m_iX; m_iHotY1 = m_iY;
+
+    m_iHotX2 = m_iX + m_iXSize;
+    m_iHotY2 = m_iY + m_iYSize;
+    
     if (m_cType==3)
     {
         m_pIdle->SetPosition((float)iX1,(float)iY1);
