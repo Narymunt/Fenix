@@ -1,71 +1,61 @@
 // Game.cpp : Defines the entry point for the console application.
 
-//#pragma comment(lib, "opengl32.lib")
-
 #pragma warning(disable : 4996)
+#pragma warning(disable : 4244)     // zwrot innego typu niz size_t
 
 #include <stdio.h>
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
+
 #include "Game.h"
 
-#include "OGL.h"
+#include "gfx/OGL.h"
+#include "gfx/Screen.h"
+#include "gfx/Sprite.h"
+#include "ui/Mouse.h"	
+#include "windows/GameSettings.h"
+#include "ui/Button.h"
+#include "ui/SpriteFont.h"
+#include "gfx/FontTTF.h"
 
-#include "Screen.h"
-#include "Sprite.h"
-#include "Mouse.h"
-#include "GameSettings.h"
+// definicje dla windows, pierwsza dla vs2015
+
+#ifdef _WIN32
+	FILE _iob[] = { *stdin, *stdout, *stderr };
+	extern "C" FILE * __cdecl __iob_func(void) { return _iob; }
+// dolaczenie visual leak detector
+	#ifdef _DEBUG
+	#include "vld/include/vld.h"
+	#endif 
+#endif
 
 //=== stany aplikacji 
 
-#include "eLanguage.h"		// wybor jezyka
-#include "ePreload.h"		// loga
-#include "eIntro.h"
-#include "eMainMenu.h"		// menu glowne, nowa gra, ustawienia itd itp
-#include "eLevelMenu.h"
-#include "eIngame.h"		// in game - tutaj ukladamy klocki
-#include "ePostGame.h"		// zliczanie punktow po levelu do glownego profilu
-#include "eHelp.h"			// plansza pomocnicza
-#include "eCredits.h"		// autorzy gry
-#include "eTroophy.h"		// trofea i osiagniecia dla tego profilu
-#include "eSettings.h"		// zmiana ustawien gry
-#include "eCongratulations.h"	// zwyciêstwo !!! koniec gry !!!
-#include "ePostTroophy.h"	// zdobyte trofea po zakoñczeniu levelu
+#include "app/Ingame.h"				   // in game - tutaj ukladamy klocki
+#include "app/Congratulations.h"		// zwyciêstwo !!! koniec gry !!!
 
+int		iAppState;					// current application state
+int		iPrevAppState;				// poprzedni stan aplikacji
+int		iLoad;						// na jakim etapie wczytywania danych jestesmy
 
-// visual leak detector
+int		iReturn;					   // funkcje renderujace moga zwracac rozne wartosci
 
-//#include "vld.h"
+unsigned char	ucLanguage;			// w jakim jezyku wyswietlamy menu etc.
 
-int		iAppState;		// current application state
-int		iPrevAppState;	// poprzedni stan aplikacji
-int		iLoad;			// na jakim etapie wczytywania danych jestesmy
-
-int		iReturn;			// funkcje renderujace moga zwracac rozne wartosci
-
-unsigned char	ucLanguage;		// w jakim jezyku wyswietlamy menu etc.
-
+unsigned char	ucVolumeMusic;		// glosnosc muzyki
 
 // stany aplikacji
 
-eLanguage			*pLanguage;		// wybor jezyka
-ePreload			*pPreload;		// banery reklamowe
-eMainMenu			*pMainMenu;		// main menu application state class
-eLevelMenu			*pLevelMenu;	// wybor etapu gry
-eIngame				*pIngame;		// MATCH3
-ePostGame			*pPostGame;		// zliczanie punktow po levelu
-eHelp				*pHelp;			// plansza pomocnicza
-eCredits			*pCredits;		// plansza z autorami gry
-eTroophy			*pTroophy;		// plansza z osiagnieciami
-eSettings			*pSettings;		// zmiana ustawien gry
-eCongratulations	*pCongratulations;	// zwyciêstwo, koniec gry
-ePostTroophy		*pPostTroophy;	// zdobyte trofea po zakoñczeniu jednorazowej gry
-
+CIngame				*pIngame;		// MATCH3
+CCongratulations	*pCongratulations;	// zwyciêstwo, koniec gry
 
 // ekran
 
 CScreen	*pMainScreen;	// our screen, there can be more than 1
+
+CFontTTF *pFont;
 
 // myszka 
 
@@ -73,9 +63,18 @@ CMouse	*pMouse;
 
 // grafiki do preload screen
 
-CSprite	*pLoadScreen;
-CSprite *pGreyBar;
-CSprite *pGreenBar;
+CSprite *pBackground;
+CSprite *pLoadScreen;
+CSprite *pConfirmQuit;					// czy na pewno wyjscie z gry ? 
+
+// do potwierdzenia wyjscia z gry
+
+CButton *pButtonYES;
+CButton *pButtonNO;
+
+// czcionka
+
+CSpriteFont *pSpriteFont;
 
 // eventy dla SDL
 
@@ -83,12 +82,15 @@ SDL_Event event;		// sdl event
 
 // muzyka
 
-Mix_Music *pMusicIngame, *pMusicMenu, *pMusicPostgame;
+Mix_Music *pMusicIngame[7], *pMusicMenu, *pMusicPostgame, *pMusicVictory;
 
 // timery do liczenia klatek
 
-int frames;
+int iFrames, iFPS;
 unsigned long ulTimer;	// main application timer
+unsigned long ulTimerLast;
+
+char cBuffer[64];
 
 // do ustawien aplikacji, zeby bylo wiadomo kiedy mamy wczytywac muzyke a kiedy nie
 
@@ -107,7 +109,7 @@ size_t getTotalSystemMemory()
 	return status.ullAvailPhys/1024;
 }
 
-void fx_debug(char cInfo[])
+void _debug(char cInfo[])
 {
 	FILE *plik;
 	
@@ -137,18 +139,23 @@ void UpOnly(char str[])
 void LoadScreen(int iProgress)
 {
 	pLoadScreen->Render();
-		
-	for (int i=(iScreenX/16); i<iScreenX-(iScreenX/16); i++)
-	{
-		pGreyBar->Position((float)i,(float)iScreenY-(iScreenY/8));
-		pGreyBar->Render();
-	}
+}
 
-	for (int i=0; i< (9*iProgress); i+=32)
-	{
-		pGreenBar->Position((float)((iScreenX/16)+i),iScreenY-(iScreenY/8));
-		pGreenBar->Render();
-	}
+//=== wczytaj ustawienia
+
+void reloadSettings(void)
+{
+	// wczytaj config
+
+	CGameSettings *pSetup;
+
+	pSetup = new CGameSettings();
+	pSetup->bLoad();
+
+	bSettingsMSX = pSetup->isMSX();
+	bSettingsSFX = pSetup->isSFX();
+
+	delete pSetup;
 }
 
 //=== wczytaj konfiguracje z pliku
@@ -183,15 +190,69 @@ void loadGameConfig(void)
 	fclose(plik);
 }
 
+// czy w pliku konfiguracyjnym jest zmiana stanu aplikacji ?
 
+int iLoadAppState(void)
+{
+	int iApp = 0;
+
+	FILE	*plik;
+	char linia[1024];
+
+	if ((plik=fopen(SCRIPT_FILE,"r"))==NULL)
+		printf("ERROR: no script file %s\n",SCRIPT_FILE);
+	
+	while (strcmp(linia,"<END>"))
+	{
+		fscanf(plik,"%s\n",linia);	// wczytaj linie pliku
+		UpOnly(linia);
+
+		if (!strcmp(linia,"<APPSTATE>")) // znaleziono obiekt
+		{
+			fscanf(plik,"%s\n",&linia);	// wczytaj linie pliku
+			UpOnly(linia);
+
+			if (!strcmp(linia,"E_LANGUAGE")) iApp=E_LANGUAGE;
+			if (!strcmp(linia,"E_PRELOAD")) iApp=E_PRELOAD;
+			if (!strcmp(linia,"E_ADS")) iApp=E_ADS;
+			if (!strcmp(linia,"E_INTRO")) iApp=E_INTRO;
+			if (!strcmp(linia,"E_MAINMENU")) iApp=E_MAINMENU;
+			if (!strcmp(linia,"E_SETTINGS")) iApp=E_SETTINGS;
+			if (!strcmp(linia,"E_CREDITS")) iApp=E_CREDITS;
+			if (!strcmp(linia,"E_PAUSE")) iApp=E_PAUSE;
+			if (!strcmp(linia,"E_FREEZE")) iApp=E_FREEZE;
+			if (!strcmp(linia,"E_PAUSE")) iApp=E_PROFILE;
+			if (!strcmp(linia,"E_LEVELMENU")) iApp=E_LEVELMENU;
+			if (!strcmp(linia,"E_PAUSE")) iApp=E_INGAME;
+			if (!strcmp(linia,"E_TROOPHY")) iApp=E_TROOPHY;
+			if (!strcmp(linia,"E_GAMEOVER")) iApp=E_GAMEOVER;
+			if (!strcmp(linia,"E_ENDSCREEN")) iApp=E_ENDSCREEN;
+			if (!strcmp(linia,"E_POSTGAME")) iApp=E_POSTGAME;
+			if (!strcmp(linia,"E_HELP")) iApp=E_HELP;
+			if (!strcmp(linia,"E_POST_TROOPHY")) iApp=E_POST_TROOPHY;
+			if (!strcmp(linia,"E_CONGRATULATIONS")) iApp=E_CONGRATULATIONS;
+			if (!strcmp(linia,"E_QUIT")) iApp=E_QUIT;
+		} // if 
+	} // while <end>
+
+	fclose(plik);
+
+	return iApp;
+}
 
 //=== main application
 
 int main(int argc, char **argv)
-{
+{  
 
 	atexit(SDL_Quit);
 	
+   if (TTF_Init()==-1)
+   {
+		printf("ERROR: unable to init TTF\n");
+		exit(1);
+   }
+
 	if (SDL_Init(SDL_INIT_AUDIO)<0)
 	{
 		printf("ERROR: unable to init audio\n");
@@ -208,9 +269,10 @@ int main(int argc, char **argv)
 	if (iMode==2)
 	{
 		pMainScreen = new CScreen(true);
-		iScreenX = pMainScreen->iSizeX();
-		iScreenY = pMainScreen->iSizeY();
+		iScreenX = pMainScreen->_iSizeX;
+		iScreenY = pMainScreen->_iSizeY;
 	}
+
 	// ustawiamy na podstawie parametrow
 
 	if (iMode==1)
@@ -219,72 +281,126 @@ int main(int argc, char **argv)
 	if (iMode==0)
 		pMainScreen = new CScreen(iScreenX,iScreenY,32,false);
 
-	pMouse = new CMouse();
+   pFont = new CFontTTF("verdana.ttf",20);
 
-	// wczytaj config
+	// inicjalizacja myszki
 
-	CGameSettings *pSetup;
+	pMouse = new CMouse(true);
 
-	pSetup = new CGameSettings();
-	pSetup->bLoad();
+	// czcionka g³ówna
 
-	bSettingsMSX = pSetup->isMSX();
-	bSettingsSFX = pSetup->isSFX();
+//	pSpriteFont = new CSpriteFont(pMainScreen);
 
-	delete pSetup;
+	// sprawdz ustawienia
+
+	reloadSettings();
 
 	// ekran wczytywania danych
 
-	pLoadScreen = new CSprite(pMainScreen,"GFX_LOAD_SCREEN");
-	pGreyBar = new CSprite(pMainScreen,"BAR_GREY");
-	pGreenBar = new CSprite(pMainScreen,"BAR_GREEN");
+	pLoadScreen = new CSprite("background.jpg");
+   pLoadScreen->Resize(0,0,pMainScreen->_iSizeX, pMainScreen->_iSizeY);
+   pLoadScreen->Render();
+//	pConfirmQuit = new CSprite(pMainScreen, "QUIT_SCREEN");
+
+//	pButtonYES = new CButton(pMainScreen, "BUTTON_OK_PROFILE");
+//	pButtonNO = new CButton(pMainScreen, "BUTTON_CANCEL_PROFILE");
+
+/*
+	if (pMainScreen->iSizeX() < 1500)
+	{
+		pButtonYES->setPosition(pMainScreen->iSizeX() / 4, pMainScreen->iSizeY() / 2);
+		pButtonYES->setHotCoords(pMainScreen->iSizeX() / 4, pMainScreen->iSizeY() / 2, pMainScreen->iSizeX() / 4 + 128, pMainScreen->iSizeY() / 2 + 128);
+
+		pButtonNO->setPosition((pMainScreen->iSizeX() / 4) * 3 - 128, pMainScreen->iSizeY() / 2);
+		pButtonNO->setHotCoords((pMainScreen->iSizeX() / 4) * 3 - 128, pMainScreen->iSizeY() / 2, (pMainScreen->iSizeX() / 4) * 3, pMainScreen->iSizeY() / 2 + 128);
+	}
+	else
+	{
+		pButtonYES->setPosition(pMainScreen->iSizeX() / 4, pMainScreen->iSizeY() / 2);
+		pButtonYES->setHotCoords(pMainScreen->iSizeX() / 4, pMainScreen->iSizeY() / 2, pMainScreen->iSizeX() / 4 + 256, pMainScreen->iSizeY() / 2 + 256);
+
+		pButtonNO->setPosition((pMainScreen->iSizeX() / 4) * 3 - 256, pMainScreen->iSizeY() / 2);
+		pButtonNO->setHotCoords((pMainScreen->iSizeX() / 4) * 3 - 256, pMainScreen->iSizeY() / 2, (pMainScreen->iSizeX() / 4) * 3, pMainScreen->iSizeY() / 2 + 256);
+	}
+*/
+
+	// ekran w trakcie wczytywania muzyki itd
+
+//	pStart = new CSprite(pMainScreen,"START");
+//	pStart->Render();
+	oglFlip();
 
 	// inicjalizacja malych komponentow
 
 	iLoad = 0;	// progress bar, zeby nie przenosil z poprzedniego stanu
 
-	pPreload = new ePreload();
-	pLanguage = new eLanguage();
-	pMainMenu = new eMainMenu();
-	pLevelMenu = new eLevelMenu();
-	pIngame = new eIngame();
-	pPostGame = new ePostGame();
-	pHelp = new eHelp();
-	pCredits = new eCredits();
-	pTroophy = new eTroophy();
-	pSettings = new eSettings();
-	pCongratulations = new eCongratulations();
-	pPostTroophy = new ePostTroophy();
+//	pIngame = new CIngame();
+//	pCongratulations = new CCongratulations();
 
 	// load music
 
-	pMusicIngame = Mix_LoadMUS("data/music_ingame.ogg");
+/*
+	pMusicIngame[0] = Mix_LoadMUS("data/music_ingame01.ogg");
+	pMusicIngame[1] = Mix_LoadMUS("data/music_ingame02.ogg");
+	pMusicIngame[2] = Mix_LoadMUS("data/music_ingame03.ogg");
+	pMusicIngame[3] = Mix_LoadMUS("data/music_ingame04.ogg");
+	pMusicIngame[4] = Mix_LoadMUS("data/music_ingame05.ogg");
+	pMusicIngame[5] = Mix_LoadMUS("data/music_ingame06.ogg");
+	pMusicIngame[6] = Mix_LoadMUS("data/music_ingame07.ogg");
+
 	pMusicMenu = Mix_LoadMUS("data/music_mainmenu.ogg");
 	pMusicPostgame = Mix_LoadMUS("data/music_postgame.ogg");
+	pMusicVictory = Mix_LoadMUS("data/music_victory.ogg");
+*/
 
 	// hide cursor
 
-	SDL_ShowCursor(SDL_DISABLE); 
+//	SDL_ShowCursor(SDL_DISABLE); 
 	
-	frames = 0;
+	iFrames = 0;
+	iFPS = 0;
+	ulTimer = 0;
+	ulTimerLast = 0;
 
 	SDL_WM_SetCaption("SHODAN9 : GAME", "SHODAN9 : GAME");
 
 	iPrevAppState = E_SETTINGS;
-	iAppState = E_LANGUAGE; //E_MAINMENU;	// start aplikacji
+
+	iAppState = iLoadAppState();
+
+	if (!iAppState)
+		iAppState = E_INGAME;			// start aplikacji
 
 	ulTimer = SDL_GetTicks();
+
+	ucVolumeMusic = 0;
 
 	while(iAppState!=E_QUIT)
 	{
 
-		oglClear();		// clear screen
+		if (bSettingsMSX && ucVolumeMusic!=128)	// fade muzyki, maksymalna glosnosc to 128
+		{
+			Mix_VolumeMusic(ucVolumeMusic);
+			ucVolumeMusic++;
+		}
 
 		while(SDL_PollEvent(&event))
 		{
-			if(event.type == SDL_QUIT || (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
+			if (event.type == SDL_QUIT || (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
 			{
-				iAppState = E_QUIT;
+				if (iAppState == E_MAINMENU || iAppState == E_INGAME || iAppState == E_LEVELMENU || iAppState == E_POSTGAME || iAppState == E_POST_TROOPHY)
+				{
+					if (iAppState != E_CONFIRM_QUIT)
+					{
+						iPrevAppState = iAppState;
+						iAppState = E_CONFIRM_QUIT;
+					}
+					else
+					{
+						iAppState = iPrevAppState;
+					}
+						iAppState = E_QUIT; // DO USUNIÊCIA !!!
+				}
 			}
 
 			 if( event.type == SDL_MOUSEMOTION ) 
@@ -297,12 +413,22 @@ int main(int argc, char **argv)
 			  //If a mouse button was pressed 
 			 if( event.type == SDL_MOUSEBUTTONDOWN ) 
 			 { 
-				 //If the left mouse button was pressed 
-				 if( event.button.button == SDL_BUTTON_LEFT ) 
-					 pMouse->isLeft(true);
 
-				 if( event.button.button == SDL_BUTTON_RIGHT ) 
+				 // zapamietaj wspolrzedne klikniecia
+
+				 pMouse->fMouseXClick(event.motion.x);	
+				 pMouse->fMouseYClick(event.motion.y);
+
+				 //If the left mouse button was pressed 
+				 if (event.button.button == SDL_BUTTON_LEFT)
+				 {
+					 pMouse->isLeft(true);
+				 }
+
+				 if (event.button.button == SDL_BUTTON_RIGHT)
+				 {
 					 pMouse->isRight(true);
+				 }
 
 			 }
 
@@ -312,7 +438,7 @@ int main(int argc, char **argv)
 				if( event.button.button == SDL_BUTTON_LEFT )
 					pMouse->isLeft(false);
 
-				if( event.button.button == SDL_BUTTON_LEFT )
+				if( event.button.button == SDL_BUTTON_RIGHT )
 					pMouse->isRight(false);				
 			}
 
@@ -321,334 +447,63 @@ int main(int argc, char **argv)
 		switch	(iAppState)
 		{	
 
-			case	E_LANGUAGE:
-
-				if (!pLanguage->isActive())
-					pLanguage->Open(pMainScreen);
-
-				if (pLanguage->Render(ulTimer,pMouse)!=0)
-				{	
-					if (ucLanguage==0)
-					{
-						iAppState = E_PRELOAD;	// pierwsze uruchomienie aplikacji
-					}
-					else
-					{
-						iAppState = E_MAINMENU;	// kolejna zmiana jezyka
-						iPrevAppState = E_PRELOAD;	// przeskakujemy preload przy zmianie jezyka z menu glownego
-					}
-
-					ucLanguage = pLanguage->ucLanguage();
-
-					pLanguage->Close();
-				}
-	
-			break;
-
-			case	E_PRELOAD:
-
-				if (!pPreload->isActive()) // nie zawiera danych
-				{
-					pPreload->Open(pMainScreen);
-					
-					if (bSettingsMSX)
-						Mix_PlayMusic(pMusicMenu,200);
-				}
-				
-				// przelaczyc ? 
-					
-				if (pPreload->Render(ulTimer,pMouse))
-				{
-					pPreload->Close();		// zwalniamy zasoby, ale zapamietujemy ustawienia
-					iAppState=E_MAINMENU;
-					iPrevAppState = E_PRELOAD;
-				}
-
-			break;
-
-			case	E_MAINMENU:
-				if (!pMainMenu->isActive())
-				{
-					pMainMenu->ucLanguage(ucLanguage);	// ustawiamy jezyk zanim zainicjalizujemy assety
-					iLoad = pMainMenu->Open(pMainScreen);
-
-					if (iLoad==101)
-					{
-						if (iPrevAppState == E_SETTINGS)	// zaktualizuj ustawienia
-						{
-							CGameSettings *pSetup;
-
-							pSetup = new CGameSettings();
-							pSetup->bLoad();
-
-							bSettingsMSX = pSetup->isMSX();
-							bSettingsSFX = pSetup->isSFX();
-
-							delete pSetup;
-						}
-
-						if (iPrevAppState == E_INGAME || iPrevAppState == E_POSTGAME || iPrevAppState == E_SETTINGS)
-						{
-							if (bSettingsMSX)
-							{
-								Mix_HaltMusic();
-								Mix_PlayMusic(pMusicMenu,200);
-							}
-						}
-					}
-					else
-					{
-						LoadScreen(iLoad);
-					}
-				}
-				else	// assety zaladowane - renderowanie
-				{
-
-					switch (pMainMenu->Render(ulTimer,pMouse,KEYPRESSED))
-					{
-
-						// START - wybor etapu
-	
-						case 1:
-							pMainMenu->Close();
-							iAppState = E_LEVELMENU;
-							iPrevAppState = E_MAINMENU;
-						break;
-
-						// SETTINGS - ustawienia
-
-						case 2:
-							pMainMenu->Close();
-							iAppState = E_SETTINGS;
-							iPrevAppState = E_MAINMENU;
-						break;
-
-						// TROPHY ROOM
-
-						case 3:
-							pMainMenu->Close();
-							iAppState = E_TROOPHY;
-							iPrevAppState = E_MAINMENU;
-						break;	
-
-						// HELP
-
-						case 4:
-							pMainMenu->Close();
-							iAppState = E_HELP;
-							iPrevAppState = E_MAINMENU;
-						break;
-
-						// SUPPORT / CREDITS
-
-						case 5: 
-							pMainMenu->Close();
-							iAppState = E_CREDITS;
-							iPrevAppState = E_MAINMENU;
-						break;
-
-						// QUIT
-
-						case 6:
-							pMainMenu->Close();
-							iAppState = E_QUIT;
-							PostQuitMessage(0);
-						break;
-
-						// ZMIANA JEZYKA
-
-						case 10:
-							pMainMenu->Close();
-							iAppState = E_LANGUAGE;
-							iPrevAppState = E_MAINMENU;
-						break;
-					}
-				}
-			break;
-
-			case	E_LEVELMENU:
-		
-				if (!pLevelMenu->isActive())
-				{
-					pLevelMenu->Open(pMainScreen);
-					
-					if (iPrevAppState != E_PRELOAD && iPrevAppState!=E_MAINMENU)
-					{
-						if (bSettingsMSX)
-						{
-							Mix_HaltMusic();
-							Mix_PlayMusic(pMusicMenu,200);
-						}
-					}
-				}
-
-				iReturn = pLevelMenu->Render(ulTimer,pMouse);
-
-				if (iReturn>99)	// wejscie do koniec gry
-				{
-					pLevelMenu->Close();
-					iAppState = E_CONGRATULATIONS;
-					iPrevAppState = E_LEVELMENU;
-				}
-
-
-				if (iReturn>0 && iReturn <100)
-				{
-					pLevelMenu->Close();
-					iAppState = E_INGAME;
-					iPrevAppState = E_LEVELMENU;
-				}
-
-				if (iReturn<0)
-				{
-					pLevelMenu->Close();
-					iAppState = E_MAINMENU;
-					iPrevAppState = E_LEVELMENU;
-				}
-				
-			break;
-
 			case	E_INGAME:
-				if (!pIngame->isActive())
+
+            pFont->Print("kicha i pompa prezesie",255,128,64,10,10);
+/*            
+            if (!pIngame->isActive())
 				{
-					pIngame->Open(pLevelMenu->iGetCurrentLevel(),pMainScreen);
+					pIngame->Open(pMainScreen);
 
 					if (iPrevAppState == E_LEVELMENU)
 					{
 						if (bSettingsMSX)
 						{
+							ucVolumeMusic = 0;
+							Mix_VolumeMusic(ucVolumeMusic);
 							Mix_HaltMusic();
-							Mix_PlayMusic(pMusicIngame,200);
+							Mix_PlayMusic(pMusicIngame[1],200);
+						}
+						else
+						{
+							ucVolumeMusic = 0;
+							Mix_VolumeMusic(ucVolumeMusic);
+							Mix_HaltMusic();
 						}
 					}
 				}
 
-				if (pIngame->Render(ulTimer/10,pMouse)<0)
+            pIngame->Render(ulTimer,pMouse);
+
+				if (pIngame->isFinished())
 				{
 					pIngame->Close();		
 					iAppState = E_POST_TROOPHY;
 					iPrevAppState = E_INGAME;
 				}
+*/
 			break;		
-
-			case	E_POST_TROOPHY:
-
-				if (!pPostTroophy->isActive())
-				{
-					pPostTroophy->Open(pMainScreen);
-
-					for (int i=0; i<20; i++)	// dane graficzne juz rozladowane, ale tablica trzyma ustawienia z ostatniej gry
-						pPostTroophy->ucNewTroophy(i,pIngame->ucNewTroophy(i));
-
-					if (!pPostTroophy->reOpen())
-					{
-						pPostTroophy->Close();
-						iAppState = E_POSTGAME;					
-					}
-				}
-				else
-				{				
-					if (pPostTroophy->Render(ulTimer,pMouse))
-					{
-						pPostTroophy->Close();
-						iAppState = E_POSTGAME;
-					}
-				}
-
-			break;
-
-			case	E_POSTGAME:
-
-				if (!pPostGame->isActive())
-				{
-					pPostGame->Open(pMainScreen);
-				
-					if (bSettingsMSX)
-					{
-						Mix_HaltMusic();
-						Mix_PlayMusic(pMusicPostgame,200);
-					}
-				}
-	
-				switch (pPostGame->Render(ulTimer,pMouse))
-				{
-					case 1:
-						Mix_HaltMusic();
-						iAppState = E_MAINMENU;
-						iPrevAppState = E_POSTGAME;
-						pPostGame->Close();
-					break;
-
-					case 2:
-						Mix_HaltMusic();
-						iAppState = E_INGAME;
-						iPrevAppState = E_LEVELMENU;
-						pPostGame->Close();
-					break;
-				}
-
-			break;
-
-			case	E_HELP:
-
-				if(!pHelp->isActive())
-					pHelp->Open(pMainScreen);
-
-				if (pHelp->Render(ulTimer,pMouse))
-				{
-					iAppState = E_MAINMENU;
-					iPrevAppState = E_HELP;
-					pHelp->Close();
-				}
-
-			break;
-
-			case	E_CREDITS:
-
-				if(!pCredits->isActive())
-					pCredits->Open(pMainScreen);
-
-				if (pCredits->Render(ulTimer,pMouse))
-				{
-					iAppState = E_MAINMENU;
-					iPrevAppState = E_CREDITS;
-					pCredits->Close();
-				}
-
-			break;
-
-			case	E_TROOPHY:
-
-				if(!pTroophy->isActive())
-					pTroophy->Open(pMainScreen);
-
-				if (pTroophy->Render(ulTimer,pMouse))
-				{
-					iAppState = E_MAINMENU;
-					iPrevAppState = E_TROOPHY;
-					pTroophy->Close();
-				}
-
-			break;
-
-			case	E_SETTINGS:
-
-				if (!pSettings->isActive())
-					pSettings->Open(pMainScreen);
-
-				if (pSettings->Render(ulTimer,pMouse))
-				{
-					iAppState = E_MAINMENU;
-					iPrevAppState = E_SETTINGS;
-					pSettings->Close();
-				}
-
-			break;
 
 			case	E_CONGRATULATIONS:
 
-				if (!pCongratulations->isActive())
+				if (!pCongratulations->_isOpen)
+				{
 					pCongratulations->Open(pMainScreen);
+
+					if (bSettingsMSX)
+					{
+						ucVolumeMusic = 0;
+						Mix_VolumeMusic(ucVolumeMusic);
+						Mix_HaltMusic();
+						Mix_PlayMusic(pMusicVictory,-1);
+					}
+					else
+					{
+						ucVolumeMusic = 0;
+						Mix_VolumeMusic(ucVolumeMusic);
+						Mix_HaltMusic();
+					}
+				}
 
 				if (pCongratulations->Render(ulTimer,pMouse))
 				{
@@ -661,50 +516,56 @@ int main(int argc, char **argv)
 
 		}	// switch
 
-		pMouse->Render();
+//		pMouse->Render();
+
+		sprintf(cBuffer, "%d", iFPS);
+//		pSpriteFont->Print(10, 10, 1, 0.05f, 0.05f, cBuffer);
 
 		oglFlip();		// show the screen
 
-		frames++;
+		iFrames++;
 		ulTimer = SDL_GetTicks();
 
-		if(SDL_GetTicks() - ulTimer > 1000)
+		if(ulTimer - ulTimerLast> 1000)
 		{
-			printf("FPS: %i\n", frames);
-			frames = 0;
+			iFPS = iFrames;
+			//printf("FPS: %d\n", iFPS);
+			iFrames = 0;
+			ulTimerLast = ulTimer;
 		}
+
+
 	}
 
-	Mix_FreeMusic(pMusicIngame);
+	for (int i=0; i<7; i++)
+	{
+		Mix_FreeMusic(pMusicIngame[i]);
+	}
+
 	Mix_FreeMusic(pMusicMenu);
 	Mix_FreeMusic(pMusicPostgame);
+	Mix_FreeMusic(pMusicVictory);
 
 	// usun stany aplikacji
 
-	delete pPreload;	
-	delete pLanguage;	
-	delete pMainMenu;	
-	delete pLevelMenu;	
 	delete pIngame;		
-	delete pPostGame;	
-	delete pHelp;		
-	delete pCredits;	
-	delete pTroophy;	
-	delete pSettings;	
 	delete pCongratulations;
-	delete pPostTroophy;
 
 	// usun load screen
 
 	delete pLoadScreen;
-	delete pGreyBar;
-	delete pGreenBar;
+	delete pConfirmQuit;
 
-	// zwolnij myszke
+	delete pButtonYES;
+	delete pButtonNO;
 
+	// zwolnij myszke, ekran, itd
+   delete pFont;
+	delete pSpriteFont;
 	delete pMouse;
 	delete pMainScreen;
 
+   TTF_Quit();
 	SDL_Quit();
 		
 	return 0;
